@@ -43,9 +43,9 @@ class ScreenBody extends StatelessWidget {
                   ])),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 4,
                 ),
-                Image(image: AssetImage(Images.user_friendly)),
+                Image(image: AssetImage(Images.user_friendly),height: 64, width: 64,),
                 Text("in creating and sharing sessions with friends.",
                     style: TextStyle(
                         fontSize: 12,
