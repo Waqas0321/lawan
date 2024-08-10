@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adaptive_sizer/adaptive_sizer.dart';
+import 'package:flutter/widgets.dart';
 import 'package:lawan/app/screens/HomeScreen/Widgets/homeScreen_Body.dart';
 import 'package:lawan/app/utils/images.dart';
 
@@ -16,7 +17,8 @@ class HomeScreen extends StatelessWidget {
       context: context,
       isDismissible: true,
       enableDrag: true,
-      isScrollControlled: true, // Allows the bottom sheet to use full screen height
+      isScrollControlled: true,
+      // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return AddAreena1();
@@ -27,27 +29,32 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffDDDDDD),
+        backgroundColor: const Color(0xffDDDDDB),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(left: 11, right: 11),
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.width * 0.023,
+                  left: MediaQuery.of(context).size.width * 0.023,
+                  right: MediaQuery.of(context).size.width * 0.023),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   ScreenHeader(),
+                  ScreenHeader(),
+                  SizedBox(height: 8),
                   ScreenBody(),
-                  SizedBox(height: 8,),
+                  SizedBox(
+                    height: 19,
+                  ),
                   Container(
-                    width: MediaQuery.of(context).size.width *0.5,
-                    height: 68,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: 70,
                     decoration: BoxDecoration(
                         color: Color(0xffB9B9B9),
-                        borderRadius: BorderRadius.circular(80)
-                    ),
+                        borderRadius: BorderRadius.circular(80)),
                     child: Center(
                       child: Padding(
-                        padding:  EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -93,7 +100,3 @@ class HomeScreen extends StatelessWidget {
         ));
   }
 }
-
-
-
-

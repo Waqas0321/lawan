@@ -14,7 +14,7 @@ class ScreenBody extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 151,
+          height: 155,
           width: MediaQuery.of(context).size.width,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
@@ -55,13 +55,13 @@ class ScreenBody extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 8),
+        SizedBox(height: 19),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: Container(
-                height: 141,
+                height: 143,
                 width: 172.5,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
@@ -89,10 +89,10 @@ class ScreenBody extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 8),
+            SizedBox(width: 16),
             Expanded(
               child: Container(
-                height: 141,
+                height: 143,
                 width: 172.5,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
@@ -105,21 +105,28 @@ class ScreenBody extends StatelessWidget {
                   child: Stack(
                     children: [
                       Positioned(
-                        child: Text.rich(TextSpan(children: [
-                          TextSpan(
-                              text: "Earn income ",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600,fontFamily: "Lufga")),
-                          TextSpan(
-                              text: "by listing as many arena that you own",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
-                        ])),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text.rich(TextSpan(children: [
+                            TextSpan(
+                                text: "     Earn income",
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w600,fontFamily: "Lufga")),
+                            TextSpan(
+                                text: " by",
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
+                            TextSpan(
+                                text: "\n     listing as many arena that you own",
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
+                          ])),
+                        ),
                       ),
                       Positioned(
                         height: 57,
-                        width: MediaQuery.of(context).size.width * 0.45,
-                        top: 82,
+                        width: MediaQuery.of(context).size.width * 0.46,
+                        top: 78,
                         child: Column(
                           children: [
                             Expanded(
@@ -139,9 +146,9 @@ class ScreenBody extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 8),
+        SizedBox(height: 19),
         Container(
-          height: 260,
+          height: 275,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [

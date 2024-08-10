@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:lawan/app/utils/text.dart';
 
 import '../../../utils/images.dart';
 
@@ -21,7 +22,7 @@ class ScreenHeader extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,7 +33,7 @@ class ScreenHeader extends StatelessWidget {
                       height: 48,
                     ),
                     Text(
-                      "Soccer",
+                      Apptext.scrore,
                       style:
                       TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
@@ -73,7 +74,7 @@ class ScreenHeader extends StatelessWidget {
           ],
         ),
         const Padding(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.only(top: 23,bottom: 20),
           child: Center(
               child: Text.rich(
                 TextSpan(children: [

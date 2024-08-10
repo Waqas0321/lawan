@@ -32,4 +32,8 @@ class Apptext{
   static const String standard_hours_of_operation="Standard hours of operation for this arena";
   static const String weekend_rate="Weekend Rate";
   static const String add_arena="Add Arena";
+
+
+  // Home Screen
+static const String scrore = "Soccer";
 }
