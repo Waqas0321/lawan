@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 import '../../../utils/images.dart';
 
@@ -16,7 +17,7 @@ class ScreenHeader extends StatelessWidget {
           children: [
             Container(
               height: 44,
-              width: 123,
+              width: MediaQuery.of(context).size.width * 0.35 ,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
@@ -26,7 +27,7 @@ class ScreenHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image(
-                      image: AssetImage(Images.add),
+                      image: AssetImage(Images.ball),
                       width: 32,
                       height: 48,
                     ),
@@ -36,7 +37,7 @@ class ScreenHeader extends StatelessWidget {
                       TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
                     Image(
-                      image: AssetImage(Images.game),
+                      image: AssetImage(Images.chevron_down),
                       height: 16,
                       width: 16,
                     )
@@ -46,7 +47,7 @@ class ScreenHeader extends StatelessWidget {
             ),
             Container(
               height: 44,
-              width: 68,
+              width: MediaQuery.of(context).size.width * 0.20,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
@@ -56,12 +57,12 @@ class ScreenHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image(
-                      image: AssetImage(Images.mainImage),
+                      image: AssetImage(Images.avtar),
                       height: 32,
                       width: 32,
                     ),
                     Image(
-                      image: AssetImage("Images.down_Shevron"),
+                      image: AssetImage(Images.chevron_down),
                       height: 16,
                       width: 16,
                     )
@@ -72,7 +73,7 @@ class ScreenHeader extends StatelessWidget {
           ],
         ),
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8),
           child: Center(
               child: Text.rich(
                 TextSpan(children: [
@@ -81,12 +82,14 @@ class ScreenHeader extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
+                        fontFamily: "Lufga"
                       )),
                   TextSpan(
                       text: "with Lawan, \n attract and inspire Pahlawans!",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 20,
+                          fontFamily: "Lufga"
                       )),
                 ]),
               )),

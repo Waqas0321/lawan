@@ -6,6 +6,7 @@ class ScreenBody extends StatelessWidget {
   ScreenBody({
     super.key,
   });
+
   final images = Images();
 
   @override
@@ -14,7 +15,7 @@ class ScreenBody extends StatelessWidget {
       children: [
         Container(
           height: 151,
-          width: 361,
+          width: MediaQuery.of(context).size.width,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
               side: BorderSide(width: 2, color: Colors.white),
@@ -25,24 +26,31 @@ class ScreenBody extends StatelessWidget {
             padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Text.rich(TextSpan(children: [
-                  TextSpan(
-                      text: "Seamless experience",
-                      style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
-                  TextSpan(
-                      text: " for your customers",
-                      style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w400))
-                ])),
+                Expanded(
+                  child: Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text: "Seamless experience",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Lufga")),
+                    TextSpan(
+                        text: " for your customers",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "Lufga"))
+                  ])),
+                ),
                 SizedBox(
                   height: 10,
                 ),
-                Image(image: AssetImage("assets/Images/user-friendly.png")),
+                Image(image: AssetImage(Images.user_friendly)),
                 Text("in creating and sharing sessions with friends.",
                     style: TextStyle(
                         fontSize: 12,
-                        fontWeight: FontWeight.w400))
+                        fontWeight: FontWeight.w400,
+                        fontFamily: "Lufga"))
               ],
             ),
           ),
@@ -67,14 +75,14 @@ class ScreenBody extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage("assets/Images/multi-devices.png"),
+                        image: AssetImage(Images.multi_devices),
                         height: 64,
                         width: 64,
                       ),
                       Text(
                         "Online visibility",
                         style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400),
+                            fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga"),
                       )
                     ],
                   ),
@@ -101,21 +109,27 @@ class ScreenBody extends StatelessWidget {
                           TextSpan(
                               text: "Earn income ",
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w600)),
+                                  fontSize: 14, fontWeight: FontWeight.w600,fontFamily: "Lufga")),
                           TextSpan(
                               text: "by listing as many arena that you own",
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w400)),
+                                  fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
                         ])),
                       ),
                       Positioned(
                         height: 57,
-                        width: 168,
+                        width: MediaQuery.of(context).size.width * 0.45,
                         top: 82,
-                        child: Image(
-                          image: AssetImage("assets/Images/dollar signs.png"),
-                          height: 57,
-                          width: 168,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Image(
+                                image: AssetImage("assets/Images/dollars_images.png"),
+                                height: 57,
+                                width: 168,
+                              ),
+                            ),
+                          ],
                         ),
                       )
                     ],
@@ -128,7 +142,7 @@ class ScreenBody extends StatelessWidget {
         SizedBox(height: 8),
         Container(
           height: 260,
-          width: 361,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
                 Color(0xff2A65F8),
@@ -139,7 +153,7 @@ class ScreenBody extends StatelessWidget {
             child: Stack(
               children: [
                 Image(
-                  image: AssetImage("assets/Images/Vector.png"),
+                  image: AssetImage(Images.vector),
                   width: 150,
                   height: 204.38,
                 ),

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
-import 'package:lawan/app/widgets/Areena/AddArena1.dart';
 
 void main() {
 

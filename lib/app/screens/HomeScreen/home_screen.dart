@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 11, right: 11),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                   ScreenBody(),
                   SizedBox(height: 8,),
                   Container(
-                    width: 205,
+                    width: MediaQuery.of(context).size.width *0.5,
                     height: 68,
                     decoration: BoxDecoration(
                         color: Color(0xffB9B9B9),
@@ -49,31 +49,37 @@ class HomeScreen extends StatelessWidget {
                       child: Padding(
                         padding:  EdgeInsets.all(3.0),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            CircularContainer(
-                              image: "assets/Images/play.png",
-                              color: Colors.white,
-                              text: "Session",
+                            Expanded(
+                              child: CircularContainer(
+                                image: Images.play,
+                                color: Colors.white,
+                                text: "Session",
+                              ),
                             ),
                             SizedBox(
-                              width: 4,
+                              width: 6,
                             ),
-                            CircularContainer(
-                              image: "assets/Images/fi_690839.png",
-                              color: Colors.black,
-                              text: "Arena",
-                              textColor: Colors.white,
-                              imageHeight: 24,
-                              imageWidth: 24,
+                            Expanded(
+                              child: CircularContainer(
+                                image: "assets/Images/fi_690839.png",
+                                color: Colors.black,
+                                text: "Arena",
+                                textColor: Colors.white,
+                                imageHeight: 24,
+                                imageWidth: 24,
+                              ),
                             ),
                             SizedBox(
-                              width: 4,
+                              width: 6,
                             ),
-                            CircularContainer(
-                              image: "assets/Images/fi_3446795.png",
-                              color: Colors.white,
-                              text: "Arena",
+                            Expanded(
+                              child: CircularContainer(
+                                image: "assets/Images/fi_3446795.png",
+                                color: Colors.white,
+                                text: "Arena",
+                              ),
                             ),
                           ],
                         ),
