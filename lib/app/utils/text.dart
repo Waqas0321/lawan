@@ -1,0 +1,35 @@
+class Apptext{
+  static const String details="Details";
+  static const String hour="Hour";
+  static const String rate="Rate";
+  static const String add_arena_details="Add Arena Details";
+  static const String add_picture="Add Picture";
+  static const String add_photos_name_and_location="Add photos, name and location";
+  static const String location="Location";
+  static const String  enter_arena_name="Enter Arena Name";
+  static const String enter_court_name="Enter Court Name";
+  static const String optional="Optional";
+  static const String arena_type="Arena Type";
+  static const String indoor="Indoor";
+  static const String outdoor="Outdoor";
+  static const String flooring="Flooring";
+  static const String court_turf="Court Turf";
+  static const String court_grass="Court Grass";
+  static const String cement="Cement";
+  static const String cancel="Cancel";
+  static const String next="Next";
+  static const String set_standard_hours="Standard hours of operation for this arena";
+  static const String sunday="Sunday";
+  static const String closed="Closed";
+  static const String  monday="Monday";
+  static const String open="Open";
+  static const  String tuesdayoday="Tuesday (Today)";
+  static const  String wednesday="Wednesday";
+  static const String thursday="Thursday";
+  static const String  friday="Friday";
+  static const String to="to";
+  static const String configure_the_rate_for_the_arena="Configure the rate for the arena";
+  static const String standard_hours_of_operation="Standard hours of operation for this arena";
+  static const String weekend_rate="Weekend Rate";
+  static const String add_arena="Add Arena";
+}
