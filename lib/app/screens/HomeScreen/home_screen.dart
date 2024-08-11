@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:adaptive_sizer/adaptive_sizer.dart';
-import 'package:flutter/widgets.dart';
 import 'package:lawan/app/screens/HomeScreen/Widgets/homeScreen_Body.dart';
+import 'package:lawan/app/utils/appSizes.dart';
 import 'package:lawan/app/utils/images.dart';
-
-import '../../utils/ScreenDimensions.dart';
-import '../../utils/colors.dart';
+import 'package:lawan/app/utils/text.dart';
 import '../../widgets/Areena/AddArena1.dart';
 import '../../widgets/Areena/circularContainer.dart';
 import 'Widgets/homeScreenHeader.dart';
@@ -41,51 +37,51 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ScreenHeader(),
-                  SizedBox(height: 8),
+                  SizedBox(height: AppSizes.spaceBTWSections / 2.5),
                   ScreenBody(),
                   SizedBox(
-                    height: 19,
+                    height: AppSizes.spaceBTWSections,
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.5,
                     height: 70,
                     decoration: BoxDecoration(
-                        color: Color(0xffB9B9B9),
+                        color: const Color(0xffB9B9B9),
                         borderRadius: BorderRadius.circular(80)),
                     child: Center(
                       child: Padding(
-                        padding: EdgeInsets.all(3.0),
+                        padding: const EdgeInsets.all(3.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Expanded(
+                            const Expanded(
                               child: CircularContainer(
                                 image: Images.play,
                                 color: Colors.white,
-                                text: "Session",
+                                text: Apptext.session,
                               ),
                             ),
                             SizedBox(
-                              width: 6,
+                              width: AppSizes.spaceBTWItems,
                             ),
-                            Expanded(
+                            const Expanded(
                               child: CircularContainer(
-                                image: "assets/Images/fi_690839.png",
+                                image: Images.arena_image,
                                 color: Colors.black,
-                                text: "Arena",
+                                text: Apptext.arena,
                                 textColor: Colors.white,
                                 imageHeight: 24,
                                 imageWidth: 24,
                               ),
                             ),
                             SizedBox(
-                              width: 6,
+                              width: AppSizes.spaceBTWItems,
                             ),
-                            Expanded(
+                            const Expanded(
                               child: CircularContainer(
-                                image: "assets/Images/fi_3446795.png",
+                                image: Images.sales_image,
                                 color: Colors.white,
-                                text: "Arena",
+                                text: Apptext.sales,
                               ),
                             ),
                           ],

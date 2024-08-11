@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/get_utils.dart';
 import 'package:lawan/app/utils/text.dart';
-
 import '../../../utils/images.dart';
 
 class ScreenHeader extends StatelessWidget {
@@ -22,7 +20,7 @@ class ScreenHeader extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,7 +31,7 @@ class ScreenHeader extends StatelessWidget {
                       height: 48,
                     ),
                     Text(
-                      Apptext.scrore,
+                      Apptext.soccer,
                       style:
                       TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                     ),
@@ -79,14 +77,14 @@ class ScreenHeader extends StatelessWidget {
               child: Text.rich(
                 TextSpan(children: [
                   TextSpan(
-                      text: "    List your arena ",
+                      text: Apptext.mainHeading1,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
                         fontFamily: "Lufga"
                       )),
                   TextSpan(
-                      text: "with Lawan, \n attract and inspire Pahlawans!",
+                      text: Apptext.mainHeading2,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 20,

@@ -10,12 +10,15 @@ class Images {
   static const String  oval="$mainImage/oval.png";
   static const String frame1="$mainImage/frame1.png";
 
+  //home Screen
   static const String ball="$mainImage/ball.png";
   static const String avtar="$mainImage/Avatar.png";
   static const String chevron_down="$mainImage/down.png";
-  static const String dollar_signs="$mainImage/dollar signs.png";
+  static const String dollar_signs="$mainImage/dollars_images.png";
   static const String play="$mainImage/play.png";
   static const String vector="$mainImage/Vector.png";
   static const String user_friendly="$mainImage/user-friendly.png";
   static const String multi_devices="$mainImage/multi-devices.png";
+  static const String arena_image="$mainImage/fi_690839.png";
+  static const String sales_image="$mainImage/fi_3446795.png";
 }

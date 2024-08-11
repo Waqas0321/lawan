@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lawan/app/utils/colors.dart';
-
+import 'package:lawan/app/utils/appSizes.dart';
 import '../../utils/images.dart';
 
-// Define the custom widget
 class CustomCard extends StatelessWidget {
   final String count;
   final String text;
@@ -56,14 +54,14 @@ class CustomCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 16,
+                 SizedBox(
+                  width: AppSizes.spaceBTWSections2,
                 ),
                 if (showline) Expanded(child: Image.asset(Images.line)),
               ],
             ),
           ),
-          SizedBox(height: 8),
+          SizedBox(height: AppSizes.spaceBTWSections2 / 2),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +77,7 @@ class CustomCard extends StatelessWidget {
                 ),
             
                 SizedBox(
-                  width: 16,
+                  width: AppSizes.spaceBTWSections2,
                 ),
                 if (showline) Expanded(child: Image.asset(Images.line, color: Colors.transparent,)),
               ],

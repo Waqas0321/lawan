@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lawan/app/utils/appSizes.dart';
 import 'package:lawan/app/utils/images.dart';
+import 'package:lawan/app/utils/text.dart';
 
 class ScreenBody extends StatelessWidget {
   ScreenBody({
@@ -18,24 +20,24 @@ class ScreenBody extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 2, color: Colors.white),
+              side: const BorderSide(width: 2, color: Colors.white),
               borderRadius: BorderRadius.circular(32),
             ),
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(16.0),
+          child:  Padding(
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                Expanded(
+                const Expanded(
                   child: Text.rich(TextSpan(children: [
                     TextSpan(
-                        text: "Seamless experience",
+                        text: Apptext.seamlessExperience1,
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                             fontFamily: "Lufga")),
                     TextSpan(
-                        text: " for your customers",
+                        text: Apptext.seamlessExperience2,
                         style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -43,10 +45,10 @@ class ScreenBody extends StatelessWidget {
                   ])),
                 ),
                 SizedBox(
-                  height: 4,
+                  height: AppSizes.spaceBTWItems,
                 ),
-                Image(image: AssetImage(Images.user_friendly),height: 64, width: 64,),
-                Text("in creating and sharing sessions with friends.",
+                const Image(image: AssetImage(Images.user_friendly),height: 64, width: 64,),
+                const Text(Apptext.seamlessExperience3,
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
@@ -55,7 +57,7 @@ class ScreenBody extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 19),
+        SizedBox(height: AppSizes.spaceBTWSections),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -65,11 +67,11 @@ class ScreenBody extends StatelessWidget {
                 width: 172.5,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
-                    side: BorderSide(width: 2, color: Colors.white),
+                    side: const BorderSide(width: 2, color: Colors.white),
                     borderRadius: BorderRadius.circular(32),
                   ),
                 ),
-                child: Center(
+                child: const Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,14 +91,14 @@ class ScreenBody extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 16),
+            SizedBox(width: AppSizes.spaceBTWSections),
             Expanded(
               child: Container(
                 height: 143,
                 width: 172.5,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
-                    side: BorderSide(width: 2, color: Colors.white),
+                    side: const BorderSide(width: 2, color: Colors.white),
                     borderRadius: BorderRadius.circular(32),
                   ),
                 ),
@@ -104,20 +106,20 @@ class ScreenBody extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16, right: 16, top: 11),
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Text.rich(TextSpan(children: [
                             TextSpan(
-                                text: "     Earn income",
+                                text: Apptext.earnIncome1,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w600,fontFamily: "Lufga")),
                             TextSpan(
-                                text: " by",
+                                text: Apptext.by,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
                             TextSpan(
-                                text: "\n     listing as many arena that you own",
+                                text: Apptext.earnIncome2,
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
                           ])),
@@ -127,11 +129,11 @@ class ScreenBody extends StatelessWidget {
                         height: 57,
                         width: MediaQuery.of(context).size.width * 0.46,
                         top: 78,
-                        child: Column(
+                        child: const Column(
                           children: [
                             Expanded(
                               child: Image(
-                                image: AssetImage("assets/Images/dollars_images.png"),
+                                image: AssetImage(Images.dollar_signs),
                                 height: 57,
                                 width: 168,
                               ),
@@ -146,17 +148,17 @@ class ScreenBody extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 19),
+        SizedBox(height: AppSizes.spaceBTWSections),
         Container(
           height: 275,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
+              gradient: const LinearGradient(colors: [
                 Color(0xff2A65F8),
                 Color(0xff193B92),
               ]),
               borderRadius: BorderRadius.circular(32)),
-          child: Center(
+          child: const Center(
             child: Stack(
               children: [
                 Image(
@@ -167,18 +169,18 @@ class ScreenBody extends StatelessWidget {
                 Positioned(
                   top: 90,
                   left: 63,
+                  height: 24,
+                  width: 24,
                   child: Icon(
                     CupertinoIcons.add_circled_solid,
                     color: Colors.white,
                   ),
-                  height: 24,
-                  width: 24,
                 ),
                 Positioned(
                     top: 120,
                     left: 40,
                     child: Text(
-                      "Add Arena",
+                      Apptext.add_arena,
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,

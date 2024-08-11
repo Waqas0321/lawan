@@ -7,6 +7,7 @@ import 'package:lawan/app/widgets/Areena/ar-in-out-button.dart';
 import 'package:lawan/app/widgets/Areena/areenaButton.dart';
 
 import '../../utils/ScreenDimensions.dart';
+import '../../utils/appSizes.dart';
 import '../../utils/images.dart';
 import 'Add-Arena-Container.dart';
 import 'AddAreena2.dart';
@@ -41,7 +42,7 @@ class _AddAreena1State extends State<AddAreena1> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(32),
               ),
-              shadows: [
+              shadows: const [
                 BoxShadow(
                   color: Color(0x19000000),
                   blurRadius: 0,
@@ -100,9 +101,9 @@ class _AddAreena1State extends State<AddAreena1> {
                       ),
                     ),
                     SizedBox(
-                      height: 16,
+                      height: AppSizes.spaceBTWSections2,
                     ),
-                    Text(
+                    const Text(
                       Apptext.add_arena_details,
                       style: TextStyle(
                         color: AappColor.black,
@@ -111,7 +112,7 @@ class _AddAreena1State extends State<AddAreena1> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Text(
+                    const Text(
                       Apptext.add_photos_name_and_location,
                       style: TextStyle(
                         color: AappColor.mid_grey,
@@ -120,8 +121,8 @@ class _AddAreena1State extends State<AddAreena1> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(
-                      height: 8,
+                     SizedBox(
+                      height: AppSizes.spaceBTWSections2 / 2,
                     ),
                     Container(
                       width: Get.width * 0.4,
@@ -129,7 +130,7 @@ class _AddAreena1State extends State<AddAreena1> {
                       padding: const EdgeInsets.all(24),
                       decoration: ShapeDecoration(
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+                          side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
@@ -142,11 +143,11 @@ class _AddAreena1State extends State<AddAreena1> {
                             width: 24,
                             height: 24,
                             clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Image.asset(Images.gallery),
                           ),
-                          SizedBox(height: 8),
-                          Text(
+                          SizedBox(height: AppSizes.spaceBTWSections2 / 2,),
+                          const Text(
                             Apptext.add_picture,
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -156,33 +157,33 @@ class _AddAreena1State extends State<AddAreena1> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(
-                            height: 8,
+                           SizedBox(
+                            height: AppSizes.spaceBTWSections2 / 2,
                           ),
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: AppSizes.spaceBTWSections2 / 2,
                     ),
                     CustomTextFormField(
                         hintText: Apptext.location, icon: Images.location),
-                    SizedBox(
-                      height: 8,
+                     SizedBox(
+                      height: AppSizes.spaceBTWSections2 / 2,
                     ),
                     CustomTextFormField(
                       hintText: Apptext.enter_arena_name,
                     ),
                     SizedBox(
-                      height: 8,
+                      height: AppSizes.spaceBTWSections2 / 2,
                     ),
                     CustomTextFormField(
                       hintText: Apptext.enter_court_name,
                       text: Apptext.optional,
                     ),
 
-                    SizedBox(height: 20),
-                    Text(
+                    SizedBox(height: AppSizes.spaceBTWSections2 + 4),
+                    const Text(
                       Apptext.arena_type,
                       style: TextStyle(
                         color: Color(0xFF545F71),
@@ -192,7 +193,7 @@ class _AddAreena1State extends State<AddAreena1> {
                       ),
                     ),
                     SizedBox(
-                      height: 13,
+                      height: AppSizes.spaceBTWSections2 - 3,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -204,7 +205,7 @@ class _AddAreena1State extends State<AddAreena1> {
                             onPressed: () => _onButtonPressed('Indoor'),
                           ),
                         ),
-                        SizedBox(width: 6),
+                        SizedBox(width: AppSizes.spaceBTWItems + 1.5),
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Outdoor',
@@ -212,13 +213,13 @@ class _AddAreena1State extends State<AddAreena1> {
                             onPressed: () => _onButtonPressed('Outdoor'),
                           ),
                         ),
-                        Expanded(child: SizedBox(width: 70)),
+                        const Expanded(child: SizedBox(width: 70)),
                       ],
                     ),
                     SizedBox(
-                      height: 8,
+                      height: AppSizes.spaceBTWSections2 / 2,
                     ),
-                    Text(
+                    const Text(
                       Apptext.flooring,
                       style: TextStyle(
                         color: Color(0xFF545F71),
@@ -239,7 +240,7 @@ class _AddAreena1State extends State<AddAreena1> {
                             onPressed: () => _onButtonPressed('Court Turf'),
                           ),
                         ),
-                        SizedBox(width: 6),
+                         SizedBox(width: AppSizes.spaceBTWItems + 1.5),
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Court Grass',
@@ -247,7 +248,7 @@ class _AddAreena1State extends State<AddAreena1> {
                             onPressed: () => _onButtonPressed('Court Grass'),
                           ),
                         ),
-                        SizedBox(width: 6),
+                        SizedBox(width: AppSizes.spaceBTWItems + 1.5),
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Cement',
@@ -257,8 +258,8 @@ class _AddAreena1State extends State<AddAreena1> {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 32,
+                     SizedBox(
+                      height: AppSizes.spaceBTWSections2 * 2,
                     ),
                     Row(
                       crossAxisAlignment:CrossAxisAlignment.center,
@@ -268,7 +269,7 @@ class _AddAreena1State extends State<AddAreena1> {
                           child: CustomAreenaButton(
                             text: Apptext.cancel,
                             color: AappColor.white,
-                            borderColor: Color(0xFFE9EAF0),
+                            borderColor: const Color(0xFFE9EAF0),
                             textColor: Colors.black, onTap: () {
                             Get.back();
                           },
@@ -279,7 +280,7 @@ class _AddAreena1State extends State<AddAreena1> {
                           child: CustomAreenaButton(
                             text: Apptext.next,
                             color: AappColor.black,
-                            borderColor: Color(0xFFE9EAF0),
+                            borderColor: const Color(0xFFE9EAF0),
                             textColor:AappColor.white, onTap: () async{
                                Navigator.pop(context);
                                _openBottomSheet(context);
