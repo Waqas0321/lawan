@@ -8,6 +8,7 @@ import '../../utils/colors.dart';
 import '../../utils/images.dart';
 import '../../utils/text.dart';
 import 'Add-Arena-Container.dart';
+import 'AddArena1.dart';
 import 'AlertBox.dart';
 import 'TimeSlotRow.dart';
 import 'areenaButton.dart';
@@ -42,7 +43,7 @@ class _AddAreena3State extends State<AddAreena3> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 377,
+      width: Get.width,
       height: 715,
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
@@ -65,36 +66,37 @@ class _AddAreena3State extends State<AddAreena3> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 45, top: 16),
+              padding: const EdgeInsets.only(top: 30),
               child: Row(
+                mainAxisAlignment:MainAxisAlignment.center,
                 children: [
-                  CustomCard(
-                    count: '1',
-                    text: Apptext.details,
-                    color: AappColor.silver,
-                    showline: true,
-                    countcolor: AappColor.dark_grey,
-                    textcolor: AappColor.mid_grey,
-                    fontWeight: FontWeight.w400,
+                  CustomDetailRow(
+                    containerColor: AappColor.white,
+                    textColor: AappColor.mid_grey,
+                    countColor: AappColor.mid_grey,
+                    countText: "1",
+                    detailText: "Details",
+                    padding:30,
                   ),
-                  CustomCard(
-                    count: '1',
-                    text: Apptext.hour,
-                    color: AappColor.silver,
-                    showline: true,
-                    countcolor: AappColor.dark_grey,
-                    textcolor: AappColor.mid_grey,
-                    fontWeight: FontWeight.w400,
+                  CustomDetailRow(
+                    containerColor: AappColor.white,
+                    textColor: AappColor.mid_grey,
+                    countColor: AappColor.mid_grey,
+                    countText: "2",
+                    detailText: "Hour",
+                    textpadding: 5,
+                    padding:30,
+
                   ),
-                  CustomCard(
-                    count: '3',
-                    text: Apptext.rate,
-                    color: AappColor.bluee,
-                    showline: false,
-                    countcolor: AappColor.white,
-                    textcolor: AappColor.bluee,
-                    fontWeight: FontWeight.w500,
-                  )
+                  CustomDetailRow(
+                    containerColor: AappColor.bluee,
+                    textColor: AappColor.bluee,
+                    countColor: AappColor.mid_grey,
+                    countText: "3",
+                    detailText: "Rate",
+                    textpadding: 5,
+                    showline: true,
+                  ),
                 ],
               ),
             ),

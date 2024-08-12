@@ -20,7 +20,7 @@ class TimeSlot extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Container(
-          width: 153,
+          width: 150,
           height: 44,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: ShapeDecoration(

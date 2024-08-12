@@ -9,6 +9,7 @@ import '../../utils/images.dart';
 import '../../utils/text.dart';
 import 'Add-Arena-Container.dart';
 import 'AddAreena3.dart';
+import 'AddArena1.dart';
 import 'TimeSlotRow.dart';
 import 'ar-in-out-button.dart';
 import 'areenaButton.dart';
@@ -42,7 +43,7 @@ class _AddAreena2State extends State<AddAreena2> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 377,
+      width: Get.width,
       height: 715,
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
@@ -60,46 +61,41 @@ class _AddAreena2State extends State<AddAreena2> {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 16, right: 16),
+        padding: const EdgeInsets.only(left: 16, right: 16,top:30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 45, top: 16),
-              child: Row(
-                children: [
-                  CustomCard(
-                    count: '1',
-                    text: Apptext.details,
-                    color: AappColor.silver,
-                    showline: true,
-                    countcolor: AappColor.dark_grey,
-                    textcolor: AappColor.mid_grey,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  CustomCard(
-                    count: '2',
-                    text: Apptext.hour,
-                    color: AappColor.bluee,
-                    showline: true,
-                    countcolor: AappColor.white,
-                    textcolor: AappColor.bluee,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  CustomCard(
-                    count: '3',
-                    text: Apptext.rate,
-                    color: AappColor.silver,
-                    showline: false,
-                    countcolor: AappColor.dark_grey,
-                    textcolor: AappColor.mid_grey,
-                    fontWeight: FontWeight.w400,
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 16,
+            Row(
+              mainAxisAlignment:MainAxisAlignment.center,
+              children: [
+                CustomDetailRow(
+                  containerColor: AappColor.white,
+                  textColor: AappColor.mid_grey,
+                  countColor: AappColor.mid_grey,
+                  countText: "1",
+                  detailText: "Details",
+                  padding:30,
+                ),
+                CustomDetailRow(
+                  containerColor: AappColor.bluee,
+                  textColor: AappColor.bluee,
+                  countColor: Colors.white,
+                  countText: "2",
+                  detailText: "Hour",
+                  textpadding: 5,
+                  padding:30,
+
+                ),
+                CustomDetailRow(
+                  containerColor: AappColor.white,
+                  textColor: AappColor.mid_grey,
+                  countColor: AappColor.mid_grey,
+                  countText: "3",
+                  detailText: "Rate",
+                  textpadding: 5,
+                  showline: true,
+                ),
+              ],
             ),
             Text(
               Apptext.add_arena_details,
@@ -143,6 +139,7 @@ class _AddAreena2State extends State<AddAreena2> {
               },
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TimeSlot(
                   timeSlots: _timeSlots,
@@ -183,6 +180,7 @@ class _AddAreena2State extends State<AddAreena2> {
               },
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TimeSlot(
                   timeSlots: _timeSlots,
@@ -223,6 +221,7 @@ class _AddAreena2State extends State<AddAreena2> {
               },
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TimeSlot(
                   timeSlots: _timeSlots,
@@ -263,6 +262,7 @@ class _AddAreena2State extends State<AddAreena2> {
               },
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TimeSlot(
                   timeSlots: _timeSlots,
@@ -270,7 +270,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   onChanged: _onTimeSlotChanged, isImage: true,
                 ),
                 SizedBox(
-                  width: 12,
+                  width: 10,
                 ),
                 Text(
                   'to',
@@ -283,7 +283,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   ),
                 ),
                 SizedBox(
-                  width: 12,
+                  width: 10,
                 ),
                 TimeSlot(
                   timeSlots: _timeSlots,

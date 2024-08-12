@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../main.dart';
 import '../../utils/colors.dart';
@@ -20,7 +21,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 345,
+      width: Get.width,
       height: 40, // Adjust height as needed
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -58,9 +59,9 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
               height: 20,
               activeColor: Colors.white,
               inactiveColor: AappColor.mid_grey,
-              activeTrackColor: AappColor.black,
+              activeTrackColor: AappColor.greenColor,
               inactiveTrackColor: AappColor.white,
-              borderColor: AappColor.mid_grey,
+              borderColor: isSelected? AappColor.greenColor:AappColor.mid_grey,
               borderWidth: 2.0,
               thumbBorderColor: Colors.red,
               thumbBorderWidth: 5.0,
