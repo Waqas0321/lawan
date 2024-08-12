@@ -12,25 +12,24 @@ import '../../widgets/Areena/circularContainer.dart';
 import 'Widgets/homeScreenHeader.dart';
 
 class HomeScreen extends StatelessWidget {
-
+  void _openBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      enableDrag: true,
+      isScrollControlled: true,
+      // Allows the bottom sheet to use full screen height
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return AddAreena1();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    openBottomSheet(BuildContext context) {
-      showModalBottomSheet(
-        context: context,
-        isDismissible: true,
-        enableDrag: true,
-        isScrollControlled: true,
-        // Allows the bottom sheet to use full screen height
-        backgroundColor: Colors.transparent,
-        builder: (BuildContext context) {
-          return AddAreena1();
-        },
-      );
-    }
     return Scaffold(
-        backgroundColor: const Color(0xFFF2F3F2),
+        backgroundColor: const Color(0xffDDDDDB),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Padding(
@@ -43,19 +42,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   ScreenHeader(),
                   SizedBox(height: 8),
-                  ScreenBody(onTap:(){
-                    showModalBottomSheet(
-                      context: context,
-                      isDismissible: true,
-                      enableDrag: true,
-                      isScrollControlled: true,
-                      // Allows the bottom sheet to use full screen height
-                      backgroundColor: Colors.transparent,
-                      builder: (BuildContext context) {
-                        return AddAreena1();
-                      },
-                    );
-                  },),
+                  ScreenBody(),
                   SizedBox(
                     height: 19,
                   ),
@@ -63,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.5,
                     height: 70,
                     decoration: BoxDecoration(
-                        color: AappColor.bottombox,
+                        color: Color(0xffB9B9B9),
                         borderRadius: BorderRadius.circular(80)),
                     child: Center(
                       child: Padding(
@@ -105,8 +92,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(height:20,),
+                  )
                 ],
               ),
             ),

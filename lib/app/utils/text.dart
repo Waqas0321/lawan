@@ -31,9 +31,21 @@ class Apptext{
   static const String configure_the_rate_for_the_arena="Configure the rate for the arena";
   static const String standard_hours_of_operation="Standard hours of operation for this arena";
   static const String weekend_rate="Weekend Rate";
-  static const String add_arena="Add Arena";
+
 
 
   // Home Screen
-static const String scrore = "Soccer";
+static const String soccer = "Soccer";
+static const String session = "Session";
+static const String arena = "Arena";
+static const String sales = "Sales";
+static const String mainHeading1 = "    List your arena ";
+static const String mainHeading2 = "with Lawan, \n attract and inspire Pahlawans!";
+static const String seamlessExperience1 = "Seamless experience";
+static const String seamlessExperience2 = " for your customers";
+static const String seamlessExperience3 = "in creating and sharing sessions with friends.";
+  static const String add_arena="Add Arena";
+  static const String earnIncome1="     Earn income";
+  static const String by=" by";
+  static const String earnIncome2="\n     listing as many arena that you own";
 }

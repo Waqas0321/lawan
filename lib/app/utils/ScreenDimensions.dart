@@ -6,6 +6,7 @@ class ScreenDimensions{
   double get screenWidth  =>MediaQuery.of(context).size.height;
   double get  screenHeight=>MediaQuery.of(context).size.width;
   // Custom dimensions based on screen width and height in 2% increments
+
   double get width1Percent => screenWidth * 0.01;
 
   double get width2Percent => screenWidth * 0.02;

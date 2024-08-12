@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:lawan/app/utils/images.dart';
 
 class ScreenBody extends StatelessWidget {
+  ScreenBody({
+    super.key,
+  });
 
   final images = Images();
-  final VoidCallback  onTap;
-  ScreenBody({required this.onTap});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +42,9 @@ class ScreenBody extends StatelessWidget {
                             fontFamily: "Lufga"))
                   ])),
                 ),
-
+                SizedBox(
+                  height: 4,
+                ),
                 Image(image: AssetImage(Images.user_friendly),height: 64, width: 64,),
                 Text("in creating and sharing sessions with friends.",
                     style: TextStyle(
@@ -91,48 +94,51 @@ class ScreenBody extends StatelessWidget {
               child: Container(
                 height: 143,
                 width: 172.5,
-                margin:EdgeInsets.only(left: 10,right:10,top:10),
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
                     side: BorderSide(width: 2, color: Colors.white),
                     borderRadius: BorderRadius.circular(32),
                   ),
                 ),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16, top: 11),
+                  child: Stack(
                     children: [
-                      SizedBox(
-                        width: 140.50,
-                        child: Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Earn income',
+                      Positioned(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text.rich(TextSpan(children: [
+                            TextSpan(
+                                text: "     Earn income",
                                 style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontFamily: 'Lufga',
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              TextSpan(
-                                text: ' by listing as many arena that you own',
+                                    fontSize: 14, fontWeight: FontWeight.w600,fontFamily: "Lufga")),
+                            TextSpan(
+                                text: " by",
                                 style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontFamily: 'Lufga',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                          textAlign: TextAlign.center,
+                                    fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
+                            TextSpan(
+                                text: "\n     listing as many arena that you own",
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w400,fontFamily: "Lufga")),
+                          ])),
                         ),
                       ),
-                     SizedBox(height:10,),
-                     Image.asset(Images.dollar_signs)
+                      Positioned(
+                        height: 57,
+                        width: MediaQuery.of(context).size.width * 0.46,
+                        top: 78,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Image(
+                                image: AssetImage("assets/Images/dollars_images.png"),
+                                height: 57,
+                                width: 168,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -141,9 +147,7 @@ class ScreenBody extends StatelessWidget {
           ],
         ),
         SizedBox(height: 19),
-      GestureDetector(
-        onTap:onTap,
-        child:   Container(
+        Container(
           height: 275,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
@@ -185,8 +189,7 @@ class ScreenBody extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      )
+        )
       ],
     );
   }
