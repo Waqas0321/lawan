@@ -126,8 +126,10 @@ class CustomSwitch extends StatelessWidget {
               child: Container(
                 width: height,
                 height: height,
-                margin:
-                    EdgeInsets.only(top: 1.5,bottom: 1.5,), // Adjust thumb margin to control padding
+                margin: EdgeInsets.only(
+                  top: 1.5,
+                  bottom: 1.5,
+                ), // Adjust thumb margin to control padding
                 decoration: BoxDecoration(
                   color: value ? activeColor : inactiveColor,
                   shape: BoxShape.circle,

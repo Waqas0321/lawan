@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
+import 'package:lawan/app/widgets/Areena/custom_container_Add_Areena3.dart';
 
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
@@ -68,7 +69,7 @@ class _AddAreena3State extends State<AddAreena3> {
         child: Padding(
           padding: const EdgeInsets.only(left: 16, right: 16,top:30),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               customHeaderCount(
                 thisCount: "3",
@@ -114,10 +115,11 @@ class _AddAreena3State extends State<AddAreena3> {
                 children: [
                   Expanded(
                     child: TimeSlot(
+                      isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
                       onChanged: _onTimeSlotChanged,
-                      isImage: false,
+                      isImage: true,
                     ),
                   ),
                   SizedBox(
@@ -126,14 +128,20 @@ class _AddAreena3State extends State<AddAreena3> {
              
                   Expanded(
                     child: TimeSlot(
+                      isClock: false,
                       timeSlots: weekshours,
                       selectedTimeSlot: _selectedhrsTimeSlot,
                       onChanged: _onTimeSlotChanged,
-                      isImage: false,
+                      isImage: true,
                     ),
                   ),
                 ],
               ),
+              SizedBox(
+                height: 16,
+              ),
+              Expanded(child: CustomContainerAreena3( text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',
+              )),
               SizedBox(
                 height: 16,
               ),
@@ -154,10 +162,11 @@ class _AddAreena3State extends State<AddAreena3> {
                 children: [
                   Expanded(
                     child: TimeSlot(
+                      isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
                       onChanged: _onTimeSlotChanged,
-                      isImage: false,
+                      isImage: true,
                     ),
                   ),
                   SizedBox(
@@ -165,13 +174,21 @@ class _AddAreena3State extends State<AddAreena3> {
                   ),
                   Expanded(
                     child: TimeSlot(
+                      isClock: false,
                       timeSlots: weekshours,
                       selectedTimeSlot: _selectedhrsTimeSlot,
                       onChanged: _onTimeSlotChanged,
-                      isImage: false,
+                      isImage: true,
                     ),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Expanded(child: CustomContainerAreena3(text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',)),
+              SizedBox(
+                height: 16,
               ),
               Spacer(),
               Row(

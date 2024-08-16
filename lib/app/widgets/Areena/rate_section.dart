@@ -9,6 +9,7 @@ import '../../utils/text.dart';
 import 'AlertBox.dart';
 import 'TimeSlotAreena.dart';
 import 'areenaButton.dart';
+import 'custom_container_Add_Areena3.dart';
 import 'custom_header_count.dart';
 class RateSection extends StatefulWidget {
   const RateSection({super.key});
@@ -41,7 +42,7 @@ class _RateSectionState extends State<RateSection> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(
           height: 16,
@@ -82,25 +83,34 @@ class _RateSectionState extends State<RateSection> {
         ),
         Row(
           children: [
-            TimeSlot(
-              timeSlots: weeksRate,
-              selectedTimeSlot: _selectedTimeSlot,
-              onChanged: _onTimeSlotChanged,
-              isImage: false,
-            ),
             Expanded(
-              child: SizedBox(
-                width: 22,
+              child: TimeSlot(
+                isClock: false,
+                timeSlots: weeksRate,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged,
+                isImage: true,
               ),
             ),
+            SizedBox(
+              width: 22,
+            ),
 
-            TimeSlot(
-              timeSlots: weekshours,
-              selectedTimeSlot: _selectedhrsTimeSlot,
-              onChanged: _onTimeSlotChanged,
-              isImage: false,
+            Expanded(
+              child: TimeSlot(
+                isClock: false,
+                timeSlots: weekshours,
+                selectedTimeSlot: _selectedhrsTimeSlot,
+                onChanged: _onTimeSlotChanged,
+                isImage: true,
+              ),
             ),
           ],
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        CustomContainerAreena3( text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',
         ),
         SizedBox(
           height: 16,
@@ -120,28 +130,37 @@ class _RateSectionState extends State<RateSection> {
         ),
         Row(
           children: [
-            TimeSlot(
-              timeSlots: weeksRate,
-              selectedTimeSlot: _selectedTimeSlot,
-              onChanged: _onTimeSlotChanged,
-              isImage: false,
-            ),
             Expanded(
-              child: SizedBox(
-                width: 22,
+              child: TimeSlot(
+                isClock: false,
+                timeSlots: weeksRate,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged,
+                isImage: true,
               ),
             ),
-            TimeSlot(
-              timeSlots: weekshours,
-              selectedTimeSlot: _selectedhrsTimeSlot,
-              onChanged: _onTimeSlotChanged,
-              isImage: false,
+            SizedBox(
+              width: 22,
+            ),
+            Expanded(
+              child: TimeSlot(
+                isClock: false,
+                timeSlots: weekshours,
+                selectedTimeSlot: _selectedhrsTimeSlot,
+                onChanged: _onTimeSlotChanged,
+                isImage: true,
+              ),
             ),
           ],
         ),
         SizedBox(
-          height: 60,
+          height: 16,
         ),
+        CustomContainerAreena3(text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',),
+        SizedBox(
+          height: 16,
+        ),
+        Spacer(),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -165,7 +184,7 @@ class _RateSectionState extends State<RateSection> {
                 borderColor: Color(0xFFE9EAF0),
                 textColor: AappColor.white,
                 onTap: () {
-                  showCustomAlertDialog(context,'Arena Added Successfully!','You can now start earning from this arena',true,'Cancel','Confirm');
+                  showCustomAlertDialog(context,'Arena Added Successfully!','You can now start earning from this arena',true,'Add Another Court','Done');
                 },
               ),
             ),
