@@ -39,10 +39,10 @@ dependencies:
   animated_toggle_switch: ^0.8.2
 
   get: ^4.6.6
-  device_preview:
   flutter_responsive: ^1.1.0
   flutter_screenutil: ^5.9.3
   adaptive_sizer: ^0.0.4
+  device_preview: ^1.2.0
 
   responsive_builder:
 dev_dependencies:

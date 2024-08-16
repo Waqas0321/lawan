@@ -6,10 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
 
 import '../../utils/colors.dart';
-import '../../utils/images.dart';
 import '../../utils/text.dart';
-import 'Add-Arena-Container.dart';
-import 'AddArena1.dart';
 import 'AlertBox.dart';
 import 'TimeSlotRow.dart';
 import 'areenaButton.dart';
@@ -114,6 +111,7 @@ class _AddAreena3State extends State<AddAreena3> {
                 children: [
                   Expanded(
                     child: TimeSlot(
+                      isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
                       onChanged: _onTimeSlotChanged,
@@ -121,7 +119,7 @@ class _AddAreena3State extends State<AddAreena3> {
                     ),
                   ),
                   SizedBox(
-                    width: 22,
+                    width: 16,
                   ),
              
                   Expanded(
@@ -154,6 +152,7 @@ class _AddAreena3State extends State<AddAreena3> {
                 children: [
                   Expanded(
                     child: TimeSlot(
+                      isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
                       onChanged: _onTimeSlotChanged,

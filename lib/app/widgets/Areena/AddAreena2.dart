@@ -1,22 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
 import 'package:lawan/app/widgets/Areena/custom_header_count.dart';
 
 import '../../utils/colors.dart';
-import '../../utils/images.dart';
 import '../../utils/text.dart';
-import 'Add-Arena-Container.dart';
 import 'AddAreena3.dart';
-import 'AddArena1.dart';
 import 'TimeSlotRow.dart';
-import 'ar-in-out-button.dart';
 import 'areenaButton.dart';
-import 'custom-Arena-textform.dart';
-import 'customToggle.dart';
 
 class AddAreena2 extends StatefulWidget {
   @override
@@ -121,6 +112,7 @@ class _AddAreena2State extends State<AddAreena2> {
                 },
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
