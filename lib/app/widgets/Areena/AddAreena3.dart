@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
+import 'package:lawan/app/widgets/Areena/TimeSlotTwoAreena.dart';
 import 'package:lawan/app/widgets/Areena/custom_container_Add_Areena3.dart';
 
 import '../../utils/colors.dart';
@@ -22,19 +23,18 @@ class AddAreena3 extends StatefulWidget {
 }
 
 class _AddAreena3State extends State<AddAreena3> {
-  bool _isSelected = false;
   // Sample time slots
   final List<String> weeksRate = [
-    'RM         200',
-    'RM         300',
+    '200',
+    '300',
   ];
 
   // Currently selected time slot
-  String _selectedTimeSlot = 'RM         200';
-  String _selectedhrsTimeSlot = '1         hr';
+  String _selectedTimeSlot = '200';
+  String _selectedhrsTimeSlot = '1';
 
   final List<String> weekshours = [
-    '1         hr',
+    '1',
   ];
 
   void _onTimeSlotChanged(String newValue) {
@@ -42,12 +42,17 @@ class _AddAreena3State extends State<AddAreena3> {
       _selectedTimeSlot = newValue;
     });
   }
+  void _onTimeSlotChangedTwo(String newValue) {
+    setState(() {
+      _selectedhrsTimeSlot = newValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        width: Get.width +20,
+        width: MediaQuery.of(context).size.width +20,
         height: 735,
         clipBehavior: Clip.antiAlias,
         margin:EdgeInsets.all(8),
@@ -69,7 +74,7 @@ class _AddAreena3State extends State<AddAreena3> {
         child: Padding(
           padding: const EdgeInsets.only(left: 16, right: 16,top:30),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               customHeaderCount(
                 thisCount: "3",
@@ -114,7 +119,7 @@ class _AddAreena3State extends State<AddAreena3> {
               Row(
                 children: [
                   Expanded(
-                    child: TimeSlot(
+                    child: TimeSlotTwo(
                       isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
@@ -125,13 +130,13 @@ class _AddAreena3State extends State<AddAreena3> {
                   SizedBox(
                     width: 22,
                   ),
-             
+
                   Expanded(
-                    child: TimeSlot(
+                    child: TimeSlotTwo(
                       isClock: false,
                       timeSlots: weekshours,
                       selectedTimeSlot: _selectedhrsTimeSlot,
-                      onChanged: _onTimeSlotChanged,
+                      onChanged: _onTimeSlotChangedTwo,
                       isImage: true,
                     ),
                   ),
@@ -161,7 +166,7 @@ class _AddAreena3State extends State<AddAreena3> {
               Row(
                 children: [
                   Expanded(
-                    child: TimeSlot(
+                    child: TimeSlotTwo(
                       isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
@@ -173,11 +178,11 @@ class _AddAreena3State extends State<AddAreena3> {
                     width: 22,
                   ),
                   Expanded(
-                    child: TimeSlot(
+                    child: TimeSlotTwo(
                       isClock: false,
                       timeSlots: weekshours,
                       selectedTimeSlot: _selectedhrsTimeSlot,
-                      onChanged: _onTimeSlotChanged,
+                      onChanged: _onTimeSlotChangedTwo,
                       isImage: true,
                     ),
                   ),

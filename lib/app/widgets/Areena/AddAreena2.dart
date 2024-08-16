@@ -53,7 +53,7 @@ class _AddAreena2State extends State<AddAreena2> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        width: Get.width +20,
+        width: MediaQuery.of(context).size.width +20,
         height: 735,
         clipBehavior: Clip.antiAlias,
         margin:EdgeInsets.all(8),

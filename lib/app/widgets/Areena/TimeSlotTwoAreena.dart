@@ -1,18 +1,22 @@
+
 import 'package:flutter/material.dart';
 
 import '../../utils/images.dart';
 
-class TimeSlot extends StatelessWidget {
+class TimeSlotTwo extends StatelessWidget {
   final List<String> timeSlots;
   final String selectedTimeSlot;
   final bool isImage;
   final ValueChanged<String> onChanged;
   final bool isClock;
-  TimeSlot({
+  final FontWeight font1;
+  final FontWeight font2;
+  TimeSlotTwo({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged, required this.isImage,
-     this.isClock = true,
+    this.isClock = true, this.font1 = FontWeight.w500, this.font2 = FontWeight.w400,
+
   });
 
   @override

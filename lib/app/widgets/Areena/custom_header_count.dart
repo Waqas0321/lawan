@@ -43,9 +43,8 @@ class customHeaderCount extends StatelessWidget {
               count: '3',
               text: Apptext.rate,
               color:thisCount =="3"? AappColor.brand2: Colors.transparent,
-              linecolor: Color(0x19000000),
-
-                            countcolor:thisCount=="3"? AappColor.white: AappColor.dark_grey,
+              linecolor: Colors.transparent,
+              countcolor:thisCount=="3"? AappColor.white: AappColor.dark_grey,
               textcolor: thisCount == "3" ?AappColor.brand2:AappColor.dark_grey,
               fontWeight: thisCount == "3"?FontWeight.w500: FontWeight.w400, padding: 6,
             ),

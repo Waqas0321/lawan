@@ -19,7 +19,6 @@ class RateSection extends StatefulWidget {
 }
 
 class _RateSectionState extends State<RateSection> {
-  bool _isSelected = false;
   // Sample time slots
   final List<String> weeksRate = [
     'RM         200',
@@ -39,10 +38,15 @@ class _RateSectionState extends State<RateSection> {
       _selectedTimeSlot = newValue;
     });
   }
+  void _onTimeSlotChangedTwo(String newValue) {
+    setState(() {
+      _selectedhrsTimeSlot = newValue;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 16,
@@ -101,7 +105,7 @@ class _RateSectionState extends State<RateSection> {
                 isClock: false,
                 timeSlots: weekshours,
                 selectedTimeSlot: _selectedhrsTimeSlot,
-                onChanged: _onTimeSlotChanged,
+                onChanged: _onTimeSlotChangedTwo,
                 isImage: true,
               ),
             ),
@@ -110,7 +114,10 @@ class _RateSectionState extends State<RateSection> {
         SizedBox(
           height: 16,
         ),
-        CustomContainerAreena3( text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',
+        SizedBox(
+          width: double.infinity,
+          child: CustomContainerAreena3( text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',
+          ),
         ),
         SizedBox(
           height: 16,
@@ -147,7 +154,7 @@ class _RateSectionState extends State<RateSection> {
                 isClock: false,
                 timeSlots: weekshours,
                 selectedTimeSlot: _selectedhrsTimeSlot,
-                onChanged: _onTimeSlotChanged,
+                onChanged: _onTimeSlotChangedTwo,
                 isImage: true,
               ),
             ),
@@ -156,7 +163,9 @@ class _RateSectionState extends State<RateSection> {
         SizedBox(
           height: 16,
         ),
-        CustomContainerAreena3(text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',),
+        SizedBox(
+            width: double.infinity,
+            child: CustomContainerAreena3(text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',)),
         SizedBox(
           height: 16,
         ),

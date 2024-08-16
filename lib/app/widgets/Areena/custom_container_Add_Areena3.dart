@@ -10,7 +10,7 @@ class CustomContainerAreena3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 76,
+        height: 86,
         padding: const EdgeInsets.symmetric(vertical: 8),
     decoration: ShapeDecoration(
     gradient: LinearGradient(
@@ -23,42 +23,41 @@ class CustomContainerAreena3 extends StatelessWidget {
     ),
     ),
     child: Center(
-      child: SingleChildScrollView(
-        child: Column(
-            children: [
-              Text(
-                text1,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AappColor.containerTextColor,
-                  fontSize: 12,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text1,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: AappColor.containerTextColor,
+                fontSize: 12,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w400,
               ),
-              Text(
-                text2,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: -0.72,
-                ),
+            ),
+            Text(
+              text2,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w600,
+                letterSpacing: -0.72,
               ),
-              Text(
-                text3,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AappColor.borderColor,
-                  fontSize: 12,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                ),
-              )
-            ],
-        ),
+            ),
+            Text(
+              text3,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: AappColor.borderColor,
+                fontSize: 12,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w400,
+              ),
+            )
+          ],
       ),
     ),);
   }
