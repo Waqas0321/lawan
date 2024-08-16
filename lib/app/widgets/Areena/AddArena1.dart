@@ -196,7 +196,7 @@ class _AddAreena1State extends State<AddAreena1> {
                       ),
                     ),
                     SizedBox(
-                      height: 13,
+                      height: 16,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,

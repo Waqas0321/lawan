@@ -16,13 +16,50 @@ DetailsSction({super.key});
 }
 
 class _DetailsSctionState extends State<DetailsSction> {
-  String _selectedButton = 'Indoor';
-
-void _onButtonPressed(String buttonText) {
-  setState(() {
-    _selectedButton = buttonText; // Update the selected button
-  });
-}
+  late bool _selectedButtonIndoor = true;
+  late bool _selectedButtonOutdoor = false;
+  late bool _selectedCourtButtonTruff = true;
+  late bool _selectedCourtButtonGrass = false;
+  late bool _selectedCourtButtonCement = false;
+  void _onButtonPressINOutdoor( String text){
+    setState(() {
+      switch (text) {
+        case "Indoor":
+          _selectedButtonIndoor = true;
+          _selectedButtonOutdoor = false;
+          break;
+        case "Outdoor":
+          _selectedButtonOutdoor = true;
+          _selectedButtonIndoor = false;
+          break;
+        default:
+          break;
+      }
+    });
+  }
+  void _onButtonPressCourt( String text){
+    setState(() {
+      switch (text) {
+        case "Truf":
+          _selectedCourtButtonTruff = true;
+          _selectedCourtButtonGrass = false;
+          _selectedCourtButtonCement = false;
+          break;
+        case "Grass":
+          _selectedCourtButtonTruff = false;
+          _selectedCourtButtonGrass = true;
+          _selectedCourtButtonCement = false;
+          break;
+        case "Cement":
+          _selectedCourtButtonTruff = false;
+          _selectedCourtButtonGrass = false;
+          _selectedCourtButtonCement = true;
+          break;
+        default:
+          break;
+      }
+    });
+  }
 
 @override
   Widget build(BuildContext context) {
@@ -56,7 +93,7 @@ void _onButtonPressed(String buttonText) {
             Row(
               children: [
                 Container(
-                  width: 160,
+                  width: 155,
                   height: 120,
                   padding: const EdgeInsets.all(24),
                   decoration: ShapeDecoration(
@@ -72,7 +109,7 @@ void _onButtonPressed(String buttonText) {
                 ),
                 SizedBox(width: 16,),
                 Container(
-                  width: 160,
+                  width: 155,
                   height: 120,
                   padding: const EdgeInsets.all(24),
                   decoration: ShapeDecoration(
@@ -152,16 +189,18 @@ void _onButtonPressed(String buttonText) {
                 Expanded(
                   child: ArenaINOutButton(
                     text: 'Indoor',
-                    isSelected: _selectedButton == 'Indoor',
-                    onPressed: () => _onButtonPressed('Indoor'),
+                    isSelected: _selectedButtonIndoor,
+                    onPressed: (){
+                      _onButtonPressINOutdoor("Indoor");
+                    },
                   ),
                 ),
                 SizedBox(width: 6),
                 Expanded(
                   child: ArenaINOutButton(
-                    text: 'Outdoor',
-                    isSelected: _selectedButton == 'Outdoor',
-                    onPressed: () => _onButtonPressed('Outdoor'),
+                      text: 'Outdoor',
+                      isSelected: _selectedButtonOutdoor,
+                      onPressed: () => _onButtonPressINOutdoor("Outdoor")
                   ),
                 ),
                 Expanded(child: SizedBox(width: 70)),
@@ -185,25 +224,27 @@ void _onButtonPressed(String buttonText) {
                 Expanded(
                   child: ArenaINOutButton(
                     text: 'Court Turf',
-                    isSelected: _selectedButton == 'Court Turf',
-                    onPressed: () => _onButtonPressed('Court Turf'),
+                    isSelected: _selectedCourtButtonTruff,
+                    onPressed: () {
+                      _onButtonPressCourt("Truf");
+
+                    },
                   ),
                 ),
                 SizedBox(width: 6),
                 Expanded(
                   child: ArenaINOutButton(
-        
                     text: 'Court Grass',
-                    isSelected: _selectedButton == 'Court Grass',
-                    onPressed: () => _onButtonPressed('Court Grass'),
+                    isSelected: _selectedCourtButtonGrass,
+                    onPressed: () => _onButtonPressCourt("Grass"),
                   ),
                 ),
-                SizedBox(width: 16),
+                SizedBox(width: 6),
                 Expanded(
                   child: ArenaINOutButton(
                     text: 'Cement',
-                    isSelected: _selectedButton == 'Cement',
-                    onPressed: () => _onButtonPressed('Cement'),
+                    isSelected: _selectedCourtButtonCement,
+                    onPressed: () => _onButtonPressCourt("Cement"),
                   ),
                 ),
               ],

@@ -48,9 +48,6 @@ class _HourSectionState extends State<HourSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          customHeaderCount(
-            thisCount: "2",
-          ),
           SizedBox(height: 16,),
           Text(
             Apptext.add_arena_details,
@@ -96,15 +93,13 @@ class _HourSectionState extends State<HourSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
               Text(
                 'to',
@@ -117,14 +112,12 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
             ],
           ),
@@ -141,15 +134,13 @@ class _HourSectionState extends State<HourSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
               Text(
                 'to',
@@ -162,14 +153,12 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
             ],
           ),
@@ -186,15 +175,13 @@ class _HourSectionState extends State<HourSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
               Text(
                 'to',
@@ -207,14 +194,12 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
             ],
           ),
@@ -232,15 +217,13 @@ class _HourSectionState extends State<HourSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
             children: [
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
               Text(
                 'to',
@@ -253,14 +236,12 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 12,
+                width: 16,
               ),
-              Expanded(
-                child: TimeSlot(
-                  timeSlots: _timeSlots,
-                  selectedTimeSlot: _selectedTimeSlot,
-                  onChanged: _onTimeSlotChanged, isImage: true,
-                ),
+              TimeSlot(
+                timeSlots: _timeSlots,
+                selectedTimeSlot: _selectedTimeSlot,
+                onChanged: _onTimeSlotChanged, isImage: true,
               ),
             ],
           ),
