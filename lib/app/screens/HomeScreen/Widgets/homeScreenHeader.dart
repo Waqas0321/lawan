@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:lawan/app/utils/text.dart';
+import 'package:lawan/app/widgets/TimeSlotHomeDropDown.dart';
 import '../../../utils/images.dart';
 
-class ScreenHeader extends StatelessWidget {
+class ScreenHeader extends StatefulWidget {
   ScreenHeader({
     super.key,
   });
+
+  @override
+  State<ScreenHeader> createState() => _ScreenHeaderState();
+}
+
+class _ScreenHeaderState extends State<ScreenHeader> {
+  final List<String> weeksRate = [
+    'Soccer',
+    'Soccer2',
+  ];
+
+  // Currently selected time slot
+  String _selectedTimeSlot = 'Soccer';
+
+  void _onTimeSlotChanged(String newValue) {
+    setState(() {
+      _selectedTimeSlot = newValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,84 +34,52 @@ class ScreenHeader extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 44,
-              width: MediaQuery.of(context).size.width * 0.35 ,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(300)),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image(
-                      image: AssetImage(Images.ball),
-                      width: 32,
-                      height: 48,
-                    ),
-                    Text(
-                      Apptext.soccer,
-                      style:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                    ),
-                    Image(
-                      image: AssetImage(Images.chevron_down),
-                      height: 16,
-                      width: 16,
-                    )
-                  ],
-                ),
+            TimeSlotHome(
+              timeSlots: weeksRate,
+              selectedTimeSlot: _selectedTimeSlot,
+              onChanged: _onTimeSlotChanged,
+              isImage: false,
+              isWidth: MediaQuery.of(context).size.width * 0.35,
+              image: Image(
+                image: AssetImage(Images.ball),
+                height: MediaQuery.of(context).size.height * 0.08,
+                width: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
-            Container(
-              height: 44,
-              width: MediaQuery.of(context).size.width * 0.20,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(300)),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image(
-                      image: AssetImage(Images.avtar),
-                      height: 32,
-                      width: 32,
-                    ),
-                    Image(
-                      image: AssetImage(Images.chevron_down),
-                      height: 16,
-                      width: 16,
-                    )
-                  ],
-                ),
+            TimeSlotHome(
+              timeSlots: weeksRate,
+              selectedTimeSlot: _selectedTimeSlot,
+              onChanged: _onTimeSlotChanged,
+              isImage: false,
+              isWidth: MediaQuery.of(context).size.width * 0.23,
+              isText: false,
+              image: Image(
+                image: AssetImage(Images.avatar),
+                height: MediaQuery.of(context).size.height * 0.08,
+                width: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
           ],
         ),
         const Padding(
-          padding: EdgeInsets.only(top: 23,bottom: 20),
+          padding: EdgeInsets.only(top: 23, bottom: 20),
           child: Center(
               child: Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                      text: Apptext.mainHeading1,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                        fontFamily: "Lufga"
-                      )),
-                  TextSpan(
-                      text: Apptext.mainHeading2,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
-                          fontFamily: "Lufga"
-                      )),
-                ]),
-              )),
+            TextSpan(children: [
+              TextSpan(
+                  text: Apptext.mainHeading1,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                      fontFamily: "Lufga")),
+              TextSpan(
+                  text: Apptext.mainHeading2,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                      fontFamily: "Lufga")),
+            ]),
+          )),
         ),
       ],
     );

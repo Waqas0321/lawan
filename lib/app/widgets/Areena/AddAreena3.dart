@@ -2,18 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotTwoAreena.dart';
 import 'package:lawan/app/widgets/Areena/custom_container_Add_Areena3.dart';
-
 import '../../utils/colors.dart';
-import '../../utils/images.dart';
 import '../../utils/text.dart';
-import 'Add-Arena-Container.dart';
-import 'AddArena1.dart';
 import 'AlertBox.dart';
-import 'TimeSlotRow.dart';
 import 'areenaButton.dart';
 import 'custom_header_count.dart';
 

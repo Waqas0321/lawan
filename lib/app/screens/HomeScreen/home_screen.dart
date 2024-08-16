@@ -58,60 +58,13 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: 19,
                         ),
-                        // Container(
-                        //   width: MediaQuery.of(context).size.width * 0.5,
-                        //   height: 70,
-                        //   decoration: BoxDecoration(
-                        //       color: Color(0xCCE5E6E5),
-                        //       borderRadius: BorderRadius.circular(80)),
-                        //   child: Center(
-                        //     child: Padding(
-                        //       padding: EdgeInsets.all(3.0),
-                        //       child: Row(
-                        //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //         children: [
-                        //           Expanded(
-                        //             child: CircularContainer(
-                        //               image: Images.play,
-                        //               color: Colors.white,
-                        //               text: "Session",
-                        //             ),
-                        //           ),
-                        //           SizedBox(
-                        //             width: 6,
-                        //           ),
-                        //           Expanded(
-                        //             child: CircularContainer(
-                        //               image: "assets/Images/fi_690839.png",
-                        //               color: Colors.black,
-                        //               text: "Arena",
-                        //               textColor: Colors.white,
-                        //               imageHeight: 24,
-                        //               imageWidth: 24,
-                        //             ),
-                        //           ),
-                        //           SizedBox(
-                        //             width: 6,
-                        //           ),
-                        //           Expanded(
-                        //             child: CircularContainer(
-                        //               image: "assets/Images/fi_3446795.png",
-                        //               color: Colors.white,
-                        //               text: "Arena",
-                        //             ),
-                        //           ),
-                        //         ],
-                        //       ),
-                        //     ),
-                        //   ),
-                        // )
                       ],
                     ),
                   ),
                 ),
               ),
               Positioned(
-                left: Get.width/2 -98,
+                left: Get.width/2 -70,
                 bottom: 16,
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.5,
