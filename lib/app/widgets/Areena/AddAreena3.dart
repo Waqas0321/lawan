@@ -120,6 +120,7 @@ class _AddAreena3State extends State<AddAreena3> {
                 children: [
                   Expanded(
                     child: TimeSlotTwo(
+                      isRight: true,
                       isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
@@ -133,6 +134,7 @@ class _AddAreena3State extends State<AddAreena3> {
 
                   Expanded(
                     child: TimeSlotTwo(
+                      isLeft: true,
                       isClock: false,
                       timeSlots: weekshours,
                       selectedTimeSlot: _selectedhrsTimeSlot,
@@ -167,6 +169,7 @@ class _AddAreena3State extends State<AddAreena3> {
                 children: [
                   Expanded(
                     child: TimeSlotTwo(
+                      isRight: true,
                       isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
@@ -179,6 +182,7 @@ class _AddAreena3State extends State<AddAreena3> {
                   ),
                   Expanded(
                     child: TimeSlotTwo(
+                      isLeft: true,
                       isClock: false,
                       timeSlots: weekshours,
                       selectedTimeSlot: _selectedhrsTimeSlot,

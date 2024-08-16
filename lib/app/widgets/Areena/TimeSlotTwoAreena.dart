@@ -11,11 +11,15 @@ class TimeSlotTwo extends StatelessWidget {
   final bool isClock;
   final FontWeight font1;
   final FontWeight font2;
+  final bool isRight;
+  final bool isLeft;
   TimeSlotTwo({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged, required this.isImage,
     this.isClock = true, this.font1 = FontWeight.w500, this.font2 = FontWeight.w400,
+    this.isRight = false,
+    this.isLeft = false,
 
   });
 
@@ -59,6 +63,16 @@ class TimeSlotTwo extends StatelessWidget {
                         SizedBox(width:10,),
                         isClock? Image.asset(Images.clock):SizedBox(width: 1,),
                         SizedBox(width:5,),
+                        isRight?  Text(
+                          "RM",
+                          style: TextStyle(
+                            color: Color(0xFF545F71),
+                            fontSize: 14,
+                            fontFamily: 'Lufga',
+                            fontWeight: FontWeight.w400,
+                          )
+                        ):SizedBox(width: 1,),
+                        SizedBox(width: 12,),
                         Text(
                           value,
                           style: TextStyle(
@@ -68,6 +82,16 @@ class TimeSlotTwo extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
+                        SizedBox(width: 12),
+                        isLeft? Text(
+                            "Hour",
+                            style: TextStyle(
+                              color: Color(0xFF545F71),
+                              fontSize: 14,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w400,
+                            )
+                        ):SizedBox(width: 1,)
                       ],
                     ),
                   ),
