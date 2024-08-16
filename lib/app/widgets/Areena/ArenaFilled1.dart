@@ -211,7 +211,7 @@ class AreenaFilled1 extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: Get.width/2 -98,
+          left: Get.width/2 -75,
           bottom: 23,
           child: Container(
           width: MediaQuery.of(context).size.width * 0.5,
