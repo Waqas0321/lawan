@@ -73,7 +73,7 @@ class _AddAreena1State extends State<AddAreena1> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width + 20,
+            width: Get.width + 20,
             margin:EdgeInsets.all(8),
             height: 735,
             decoration: ShapeDecoration(
