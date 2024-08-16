@@ -11,6 +11,7 @@ import '../../utils/images.dart';
 import 'Add-Arena-Container.dart';
 import 'AddAreena2.dart';
 import 'custom-Arena-textform.dart';
+import 'custom_header_count.dart';
 
 class AddAreena1 extends StatefulWidget {
   @override
@@ -19,10 +20,49 @@ class AddAreena1 extends StatefulWidget {
 
 class _AddAreena1State extends State<AddAreena1> {
   String _selectedButton = 'Indoor'; // Track the selected button
+  late bool _selectedButtonIndoor = true;
+  late bool _selectedButtonOutdoor = false;
+  late bool _selectedCourtButtonTruff = true;
+  late bool _selectedCourtButtonGrass = false;
+  late bool _selectedCourtButtonCement = false;
 
-  void _onButtonPressed(String buttonText) {
+  void _onButtonPressINOutdoor( String text){
     setState(() {
-      _selectedButton = buttonText; // Update the selected button
+      switch (text) {
+        case "Indoor":
+          _selectedButtonIndoor = true;
+          _selectedButtonOutdoor = false;
+          break;
+        case "Outdoor":
+          _selectedButtonOutdoor = true;
+          _selectedButtonIndoor = false;
+          break;
+        default:
+          break;
+      }
+    });
+  }
+  void _onButtonPressCourt( String text){
+    setState(() {
+      switch (text) {
+        case "Truf":
+          _selectedCourtButtonTruff = true;
+          _selectedCourtButtonGrass = false;
+          _selectedCourtButtonCement = false;
+          break;
+        case "Grass":
+          _selectedCourtButtonTruff = false;
+          _selectedCourtButtonGrass = true;
+          _selectedCourtButtonCement = false;
+          break;
+        case "Cement":
+          _selectedCourtButtonTruff = false;
+          _selectedCourtButtonGrass = false;
+          _selectedCourtButtonCement = true;
+          break;
+        default:
+          break;
+      }
     });
   }
 
@@ -33,11 +73,11 @@ class _AddAreena1State extends State<AddAreena1> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: Get.width,
-            height: 715,
-            clipBehavior: Clip.antiAlias,
+            width: Get.width + 20,
+            margin:EdgeInsets.all(8),
+            height: 735,
             decoration: ShapeDecoration(
-              color: AappColor.gainsboro,
+              color: AappColor.Grey1,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(32),
               ),
@@ -50,53 +90,16 @@ class _AddAreena1State extends State<AddAreena1> {
                 )
               ],
             ),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 30,left: 13,right: 13,bottom: 13),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20,left: 13,right: 13,bottom: 13),
+              child: Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 13,),
                     Expanded(
-                      child: Padding(
-                        padding:  EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.1),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: CustomCard(
-                                count: '1',
-                                text: Apptext.details,
-                                color: AappColor.bluee,
-                                showline: true,
-                                countcolor: AappColor.white,
-                                textcolor: AappColor.bluee,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Expanded(
-                              child: CustomCard(
-                                count: '2',
-                                text: Apptext.hour,
-                                color: AappColor.silver,
-                                showline: true,
-                                countcolor: AappColor.dark_grey,
-                                textcolor: AappColor.mid_grey,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Expanded(
-                              child: CustomCard(
-                                count: '3',
-                                text: Apptext.rate,
-                                color: AappColor.silver,
-                                showline: false,
-                                countcolor: AappColor.dark_grey,
-                                textcolor: AappColor.mid_grey,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            )
-                          ],
-                        ),
+                      child: customHeaderCount(
+                        thisCount: "1",
                       ),
                     ),
                     SizedBox(
@@ -114,7 +117,7 @@ class _AddAreena1State extends State<AddAreena1> {
                     Text(
                       Apptext.add_photos_name_and_location,
                       style: TextStyle(
-                        color: AappColor.mid_grey,
+                        color: AappColor.dark_grey,
                         fontSize: 12,
                         fontFamily: 'Lufga',
                         fontWeight: FontWeight.w400,
@@ -128,8 +131,9 @@ class _AddAreena1State extends State<AddAreena1> {
                       height: 120,
                       padding: const EdgeInsets.all(24),
                       decoration: ShapeDecoration(
+                        color: AappColor.white,
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+                          side: BorderSide(width: 1, color: AappColor.white),
                           borderRadius: BorderRadius.circular(32),
                         ),
                       ),
@@ -143,7 +147,7 @@ class _AddAreena1State extends State<AddAreena1> {
                             height: 24,
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(),
-                            child: Image.asset(Images.gallery),
+                            child: Image.asset(Images.gallery,color:AappColor.mid_grey,),
                           ),
                           SizedBox(height: 8),
                           Text(
@@ -200,16 +204,18 @@ class _AddAreena1State extends State<AddAreena1> {
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Indoor',
-                            isSelected: _selectedButton == 'Indoor',
-                            onPressed: () => _onButtonPressed('Indoor'),
+                            isSelected: _selectedButtonIndoor,
+                            onPressed: (){
+                              _onButtonPressINOutdoor("Indoor");
+                            },
                           ),
                         ),
                         SizedBox(width: 6),
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Outdoor',
-                            isSelected: _selectedButton == 'Outdoor',
-                            onPressed: () => _onButtonPressed('Outdoor'),
+                            isSelected: _selectedButtonOutdoor,
+                            onPressed: () => _onButtonPressINOutdoor("Outdoor")
                           ),
                         ),
                         Expanded(child: SizedBox(width: 70)),
@@ -235,24 +241,27 @@ class _AddAreena1State extends State<AddAreena1> {
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Court Turf',
-                            isSelected: _selectedButton == 'Court Turf',
-                            onPressed: () => _onButtonPressed('Court Turf'),
+                            isSelected: _selectedCourtButtonTruff,
+                            onPressed: () {
+                              _onButtonPressCourt("Truf");
+
+                            },
                           ),
                         ),
                         SizedBox(width: 6),
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Court Grass',
-                            isSelected: _selectedButton == 'Court Grass',
-                            onPressed: () => _onButtonPressed('Court Grass'),
+                            isSelected: _selectedCourtButtonGrass,
+                            onPressed: () => _onButtonPressCourt("Grass"),
                           ),
                         ),
                         SizedBox(width: 6),
                         Expanded(
                           child: ArenaINOutButton(
                             text: 'Cement',
-                            isSelected: _selectedButton == 'Cement',
-                            onPressed: () => _onButtonPressed('Cement'),
+                            isSelected: _selectedCourtButtonCement,
+                            onPressed: () => _onButtonPressCourt("Cement"),
                           ),
                         ),
                       ],
@@ -274,7 +283,7 @@ class _AddAreena1State extends State<AddAreena1> {
                           },
                           ),
                         ),
-                        SizedBox(width: ScreenDimensions(context).width1Percent,),
+                        SizedBox(width: 16),
                         Expanded(
                           child: CustomAreenaButton(
                             text: Apptext.next,
@@ -287,7 +296,8 @@ class _AddAreena1State extends State<AddAreena1> {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    SizedBox(height: 20,)
                   ],
                 ),
               ),

@@ -4,17 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
+import 'package:lawan/app/widgets/Areena/ArenaFilled1.dart';
 
 void main() {
-
-  runApp(DevicePreview(
-    enabled: true,
-
-    builder: (context) =>  ScreenUtilInit(
-      designSize: Size(375, 812), // Design size for scaling
-      builder: (context, child) => MyApp(),
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => ScreenUtilInit(
+        designSize: Size(375, 812), // Design size for scaling
+        builder: (context, child) => MyApp(),
+      ),
     ),
-  ),
   );
 }
 
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           inactiveColor: AappColor.mid_grey,
           activeTrackColor: AappColor.black,
           inactiveTrackColor: AappColor.white,
-          borderColor:AappColor.mid_grey, // Border color for the track
+          borderColor: AappColor.mid_grey, // Border color for the track
           borderWidth: 2.0, // Border width for the track
           thumbBorderColor: Colors.red, // Border color for the thumb
           thumbBorderWidth: 5.0, // Border width for the thumb
@@ -113,7 +113,8 @@ class CustomSwitch extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(height / 2),
           color: value ? activeTrackColor : inactiveTrackColor,
-          border: Border.all(color: borderColor, width: borderWidth), // Border for the track
+          border: Border.all(
+              color: borderColor, width: borderWidth), // Border for the track
         ),
         child: Stack(
           children: [
@@ -123,7 +124,8 @@ class CustomSwitch extends StatelessWidget {
               child: Container(
                 width: height,
                 height: height,
-                margin: EdgeInsets.all(2), // Adjust thumb margin to control padding
+                margin:
+                    EdgeInsets.only(top: 1.5,bottom: 1.5,), // Adjust thumb margin to control padding
                 decoration: BoxDecoration(
                   color: value ? activeColor : inactiveColor,
                   shape: BoxShape.circle,

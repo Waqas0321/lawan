@@ -17,11 +17,12 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
     required this.isSelected,
     required this.onChanged,
   });
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.width,
+      padding: EdgeInsets.only(
+        left: 5,
+      ),
       height: 40, // Adjust height as needed
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -32,7 +33,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: Text(
               leftText,
               style: TextStyle(
-                color: Color(0xFF545F71),
+                color: AappColor.txtColor,
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
@@ -41,9 +42,9 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            rightText,
+            isSelected ? "open" : "closed",
             style: TextStyle(
-              color: Color(0xFFACB3C0),
+              color: isSelected ? AappColor.dark_grey : AappColor.mid_grey,
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w400,
@@ -59,9 +60,9 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
               height: 20,
               activeColor: Colors.white,
               inactiveColor: AappColor.mid_grey,
-              activeTrackColor: AappColor.greenColor,
+              activeTrackColor: AappColor.brand2,
               inactiveTrackColor: AappColor.white,
-              borderColor: isSelected? AappColor.greenColor:AappColor.mid_grey,
+              borderColor: isSelected ? AappColor.brand2 : AappColor.dark_grey,
               borderWidth: 2.0,
               thumbBorderColor: Colors.red,
               thumbBorderWidth: 5.0,

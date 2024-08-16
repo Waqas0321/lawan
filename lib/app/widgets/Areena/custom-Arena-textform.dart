@@ -57,7 +57,8 @@ class CustomTextFormField extends StatelessWidget {
           ],
           if (icon != null) ...[
             Container(
-              child: Image.asset(icon!, color:AappColor.black),
+              child: Image.asset(icon!,                               color: AappColor.mid_grey,
+              ),
             ),
           ],
         ],

@@ -21,4 +21,9 @@ class Images {
   static const String multi_devices="$mainImage/multi-devices.png";
   static const String arena_image="$mainImage/fi_690839.png";
   static const String sales_image="$mainImage/fi_3446795.png";
+  static const String clock="$mainImage/clock.png";
+  // Arena Filled
+static const String add_Image = "$mainImage/Add Image.png";
+static const String pencil = "$mainImage/pencil.png";
+
 }

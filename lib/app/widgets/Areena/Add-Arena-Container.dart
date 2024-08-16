@@ -7,68 +7,88 @@ import '../../utils/images.dart';
 class CustomCard extends StatelessWidget {
   final String count;
   final String text;
-  final bool showline;
+  final Color linecolor;
   final Color textcolor;
   final FontWeight fontWeight;
   final Color countcolor;
   final Color color;
+  final double padding;
   CustomCard({
     required this.count,
     required this.text,
     required this.color,
-    required this.showline,
+    required this.linecolor,
     required this.countcolor,
     required this.textcolor,
     required this.fontWeight,
+    required this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.28,
-      height: 90,
+      height: 100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: ShapeDecoration(
-                    color: color,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80),
-                    ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: ShapeDecoration(
+                  color: color,
+                  shape: CircleBorder(
+                    side: BorderSide(width: 1, color: AappColor.Grey1),
                   ),
-                  child: Center(
-                    child: Text(
-                      count,
-                      style: TextStyle(
-                        color: countcolor,
-                        fontSize: 16,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w500,
-                      ),
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 0,
+                      offset: Offset(0, -0.50),
+                      spreadRadius: 0,
+                    )
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    count,
+                    style: TextStyle(
+                      color: countcolor,
+                      fontSize: 16,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 16,
+              ),
+              // SizedBox(
+              //   width: 16,
+              // ),
+
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Image.asset(
+                  Images.line,
+                  color: linecolor,
+                  fit: BoxFit.fitWidth,
                 ),
-                if (showline) Expanded(child: Image.asset(Images.line)),
-              ],
-            ),
+              )),
+            ],
           ),
-          SizedBox(height: 8),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: padding),
+                child: Text(
                   text,
                   style: TextStyle(
                     color: textcolor,
@@ -77,13 +97,8 @@ class CustomCard extends StatelessWidget {
                     fontWeight: fontWeight,
                   ),
                 ),
-            
-                SizedBox(
-                  width: 16,
-                ),
-                if (showline) Expanded(child: Image.asset(Images.line, color: Colors.transparent,)),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
