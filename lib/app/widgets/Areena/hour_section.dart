@@ -19,8 +19,13 @@ class HourSection extends StatefulWidget {
 }
 
 class _HourSectionState extends State<HourSection> {
-  bool _isSelected = false;
-  // Sample time slots
+  bool _isSelectedSunday = true;
+  bool _isSelectedSundayTwo = false;
+  bool _isSelectedMonday = true;
+  bool _isSelectedTuesday = false;
+  bool _isSelectedWednesday = false;
+  bool _isSelectedThurstday = false;
+  bool _isSelectedFriday = false;
   final List<String> _timeSlots = [
     '8:00 AM',
     '9:00 AM',
@@ -43,6 +48,9 @@ class _HourSectionState extends State<HourSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          customHeaderCount(
+            thisCount: "2",
+          ),
           SizedBox(height: 16,),
           Text(
             Apptext.add_arena_details,
@@ -68,35 +76,35 @@ class _HourSectionState extends State<HourSection> {
           CustomSwitchTimeslotRow(
             leftText: Apptext.sunday,
             rightText:Apptext.closed,
-            isSelected: _isSelected,
+            isSelected: _isSelectedSunday,
             onChanged: (bool value) {
               setState(() {
-                _isSelected = value;
+                _isSelectedSunday = value;
               });
             },
           ),
           CustomSwitchTimeslotRow(
             leftText: Apptext.monday,
             rightText: Apptext.closed,
-            isSelected: _isSelected,
+            isSelected: _isSelectedMonday,
             onChanged: (bool value) {
               setState(() {
-                _isSelected = value;
+                _isSelectedMonday = value;
               });
             },
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
-              ),
               Expanded(
-                child: SizedBox(
-                  width: 12,
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
                 ),
+              ),
+              SizedBox(
+                width: 12,
               ),
               Text(
                 'to',
@@ -108,40 +116,40 @@ class _HourSectionState extends State<HourSection> {
                   height: 0.11,
                 ),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: 12,
-                ),
+              SizedBox(
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
           CustomSwitchTimeslotRow(
             leftText: Apptext.tuesdayoday,
             rightText: Apptext.open,
-            isSelected: _isSelected,
+            isSelected: _isSelectedTuesday,
             onChanged: (bool value) {
               setState(() {
-                _isSelected = value;
+                _isSelectedTuesday = value;
               });
             },
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
-              ),
               Expanded(
-                child: SizedBox(
-                  width: 12,
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
                 ),
+              ),
+              SizedBox(
+                width: 12,
               ),
               Text(
                 'to',
@@ -153,40 +161,40 @@ class _HourSectionState extends State<HourSection> {
                   height: 0.11,
                 ),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: 12,
-                ),
+              SizedBox(
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
           CustomSwitchTimeslotRow(
             leftText: Apptext.wednesday,
             rightText: Apptext.open,
-            isSelected: _isSelected,
+            isSelected: _isSelectedWednesday,
             onChanged: (bool value) {
               setState(() {
-                _isSelected = value;
+                _isSelectedWednesday = value;
               });
             },
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
-              ),
               Expanded(
-                child: SizedBox(
-                  width: 12,
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
                 ),
+              ),
+              SizedBox(
+                width: 12,
               ),
               Text(
                 'to',
@@ -198,25 +206,25 @@ class _HourSectionState extends State<HourSection> {
                   height: 0.11,
                 ),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: 12,
-                ),
+              SizedBox(
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
           CustomSwitchTimeslotRow(
             leftText: Apptext.friday,
             rightText: Apptext.open,
-            isSelected: _isSelected,
+            isSelected: _isSelectedFriday,
             onChanged: (bool value) {
               setState(() {
-                _isSelected = value;
+                _isSelectedFriday = value;
               });
             },
           ),
@@ -224,15 +232,15 @@ class _HourSectionState extends State<HourSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
-              ),
               Expanded(
-                child: SizedBox(
-                  width: 12,
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
                 ),
+              ),
+              SizedBox(
+                width: 12,
               ),
               Text(
                 'to',
@@ -244,25 +252,25 @@ class _HourSectionState extends State<HourSection> {
                   height: 0.11,
                 ),
               ),
-              Expanded(
-                child: SizedBox(
-                  width: 12,
-                ),
+              SizedBox(
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
           CustomSwitchTimeslotRow(
             leftText: Apptext.sunday,
             rightText: Apptext.open,
-            isSelected: _isSelected,
+            isSelected: _isSelectedSundayTwo,
             onChanged: (bool value) {
               setState(() {
-                _isSelected = value;
+                _isSelectedSundayTwo = value;
               });
             },
           ),
@@ -300,7 +308,7 @@ class _HourSectionState extends State<HourSection> {
           SizedBox(height: 20,)
 
         ],
-      )
+      ),
     );
   }
 }
