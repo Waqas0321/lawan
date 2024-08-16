@@ -22,7 +22,7 @@ class TimeSlot extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.37,
+        width: MediaQuery.of(context).size.width * 0.388,
         height: 44,
         decoration: ShapeDecoration(
           color: Colors.white,
@@ -38,8 +38,8 @@ class TimeSlot extends StatelessWidget {
               value: selectedTimeSlot,
               icon: Image.asset(
                 isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
-                width: 17,
-                height: 17,
+                width: 19,
+                height: 19,
               ),
               onChanged: (String? newValue) {
                 if (newValue != null) {
@@ -50,12 +50,12 @@ class TimeSlot extends StatelessWidget {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 6.0),
+                    padding: const EdgeInsets.only(right: 8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(width:7,),
-                        isClock? Image.asset(Images.clock):SizedBox(width:1,),
+                        SizedBox(width:10,),
+                        isClock? Image.asset(Images.clock):SizedBox(width: 1,),
                         SizedBox(width:5,),
                         Text(
                           value,

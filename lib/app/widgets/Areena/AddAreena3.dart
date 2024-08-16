@@ -43,7 +43,7 @@ class _AddAreena3State extends State<AddAreena3> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        width: Get.width +20,
+        width: MediaQuery.of(context).size.width + 20,
         height: 735,
         clipBehavior: Clip.antiAlias,
         margin:EdgeInsets.all(8),
@@ -108,27 +108,24 @@ class _AddAreena3State extends State<AddAreena3> {
                 height: 16,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: TimeSlot(
-                      isClock: false,
-                      timeSlots: weeksRate,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged,
-                      isImage: false,
-                    ),
+                  TimeSlot(
+                    isClock: false,
+                    timeSlots: weeksRate,
+                    selectedTimeSlot: _selectedTimeSlot,
+                    onChanged: _onTimeSlotChanged,
+                    isImage: false,
                   ),
                   SizedBox(
                     width: 16,
                   ),
              
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: weekshours,
-                      selectedTimeSlot: _selectedhrsTimeSlot,
-                      onChanged: _onTimeSlotChanged,
-                      isImage: false,
-                    ),
+                  TimeSlot(
+                    timeSlots: weekshours,
+                    selectedTimeSlot: _selectedhrsTimeSlot,
+                    onChanged: _onTimeSlotChanged,
+                    isImage: false,
                   ),
                 ],
               ),
@@ -149,26 +146,23 @@ class _AddAreena3State extends State<AddAreena3> {
                 height: 16,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: TimeSlot(
-                      isClock: false,
-                      timeSlots: weeksRate,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged,
-                      isImage: false,
-                    ),
+                  TimeSlot(
+                    isClock: false,
+                    timeSlots: weeksRate,
+                    selectedTimeSlot: _selectedTimeSlot,
+                    onChanged: _onTimeSlotChanged,
+                    isImage: false,
                   ),
                   SizedBox(
                     width: 22,
                   ),
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: weekshours,
-                      selectedTimeSlot: _selectedhrsTimeSlot,
-                      onChanged: _onTimeSlotChanged,
-                      isImage: false,
-                    ),
+                  TimeSlot(
+                    timeSlots: weekshours,
+                    selectedTimeSlot: _selectedhrsTimeSlot,
+                    onChanged: _onTimeSlotChanged,
+                    isImage: false,
                   ),
                 ],
               ),
