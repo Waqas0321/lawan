@@ -25,5 +25,8 @@ class Images {
   // Arena Filled
 static const String add_Image = "$mainImage/Add Image.png";
 static const String pencil = "$mainImage/pencil.png";
+static const String picture = "$mainImage/Picture.png";
+static const String map = "$mainImage/map-pin.png";
+static const String layerImage = "$mainImage/Layer_1.png";
 
 }

@@ -160,7 +160,7 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                         height: 12,
                       ),
                       CustomTextFormField(
-                          hintText: Apptext.location, icon: Images.location),
+                          hintText: Apptext.location, icon: Images.map),
                       const SizedBox(
                         height: 12,
                       ),

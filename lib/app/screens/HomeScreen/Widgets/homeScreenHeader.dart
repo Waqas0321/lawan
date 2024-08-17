@@ -42,29 +42,41 @@ class _ScreenHeaderState extends State<ScreenHeader> {
               isImage: false,
               isWidth: MediaQuery.of(context).size.width * 0.34,
               image: Image(
-                image: AssetImage(Images.ball),
+                image: const AssetImage(Images.ball),
                 height: MediaQuery.of(context).size.height * 0.08,
                 width: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
-            TimeSlotHome(
-              timeSlots: weeksRate,
-              selectedTimeSlot: _selectedTimeSlot,
-              onChanged: _onTimeSlotChanged,
-              isImage: false,
-              isWidth: MediaQuery.of(context).size.width * 0.22,
-              isText: false,
-              image: Image(
-                image: AssetImage(Images.avatar),
-                height: MediaQuery.of(context).size.height * 0.08,
-                width: MediaQuery.of(context).size.width * 0.08,
+            Container(
+              height: 44,
+              width: MediaQuery.of(context).size.width * 0.20,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(300)),
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image(
+                      image: AssetImage(Images.avtar),
+                      height: 32,
+                      width: 32,
+                    ),
+                    Image(
+                      image: AssetImage(Images.chevron_down),
+                      height: 16,
+                      width: 16,
+                    )
+                  ],
+                ),
               ),
             ),
           ],
         ),
          Padding(
           padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.01,),
-          child: Center(
+          child: const Center(
               child: Text.rich(
             TextSpan(children: [
               TextSpan(

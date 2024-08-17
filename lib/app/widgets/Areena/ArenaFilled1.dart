@@ -12,9 +12,28 @@ import '../../screens/HomeScreen/Widgets/circularContainer.dart';
 import '../../utils/images.dart';
 import '../../utils/text.dart';
 import 'EditAlertBox.dart';
-class AreenaFilled1 extends StatelessWidget {
+import 'TimeSlotHomeDropDown.dart';
+class AreenaFilled1 extends StatefulWidget {
   const AreenaFilled1({super.key});
 
+  @override
+  State<AreenaFilled1> createState() => _AreenaFilled1State();
+}
+
+class _AreenaFilled1State extends State<AreenaFilled1> {
+  final List<String> weeksRate = [
+    'Soccer',
+    'Futsal',
+  ];
+
+  // Currently selected time slot
+  String _selectedTimeSlot = 'Soccer';
+
+  void _onTimeSlotChanged(String newValue) {
+    setState(() {
+      _selectedTimeSlot = newValue;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,34 +54,16 @@ class AreenaFilled1 extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            height: 44,
-                            width: MediaQuery.of(context).size.width * 0.35 ,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(300)),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Image(
-                                    image: AssetImage(Images.ball),
-                                    width: 32,
-                                    height: 48,
-                                  ),
-                                  Text(
-                                    Apptext.soccer,
-                                    style:
-                                    TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                                  ),
-                                  Image(
-                                    image: AssetImage(Images.chevron_down),
-                                    height: 16,
-                                    width: 16,
-                                  )
-                                ],
-                              ),
+                          TimeSlotHome(
+                            timeSlots: weeksRate,
+                            selectedTimeSlot: _selectedTimeSlot,
+                            onChanged: _onTimeSlotChanged,
+                            isImage: false,
+                            isWidth: MediaQuery.of(context).size.width * 0.34,
+                            image: Image(
+                              image: const AssetImage(Images.ball),
+                              height: MediaQuery.of(context).size.height * 0.08,
+                              width: MediaQuery.of(context).size.width * 0.08,
                             ),
                           ),
                           Container(
@@ -98,14 +99,13 @@ class AreenaFilled1 extends StatelessWidget {
                       Text(
                         'Arena',
                         style: TextStyle(
-                          color: Color(0xFF545F71),
-                          fontSize: 14,
+                          color: Colors.black,
+                          fontSize: 16,
                           fontFamily: 'Lufga',
-                          fontWeight: FontWeight.w400,
-                          height: 0.11,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5
                         ),
                       ),
-                      SizedBox(height: 16,),
                       Row(
                         children: [
                           Expanded(
@@ -115,26 +115,24 @@ class AreenaFilled1 extends StatelessWidget {
                                     showCustomEditAlertDialog(context,"Edit Arena Name",'MBPJ Sports Complex');
                                   },
                                   child: Image(image: AssetImage(Images.pencil),height: 20,width: 20,))),
-                          SizedBox(width: 6,),
+                          SizedBox(width: 12),
                           Expanded(
-                              flex: 3,
+                              flex: 7,
                               child: CustomContainer(width: 178,height: 44,text: 'MBPJ Sports Complex',color: AappColor.black,textColor: AappColor.white,)),
-                          SizedBox(width: 6,),
+                          SizedBox(width: 12),
                           Expanded(
-                              flex: 2,
+                              flex: 4,
                               child: CustomContainer(width: 178,height: 44,text: 'KLFA Court',color: AappColor.white,textColor: Color(0xFF545F71),)),
                         ],
                       ),
-                      SizedBox(height: 16,),
+                      SizedBox(height: 12,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-
-
                           Expanded(
                               flex: 5,
                               child: CustomContainer(width: 100,height: 44,text: 'Sports Arena Mahkota Cheras',color: AappColor.white,textColor: AappColor.black,)),
-                          SizedBox(width: 6,),
+                          SizedBox(width: 12),
                           CustomContainer(width: 44,height: 44,icon: true,color: AappColor.black,textColor: AappColor.white,circular: true,),
                           Expanded(
                               flex: 1,
@@ -147,14 +145,13 @@ class AreenaFilled1 extends StatelessWidget {
                       Text(
                         'Court',
                         style: TextStyle(
-                          color: Color(0xFF545F71),
-                          fontSize: 14,
+                          color: Colors.black,
+                          fontSize: 16,
                           fontFamily: 'Lufga',
-                          fontWeight: FontWeight.w400,
-                          height: 0.11,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5,
                         ),
                       ),
-                      SizedBox(height: 16,),
                       Row(
                         children: [
                           Expanded(
@@ -165,11 +162,11 @@ class AreenaFilled1 extends StatelessWidget {
                                   },
                                   child: Image(image: AssetImage(Images.pencil),height: 20,width: 20,))),
                           CustomContainer(width: 44,height: 44,text: "1",color: AappColor.black,textColor: AappColor.white,circular: true,),
-                          SizedBox(width: 18,),
+                          SizedBox(width: 12,),
                           CustomContainer(width: 44,height: 44,text: "2",color: AappColor.white,textColor: AappColor.black,circular: true,),
-                          SizedBox(width: 13,),
+                          SizedBox(width: 12,),
                           CustomContainer(width: 44,height: 44,text: "3",color: AappColor.white,textColor: AappColor.black,circular: true,),
-                          SizedBox(width: 13,),
+                          SizedBox(width: 12,),
                           CustomContainer(width: 44,height: 44,icon: true,color: AappColor.black,textColor: AappColor.white,circular: true,),
                           Expanded(
                               flex: 5,
@@ -184,8 +181,7 @@ class AreenaFilled1 extends StatelessWidget {
                   Column(
                     children: [
                       Container(
-                        height: Get.height,
-
+                        height: MediaQuery.of(context).size.height,
                         color: Colors.transparent,
                         child: DefaultTabController(length: 3, child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -238,7 +234,7 @@ class AreenaFilled1 extends StatelessWidget {
                   ),
                   Expanded(
                     child: CircularContainer(
-                      image: "assets/Images/fi_690839.png",
+                      image: Images.layerImage,
                       color: Colors.black,
                       text: "Arena",
                       textColor: Colors.white,
