@@ -22,8 +22,8 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(
         left: 5,
-      ),
-      height: 40, // Adjust height as needed
+        right: 5
+      ), // Adjust height as needed
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -56,8 +56,8 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: CustomSwitch(
               value: isSelected,
               onChanged: onChanged,
-              width: 40,
-              height: 20,
+              width: 32,
+              height: 16,
               activeColor: Colors.white,
               inactiveColor: AappColor.mid_grey,
               activeTrackColor: AappColor.brand2,

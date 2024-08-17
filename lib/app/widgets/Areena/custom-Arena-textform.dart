@@ -11,7 +11,8 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 44,
-      padding: const EdgeInsets.only(right: 10, left: 12, bottom: 4),
+      width: double.infinity,
+      padding: const EdgeInsets.only(right: 16, left: 16, bottom: 12, top: 12),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(

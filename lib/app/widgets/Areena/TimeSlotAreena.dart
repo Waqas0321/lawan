@@ -21,7 +21,7 @@ class TimeSlot extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.388,
-        height: 44,
+        height: 45,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -30,7 +30,7 @@ class TimeSlot extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 16,right: 16,top: 12,bottom: 12),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,

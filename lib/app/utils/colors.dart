@@ -14,7 +14,7 @@ static const Color greenColor=Color(0xff57CC86);
 static const Color borderColor=Color(0xFFE0E0E0);
 static const Color brand2=Color(0xff23A991);
 static const Color Grey2=Color(0xFFE0E0E0);
-static const Color Grey1=Color(0xB2F2F3F2);
+static const Color Grey1=Color(0xEDF2F3F2);
 static const Color txtColor=Color(0xFF545F71);
 static const Color containerTextColor=Color(0xFFACB3C0);
 }

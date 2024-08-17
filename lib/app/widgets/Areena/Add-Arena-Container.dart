@@ -28,7 +28,6 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.28,
-      height: 100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -37,16 +36,16 @@ class CustomCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 40,
-                height: 40,
+                width: 42,
+                height: 42,
                 decoration: ShapeDecoration(
                   color: color,
                   shape: CircleBorder(
-                    side: BorderSide(width: 1, color: AappColor.Grey1),
+                    side: BorderSide(width: 1, color: AappColor.white),
                   ),
                   shadows: [
                     BoxShadow(
-                      color: Color(0x19000000),
+                      color: Colors.black12,
                       blurRadius: 0,
                       offset: Offset(0, -0.50),
                       spreadRadius: 0,
@@ -76,6 +75,7 @@ class CustomCard extends StatelessWidget {
                   Images.line,
                   color: linecolor,
                   fit: BoxFit.fitWidth,
+                  height: 12,
                 ),
               )),
             ],

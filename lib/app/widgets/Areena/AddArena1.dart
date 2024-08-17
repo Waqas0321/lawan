@@ -1,14 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/text.dart';
 import 'package:lawan/app/widgets/Areena/ar-in-out-button.dart';
 import 'package:lawan/app/widgets/Areena/areenaButton.dart';
-
-import '../../utils/ScreenDimensions.dart';
 import '../../utils/images.dart';
-import 'Add-Arena-Container.dart';
 import 'AddAreena2.dart';
 import 'custom-Arena-textform.dart';
 import 'custom_header_count.dart';
@@ -18,8 +14,7 @@ class AddAreena1 extends StatefulWidget {
   State<AddAreena1> createState() => _AddAreena1State();
 }
 
-class _AddAreena1State extends State<AddAreena1> {
-  String _selectedButton = 'Indoor'; // Track the selected button
+class _AddAreena1State extends State<AddAreena1> {// Track the selected button
   late bool _selectedButtonIndoor = true;
   late bool _selectedButtonOutdoor = false;
   late bool _selectedCourtButtonTruff = true;
@@ -73,232 +68,225 @@ class _AddAreena1State extends State<AddAreena1> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width +20,
-            margin:EdgeInsets.all(8),
-            height: 735,
-            decoration: ShapeDecoration(
-              color: AappColor.Grey1,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
+            child: Container(
+              width: MediaQuery.of(context).size.width - 16,
+              height: 711,
+              decoration: ShapeDecoration(
+                color: AappColor.Grey1,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32),
+                ),
+                shadows: [
+                  const BoxShadow(
+                    color: Color(0xda131313),
+                    blurRadius: 0,
+                    offset: Offset(1, 1),
+                    spreadRadius: 0,
+                  )
+                ],
               ),
-              shadows: [
-                BoxShadow(
-                  color: Color(0x19000000),
-                  blurRadius: 0,
-                  offset: Offset(0, -0.50),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20,left: 13,right: 13,bottom: 13),
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 13,),
-                    Expanded(
-                      child: customHeaderCount(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      customHeaderCount(
                         thisCount: "1",
                       ),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      Apptext.add_arena_details,
-                      style: TextStyle(
-                        color: AappColor.black,
-                        fontSize: 16,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w500,
+                      const SizedBox(
+                        height: 16,
                       ),
-                    ),
-                    Text(
-                      Apptext.add_photos_name_and_location,
-                      style: TextStyle(
-                        color: AappColor.dark_grey,
-                        fontSize: 12,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                      width: Get.width * 0.4,
-                      height: 120,
-                      padding: const EdgeInsets.all(24),
-                      decoration: ShapeDecoration(
-                        color: AappColor.white,
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: AappColor.white),
-                          borderRadius: BorderRadius.circular(32),
+                      const Text(
+                        Apptext.add_arena_details,
+                        style: TextStyle(
+                          color: AappColor.black,
+                          fontSize: 16,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 24,
-                            height: 24,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(),
-                            child: Image.asset(Images.gallery,color:AappColor.mid_grey,),
+                      const Text(
+                        Apptext.add_photos_name_and_location,
+                        style: TextStyle(
+                          color: AappColor.dark_grey,
+                          fontSize: 12,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Container(
+                        width: Get.width * 0.4,
+                        height: 120,
+                        padding: const EdgeInsets.all(24),
+                        decoration: ShapeDecoration(
+                          color: AappColor.white,
+                          shape: RoundedRectangleBorder(
+                            side: const BorderSide(width: 1, color: AappColor.white),
+                            borderRadius: BorderRadius.circular(32),
                           ),
-                          SizedBox(height: 8),
-                          Text(
-                            Apptext.add_picture,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: AappColor.mid_grey,
-                              fontSize: 14,
-                              fontFamily: 'Lufga',
-                              fontWeight: FontWeight.w400,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 24,
+                              height: 24,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: const BoxDecoration(),
+                              child: Image.asset(Images.gallery,color:AappColor.mid_grey,),
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                              Apptext.add_picture,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AappColor.mid_grey,
+                                fontSize: 14,
+                                fontFamily: 'Lufga',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      CustomTextFormField(
+                          hintText: Apptext.location, icon: Images.location),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      CustomTextFormField(
+                        hintText: Apptext.enter_arena_name,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      CustomTextFormField(
+                        hintText: Apptext.enter_court_name,
+                        text: Apptext.optional,
+                      ),
+
+                      const SizedBox(height: 16),
+                      const Text(
+                        Apptext.arena_type,
+                        style: TextStyle(
+                          color: Color(0xFF545F71),
+                          fontSize: 14,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: ArenaINOutButton(
+                              text: 'Indoor',
+                              isSelected: _selectedButtonIndoor,
+                              onPressed: (){
+                                _onButtonPressINOutdoor("Indoor");
+                              },
                             ),
                           ),
-                          SizedBox(
-                            height: 8,
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: ArenaINOutButton(
+                              text: 'Outdoor',
+                              isSelected: _selectedButtonOutdoor,
+                              onPressed: () => _onButtonPressINOutdoor("Outdoor")
+                            ),
+                          ),
+                          const Expanded(child: SizedBox(width: 70)),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const Text(
+                        Apptext.flooring,
+                        style: TextStyle(
+                          color: Color(0xFF545F71),
+                          fontSize: 14,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: ArenaINOutButton(
+                              text: 'Court Turf',
+                              isSelected: _selectedCourtButtonTruff,
+                              onPressed: () {
+                                _onButtonPressCourt("Truf");
+
+                              },
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: ArenaINOutButton(
+                              text: 'Court Grass',
+                              isSelected: _selectedCourtButtonGrass,
+                              onPressed: () => _onButtonPressCourt("Grass"),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: ArenaINOutButton(
+                              text: 'Cement',
+                              isSelected: _selectedCourtButtonCement,
+                              onPressed: () => _onButtonPressCourt("Cement"),
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    CustomTextFormField(
-                        hintText: Apptext.location, icon: Images.location),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    CustomTextFormField(
-                      hintText: Apptext.enter_arena_name,
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    CustomTextFormField(
-                      hintText: Apptext.enter_court_name,
-                      text: Apptext.optional,
-                    ),
-
-                    SizedBox(height: 20),
-                    Text(
-                      Apptext.arena_type,
-                      style: TextStyle(
-                        color: Color(0xFF545F71),
-                        fontSize: 14,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: ArenaINOutButton(
-                            text: 'Indoor',
-                            isSelected: _selectedButtonIndoor,
-                            onPressed: (){
-                              _onButtonPressINOutdoor("Indoor");
+                      Spacer(),
+                      Row(
+                        crossAxisAlignment:CrossAxisAlignment.center,
+                        mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: CustomAreenaButton(
+                              text: Apptext.cancel,
+                              color: AappColor.white,
+                              borderColor: const Color(0xFFE9EAF0),
+                              textColor: Colors.black, onTap: () {
+                              Get.back();
                             },
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 6),
-                        Expanded(
-                          child: ArenaINOutButton(
-                            text: 'Outdoor',
-                            isSelected: _selectedButtonOutdoor,
-                            onPressed: () => _onButtonPressINOutdoor("Outdoor")
-                          ),
-                        ),
-                        Expanded(child: SizedBox(width: 70)),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      Apptext.flooring,
-                      style: TextStyle(
-                        color: Color(0xFF545F71),
-                        fontSize: 14,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    SizedBox(
-                      height: ScreenDimensions(context).height2Percent,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: ArenaINOutButton(
-                            text: 'Court Turf',
-                            isSelected: _selectedCourtButtonTruff,
-                            onPressed: () {
-                              _onButtonPressCourt("Truf");
-
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: CustomAreenaButton(
+                              text: Apptext.next,
+                              color: AappColor.black,
+                              borderColor: const Color(0xFFE9EAF0),
+                              textColor:AappColor.white, onTap: () async{
+                                 Navigator.pop(context);
+                                 _openBottomSheet(context);
                             },
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 6),
-                        Expanded(
-                          child: ArenaINOutButton(
-                            text: 'Court Grass',
-                            isSelected: _selectedCourtButtonGrass,
-                            onPressed: () => _onButtonPressCourt("Grass"),
-                          ),
-                        ),
-                        SizedBox(width: 6),
-                        Expanded(
-                          child: ArenaINOutButton(
-                            text: 'Cement',
-                            isSelected: _selectedCourtButtonCement,
-                            onPressed: () => _onButtonPressCourt("Cement"),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    Row(
-                      crossAxisAlignment:CrossAxisAlignment.center,
-                      mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: CustomAreenaButton(
-                            text: Apptext.cancel,
-                            color: AappColor.white,
-                            borderColor: Color(0xFFE9EAF0),
-                            textColor: Colors.black, onTap: () {
-                            Get.back();
-                          },
-                          ),
-                        ),
-                        SizedBox(width: 16),
-                        Expanded(
-                          child: CustomAreenaButton(
-                            text: Apptext.next,
-                            color: AappColor.black,
-                            borderColor: Color(0xFFE9EAF0),
-                            textColor:AappColor.white, onTap: () async{
-                               Navigator.pop(context);
-                               _openBottomSheet(context);
-                          },
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20,)
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

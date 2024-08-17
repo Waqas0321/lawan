@@ -20,10 +20,10 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
             top: 24,
             left: 16,
             right: 16,
-            bottom: 24
+            bottom: 16
           ),
           decoration: ShapeDecoration(
-            color: Colors.white,
+            color: Color(0xB2F2F3F2),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(32),
             ),
@@ -59,24 +59,27 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
               ),
               SizedBox(height: 24),
               CustomAreenaButton(
-                width: 329,
+                width: double.infinity,
                 height: 49,
                 text: buttonText1,
                 color: Colors.white,
                 borderColor:AappColor.borderColor,
                 textColor:AappColor.black,
-                onTap: () {},
+                onTap: () {
+                  Get.to(AreenaFilled1());
+                },
               ),
               SizedBox(height: 8),
               CustomAreenaButton(
-                width: 329,
+                width: double.infinity,
                 height: 49,
                 text: buttonText2,
                 color: Colors.black,
                 borderColor: Color(0xFFE9EAF0),
                 textColor: Colors.white,
                 onTap: () {
-Get.back();                },
+                  Get.back();
+                  },
               ),
             ],
           ),

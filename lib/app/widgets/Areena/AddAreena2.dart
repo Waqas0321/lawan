@@ -53,10 +53,9 @@ class _AddAreena2State extends State<AddAreena2> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        width: MediaQuery.of(context).size.width +20,
-        height: 735,
+        width: MediaQuery.of(context).size.width -16,
+        height: 711,
         clipBehavior: Clip.antiAlias,
-        margin:EdgeInsets.all(8),
         decoration: ShapeDecoration(
             color: AappColor.Grey1,
             shape: RoundedRectangleBorder(
@@ -65,13 +64,13 @@ class _AddAreena2State extends State<AddAreena2> {
             shadows: [
             BoxShadow(
             color: Color(0x19000000),
-        blurRadius: 0,
-        offset: Offset(0, -0.50),
+              blurRadius: 0,
+              offset: Offset(0, -0.50),
             )
         ]
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16,top:30),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -110,6 +109,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   });
                 },
               ),
+              SizedBox(height: 8),
               CustomSwitchTimeslotRow(
                 leftText: Apptext.monday,
                 rightText: Apptext.closed,
@@ -120,6 +120,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   });
                 },
               ),
+              SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -155,6 +156,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   ),
                 ],
               ),
+              SizedBox(height: 8),
               CustomSwitchTimeslotRow(
                 leftText: Apptext.tuesdayoday,
                 rightText: Apptext.open,
@@ -165,6 +167,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   });
                 },
               ),
+              SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -200,6 +203,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   ),
                 ],
               ),
+              SizedBox(height: 8),
               CustomSwitchTimeslotRow(
                 leftText: Apptext.wednesday,
                 rightText: Apptext.open,
@@ -210,6 +214,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   });
                 },
               ),
+              SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -245,6 +250,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   ),
                 ],
               ),
+              SizedBox(height: 8),
               CustomSwitchTimeslotRow(
                 leftText: Apptext.friday,
                 rightText: Apptext.open,
@@ -255,6 +261,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   });
                 },
               ),
+              SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
       
@@ -291,6 +298,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   ),
                 ],
               ),
+              SizedBox(height: 8),
               CustomSwitchTimeslotRow(
                 leftText: Apptext.sunday,
                 rightText: Apptext.open,
@@ -301,7 +309,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   });
                 },
               ),
-              SizedBox(height:40,),
+              Spacer(),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -332,8 +340,6 @@ class _AddAreena2State extends State<AddAreena2> {
                   ),
                 ],
               ),
-              SizedBox(height: 20,)
-      
             ],
           ),
         ),
