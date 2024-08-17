@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Expanded(
                             child: CircularContainer(
-                              image: "assets/Images/fi_690839.png",
+                              image: Images.layerImage,
                               color: Colors.black,
                               text: "Arena",
                               textColor: Colors.white,

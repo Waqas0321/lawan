@@ -20,6 +20,7 @@ class ArenaINOutButton extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.28,
         height: 37,
+        padding: EdgeInsets.symmetric(vertical: 8,horizontal: 12),
         decoration: ShapeDecoration(
           color: isSelected ? Colors.black : Colors.white, // Background color
           shape: RoundedRectangleBorder(

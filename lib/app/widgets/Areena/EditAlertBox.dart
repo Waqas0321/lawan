@@ -28,10 +28,10 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
             top: 24,
             left: 16,
             right: 16,
-            bottom: 24
+            bottom: 16,
           ),
           decoration: ShapeDecoration(
-            color: Color(0xFFF2F3F2),
+            color: Color(0xB2F2F3F2),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(32),
             ),
@@ -43,7 +43,7 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
             children: [
               Row(
                 children: [
-                  Image(image: AssetImage(Images.pencil,),color:AappColor.mid_grey,),
+                  Image(image: AssetImage(Images.pencil,),color:AappColor.white,),
                     SizedBox(width: 8,),
                     Text(
                       text1,
@@ -58,57 +58,62 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
                 ],
               ),
               SizedBox(height: 16),
-              Container(
-                width: 329,
-                height: 44,
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(80),
+              SizedBox(
+                width: double.infinity,
+                child: Container(
+                  height: 44,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Row(
-                    children: [
-                      Text(
-                              text2,
-                              style: TextStyle(
-                                 color: Colors.black,
-                               fontSize: 14,
-                                 fontFamily: 'Lufga',
-                                 fontWeight: FontWeight.w500,
-                                 height: 0.11,
-                              ),
-                      ),
-                    ],
-                  )
+                  child: Center(
+                    child: Row(
+                      children: [
+                        Text(
+                                text2,
+                                style: TextStyle(
+                                   color: Colors.black,
+                                 fontSize: 14,
+                                   fontFamily: 'Lufga',
+                                   fontWeight: FontWeight.w500,
+                                ),
+                        ),
+                      ],
+                    )
+                  ),
                 ),
               ),
               SizedBox(height: 24),
-              CustomAreenaButton(
-                width: 329,
-                height: 49,
-                text: "Cancel",
-                color: Colors.white,
-                borderColor:AappColor.borderColor,
-                textColor:AappColor.black,
-                onTap: () {
-                  Navigator.pop(context);
-                },
+              SizedBox(
+                width: double.infinity,
+                child: CustomAreenaButton(
+                  height: 49,
+                  text: "Cancel",
+                  color: Colors.white,
+                  borderColor:AappColor.borderColor,
+                  textColor:AappColor.black,
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ),
               SizedBox(height: 8),
-              CustomAreenaButton(
-                width: 329,
-                height: 49,
-                text: "Update",
-                color: Colors.black,
-                borderColor: Color(0xFFE9EAF0),
-                textColor: Colors.white,
-                onTap: () {
-                  Navigator.pop(context);
-                _openBottomSheet(context);
-                },
+              SizedBox(
+                width: double.infinity,
+                child: CustomAreenaButton(
+                  height: 49,
+                  text: "Update",
+                  color: Colors.black,
+                  borderColor: Color(0xFFE9EAF0),
+                  textColor: Colors.white,
+                  onTap: () {
+                    Navigator.pop(context);
+                  _openBottomSheet(context);
+                  },
+                ),
               ),
             ],
           ),
@@ -127,22 +132,17 @@ void _openBottomSheet(BuildContext context) {
     backgroundColor: Colors.transparent,
     builder: (BuildContext context) {
       return Container(
-          width: Get.width + 20,
+          width: MediaQuery.of(context).size.width - 16,
           height: 105,
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
-          color: AappColor.gainsboro,
+          color: Color(0xB2F2F3F2),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(32),
+              topRight: Radius.circular(32),
+            ),
           ),
-          shadows: [
-            BoxShadow(
-              color: Color(0x19000000),
-              blurRadius: 0,
-              offset: Offset(0, -0.50),
-              spreadRadius: 0,
-            )
-          ],
         ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -164,7 +164,7 @@ void _openBottomSheet(BuildContext context) {
                 SizedBox(width: 16,),
                 Expanded(
                   child: CustomAreenaButton(
-                    text: "Save and Update",
+                    text: "Save & Update",
                     color: AappColor.black,
                     borderColor: Color(0xFFE9EAF0),
                     textColor: AappColor.white,

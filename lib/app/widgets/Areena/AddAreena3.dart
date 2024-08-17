@@ -227,6 +227,7 @@ class customText extends StatelessWidget {
             fontSize: 14,
             fontFamily: 'Lufga',
             fontWeight: FontWeight.w400,
+            height: 1.5
           ),
         ),
       ),

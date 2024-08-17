@@ -10,7 +10,6 @@ import '../../utils/text.dart';
 import 'TimeSlotAreena.dart';
 import 'TimeSlotRow.dart';
 import 'areenaButton.dart';
-import 'custom_header_count.dart';
 class HourSection extends StatefulWidget {
   const HourSection({super.key});
 
@@ -48,18 +47,19 @@ class _HourSectionState extends State<HourSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 16,),
+          SizedBox(height: 16),
           Text(
-            Apptext.add_arena_details,
+            "Standard Hours",
             style: TextStyle(
               color: AappColor.black,
               fontSize: 16,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w500,
+              height: 1
             ),
           ),
           Text(
-            Apptext.set_standard_hours,
+            "Standard hours of operation for this arena",
             style: TextStyle(
               color: AappColor.mid_grey,
               fontSize: 12,
@@ -80,6 +80,7 @@ class _HourSectionState extends State<HourSection> {
               });
             },
           ),
+          SizedBox(height: 8),
           CustomSwitchTimeslotRow(
             leftText: Apptext.monday,
             rightText: Apptext.closed,
@@ -90,16 +91,19 @@ class _HourSectionState extends State<HourSection> {
               });
             },
           ),
+          SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
               SizedBox(
-                width: 16,
+                width: 12,
               ),
               Text(
                 'to',
@@ -112,15 +116,18 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 16,
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
+          SizedBox(height: 8),
           CustomSwitchTimeslotRow(
             leftText: Apptext.tuesdayoday,
             rightText: Apptext.open,
@@ -131,16 +138,19 @@ class _HourSectionState extends State<HourSection> {
               });
             },
           ),
+          SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
               SizedBox(
-                width: 16,
+                width: 12,
               ),
               Text(
                 'to',
@@ -153,15 +163,18 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 16,
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
+          SizedBox(height: 8),
           CustomSwitchTimeslotRow(
             leftText: Apptext.wednesday,
             rightText: Apptext.open,
@@ -172,16 +185,19 @@ class _HourSectionState extends State<HourSection> {
               });
             },
           ),
+          SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
               SizedBox(
-                width: 16,
+                width: 12,
               ),
               Text(
                 'to',
@@ -194,15 +210,18 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 16,
+                width: 12,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
+          SizedBox(height: 8),
           CustomSwitchTimeslotRow(
             leftText: Apptext.friday,
             rightText: Apptext.open,
@@ -213,17 +232,20 @@ class _HourSectionState extends State<HourSection> {
               });
             },
           ),
+          SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
             children: [
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
               SizedBox(
-                width: 16,
+                width: 10,
               ),
               Text(
                 'to',
@@ -236,15 +258,18 @@ class _HourSectionState extends State<HourSection> {
                 ),
               ),
               SizedBox(
-                width: 16,
+                width: 10,
               ),
-              TimeSlot(
-                timeSlots: _timeSlots,
-                selectedTimeSlot: _selectedTimeSlot,
-                onChanged: _onTimeSlotChanged, isImage: true,
+              Expanded(
+                child: TimeSlot(
+                  timeSlots: _timeSlots,
+                  selectedTimeSlot: _selectedTimeSlot,
+                  onChanged: _onTimeSlotChanged, isImage: true,
+                ),
               ),
             ],
           ),
+          SizedBox(height: 8),
           CustomSwitchTimeslotRow(
             leftText: Apptext.sunday,
             rightText: Apptext.open,
@@ -255,40 +280,8 @@ class _HourSectionState extends State<HourSection> {
               });
             },
           ),
-          SizedBox(height:40,),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: CustomAreenaButton(
-                  text: Apptext.cancel,
-                  color: AappColor.white,
-                  borderColor: Color(0xFFE9EAF0),
-                  textColor: AappColor.black,
-                  onTap: () {
-                    Get.back();
-                  },
-                ),
-              ),
-              SizedBox(width: 16,),
-              Expanded(
-                child: CustomAreenaButton(
-                  text: Apptext.next,
-                  color: AappColor.black,
-                  borderColor: Color(0xFFE9EAF0),
-                  textColor: AappColor.white,
-                  onTap: () {
-                    Get.back();
-                    _openBottomSheet(context);
-                  },
-                ),
-              ),
-            ],
-          ),
-
         ],
-      ),
+      )
     );
   }
 }
