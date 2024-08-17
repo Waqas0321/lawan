@@ -11,13 +11,14 @@ class TimeSlot extends StatelessWidget {
   TimeSlot({
     required this.timeSlots,
     required this.selectedTimeSlot,
-    required this.onChanged, required this.isImage,
-     this.isClock = true,
+    required this.onChanged,
+    required this.isImage,
+    this.isClock = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    final screensize=MediaQuery.of(context).size;
+    final screensize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
@@ -31,15 +32,18 @@ class TimeSlot extends StatelessWidget {
           ),
         ),
         child: Padding(
-
-
-          padding:  EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03,
-              right: MediaQuery.of(context).size.width * 0.03,top: 12,bottom: 12),
+          padding: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width * 0.03,
+              right: MediaQuery.of(context).size.width * 0.03,
+              top: 12,
+              bottom: 12),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
               icon: Image.asset(
-                isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
+                isImage == true
+                    ? Images.chevron_sort
+                    : Images.chevron_down, // Ensure this path is correct
                 width: MediaQuery.of(context).size.width * 0.06,
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
@@ -56,8 +60,14 @@ class TimeSlot extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        isClock? Image.asset(Images.clock):const SizedBox(width: 1,),
-                        const SizedBox(width:5,),
+                        isClock
+                            ? Image.asset(Images.clock)
+                            : const SizedBox(
+                                width: 1,
+                              ),
+                        const SizedBox(
+                          width: 5,
+                        ),
                         Text(
                           value,
                           style: const TextStyle(
