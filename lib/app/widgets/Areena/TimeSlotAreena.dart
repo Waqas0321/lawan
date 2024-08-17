@@ -25,7 +25,7 @@ class TimeSlot extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
           ),
         ),
@@ -36,8 +36,8 @@ class TimeSlot extends StatelessWidget {
               value: selectedTimeSlot,
               icon: Image.asset(
                 isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
-                width: 19,
-                height: 19,
+                width: 18,
+                height: 18,
               ),
               onChanged: (String? newValue) {
                 if (newValue != null) {
@@ -52,12 +52,11 @@ class TimeSlot extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(width:10,),
-                        isClock? Image.asset(Images.clock):SizedBox(width: 1,),
-                        SizedBox(width:5,),
+                        isClock? Image.asset(Images.clock):const SizedBox(width: 1,),
+                        const SizedBox(width:5,),
                         Text(
                           value,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontSize: 14,
                             fontFamily: 'Lufga',

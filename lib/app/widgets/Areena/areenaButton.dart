@@ -43,7 +43,6 @@ class CustomAreenaButton extends StatelessWidget {
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w500,
-              height: 0.11,
             ),
           ),
         ),
