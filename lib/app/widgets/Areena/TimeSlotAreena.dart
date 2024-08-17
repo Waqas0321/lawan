@@ -30,14 +30,15 @@ class TimeSlot extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 16,right: 16,top: 12,bottom: 12),
+          padding:  EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.03,
+              right: MediaQuery.of(context).size.width * 0.03,top: 12,bottom: 12),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
               icon: Image.asset(
                 isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
-                width: 18,
-                height: 18,
+                width: MediaQuery.of(context).size.width * 0.06,
+                height: MediaQuery.of(context).size.height * 0.06,
               ),
               onChanged: (String? newValue) {
                 if (newValue != null) {
