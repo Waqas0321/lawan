@@ -70,12 +70,11 @@ class CustomCard extends StatelessWidget {
 
               Expanded(
                   child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Image.asset(
-                  Images.line,
-                  color: linecolor,
-                  fit: BoxFit.fitWidth,
-                  height: 12,
+                padding: const EdgeInsets.all(10),
+                child:Divider(
+                  thickness:1,
+                  indent: 0.1,
+                  color:linecolor,
                 ),
               )),
             ],

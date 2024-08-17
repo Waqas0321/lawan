@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -52,295 +54,300 @@ class _AddAreena2State extends State<AddAreena2> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        width: MediaQuery.of(context).size.width -16,
-        height: 711,
-        clipBehavior: Clip.antiAlias,
-        decoration: ShapeDecoration(
-            color: AappColor.Grey1,
+      child: BackdropFilter(
+        filter:ImageFilter.blur(sigmaY:10,sigmaX:10),
+        child: Container(
+          width: MediaQuery.of(context).size.width -16,
+          margin:EdgeInsets.only(bottom:16),
+          height: 711,
+          clipBehavior: Clip.antiAlias,
+          decoration: ShapeDecoration(
+            color: Color(0xB2F2F3F2),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(32),
             ),
             shadows: [
-            BoxShadow(
-            color: Color(0x19000000),
-              blurRadius: 0,
-              offset: Offset(0, -0.50),
-            )
-        ]
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              customHeaderCount(
-                thisCount: "2",
-              ),
-              SizedBox(height: 16,),
-              Text(
-                Apptext.add_arena_details,
-                style: TextStyle(
-                  color: AappColor.black,
-                  fontSize: 16,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Text(
-                Apptext.set_standard_hours,
-                style: TextStyle(
-                  color: AappColor.mid_grey,
-                  fontSize: 12,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              CustomSwitchTimeslotRow(
-                leftText: Apptext.sunday,
-                rightText:Apptext.closed,
-                isSelected: _isSelectedSunday,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isSelectedSunday = value;
-                  });
-                },
-              ),
-              SizedBox(height: 8),
-              CustomSwitchTimeslotRow(
-                leftText: Apptext.monday,
-                rightText: Apptext.closed,
-                isSelected: _isSelectedMonday,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isSelectedMonday = value;
-                  });
-                },
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Text(
-                    'to',
-                    style: TextStyle(
-                      color: Color(0xFF545F71),
-                      fontSize: 14,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 0.11,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8),
-              CustomSwitchTimeslotRow(
-                leftText: Apptext.tuesdayoday,
-                rightText: Apptext.open,
-                isSelected: _isSelectedTuesday,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isSelectedTuesday = value;
-                  });
-                },
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Text(
-                    'to',
-                    style: TextStyle(
-                      color: Color(0xFF545F71),
-                      fontSize: 14,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 0.11,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8),
-              CustomSwitchTimeslotRow(
-                leftText: Apptext.wednesday,
-                rightText: Apptext.open,
-                isSelected: _isSelectedWednesday,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isSelectedWednesday = value;
-                  });
-                },
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Text(
-                    'to',
-                    style: TextStyle(
-                      color: Color(0xFF545F71),
-                      fontSize: 14,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 0.11,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8),
-              CustomSwitchTimeslotRow(
-                leftText: Apptext.friday,
-                rightText: Apptext.open,
-                isSelected: _isSelectedFriday,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isSelectedFriday = value;
-                  });
-                },
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      
-                children: [
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'to',
-                    style: TextStyle(
-                      color: Color(0xFF545F71),
-                      fontSize: 14,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 0.11,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: TimeSlot(
-                      timeSlots: _timeSlots,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged, isImage: true,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8),
-              CustomSwitchTimeslotRow(
-                leftText: Apptext.sunday,
-                rightText: Apptext.open,
-                isSelected: _isSelectedSundayTwo,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isSelectedSundayTwo = value;
-                  });
-                },
-              ),
-              Spacer(),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: CustomAreenaButton(
-                      text: Apptext.cancel,
-                      color: AappColor.white,
-                      borderColor: Color(0xFFE9EAF0),
-                      textColor: AappColor.black,
-                      onTap: () {
-                        Get.back();
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 16,),
-                  Expanded(
-                    child: CustomAreenaButton(
-                      text: Apptext.next,
-                      color: AappColor.black,
-                      borderColor: Color(0xFFE9EAF0),
-                      textColor: AappColor.white,
-                      onTap: () {
-                      Get.back();
-                        _openBottomSheet(context);
-                      },
-                    ),
-                  ),
-                ],
-              ),
+              BoxShadow(
+                color: Color(0x19000000),
+                blurRadius: 10,
+                offset: Offset(0, -0.50),
+                spreadRadius: 0,
+              )
             ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                customHeaderCount(
+                  thisCount: "2",
+                ),
+                SizedBox(height: 16,),
+                Text(
+                  Apptext.add_arena_details,
+                  style: TextStyle(
+                    color: AappColor.black,
+                    fontSize: 16,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                  Apptext.set_standard_hours,
+                  style: TextStyle(
+                    color: AappColor.mid_grey,
+                    fontSize: 12,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                CustomSwitchTimeslotRow(
+                  leftText: Apptext.sunday,
+                  rightText:Apptext.closed,
+                  isSelected: _isSelectedSunday,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isSelectedSunday = value;
+                    });
+                  },
+                ),
+                SizedBox(height: 8),
+                CustomSwitchTimeslotRow(
+                  leftText: Apptext.monday,
+                  rightText: Apptext.closed,
+                  isSelected: _isSelectedMonday,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isSelectedMonday = value;
+                    });
+                  },
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Text(
+                      'to',
+                      style: TextStyle(
+                        color: Color(0xFF545F71),
+                        fontSize: 14,
+                        fontFamily: 'Lufga',
+                        fontWeight: FontWeight.w400,
+                        height: 0.11,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8),
+                CustomSwitchTimeslotRow(
+                  leftText: Apptext.tuesdayoday,
+                  rightText: Apptext.open,
+                  isSelected: _isSelectedTuesday,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isSelectedTuesday = value;
+                    });
+                  },
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Text(
+                      'to',
+                      style: TextStyle(
+                        color: Color(0xFF545F71),
+                        fontSize: 14,
+                        fontFamily: 'Lufga',
+                        fontWeight: FontWeight.w400,
+                        height: 0.11,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8),
+                CustomSwitchTimeslotRow(
+                  leftText: Apptext.wednesday,
+                  rightText: Apptext.open,
+                  isSelected: _isSelectedWednesday,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isSelectedWednesday = value;
+                    });
+                  },
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Text(
+                      'to',
+                      style: TextStyle(
+                        color: Color(0xFF545F71),
+                        fontSize: 14,
+                        fontFamily: 'Lufga',
+                        fontWeight: FontWeight.w400,
+                        height: 0.11,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8),
+                CustomSwitchTimeslotRow(
+                  leftText: Apptext.friday,
+                  rightText: Apptext.open,
+                  isSelected: _isSelectedFriday,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isSelectedFriday = value;
+                    });
+                  },
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children: [
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      'to',
+                      style: TextStyle(
+                        color: Color(0xFF545F71),
+                        fontSize: 14,
+                        fontFamily: 'Lufga',
+                        fontWeight: FontWeight.w400,
+                        height: 0.11,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: TimeSlot(
+                        timeSlots: _timeSlots,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged, isImage: true,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8),
+                CustomSwitchTimeslotRow(
+                  leftText: Apptext.sunday,
+                  rightText: Apptext.open,
+                  isSelected: _isSelectedSundayTwo,
+                  onChanged: (bool value) {
+                    setState(() {
+                      _isSelectedSundayTwo = value;
+                    });
+                  },
+                ),
+                Spacer(),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: CustomAreenaButton(
+                        text: Apptext.cancel,
+                        color: AappColor.white,
+                        borderColor: Color(0xFFE9EAF0),
+                        textColor: AappColor.black,
+                        onTap: () {
+                          Get.back();
+                        },
+                      ),
+                    ),
+                    SizedBox(width: 16,),
+                    Expanded(
+                      child: CustomAreenaButton(
+                        text: Apptext.next,
+                        color: AappColor.black,
+                        borderColor: Color(0xFFE9EAF0),
+                        textColor: AappColor.white,
+                        onTap: () {
+                        Get.back();
+                          _openBottomSheet(context);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

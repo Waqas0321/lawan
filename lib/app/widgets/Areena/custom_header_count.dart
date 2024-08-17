@@ -23,7 +23,7 @@ class customHeaderCount extends StatelessWidget {
               count: '1',
               text: Apptext.details,
               color:thisCount =="1"? AappColor.brand2: AappColor.Grey1,
-              linecolor:AappColor.white,
+              linecolor:AappColor.grey3,
               countcolor:thisCount=="1"? AappColor.white: AappColor.dark_grey,
               textcolor: thisCount == "1" ?AappColor.brand2:AappColor.dark_grey,
               fontWeight: thisCount == "1"?FontWeight.w500: FontWeight.w400, padding: 2,
@@ -36,7 +36,7 @@ class customHeaderCount extends StatelessWidget {
               color:thisCount =="2"? AappColor.brand2: AappColor.Grey1,
               countcolor:thisCount=="2"? AappColor.white: AappColor.dark_grey,
               textcolor: thisCount == "2" ?AappColor.brand2:AappColor.dark_grey,
-              fontWeight: thisCount == "2"?FontWeight.w500: FontWeight.w400, padding: 10, linecolor:AappColor.white,
+              fontWeight: thisCount == "2"?FontWeight.w500: FontWeight.w400, padding: 10, linecolor:AappColor.grey3,
 
             ),
           ),

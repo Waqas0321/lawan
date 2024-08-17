@@ -17,6 +17,7 @@ class TimeSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screensize=MediaQuery.of(context).size;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
@@ -30,7 +31,7 @@ class TimeSlot extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 16,right: 16,top: 12,bottom: 12),
+          padding:  EdgeInsets.only(left:screensize.width*0.01,right: screensize.width*0.01,top: 12,bottom: 12),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
