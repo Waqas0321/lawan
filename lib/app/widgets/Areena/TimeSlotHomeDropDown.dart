@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:lawan/app/utils/colors.dart';
 
-import '../utils/images.dart';
+import '../../utils/images.dart';
 
 class TimeSlotHome extends StatelessWidget {
   final List<String> timeSlots;
@@ -43,6 +44,7 @@ class TimeSlotHome extends StatelessWidget {
                 isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
                 width: 16,
                 height: 16,
+                color:Colors.black,
               ),
               onChanged: (String? newValue) {
                 if (newValue != null) {
@@ -58,7 +60,7 @@ class TimeSlotHome extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                          image,
-                        SizedBox(width:6,),
+                        SizedBox(width:4,),
                         isText? Text(
                             value,
                             style: TextStyle(

@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +36,15 @@ class HomeScreen extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment(0.00, -1.00),
-              end: Alignment(0, 1),
-              colors: [Colors.black.withOpacity(0), Colors.black.withOpacity(0.4000000059604645)],
+              begin: Alignment(0.0, 0.8), // Start near the bottom
+              end: Alignment(0.0, 1.2), // End at the bottom edge
+              colors: [
+                Colors.black.withOpacity(0.0), // Fully transparent color
+                Colors.black.withOpacity(0.4), // Slightly visible gradient
+              ],
             ),
           ),
+
           child: Stack(
             children: [
               SingleChildScrollView(
@@ -53,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ScreenHeader(),
-                        SizedBox(height: 8),
+                        SizedBox(height:MediaQuery.of(context).size.height*0.01),
                         ScreenBody(),
                         SizedBox(
                           height: 19,
@@ -64,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: Get.width/2 -70,
+                left: Get.width/3.9,
                 bottom: 16,
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.5,
@@ -107,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                             child: CircularContainer(
                               image: "assets/Images/fi_3446795.png",
                               color: Colors.white,
-                              text: "Arena",
+                              text: "Sales",
                             ),
                           ),
                         ],

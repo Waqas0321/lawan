@@ -42,7 +42,8 @@ dependencies:
   flutter_responsive: ^1.1.0
   flutter_screenutil: ^5.9.3
   adaptive_sizer: ^0.0.4
-  device_preview: ^1.2.0
+  device_preview:
+  responsive_framework: ^1.4.0  # Use the latest version
 
   responsive_builder:
 dev_dependencies:

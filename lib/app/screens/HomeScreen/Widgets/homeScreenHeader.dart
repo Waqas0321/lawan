@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lawan/app/utils/text.dart';
-import 'package:lawan/app/widgets/TimeSlotHomeDropDown.dart';
+import 'package:lawan/app/widgets/Areena/TimeSlotHomeDropDown.dart';
 import '../../../utils/images.dart';
 
 class ScreenHeader extends StatefulWidget {
@@ -15,7 +16,7 @@ class ScreenHeader extends StatefulWidget {
 class _ScreenHeaderState extends State<ScreenHeader> {
   final List<String> weeksRate = [
     'Soccer',
-    'Soccer2',
+    'Futsal',
   ];
 
   // Currently selected time slot
@@ -39,7 +40,7 @@ class _ScreenHeaderState extends State<ScreenHeader> {
               selectedTimeSlot: _selectedTimeSlot,
               onChanged: _onTimeSlotChanged,
               isImage: false,
-              isWidth: MediaQuery.of(context).size.width * 0.35,
+              isWidth: MediaQuery.of(context).size.width * 0.34,
               image: Image(
                 image: AssetImage(Images.ball),
                 height: MediaQuery.of(context).size.height * 0.08,
@@ -51,7 +52,7 @@ class _ScreenHeaderState extends State<ScreenHeader> {
               selectedTimeSlot: _selectedTimeSlot,
               onChanged: _onTimeSlotChanged,
               isImage: false,
-              isWidth: MediaQuery.of(context).size.width * 0.23,
+              isWidth: MediaQuery.of(context).size.width * 0.22,
               isText: false,
               image: Image(
                 image: AssetImage(Images.avatar),
@@ -61,8 +62,8 @@ class _ScreenHeaderState extends State<ScreenHeader> {
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 23, bottom: 20),
+         Padding(
+          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.01,),
           child: Center(
               child: Text.rich(
             TextSpan(children: [
