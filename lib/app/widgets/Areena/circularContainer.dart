@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CircularContainer extends StatelessWidget {
   const CircularContainer({
@@ -32,8 +33,8 @@ class CircularContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(
-              image: AssetImage(image),
+            SvgPicture.asset(
+            image,
               height: imageHeight,
               width: imageWidth,
             ),

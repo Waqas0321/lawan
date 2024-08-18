@@ -6,10 +6,11 @@ class ArenaINOutButton extends StatelessWidget {
   final String text;
   final bool isSelected;
   final VoidCallback onPressed;
-
+  final double height;
   ArenaINOutButton({
     required this.text,
     required this.isSelected,
+    this.height=37,
     required this.onPressed,
   });
 
@@ -19,12 +20,12 @@ class ArenaINOutButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.28,
-        height: 37,
+        height: height,
         padding: EdgeInsets.symmetric(vertical: 8,horizontal: 12),
         decoration: ShapeDecoration(
-          color: isSelected ? Colors.black : Colors.white, // Background color
+          color: isSelected ? Colors.black :null, // Background color
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: Color(0xFFE9EAF0)), // Border color
+            side: !isSelected?BorderSide(width: 1, color: Color(0xFFE9EAF0)):BorderSide.none, // Border color
             borderRadius: BorderRadius.circular(32),
           ),
         ),
@@ -34,7 +35,7 @@ class ArenaINOutButton extends StatelessWidget {
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: isSelected ? AappColor.white :AappColor.mid_grey, // Text color
+              color: isSelected ? AappColor.white :AappColor.dark_grey, // Text color
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w400,

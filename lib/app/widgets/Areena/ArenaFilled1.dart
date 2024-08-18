@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/Areena/custom_tabbar.dart';
@@ -56,11 +57,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                               onChanged: _onTimeSlotChanged,
                               isImage: false,
                               isWidth: MediaQuery.of(context).size.width * 0.34,
-                              image: Image(
-                                image: const AssetImage(Images.ball),
-                                height: MediaQuery.of(context).size.height * 0.08,
-                                width: MediaQuery.of(context).size.width * 0.08,
-                              ),
+                              image:"⚽",
                             ),
                             Container(
                               height: 44,

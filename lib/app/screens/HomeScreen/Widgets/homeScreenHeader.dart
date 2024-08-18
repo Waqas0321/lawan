@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lawan/app/utils/text.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotHomeDropDown.dart';
 import '../../../utils/images.dart';
@@ -40,60 +43,74 @@ class _ScreenHeaderState extends State<ScreenHeader> {
               selectedTimeSlot: _selectedTimeSlot,
               onChanged: _onTimeSlotChanged,
               isImage: false,
-              isWidth: MediaQuery.of(context).size.width * 0.34,
-              image: Image(
-                image: const AssetImage(Images.ball),
-                height: MediaQuery.of(context).size.height * 0.08,
-                width: MediaQuery.of(context).size.width * 0.08,
-              ),
+              isWidth: MediaQuery.of(context).size.width * 0.31,
+              image:"⚽",
             ),
             Container(
-              height: 44,
-              width: MediaQuery.of(context).size.width * 0.20,
+              height: MediaQuery.of(context).size.height * 0.05,
+              width: MediaQuery.of(context).size.width * 0.19,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image(
-                      image: AssetImage(Images.avtar),
-                      height: 32,
-                      width: 32,
-                    ),
-                    Image(
-                      image: AssetImage(Images.chevron_down),
-                      height: 16,
-                      width: 16,
-                    )
-                  ],
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+
+                  Image.asset(
+                    Images.avtar,
+                    height: 32,
+                    width: 40,
+                  ),
+                  SvgPicture.asset(
+                  Images.chevron_down,
+                    height: 16,
+                    width: 16,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.004,
+                  ),
+                ],
               ),
             ),
           ],
         ),
-         Padding(
-          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.01,),
-          child: const Center(
-              child: Text.rich(
-            TextSpan(children: [
-              TextSpan(
-                  text: Apptext.mainHeading1,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                      fontFamily: "Lufga")),
-              TextSpan(
-                  text: Apptext.mainHeading2,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      fontFamily: "Lufga")),
-            ]),
-          )),
+        IntrinsicHeight(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.015,
+          ),
         ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.8,
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: 'List your arena',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w600,
+                    height: 1,
+                    letterSpacing: -0.60,
+                  ),
+                ),
+                TextSpan(
+                  text: ' with Lawan, attract and inspire Pahlawans!',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w400,
+                    height: 1.2,
+                    letterSpacing: -0.60,
+                  ),
+                ),
+              ],
+            ),
+            textAlign: TextAlign.center,
+          ),
+        )
       ],
     );
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomAreenaButton extends StatelessWidget {
   final String text;
-  final Color color;
+  final Color? color;
   final Color borderColor;
   final VoidCallback onTap;
   final Color textColor;

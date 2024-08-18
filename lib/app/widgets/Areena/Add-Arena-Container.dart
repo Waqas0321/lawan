@@ -11,96 +11,96 @@ class CustomCard extends StatelessWidget {
   final Color textcolor;
   final FontWeight fontWeight;
   final Color countcolor;
-  final Color color;
+  final Color? color;
   final double padding;
+  final bool showborder;
   CustomCard({
     required this.count,
     required this.text,
-    required this.color,
+     this.color,
     required this.linecolor,
     required this.countcolor,
     required this.textcolor,
     required this.fontWeight,
+    this.showborder=false,
     required this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.28,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 42,
-                height: 42,
-                decoration: ShapeDecoration(
-                  color: color,
-                  shape: CircleBorder(
-                    side: BorderSide(width: 1, color: AappColor.white),
-                  ),
-                  shadows: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 0,
-                      offset: Offset(0, -0.50),
-                      spreadRadius: 0,
-                    )
-                  ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 42,
+              height: 42,
+              decoration: ShapeDecoration(
+                color:color,
+                shape: RoundedRectangleBorder(
+                  side:showborder? BorderSide(width:1, color: AappColor.white):BorderSide.none,
+                  borderRadius: BorderRadius.circular(80),
                 ),
-                child: Center(
+
+
+              ),
+              child: Center(
+                child: SizedBox(
+                  width: 10,
                   child: Text(
                     count,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       color: countcolor,
                       fontSize: 16,
                       fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
+                      height: 0.09,
                     ),
                   ),
                 ),
               ),
-              // SizedBox(
-              //   width: 16,
-              // ),
+            ),
+            // SizedBox(
+            //   width: 16,
+            // ),
 
-              Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.all(10),
-                child:Divider(
-                  thickness:1,
-                  indent: 0.1,
-                  color:linecolor,
-                ),
-              )),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: padding),
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    color: textcolor,
-                    fontSize: 14,
-                    fontFamily: 'Lufga',
-                    fontWeight: fontWeight,
-                  ),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(10),
+              child:Divider(
+                thickness:1,
+                indent: 0.1,
+                color:linecolor,
+              ),
+            )),
+          ],
+        ),
+        SizedBox(
+          height:MediaQuery.of(context).size.height*0.018,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: padding),
+              child: Text(
+                text,
+                style: TextStyle(
+                  color:textcolor,
+                  fontSize: 14,
+                  fontFamily: 'Lufga',
+                  fontWeight:fontWeight,
+                  height: 0.11,
                 ),
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

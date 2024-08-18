@@ -1,6 +1,9 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
@@ -31,28 +34,47 @@ class ScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
 
-    // Define container height based on screen size
     double containerHeight;
     double leftPosition;
     double topPosition;
+
     if (screenSize.height <= 667) {
-      containerHeight = 100.h; // Short container for small devices
-      leftPosition = 50;
-      topPosition = 90;
-    } else if (screenSize.height <= 844) {
-      containerHeight = 210.h; // Medium container for medium devices
-      leftPosition = 39;
+      // Small devices (e.g., iPhone SE, older Androids)
+      containerHeight = 100.h;
+      leftPosition = 40;
+      topPosition = 30;
+    } else if (screenSize.height > 667 && screenSize.height <= 812) {
+      // Medium devices (e.g., iPhone 11/12 Mini, Pixel 4a)
+      containerHeight = 210.h;
+      leftPosition = 45;
+      topPosition = 85;
+    } else if (screenSize.height > 812 && screenSize.height <= 896) {
+      // Large devices (e.g., iPhone XR, iPhone 11, Pixel 4)
+      containerHeight = 225.h;
+      leftPosition = 38;
+      topPosition = 85;
+    } else if (screenSize.height > 896 && screenSize.height <= 1000) {
+      // Extra-large devices (e.g., iPhone 12 Pro Max, Pixel 5)
+      containerHeight = 250.h;
+      leftPosition = 35;
       topPosition = 80;
     } else {
-      containerHeight = 150.h; // Tall container for large devices
-      leftPosition = 40;
-      topPosition = 60;
+      // Very large devices (e.g., iPad, large Android tablets)
+      containerHeight = 350.h;
+      leftPosition = 30;
+      topPosition = 70;
     }
 
     return Column(
       children: [
+        IntrinsicHeight(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.005,
+          ),
+        ),
+        // Text(MediaQuery.of(context).size.height.toStringAsFixed(3)),
         Container(
-          height: MediaQuery.of(context).size.height * 0.19,
+          height: MediaQuery.of(context).size.height * 0.16,
           width: MediaQuery.of(context).size.width,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
@@ -62,7 +84,11 @@ class ScreenBody extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              IntrinsicHeight(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.025,
+                ),
+              ),
               Text.rich(
                 TextSpan(
                   children: [
@@ -91,22 +117,32 @@ class ScreenBody extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-              Image(
-                image: AssetImage(
-                  Images.user_friendly,
-                ),
+              // Text(MediaQuery.of(context).size.height.toStringAsFixed(2)),
+
+              SvgPicture.asset(
+                Images.user_friendly,
                 fit: BoxFit.cover,
                 height: 64,
                 width: 64,
                 color: AappColor.brand2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              Text("in creating and sharing sessions with friends.",
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: AappColor.dark_grey,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: "Lufga"))
+              Text(
+                'in creating and sharing sessions with friends.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF545F71),
+                  fontSize: 12,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w400,
+                  height: 0.12,
+                ),
+              ),
+              // IntrinsicHeight(
+              //   child: SizedBox(
+              //     height: MediaQuery.of(context).size.height * 0.005,
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -116,7 +152,7 @@ class ScreenBody extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.19,
+                height: MediaQuery.of(context).size.height * 0.18,
                 width: MediaQuery.of(context).size.width * 0.23,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
@@ -129,21 +165,26 @@ class ScreenBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image(
-                        image: AssetImage(
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: SvgPicture.asset(
                           Images.multi_devices,
+                          color: AappColor.brand2,
+                          height: 64,
+                          width: 64,
                         ),
-                        color: AappColor.brand2,
-                        height: 64,
-                        width: 64,
                       ),
-                      SizedBox(height: screenSize.height * 0.03),
+                      SizedBox(height: screenSize.height * 0.01),
                       Text(
-                        "Online visibility",
+                        'Online visibility',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: "Lufga"),
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                          height: 0.11,
+                        ),
                       )
                     ],
                   ),
@@ -153,7 +194,7 @@ class ScreenBody extends StatelessWidget {
             SizedBox(width: 16),
             Expanded(
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.19,
+                height: MediaQuery.of(context).size.height * 0.18,
                 width: MediaQuery.of(context).size.width * 0.23,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
@@ -165,42 +206,45 @@ class ScreenBody extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 12, right: 12, top: 30),
                   child: Column(
                     children: [
-                      Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text: 'Earn income',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontFamily: 'Lufga',
-                                fontWeight: FontWeight.w600,
+                      SizedBox(
+                        width: 140.50,
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Earn income',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontFamily: 'Lufga',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0.11,
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: ' by \n listing as many arena that you own',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontFamily: 'Lufga',
-                                fontWeight: FontWeight.w400,
+                              TextSpan(
+                                text: ' by listing as many arena that you own',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontFamily: 'Lufga',
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.5,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.03,
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       Expanded(
-                        child: Image(
-                          image: AssetImage(
-                            Images.dollar_signs,
-                          ),
+                        child: SvgPicture.asset(
+                          Images.dollar_signs,
                           color: AappColor.brand2,
-                          height: 57,
-                          fit: BoxFit.contain,
+                          // height: 57,
+                          // fit: BoxFit.cover,
                           width: MediaQuery.of(context).size.width,
                         ),
                       ),
@@ -219,7 +263,11 @@ class ScreenBody extends StatelessWidget {
           child: Container(
             height: containerHeight,
             width: MediaQuery.of(context).size.width,
+            margin:EdgeInsets.only(left:1),
             decoration: ShapeDecoration(
+              image:DecorationImage(
+                image:AssetImage(Images.vector,),
+              ),
               gradient: LinearGradient(
                 begin: Alignment(0.00, -1.00),
                 end: Alignment(0, 1),
@@ -229,34 +277,27 @@ class ScreenBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(32),
               ),
             ),
-            child: Center(
-              child: Stack(
+            child: Padding(
+              padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height*0.02),
+              child: Column(
+                crossAxisAlignment:CrossAxisAlignment.center,
+                mainAxisAlignment:MainAxisAlignment.center,
                 children: [
-                  Image(
-                    image: AssetImage(Images.vector),
-                    width: 150.w,
-                    height: 204.38.h,
+                  SvgPicture.asset(Images.add,height:35,width:30,fit:BoxFit.contain,),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.009,
                   ),
-                  Positioned(
-                    top: topPosition,
-                    left: leftPosition,
-                    child: Column(
-                      children: [
-                        Image.asset(Images.add),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.005,
-                        ),
-                        Text(
-                          "Add Arena",
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                              fontFamily: "Lufga"),
-                        )
-                      ],
+                  Text(
+                    'Add Arena',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w500,
+                      height: 1,
                     ),
-                  ),
+                  )
                 ],
               ),
             ),

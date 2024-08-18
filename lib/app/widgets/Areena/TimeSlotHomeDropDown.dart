@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/colors.dart';
 
 import '../../utils/images.dart';
@@ -11,7 +12,7 @@ class TimeSlotHome extends StatelessWidget {
   final ValueChanged<String> onChanged;
   final bool isText;
   final double isWidth;
-  final Image image;
+  final String image;
   TimeSlotHome({
     required this.timeSlots,
     required this.selectedTimeSlot,
@@ -27,7 +28,7 @@ class TimeSlotHome extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Container(
         width: isWidth,
-        height: 44,
+        height: MediaQuery.of(context).size.height*0.05,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -36,11 +37,11 @@ class TimeSlotHome extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left:6,right:4),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
-              icon: Image.asset(
+              icon: SvgPicture.asset(
                 isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
                 width: 16,
                 height: 16,
@@ -59,7 +60,16 @@ class TimeSlotHome extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                         image,
+                        Text(
+                          image,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 32,
+                            fontFamily: 'Lufga',
+                            fontWeight: FontWeight.w400,
+                            height: 0.05,
+                          ),
+                        ),
                         SizedBox(width:4,),
                         isText? Text(
                             value,

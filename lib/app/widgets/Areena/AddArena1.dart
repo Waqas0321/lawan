@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/text.dart';
@@ -17,14 +20,15 @@ class AddAreena1 extends StatefulWidget {
   State<AddAreena1> createState() => _AddAreena1State();
 }
 
-class _AddAreena1State extends State<AddAreena1> {// Track the selected button
+class _AddAreena1State extends State<AddAreena1> {
+  // Track the selected button
   late bool _selectedButtonIndoor = true;
   late bool _selectedButtonOutdoor = false;
   late bool _selectedCourtButtonTruff = true;
   late bool _selectedCourtButtonGrass = false;
   late bool _selectedCourtButtonCement = false;
 
-  void _onButtonPressINOutdoor( String text){
+  void _onButtonPressINOutdoor(String text) {
     setState(() {
       switch (text) {
         case "Indoor":
@@ -40,7 +44,8 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
       }
     });
   }
-  void _onButtonPressCourt( String text){
+
+  void _onButtonPressCourt(String text) {
     setState(() {
       switch (text) {
         case "Truf":
@@ -71,12 +76,12 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin:EdgeInsets.only(bottom: 10),
+            margin: EdgeInsets.only(bottom: 20),
             child: BackdropFilter(
-              filter:ImageFilter.blur(sigmaX:6,sigmaY: 6),
+              filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
               child: Container(
                 width: MediaQuery.of(context).size.width - 16,
-                height:MediaQuery.of(context).size.height*0.87,
+                height: MediaQuery.of(context).size.height * 0.87,
                 decoration: ShapeDecoration(
                   color: Color(0xB2F2F3F2),
                   shape: RoundedRectangleBorder(
@@ -85,7 +90,7 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                   shadows: [
                     BoxShadow(
                       color: Color(0x19000000),
-                      blurRadius: 10,
+                      blurRadius: 0,
                       offset: Offset(0, -0.50),
                       spreadRadius: 0,
                     )
@@ -100,38 +105,47 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                         customHeaderCount(
                           thisCount: "1",
                         ),
-                        const SizedBox(
-                          height: 16,
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.029,
                         ),
-                        const Text(
-                          Apptext.add_arena_details,
-                          style: TextStyle(
-                            color: AappColor.black,
-                            fontSize: 16,
-                            fontFamily: 'Lufga',
-                            fontWeight: FontWeight.w500,
+                        SizedBox(
+                          width: 345,
+                          child: Text(
+                            'Add Arena Details',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w600,
+                              height: 1.3,
+                            ),
                           ),
                         ),
-                        const Text(
-                          Apptext.add_photos_name_and_location,
-                          style: TextStyle(
-                            color: AappColor.dark_grey,
-                            fontSize: 12,
-                            fontFamily: 'Lufga',
-                            fontWeight: FontWeight.w400,
+                        SizedBox(
+                          width: 345,
+                          child: Text(
+                            'Add photos, name and location',
+                            style: TextStyle(
+                              color: Color(0xFF545F71),
+                              fontSize: 12,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w400,
+                              height: 2,
+                            ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 12,
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.01,
                         ),
                         Container(
                           width: Get.width * 0.4,
-                          height: 120,
+                          height: MediaQuery.of(context).size.height * 0.14,
                           padding: const EdgeInsets.all(24),
                           decoration: ShapeDecoration(
                             color: AappColor.white,
                             shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1, color: AappColor.white),
+                              side: const BorderSide(
+                                  width: 1, color: AappColor.white),
                               borderRadius: BorderRadius.circular(32),
                             ),
                           ),
@@ -145,20 +159,28 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                                 height: 24,
                                 clipBehavior: Clip.antiAlias,
                                 decoration: const BoxDecoration(),
-                                child: Image.asset(Images.gallery,color:AappColor.mid_grey,),
-                              ),
-                              const SizedBox(height: 8),
-                              const Text(
-                                Apptext.add_picture,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
+                                child: SvgPicture.asset(
+                                  Images.gallery,
                                   color: AappColor.mid_grey,
-                                  fontSize: 14,
-                                  fontFamily: 'Lufga',
-                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
-
+                              SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.015),
+                              SizedBox(
+                                width: 149,
+                                child: Text(
+                                  'Add Picture',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFFACB3C0),
+                                    fontSize: 14,
+                                    fontFamily: 'Lufga',
+                                    fontWeight: FontWeight.w400,
+                                    height: 0.11,
+                                  ),
+                                ),
+                              )
                             ],
                           ),
                         ),
@@ -180,9 +202,9 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                           hintText: Apptext.enter_court_name,
                           text: Apptext.optional,
                         ),
-
-                        const SizedBox(height: 16),
-                        const Text(
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02),
+                        Text(
                           Apptext.arena_type,
                           style: TextStyle(
                             color: Color(0xFF545F71),
@@ -191,32 +213,39 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        const SizedBox(
-                          height: 2,
-                        ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.005),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                               child: ArenaINOutButton(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
                                 text: 'Indoor',
                                 isSelected: _selectedButtonIndoor,
-                                onPressed: (){
+                                onPressed: () {
                                   _onButtonPressINOutdoor("Indoor");
                                 },
                               ),
                             ),
-                            const SizedBox(width: 12),
+                            SizedBox(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.02),
                             Expanded(
                               child: ArenaINOutButton(
-                                text: 'Outdoor',
-                                isSelected: _selectedButtonOutdoor,
-                                onPressed: () => _onButtonPressINOutdoor("Outdoor")
-                              ),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.05,
+                                  text: 'Outdoor',
+                                  isSelected: _selectedButtonOutdoor,
+                                  onPressed: () =>
+                                      _onButtonPressINOutdoor("Outdoor")),
                             ),
                             const Expanded(child: SizedBox(width: 70)),
                           ],
                         ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02),
                         Text(
                           Apptext.flooring,
                           style: TextStyle(
@@ -233,11 +262,12 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                           children: [
                             Expanded(
                               child: ArenaINOutButton(
+                                height:
+                                MediaQuery.of(context).size.height * 0.05,
                                 text: 'Court Turf',
                                 isSelected: _selectedCourtButtonTruff,
                                 onPressed: () {
                                   _onButtonPressCourt("Truf");
-
                                 },
                               ),
                             ),
@@ -249,7 +279,9 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                                 onPressed: () => _onButtonPressCourt("Grass"),
                               ),
                             ),
-                            SizedBox(width: 6),
+                            SizedBox(
+                                width:
+                                MediaQuery.of(context).size.width * 0.02),
                             Expanded(
                               child: ArenaINOutButton(
                                 text: 'Cement',
@@ -259,21 +291,20 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 32,
-                        ),
+                        Spacer(),
                         Row(
-                          crossAxisAlignment:CrossAxisAlignment.center,
-                          mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                               child: CustomAreenaButton(
                                 text: Apptext.cancel,
-                                color: AappColor.white,
+                                color: null,
                                 borderColor: Color(0xFFE9EAF0),
-                                textColor: Colors.black, onTap: () {
-                                Get.back();
-                              },
+                                textColor: Colors.black,
+                                onTap: () {
+                                  Get.back();
+                                },
                               ),
                             ),
                             SizedBox(width: 16),
@@ -282,16 +313,19 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
                                 text: Apptext.next,
                                 color: AappColor.black,
                                 borderColor: Color(0xFFE9EAF0),
-                                textColor:AappColor.white, onTap: () async{
-                                Navigator.pop(context);
-                                _openBottomSheet(context);
-                              },
+                                textColor: AappColor.white,
+                                onTap: () async {
+                                  Navigator.pop(context);
+                                  _openBottomSheet(context);
+                                },
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 20,)
-                 ],
+                        SizedBox(
+                          height: 20,
+                        )
+                      ],
                     ),
                   ),
                 ),
@@ -302,17 +336,18 @@ class _AddAreena1State extends State<AddAreena1> {// Track the selected button
       ),
     );
   }
+
   void _openBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isDismissible: true,
       enableDrag: true,
-      isScrollControlled: true, // Allows the bottom sheet to use full screen height
+      isScrollControlled:
+          true, // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return AddAreena2();
       },
     );
   }
-
 }

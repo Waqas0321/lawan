@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/colors.dart';
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
@@ -34,7 +35,7 @@ class CustomTextFormField extends StatelessWidget {
                   fontSize: 14,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w400,
-                  height: 1.1, // Adjust height to center the text
+                  height: 0.11,
                 ),
                 border: InputBorder.none,
                 contentPadding:
@@ -48,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
             Text(
               text!,
               style: TextStyle(
-                color: AappColor.mid_grey,
+                color: Color(0xFF545F71),
                 fontSize: 12,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
@@ -58,7 +59,7 @@ class CustomTextFormField extends StatelessWidget {
           ],
           if (icon != null) ...[
             Container(
-              child: Image.asset(icon!,                               color: AappColor.mid_grey,
+              child: SvgPicture.asset(icon!,                               color: AappColor.mid_grey,
               ),
             ),
           ],
