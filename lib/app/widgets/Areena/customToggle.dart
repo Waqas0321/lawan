@@ -9,7 +9,7 @@ class CustomSwitch extends StatelessWidget {
   final Color activeColor;
   final Color inactiveColor;
   final Color activeTrackColor;
-  final Color inactiveTrackColor;
+  final Color? inactiveTrackColor;
   final Color borderColor;
   final double borderWidth;
   final Color thumbBorderColor;

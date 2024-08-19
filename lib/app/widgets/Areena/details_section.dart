@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/custom-Arena-textform.dart';
@@ -105,7 +106,8 @@ class _DetailsSctionState extends State<DetailsSction> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image(image: AssetImage(Images.picture), height: 24,width: 24,),
+                      SvgPicture.asset(Images.gallery),
+                      // Image(image: AssetImage(Images.picture), height: 24,width: 24,),
                       SizedBox(height: 8,),
                       Text(
                         'Add Picture',
@@ -118,7 +120,7 @@ class _DetailsSctionState extends State<DetailsSction> {
                           height: 0.11,
                         ),
                       ),
-        
+
                     ],
                   ),
                 ),
@@ -127,7 +129,7 @@ class _DetailsSctionState extends State<DetailsSction> {
             ),
             SizedBox(height: 12,),
             CustomTextFormField(
-                hintText: 'Petaling Jaya, Selangor', icon: Images.map),
+                hintText: 'Petaling Jaya, Selangor', icon: Images.location),
             SizedBox(height: 16,),
             Text(
               'Arena Type',

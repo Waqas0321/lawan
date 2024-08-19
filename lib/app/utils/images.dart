@@ -8,7 +8,7 @@ class Images {
   static const String location="$mainImage/location.svg";
   static const String chevron_sort="$mainImage/chevron-sort.png";
   static const String  oval="$mainImage/oval.png";
-  static const String frame1="$mainImage/frame1.png";
+  static const String frame1="$mainImage/frame1.svg";
 
   //home Screen
   static const String ball="$mainImage/ball.png";
@@ -25,10 +25,11 @@ class Images {
   static const String multi_devices="$mainImage/multi-devices.svg";
   static const String arena_image="$mainImage/fi_690839.png";
   static const String sales_image="$mainImage/fi_3446795.png";
-  static const String clock="$mainImage/clock.png";
+  static const String clock="$mainImage/clock.svg";
+  static const String dropdown="$mainImage/dropdown.svg";
   // Arena Filled
 static const String add_Image = "$mainImage/Add Image.png";
-static const String pencil = "$mainImage/pencil.png";
+static const String pencil = "$mainImage/pencil.svg";
 static const String picture = "$mainImage/Picture.png";
 static const String map = "$mainImage/map-pin.png";
 static const String layerImage = "$mainImage/Layer_1.png";

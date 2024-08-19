@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../utils/images.dart';
 
@@ -27,25 +28,24 @@ class TimeSlot extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            // side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
           ),
         ),
         child: Padding(
           padding: EdgeInsets.only(
               left: MediaQuery.of(context).size.width * 0.03,
-              right: MediaQuery.of(context).size.width * 0.03,
-              top: 12,
-              bottom: 12),
+              right: MediaQuery.of(context).size.width * 0.05,
+             ),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
-              icon: Image.asset(
+              icon: SvgPicture.asset(
                 isImage == true
-                    ? Images.chevron_sort
+                    ? Images.dropdown
                     : Images.chevron_down, // Ensure this path is correct
-                width: MediaQuery.of(context).size.width * 0.06,
-                height: MediaQuery.of(context).size.height * 0.06,
+                // width: MediaQuery.of(context).size.width * 0.0,
+                // height: MediaQuery.of(context).size.height * 0.02,
               ),
               onChanged: (String? newValue) {
                 if (newValue != null) {
@@ -55,30 +55,27 @@ class TimeSlot extends StatelessWidget {
               items: timeSlots.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        isClock
-                            ? Image.asset(Images.clock)
-                            : const SizedBox(
-                                width: 1,
-                              ),
-                        const SizedBox(
-                          width: 5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      isClock
+                          ? SvgPicture.asset(Images.clock)
+                          : const SizedBox(
+                              width: 1,
+                            ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        value,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w500,
                         ),
-                        Text(
-                          value,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'Lufga',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 );
               }).toList(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CircularContainer extends StatelessWidget {
   const CircularContainer({
@@ -30,15 +31,21 @@ class CircularContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(
-              image: AssetImage(image),
+            SvgPicture.asset(image,
               height: imageHeight,
               width: imageWidth,
             ),
             Text(
               text,
+              textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 10, fontWeight: FontWeight.w400, color: textColor),
+                color:textColor,
+                fontSize: 12,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w400,
+                height: 0,
+                letterSpacing: -0.24,
+              ),
             )
           ],
         ),

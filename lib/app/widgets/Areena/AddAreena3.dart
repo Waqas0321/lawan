@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/widgets/Areena/ArenaFilled1.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotTwoAreena.dart';
 import 'package:lawan/app/widgets/Areena/custom_container_Add_Areena3.dart';
 import '../../utils/colors.dart';
@@ -50,7 +51,7 @@ class _AddAreena3State extends State<AddAreena3> {
       child: Container(
         width: MediaQuery.of(context).size.width - 16,
         height: 711,
-        margin:EdgeInsets.only(bottom:16),
+        margin:EdgeInsets.only(bottom:20),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Color(0xB2F2F3F2),
@@ -74,36 +75,48 @@ class _AddAreena3State extends State<AddAreena3> {
                 thisCount: "3",
               ),
               SizedBox(
-                height: 16,
+                height: MediaQuery.of(context).size.height*0.04,
               ),
               Text(
-                Apptext.configure_the_rate_for_the_arena,
+                'Configure the rate',
                 style: TextStyle(
-                  color: AappColor.black,
+                  color: Colors.black,
                   fontSize: 16,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w500,
+                  height: 1,
                 ),
               ),
               Text(
-                Apptext.standard_hours_of_operation,
+                'Customize to fit your needs',
                 style: TextStyle(
-                  color: AappColor.mid_grey,
+                  color: Color(0xFF545F71),
                   fontSize: 12,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w400,
+                  height: 2,
                 ),
               ),
               SizedBox(
-                height: 16,
+                height:MediaQuery.of(context).size.height*0.005,
               ),
-              customText(text: "Weekend Rate"),
+              Text(
+                'Weekend Rate',
+                style: TextStyle(
+                  color: Color(0xFF545F71),
+                  fontSize: 14,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w400,
+                  height: 2,
+                ),
+              ),
               SizedBox(
                 width: double.infinity,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TimeSlotTwo(
+                      padding:10,
                       isRight: true,
                       isClock: false,
                       timeSlots: weeksRate,
@@ -143,6 +156,8 @@ class _AddAreena3State extends State<AddAreena3> {
                   children: [
                     TimeSlotTwo(
                       isRight: true,
+                      padding:10,
+
                       isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
@@ -177,7 +192,7 @@ class _AddAreena3State extends State<AddAreena3> {
                   Expanded(
                     child: CustomAreenaButton(
                       text: Apptext.cancel,
-                      color: AappColor.white,
+                      color:null,
                       borderColor: Color(0xFFE9EAF0),
                       textColor: AappColor.black,
                       onTap: () {
@@ -190,10 +205,11 @@ class _AddAreena3State extends State<AddAreena3> {
                     child: CustomAreenaButton(
                       text: Apptext.add_arena,
                       color: AappColor.black,
-                      borderColor: Color(0xFFE9EAF0),
+                      borderColor:AappColor.black,
+
                       textColor: AappColor.white,
                       onTap: () {
-                        showCustomAlertDialog(context,'Arena Added Successfully!','You can now start earning from this arena',true,'Add Another Court','Done');
+                        Get.to(AreenaFilled1());
                       },
                     ),
                   ),

@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/utils/text.dart';
 
 import '../../../main.dart';
 import '../../utils/colors.dart';
+import 'customToggle.dart';
 
 class CustomSwitchTimeslotRow extends StatelessWidget {
   final String leftText;
@@ -20,10 +22,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        left: 5,
-        right: 5
-      ), // Adjust height as needed
+      padding: EdgeInsets.only(left: 5, right: 5), // Adjust height as needed
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,16 +32,17 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: Text(
               leftText,
               style: TextStyle(
-                color: AappColor.txtColor,
+                color: isSelected?AappColor.dark_grey:Color(0xFFACB3C0),
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
+                height: 0.11,
               ),
             ),
           ),
           Spacer(),
           Text(
-            isSelected ? "open" : "closed",
+            isSelected ? Apptext.open :Apptext.closed,
             style: TextStyle(
               color: isSelected ? AappColor.dark_grey : AappColor.mid_grey,
               fontSize: 14,
@@ -59,9 +59,9 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
               width: 32,
               height: 16,
               activeColor: Colors.white,
-              inactiveColor: AappColor.mid_grey,
+              inactiveColor: AappColor.dark_grey,
               activeTrackColor: AappColor.brand2,
-              inactiveTrackColor: AappColor.white,
+              inactiveTrackColor:null,
               borderColor: isSelected ? AappColor.brand2 : AappColor.dark_grey,
               borderWidth: 2.0,
               thumbBorderColor: Colors.red,

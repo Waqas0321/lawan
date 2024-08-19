@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/Areena/ArenaFilled1.dart';
@@ -43,9 +44,9 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
                 ),
               ),
               SizedBox(height: 8),
-             image? Image.asset(
+             image? SvgPicture.asset(
                 Images.frame1,
-                color: AappColor.bluee, // Replace with your color if needed
+                // color: AappColor.bluee, // Replace with your color if needed
               ):SizedBox(height: 4,),
               SizedBox(height: 8),
               Text(

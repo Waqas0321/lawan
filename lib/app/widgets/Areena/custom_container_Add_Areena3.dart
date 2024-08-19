@@ -26,35 +26,47 @@ class CustomContainerAreena3 extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              text1,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AappColor.containerTextColor,
-                fontSize: 12,
-                fontFamily: 'Lufga',
-                fontWeight: FontWeight.w400,
+            SizedBox(
+              width: 345,
+              child: Text(
+                text1,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFFACB3C0),
+                  fontSize: 12,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w400,
+                  height:1.4,
+                ),
               ),
             ),
-            Text(
-              text2,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontFamily: 'Lufga',
-                fontWeight: FontWeight.w600,
-                letterSpacing: -0.72,
+            SizedBox(
+              width: 345,
+              child: Text(
+                text2,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w600,
+                  height:1.2,
+                  letterSpacing: -0.72,
+                ),
               ),
             ),
-            Text(
-              text3,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: AappColor.borderColor,
-                fontSize: 12,
-                fontFamily: 'Lufga',
-                fontWeight: FontWeight.w400,
+            SizedBox(
+              width: 345,
+              child: Text(
+                text3,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFFDEE1E2),
+                  fontSize: 12,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w400,
+                  height: 2,
+                ),
               ),
             )
           ],

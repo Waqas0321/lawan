@@ -24,9 +24,9 @@ class customHeaderCount extends StatelessWidget {
           Expanded(
             child: CustomCard(
               count: '1',
-              showborder: thisCount == "1"?false:true,
+              showborder: thisCount == "1" ? false : true,
               text: Apptext.details,
-              color: thisCount == "1" ? AappColor.brand2 :null,
+              color: thisCount == "1" ? AappColor.brand2 : null,
               linecolor: AappColor.grey3,
               countcolor:
                   thisCount == "1" ? AappColor.white : AappColor.dark_grey,
@@ -39,8 +39,9 @@ class customHeaderCount extends StatelessWidget {
           Expanded(
             child: CustomCard(
               count: '2',
-              showborder: thisCount == "2"?false:true,              text: Apptext.hour,
-              color: thisCount == "2" ? AappColor.brand2 :null,
+              showborder: thisCount == "2" ? false : true,
+              text: Apptext.hour,
+              color: thisCount == "2" ? AappColor.brand2 : null,
               countcolor:
                   thisCount == "2" ? AappColor.white : AappColor.dark_grey,
               textcolor:
@@ -54,9 +55,9 @@ class customHeaderCount extends StatelessWidget {
             child: CustomCard(
               count: '3',
               text: Apptext.rate,
-              showborder: thisCount == "3"?false:true,              color: thisCount == "3" ? AappColor.brand2 :null,
+              showborder: thisCount == "3" ? false : true,
+              color: thisCount == "3" ? AappColor.brand2 : null,
               linecolor: Colors.transparent,
-
               countcolor:
                   thisCount == "3" ? AappColor.white : AappColor.dark_grey,
               textcolor:

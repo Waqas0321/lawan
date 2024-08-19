@@ -9,6 +9,7 @@ import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 
 import '../../../widgets/Areena/AddArena1.dart';
+import '../../../widgets/Areena/AlertBox.dart';
 
 class ScreenBody extends StatelessWidget {
   ScreenBody({
@@ -306,4 +307,108 @@ class ScreenBody extends StatelessWidget {
       ],
     );
   }
+  void showCustomAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.transparent, // Make the background transparent
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(32), // Custom border radius
+          ),
+          contentPadding: EdgeInsets.zero, // Remove default padding
+          content: Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xB2F2F3F2), // Custom background color
+                    borderRadius: BorderRadius.circular(32), // Match the border radius
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x19000000),
+                        blurRadius: 0,
+                        offset: Offset(0, -0.50),
+                        spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Step 1',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        'Add Arena Details',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Add photos, name, and location',
+                        style: TextStyle(
+                          color: Color(0xFF545F71),
+                          fontSize: 12,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.14,
+                        padding: const EdgeInsets.all(24),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(32),
+                          border: Border.all(width: 1, color: Colors.white),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.photo, color: Color(0xFF545F71)),
+                            SizedBox(height: 8),
+                            Text(
+                              'Add Picture',
+                              style: TextStyle(
+                                color: Color(0xFF545F71),
+                                fontSize: 12,
+                                fontFamily: 'Lufga',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                        child: Text('Close'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
 }

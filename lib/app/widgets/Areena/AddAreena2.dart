@@ -53,13 +53,14 @@ class _AddAreena2State extends State<AddAreena2> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize=MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: BackdropFilter(
         filter:ImageFilter.blur(sigmaY:10,sigmaX:10),
         child: Container(
           width: MediaQuery.of(context).size.width -16,
-          margin:EdgeInsets.only(bottom:16),
-          height: 711,
+          margin:EdgeInsets.only(bottom:16,left:1,right: 1),
+          height: MediaQuery.of(context).size.height*0.78,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             color: Color(0xB2F2F3F2),
@@ -83,27 +84,40 @@ class _AddAreena2State extends State<AddAreena2> {
                 customHeaderCount(
                   thisCount: "2",
                 ),
-                SizedBox(height: 16,),
-                Text(
-                  Apptext.add_arena_details,
-                  style: TextStyle(
-                    color: AappColor.black,
-                    fontSize: 16,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w500,
-                  ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.035,
                 ),
-                Text(
-                  Apptext.set_standard_hours,
-                  style: TextStyle(
-                    color: AappColor.mid_grey,
-                    fontSize: 12,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w400,
+                SizedBox(
+                  width: 345,
+                  child: Text(
+                    'Set Standard Hours',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w600,
+                      height: 0.09,
+                    ),
                   ),
                 ),
                 SizedBox(
-                  height: 8,
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                SizedBox(
+                  width: 345,
+                  child: Text(
+                    'Standard hours of operation for this arena',
+                    style: TextStyle(
+                      color: Color(0xFF545F71),
+                      fontSize: 12,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w400,
+                      height: 2,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.012,
                 ),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.sunday,
@@ -126,7 +140,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -162,7 +176,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.tuesdayoday,
                   rightText: Apptext.open,
@@ -173,7 +187,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -209,7 +223,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.wednesday,
                   rightText: Apptext.open,
@@ -220,7 +234,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -256,7 +270,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.friday,
                   rightText: Apptext.open,
@@ -267,7 +281,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -304,7 +318,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: MediaQuery.of(context).size.height*0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.sunday,
                   rightText: Apptext.open,
@@ -323,8 +337,9 @@ class _AddAreena2State extends State<AddAreena2> {
                     Expanded(
                       child: CustomAreenaButton(
                         text: Apptext.cancel,
-                        color: AappColor.white,
+                        color: null,
                         borderColor: Color(0xFFE9EAF0),
+
                         textColor: AappColor.black,
                         onTap: () {
                           Get.back();
@@ -336,7 +351,7 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: CustomAreenaButton(
                         text: Apptext.next,
                         color: AappColor.black,
-                        borderColor: Color(0xFFE9EAF0),
+                        borderColor: AappColor.black,
                         textColor: AappColor.white,
                         onTap: () {
                         Get.back();

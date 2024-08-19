@@ -78,7 +78,7 @@ class _AddAreena1State extends State<AddAreena1> {
           Container(
             margin: EdgeInsets.only(bottom: 20),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
+              filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
               child: Container(
                 width: MediaQuery.of(context).size.width - 16,
                 height: MediaQuery.of(context).size.height * 0.87,

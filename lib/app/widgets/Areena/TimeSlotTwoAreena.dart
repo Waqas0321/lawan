@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../utils/images.dart';
 
@@ -13,6 +14,7 @@ class TimeSlotTwo extends StatelessWidget {
   final FontWeight font2;
   final bool isRight;
   final bool isLeft;
+  final double padding;
   TimeSlotTwo({
     required this.timeSlots,
     required this.selectedTimeSlot,
@@ -20,7 +22,7 @@ class TimeSlotTwo extends StatelessWidget {
     this.isClock = true, this.font1 = FontWeight.w500, this.font2 = FontWeight.w400,
     this.isRight = false,
     this.isLeft = false,
-
+    this.padding=0.0,
   });
 
   @override
@@ -33,19 +35,19 @@ class TimeSlotTwo extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            // side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left:0,right:18),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
-              icon: Image.asset(
-                isImage==true?Images.chevron_sort:Images.chevron_down, // Ensure this path is correct
-                width: 19,
-                height: 19,
+              icon: SvgPicture.asset(
+                isImage==true?Images.dropdown:Images.chevron_down, // Ensure this path is correct
+                width: 10,
+                height: 15,
               ),
               onChanged: (String? newValue) {
                 if (newValue != null) {
@@ -71,15 +73,18 @@ class TimeSlotTwo extends StatelessWidget {
                             fontFamily: 'Lufga',
                             fontWeight: FontWeight.w400,
                           )
-                        ):SizedBox(width: 1,),
-                        SizedBox(width: 12,),
-                        Text(
-                          value,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'Lufga',
-                            fontWeight: FontWeight.w500,
+                        ):SizedBox(width: 0,),
+                        // SizedBox(width: 12,),
+                        Padding(
+                          padding:  EdgeInsets.only(left:padding),
+                          child: Text(
+                            value,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         SizedBox(width: 12),
@@ -91,7 +96,7 @@ class TimeSlotTwo extends StatelessWidget {
                               fontFamily: 'Lufga',
                               fontWeight: FontWeight.w400,
                             )
-                        ):SizedBox(width: 1,)
+                        ):SizedBox(width: 0,)
                       ],
                     ),
                   ),
