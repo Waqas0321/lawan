@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/controller/bottom_bar/bottom_navigation_controller.dart';
 import 'package:lawan/app/screens/HomeScreen/Widgets/homeScreen_Body.dart';
+import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
 import 'package:lawan/app/screens/sale/sale_main.dart';
 import 'package:lawan/app/screens/sessions/session_main.dart';
 import 'package:lawan/app/utils/images.dart';
@@ -55,35 +56,30 @@ class HomeScreen extends StatelessWidget {
             child: Stack(children: [
               SingleChildScrollView(
                 child: SafeArea(
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width * 0.02,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                        right: MediaQuery.of(context).size.width * 0.03),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Obx(() {
-                          if (controller.selectedItem.value == "Arena") {
-                            return Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                ScreenHeader(),
-                                SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.01),
-                                ScreenBody(),
-                              ],
-                            );
-                          } else if (controller.selectedItem.value == "Sales") {
-                            return SaleMain();
-                          } else {
-                            return SessionMain();
-                          }
-                        }),
-                      ],
-                    ),
-                  ),
+                  child: Obx(() {
+                    if (controller.selectedItem.value == "Arena") {
+                      return Padding(
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.width * 0.02,
+                            left: MediaQuery.of(context).size.width * 0.03,
+                            right: MediaQuery.of(context).size.width * 0.03),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ScreenHeader(),
+                            SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.01),
+                            ScreenBody(),
+                          ],
+                        ),
+                      );
+                    } else if (controller.selectedItem.value == "Sales") {
+                      return SaleMain();
+                    } else {
+                      return Sessionscreen();
+                    }
+                  }),
                 ),
               ),
               CustomBottomNavigation(
