@@ -15,31 +15,34 @@ class CustomTabBar extends StatelessWidget {
     return Container(
       height: 51,
       clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(color: Color(0xCCE5E6E5), borderRadius: BorderRadius.circular(200)),
+      decoration: BoxDecoration(color: Color(0xFFDEE1E2), borderRadius: BorderRadius.circular(200)),
       child: Padding(
         padding: EdgeInsets.only(
-          top: MediaQuery.of(context).size.width / 65,
-          bottom: MediaQuery.of(context).size.width / 65,
-            left: MediaQuery.of(context).size.width / 65,
-            right: MediaQuery.of(context).size.width / 65
+          top: MediaQuery.of(context).size.width / 110,
+          bottom: MediaQuery.of(context).size.width / 100,
+            left: MediaQuery.of(context).size.width / 100,
+            right: MediaQuery.of(context).size.width / 100
         ),
         child: Center(
           child: TabBar(
 
             indicatorSize: TabBarIndicatorSize.tab,
             dividerColor: Colors.transparent,
-            indicatorColor: AappColor.white,
+            indicatorColor: AappColor.black,
             indicator: BoxDecoration(
               color: AappColor.white,
               borderRadius: BorderRadius.circular(200)
             ),
 
             dividerHeight: 1,
-            labelStyle: const TextStyle(
-              color: Colors.black,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
+            unselectedLabelColor:AappColor.dark_grey,
+            labelStyle:TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+            fontFamily: 'Lufga',
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.28,
+          ),
             tabs: tabs.map((tab) {
               return SizedBox(
                 height: 50,

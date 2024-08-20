@@ -32,12 +32,13 @@ class TimeSlotHome extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            // side: BorderSide(width: 1, color: Color(0xFFE9EAF0)
+            // ),
             borderRadius: BorderRadius.circular(80),
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left:6,right:4),
+          padding: const EdgeInsets.only(left:2,right:4),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,

@@ -69,11 +69,13 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               CustomBottomNavigation(
+                iconSize:17,
                 textStyle: TextStyle(
                   fontSize: 15,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w400,
                   height: 1,
+                  color:Color(0xffE5E6E5CC),
                   letterSpacing: -0.24,
                 ),
               ),

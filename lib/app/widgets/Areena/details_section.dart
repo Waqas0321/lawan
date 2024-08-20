@@ -89,6 +89,7 @@ class _DetailsSctionState extends State<DetailsSction> {
                       borderRadius: BorderRadius.circular(32),
                     ),
                   ),
+
                 ),
                 SizedBox(width: 16,),
                 Container(
@@ -109,7 +110,9 @@ class _DetailsSctionState extends State<DetailsSction> {
                       SvgPicture.asset(Images.gallery),
                       // Image(image: AssetImage(Images.picture), height: 24,width: 24,),
                       SizedBox(height: 8,),
-                      Text(
+                    SizedBox(
+                      width: 149,
+                      child: Text(
                         'Add Picture',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -117,8 +120,10 @@ class _DetailsSctionState extends State<DetailsSction> {
                           fontSize: 14,
                           fontFamily: 'Lufga',
                           fontWeight: FontWeight.w400,
-                          height: 0.11,
+                          height:1,
                         ),
+                      ),
+
                       ),
 
                     ],
@@ -129,42 +134,53 @@ class _DetailsSctionState extends State<DetailsSction> {
             ),
             SizedBox(height: 12,),
             CustomTextFormField(
+              fontWeight:FontWeight.w500,
+                color:AappColor.black,
                 hintText: 'Petaling Jaya, Selangor', icon: Images.location),
-            SizedBox(height: 16,),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02),
             Text(
-              'Arena Type',
+              Apptext.arena_type,
               style: TextStyle(
                 color: Color(0xFF545F71),
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
-                height: 1.5
               ),
             ),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.005),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: ArenaINOutButton(
-                    text: 'Indoor',
-                    isSelected: _selectedButtonIndoor,
-                    onPressed: (){
-                      _onButtonPressINOutdoor("Indoor");
-                    },
-                  ),
+                ArenaINOutButton(
+                  borderColor:Color(0xFFDEE1E2),
+                  height:
+                  MediaQuery.of(context).size.height * 0.05,
+                  text: 'Indoor',
+
+                  isSelected: _selectedButtonIndoor,
+                  onPressed: () {
+                    _onButtonPressINOutdoor("Indoor");
+                  },
                 ),
-                SizedBox(width: 12),
-                Expanded(
-                  child: ArenaINOutButton(
-                      text: 'Outdoor',
-                      isSelected: _selectedButtonOutdoor,
-                      onPressed: () => _onButtonPressINOutdoor("Outdoor")
-                  ),
-                ),
-                Expanded(child: SizedBox(width: 70)),
+                SizedBox(
+                    width:
+                    MediaQuery.of(context).size.width * 0.02),
+                ArenaINOutButton(
+                    borderColor:Color(0xFFDEE1E2),
+
+                    height:
+                    MediaQuery.of(context).size.height * 0.05,
+                    text: 'Outdoor',
+                    isSelected: _selectedButtonOutdoor,
+                    onPressed: () =>
+                        _onButtonPressINOutdoor("Outdoor")),
+                const Expanded(child: SizedBox(width: 70)),
               ],
             ),
-            SizedBox(height: 16,),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02),
             Text(
               Apptext.flooring,
               style: TextStyle(
@@ -172,36 +188,45 @@ class _DetailsSctionState extends State<DetailsSction> {
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
-                height: 1.5
               ),
+            ),
+            SizedBox(
+              height: ScreenDimensions(context).height2Percent,
             ),
             Row(
               children: [
-                Expanded(
-                  child: ArenaINOutButton(
-                    text: 'Court Turf',
-                    isSelected: _selectedCourtButtonTruff,
-                    onPressed: () {
-                      _onButtonPressCourt("Truf");
+                ArenaINOutButton(
+                  borderColor:Color(0xFFDEE1E2),
 
-                    },
-                  ),
+                  height:
+                  MediaQuery.of(context).size.height * 0.05,
+                  text: 'Court Turf',
+                  isSelected: _selectedCourtButtonTruff,
+                  onPressed: () {
+                    _onButtonPressCourt("Truf");
+                  },
                 ),
-                SizedBox(width: 12),
-                Expanded(
-                  child: ArenaINOutButton(
-                    text: 'Court Grass',
-                    isSelected: _selectedCourtButtonGrass,
-                    onPressed: () => _onButtonPressCourt("Grass"),
-                  ),
+                SizedBox(width: 6),
+                ArenaINOutButton(
+                  borderColor:Color(0xFFDEE1E2),
+                  height:
+                  MediaQuery.of(context).size.height * 0.05,
+
+                  text: 'Court Grass',
+                  isSelected: _selectedCourtButtonGrass,
+                  onPressed: () => _onButtonPressCourt("Grass"),
                 ),
-                SizedBox(width: 12),
-                Expanded(
-                  child: ArenaINOutButton(
-                    text: 'Cement',
-                    isSelected: _selectedCourtButtonCement,
-                    onPressed: () => _onButtonPressCourt("Cement"),
-                  ),
+                SizedBox(
+                    width:
+                    MediaQuery.of(context).size.width * 0.02),
+                ArenaINOutButton(
+                  borderColor:Color(0xFFDEE1E2),
+                  height:
+                  MediaQuery.of(context).size.height * 0.05,
+
+                  text: 'Cement',
+                  isSelected: _selectedCourtButtonCement,
+                  onPressed: () => _onButtonPressCourt("Cement"),
                 ),
               ],
             ),

@@ -23,7 +23,7 @@ class CustomBottomNavigation extends StatelessWidget {
     this.containerColor = const Color(0xCCE5E6E5),
     this.borderRadius = 80.0,
     this.margin = const EdgeInsets.only(bottom: 10),
-    this.iconSize = 15.0,
+    this.iconSize = 17.0,
     this.spacing = 6.0,
     required this.textStyle,
   }) : super(key: key);
@@ -50,9 +50,10 @@ class CustomBottomNavigation extends StatelessWidget {
             children: [
               Expanded(
                 child: CircularContainer(
+                  padding:1,
                   image: Images.play, // Replace with your asset path
                   color: Colors.white,
-                  imageHeight: iconSize,
+                  imageHeight: 20,
                   text: "Session",
                   imageWidth: 15,
                   // textStyle: textStyle,
@@ -63,11 +64,13 @@ class CustomBottomNavigation extends StatelessWidget {
               ),
               Expanded(
                 child: CircularContainer(
+                  padding:0,
                   image:Images.areena, // Replace with your asset path
                   color: Colors.black,
                   text: "Arena",
                   textColor: Colors.white,
-                  imageHeight: iconSize,
+                  imageHeight: 17,
+fontWeight:FontWeight.w600,
                   imageWidth: iconSize,
                   // textStyle: textStyle,
                 ),
@@ -77,11 +80,12 @@ class CustomBottomNavigation extends StatelessWidget {
               ),
               Expanded(
                 child: CircularContainer(
+                  padding:1,
                   image:Images.sales, // Replace with your asset path
                   color: Colors.white,
                   text: "Sales",
                   textColor: Colors.black,
-                  imageHeight: iconSize,
+                  imageHeight: 20,
                   imageWidth: iconSize,
                   // textStyle: textStyle,
                 ),

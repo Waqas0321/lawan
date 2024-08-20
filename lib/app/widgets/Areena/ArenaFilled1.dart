@@ -124,33 +124,37 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     onChanged: _onTimeSlotChanged,
                                     isImage: false,
                                     isWidth: MediaQuery.of(context).size.width *
-                                        0.34,
+                                        0.30,
                                     image: "⚽",
                                   ),
                                   Container(
                                     height: 44,
                                     width: MediaQuery.of(context).size.width *
-                                        0.20,
+                                        0.16,
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius:
                                             BorderRadius.circular(300)),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.only(left: 2),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Image(
                                             image: AssetImage(Images.avtar),
-                                            height: 32,
-                                            width: 32,
+                                            height: 38,
+                                            width: 34,
+                                            fit: BoxFit.contain,
                                           ),
                                           SvgPicture.asset(
                                             Images.chevron_down,
                                             height: 16,
                                             width: 16,
-                                          )
+                                          ),
+                                          SizedBox(
+                                            width: 1,
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -173,7 +177,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height:screenheight*00.009,),
+                              SizedBox(
+                                height: screenheight * 00.009,
+                              ),
                               Row(
                                 children: [
                                   Expanded(
@@ -181,7 +187,6 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                       child: GestureDetector(
                                           onTap: () {
                                             showCustomEditAlertDialog(
-                                                context,
                                                 "Edit Arena Name",
                                                 'MBPJ Sports Complex');
                                           },
@@ -189,7 +194,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                             Images.pencil,
                                             height: 20,
                                             width: 20,
-                                            fit:BoxFit.scaleDown,
+                                            fit: BoxFit.scaleDown,
                                           ))),
                                   // SizedBox(width: 12),
                                   Expanded(
@@ -209,12 +214,12 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                         height: 44,
                                         text: 'KLFA Court',
                                         color: AappColor.white,
-                                        textColor: Color(0xFF545F71),
+                                        textColor: AappColor.dark_grey,
                                       )),
                                 ],
                               ),
                               SizedBox(
-                                height: 12,
+                                height: screenheight * 0.02,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -226,7 +231,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                         height: 44,
                                         text: 'Sports Arena Mahkota Cheras',
                                         color: AappColor.white,
-                                        textColor: AappColor.black,
+                                        textColor: AappColor.dark_grey,
                                       )),
                                   SizedBox(width: 12),
                                   CustomContainer(
@@ -245,7 +250,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 ],
                               ),
                               SizedBox(
-                                height: 16,
+                                height: screenheight * 0.02,
                               ),
                               Text(
                                 'Court',
@@ -257,13 +262,16 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                   height: 1.5,
                                 ),
                               ),
+                              SizedBox(
+                                height: screenheight * 0.01,
+                              ),
                               Row(
                                 children: [
                                   Expanded(
-                                      flex: 2,
+                                      flex: 3,
                                       child: GestureDetector(
                                           onTap: () {
-                                            showCustomEditAlertDialog(context,
+                                            showCustomEditAlertDialog(
                                                 "Edit Court Name", '1');
                                           },
                                           child: SvgPicture.asset(
@@ -287,7 +295,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     height: 44,
                                     text: "2",
                                     color: AappColor.white,
-                                    textColor: AappColor.black,
+                                    textColor: AappColor.dark_grey,
                                     circular: true,
                                   ),
                                   SizedBox(
@@ -298,7 +306,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     height: 44,
                                     text: "3",
                                     color: AappColor.white,
-                                    textColor: AappColor.black,
+                                    textColor: AappColor.dark_grey,
                                     circular: true,
                                   ),
                                   SizedBox(
@@ -327,8 +335,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           Column(
                             children: [
                               Container(
-                                height: MediaQuery.of(context).size.height,
-                                color: Colors.transparent,
+                                height:
+                                    MediaQuery.of(context).size.height / 1.9,
+                                // color: const Color(0xFFF2F3F2),
                                 child: DefaultTabController(
                                     length: 3,
                                     child: Column(
@@ -404,7 +413,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -479,19 +488,22 @@ class CustomContainer extends StatelessWidget {
     required this.width,
     required this.height,
     this.text = '',
-    required this.color,
+    this.color,
     required this.textColor,
     this.circular = false,
     this.icon = false,
+    this.image=Images.areena,
+    this.imageColor= Colors.white
   });
   final double width;
   final double height;
   final String text;
-  final Color color;
+  final Color? color;
   final Color textColor;
   final bool circular;
   final bool icon;
-
+  final String image;
+  final Color imageColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -501,16 +513,18 @@ class CustomContainer extends StatelessWidget {
       decoration: ShapeDecoration(
         color: color,
         shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: AappColor.white),
           borderRadius:
               circular ? BorderRadius.circular(100) : BorderRadius.circular(32),
         ),
       ),
       child: Center(
         child: icon
-            ? Icon(
-                Icons.add,
-                size: 20,
-                color: Colors.white,
+            ? SvgPicture.asset(
+                image,
+                height: 20,
+                width: 20,
+                color:color,
               )
             : Text(
                 text,
