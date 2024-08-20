@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:lawan/app/controller/bottom_bar/bottom_navigation_controller.dart';
 
 import '../../screens/HomeScreen/Widgets/circularContainer.dart';
 import '../../utils/images.dart';
@@ -30,8 +32,10 @@ class CustomBottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<BottomNavigationController>();
     return Positioned(
-      left: MediaQuery.of(context).size.width / 3.9, // Adjust position as needed
+      left:
+          MediaQuery.of(context).size.width / 3.9, // Adjust position as needed
       bottom: 20,
       child: Container(
         margin: margin,
@@ -45,49 +49,72 @@ class CustomBottomNavigation extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: CircularContainer(
-                  image: Images.play, // Replace with your asset path
-                  color: Colors.white,
-                  imageHeight: iconSize,
-                  text: "Session",
-                  imageWidth: 15,
-                  // textStyle: textStyle,
-                ),
-              ),
-              SizedBox(
-                width: spacing,
-              ),
-              Expanded(
-                child: CircularContainer(
-                  image:Images.areena, // Replace with your asset path
-                  color: Colors.black,
-                  text: "Arena",
-                  textColor: Colors.white,
-                  imageHeight: iconSize,
-                  imageWidth: iconSize,
-                  // textStyle: textStyle,
-                ),
-              ),
-              SizedBox(
-                width: spacing,
-              ),
-              Expanded(
-                child: CircularContainer(
-                  image:Images.sales, // Replace with your asset path
-                  color: Colors.white,
-                  text: "Sales",
-                  textColor: Colors.black,
-                  imageHeight: iconSize,
-                  imageWidth: iconSize,
-                  // textStyle: textStyle,
-                ),
-              ),
-            ],
-          ),
+          child: Obx(() => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: CircularContainer(
+                      image: Images.play,
+                      color: controller.selectedItem.value == "Session"
+                          ? Colors.black
+                          : Colors.white,
+                      imageHeight: iconSize,
+                      textColor: controller.selectedItem.value == "Session"
+                          ? Colors.white
+                          : Colors.black,
+                      text: "Session",
+                      imageWidth: 15,
+
+                      onTap: () {
+                        controller.changeSelection("Session");
+                      },
+                      // textStyle: textStyle,
+                    ),
+                  ),
+                  SizedBox(
+                    width: spacing,
+                  ),
+                  Expanded(
+                    child: CircularContainer(
+                      image: Images.areena, // Replace with your asset path
+                      color: controller.selectedItem.value == "Arena"
+                          ? Colors.black
+                          : Colors.white,
+                      text: "Arena",
+                      textColor: controller.selectedItem.value == "Arena"
+                          ? Colors.white
+                          : Colors.black,
+                      imageHeight: iconSize,
+                      imageWidth: iconSize,
+                      onTap: () {
+                        controller.changeSelection("Arena");
+                      },
+                      // textStyle: textStyle,
+                    ),
+                  ),
+                  SizedBox(
+                    width: spacing,
+                  ),
+                  Expanded(
+                    child: CircularContainer(
+                      image: Images.sales, // Replace with your asset path
+                      color: controller.selectedItem.value == "Sales"
+                          ? Colors.black
+                          : Colors.white,
+                      text: "Sales",
+                      textColor: controller.selectedItem.value == "Sales"
+                          ? Colors.white
+                          : Colors.black,
+                      imageHeight: iconSize,
+                      imageWidth: iconSize,
+                      onTap: () {
+                        controller.changeSelection("Sales");
+                      },
+                      // textStyle: textStyle,
+                    ),
+                  ),
+                ],
+              )),
         ),
       ),
     );

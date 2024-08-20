@@ -3,19 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/Areena/AddArena1.dart';
+
 void main() {
   runApp(MyApp()
-    // DevicePreview(
-    //   enabled: true,
-    //   builder: (context) => ScreenUtilInit(
-    //     designSize: Size(375, 812), // Design size for scaling
-    //     builder: (context, child) => MyApp(),
-    //   ),
-    // ),
-  );
+      // DevicePreview(
+      //   enabled: true,
+      //   builder: (context) => ScreenUtilInit(
+      //     designSize: Size(375, 812), // Design size for scaling
+      //     builder: (context, child) => MyApp(),
+      //   ),
+      // ),
+      );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Custom Switch Demo',
+      initialBinding: InitialBindings(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -31,8 +34,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
 
 void showCustomAlertDialogssss(BuildContext context) {
   showDialog(

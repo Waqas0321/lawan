@@ -5,7 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:lawan/app/controller/bottom_bar/bottom_navigation_controller.dart';
 import 'package:lawan/app/screens/HomeScreen/Widgets/homeScreen_Body.dart';
+import 'package:lawan/app/screens/sale/sale_main.dart';
+import 'package:lawan/app/screens/sessions/session_main.dart';
 import 'package:lawan/app/utils/images.dart';
 import '../../widgets/Areena/AddArena1.dart';
 import '../../widgets/Areena/circularContainer.dart';
@@ -29,6 +32,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<BottomNavigationController>();
     return Scaffold(
         backgroundColor: const Color(0xFFF2F3F2),
         body: ColorFiltered(
@@ -59,10 +63,24 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ScreenHeader(),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.01),
-                        ScreenBody(),
+                        Obx(() {
+                          if (controller.selectedItem.value == "Arena") {
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ScreenHeader(),
+                                SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.01),
+                                ScreenBody(),
+                              ],
+                            );
+                          } else if (controller.selectedItem.value == "Sales") {
+                            return SaleMain();
+                          } else {
+                            return SessionMain();
+                          }
+                        }),
                       ],
                     ),
                   ),
