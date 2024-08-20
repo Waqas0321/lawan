@@ -1,15 +1,10 @@
 import 'package:acrylic_any/acrylic_any.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
 import '../../utils/text.dart';
-import 'AddArena1.dart';
-import 'AlertBox.dart';
 import 'ArenaFilled1.dart';
 import 'areenaButton.dart';
 
