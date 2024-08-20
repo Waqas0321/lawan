@@ -44,7 +44,7 @@ class _SessionHeaderState extends State<SessionHeader> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TimeSlotHome(
-              color: Color(0xFFE5E7EB),
+              color: Colors.white,
               timeSlots: weeksRate,
               selectedTimeSlot: _selectedTimeSlot,
               onChanged: _onTimeSlotChanged,
@@ -56,7 +56,7 @@ class _SessionHeaderState extends State<SessionHeader> {
               height: MediaQuery.of(context).size.height * 0.05,
               width: MediaQuery.of(context).size.width * 0.19,
               decoration: BoxDecoration(
-                  color: Color(0xFFE5E7EB),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
