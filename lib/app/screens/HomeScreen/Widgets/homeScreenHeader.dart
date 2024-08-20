@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:lawan/app/utils/text.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotHomeDropDown.dart';
 import '../../../utils/images.dart';
+import 'Table_Calender.dart';
 
 class ScreenHeader extends StatefulWidget {
   ScreenHeader({
@@ -21,6 +22,8 @@ class _ScreenHeaderState extends State<ScreenHeader> {
     'Soccer',
     'Futsal',
   ];
+  String selectedDate = '';
+
 
   // Currently selected time slot
   String _selectedTimeSlot = 'Soccer';
@@ -43,12 +46,21 @@ class _ScreenHeaderState extends State<ScreenHeader> {
               selectedTimeSlot: _selectedTimeSlot,
               onChanged: _onTimeSlotChanged,
               isImage: false,
-              isWidth: MediaQuery.of(context).size.width * 0.31,
-              image:"⚽",
+              isWidth: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.31,
+              image: "⚽",
             ),
             Container(
-              height: MediaQuery.of(context).size.height * 0.05,
-              width: MediaQuery.of(context).size.width * 0.19,
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height * 0.05,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.19,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300)),
@@ -62,12 +74,15 @@ class _ScreenHeaderState extends State<ScreenHeader> {
                     width: 40,
                   ),
                   SvgPicture.asset(
-                  Images.chevron_down,
+                    Images.chevron_down,
                     height: 16,
                     width: 16,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.004,
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.004,
                   ),
                 ],
               ),
@@ -76,11 +91,17 @@ class _ScreenHeaderState extends State<ScreenHeader> {
         ),
         IntrinsicHeight(
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.015,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.015,
           ),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.8,
+          width: MediaQuery
+              .of(context)
+              .size
+              .width * 0.8,
           child: Text.rich(
             TextSpan(
               children: [
@@ -110,7 +131,9 @@ class _ScreenHeaderState extends State<ScreenHeader> {
             ),
             textAlign: TextAlign.center,
           ),
-        )
+        ),
+
+
       ],
     );
   }

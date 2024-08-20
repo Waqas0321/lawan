@@ -13,12 +13,15 @@ class TimeSlotHome extends StatelessWidget {
   final bool isText;
   final double isWidth;
   final String image;
+  final Color color;
   TimeSlotHome({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged, required this.isImage,
     this.isText = true,
     required this.isWidth, required this.image,
+    this.color = Colors.white,
+
 
   });
 
@@ -30,7 +33,7 @@ class TimeSlotHome extends StatelessWidget {
         width: isWidth,
         height: MediaQuery.of(context).size.height*0.05,
         decoration: ShapeDecoration(
-          color: Colors.white,
+          color: color,
           shape: RoundedRectangleBorder(
             side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
