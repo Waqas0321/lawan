@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:overlay_group_avatar/overlay_group_avatar.dart';
 
 import '../../../utils/images.dart';
@@ -13,11 +14,12 @@ class SessionContainer extends StatefulWidget {
 }
 
 class _SessionContainerState extends State<SessionContainer> {
-  bool showAllMembers = false;
+  bool showAll = false;
   List<ImageProvider> memberImages = [
     AssetImage(Images.avatar),
     AssetImage(Images.avatar2),
     AssetImage(Images.avatar3),
+    AssetImage(Images.ball),
     // Add more images here...
   ];
 
@@ -93,162 +95,126 @@ class _SessionContainerState extends State<SessionContainer> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Stack(
-                      //   children: [
-                      //     Row(
-                      //       children: [
-                      //
-                      //       ],
-                      //     ),
-                      //     Container(
-                      //       width: 24,
-                      //       height: 24,
-                      //       decoration: ShapeDecoration(
-                      //         image: DecorationImage(
-                      //           image: AssetImage(Images.avatar),
-                      //           fit: BoxFit.fill,
-                      //         ),
-                      //         shape: RoundedRectangleBorder(
-                      //           side: BorderSide(width: 1, color: Colors.white),
-                      //           borderRadius: BorderRadius.circular(100),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     Positioned(
-                      //       left: 16,
-                      //       child: Container(
-                      //         width: 24,
-                      //         height: 24,
-                      //         decoration: ShapeDecoration(
-                      //           image: DecorationImage(
-                      //             image: AssetImage(Images.avatar2),
-                      //             fit: BoxFit.fill,
-                      //           ),
-                      //           shape: RoundedRectangleBorder(
-                      //             side: BorderSide(width: 1, color: Colors.white),
-                      //             borderRadius: BorderRadius.circular(100),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //
-                      //     ),
-                      //     Positioned(
-                      //       left: 32,
-                      //       child: Container(
-                      //         width: 24,
-                      //         height: 24,
-                      //         decoration: ShapeDecoration(
-                      //           image: DecorationImage(
-                      //             image: AssetImage(Images.avatar3),
-                      //             fit: BoxFit.fill,
-                      //           ),
-                      //           shape: RoundedRectangleBorder(
-                      //             side: BorderSide(width: 1, color: Colors.white),
-                      //             borderRadius: BorderRadius.circular(100),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //
-                      //     ),
-                      //     Positioned(
-                      //       left: 48,
-                      //       child: Container(
-                      //         width: 24,
-                      //         height: 24,
-                      //         decoration: ShapeDecoration(
-                      //           color: Color(0xFF111928),
-                      //           shape: RoundedRectangleBorder(
-                      //             side: BorderSide(width: 1, color: Colors.white),
-                      //             borderRadius: BorderRadius.circular(999),
-                      //           ),
-                      //         ),
-                      //         child: Center(
-                      //             child: Text(
-                      //               '+10',
-                      //               textAlign: TextAlign.center,
-                      //               style: TextStyle(
-                      //                 color: Colors.white,
-                      //                 fontSize: 8,
-                      //                 fontFamily: 'Inter',
-                      //                 fontWeight: FontWeight.w600,
-                      //                 height: 0.19,
-                      //               ),
-                      //             )
-                      //         ),
-                      //       ),
-                      //
-                      //     ),
-                      //     Positioned(
-                      //       right: 8,
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           Icon(CupertinoIcons.person_2,size: 24,color: Color(0xff545F71),),
-                      //           SizedBox(width: 4),
-                      //           Text(
-                      //             '8/10',
-                      //             textAlign: TextAlign.right,
-                      //             style: TextStyle(
-                      //               color: Colors.black,
-                      //               fontSize: 12,
-                      //               fontFamily: 'Lufga',
-                      //               fontWeight: FontWeight.w400,
-                      //               height: 0.12,
-                      //             ),
-                      //           )
-                      //         ],
-                      //       ),
-                      //     )
-                      //   ],
-                      // ),
-                      Expanded(
-                        child: OverlapAvatar(
-                          insideRadius: 8,
-                          outSideRadius: 37,
-                          widthFactor: 0.2,
-                          itemCount: showAllMembers ? 10 : 3,
-                          groupWidth: 100,
-                          backgroundImage: AssetImage(Images.avatar),
-                          groupHeight: 20,
-                          backgroundColor: Colors.white,
+                      Row(
+                        children: [
+                          Wrap(
+                            spacing: -10,
+                            children: [
+                              SizedBox(
+                                height: 24,
+                                width: 24,
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(Images.avatar),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 24,
+                                width: 24,
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(Images.avatar2),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 24,
+                                width: 24,
+                                child: CircleAvatar(
+                                  backgroundImage: AssetImage(Images.avatar3),
+                                ),
+                              ),
+                              if (!showAll)
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      showAll = true;
+                                    });
+                                  },
+                                  child: Container(
+                                    width: 24,
+                                    height: 24,
+                                    decoration: ShapeDecoration(
+                                      color: Color(0xFF111928),
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 1, color: Colors.white),
+                                        borderRadius: BorderRadius.circular(999),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "+${memberImages.length}",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 8,
+                                          fontFamily: 'Inter',
+                                          fontWeight: FontWeight.w600,
+                                          height: 0.19,
+                                        ),
+                                      ),
+                                    )// Muestra el número de miembros ocultos
+                                  ),
+                                ),
+                              if (showAll)
+                                ...memberImages.map((image) => GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      showAll = false;
+                                    });
+                                  },
+                                  child: SizedBox(
+                                    height: 24,
+                                    width: 24,
+                                    child: CircleAvatar(
+                                      backgroundImage: image
+                                    ),
+                                  ),
+                                )),
+
+                            ],
+                          ),
+                          Spacer(),
+                           SvgPicture.asset(Images.users,height: 16,width: 16,),
+                          SizedBox(width: 4),
+                          Text(
+                            '8/10',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w400,
+                              height: 0.12,
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                        ],
+                      ),
+                      SizedBox(height: 14),
+                      Text(
+                        'Court 1',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w500,
+                          height: 0.12,
                         ),
                       ),
-                      TextButton(
-                        child: Text(showAllMembers ? 'Show Less' : 'Show All (${10 - 3})'),
-                        onPressed: () {
-                          setState(() {
-                            showAllMembers = !showAllMembers;
-                          });
-                        },
-                      ),
-
-                      // SizedBox(height: 8),
-                      // Text(
-                      //   'Court 1',
-                      //   style: TextStyle(
-                      //     color: Colors.black,
-                      //     fontSize: 12,
-                      //     fontFamily: 'Lufga',
-                      //     fontWeight: FontWeight.w500,
-                      //     height: 0.12,
-                      //   ),
-                      // ),
-                      // SizedBox(height: 12),
-                      // Row(
-                      //   children: [
-                      //     Image(image: AssetImage(Images.map),height: 16,width: 16,),
-                      //     SizedBox(width: 4),
-                      //     Text(
-                      //       'MBPJ Sports Complex',
-                      //       style: TextStyle(
-                      //         color: Colors.black,
-                      //         fontSize: 12,
-                      //         fontFamily: 'Lufga',
-                      //         fontWeight: FontWeight.w400,
-                      //         height: 0.12,
-                      //       ),
-                      //     )
-                      //   ],)
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Image(image: AssetImage(Images.map),height: 16,width: 16,),
+                          SizedBox(width: 4),
+                          Text(
+                            'MBPJ Sports Complex',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w400,
+                              height: 0.12,
+                            ),
+                          )
+                        ],)
 
                     ],
                   ),
@@ -260,9 +226,9 @@ class _SessionContainerState extends State<SessionContainer> {
                 padding: const EdgeInsets.all(12),
                 clipBehavior: Clip.antiAlias,
                 decoration: ShapeDecoration(
-                  color: Color(0xFFEEF0F4),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
                 child: Center(

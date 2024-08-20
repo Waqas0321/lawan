@@ -11,6 +11,7 @@ class Images {
   static const String chevron_sort="$mainImage/chevron-sort.png";
   static const String  oval="$mainImage/oval.png";
   static const String frame1="$mainImage/frame1.svg";
+  static const String users="$mainImage/users.svg";
 
   //home Screen
   static const String ball="$mainImage/ball.png";
