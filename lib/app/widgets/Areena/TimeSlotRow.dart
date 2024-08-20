@@ -32,7 +32,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: Text(
               leftText,
               style: TextStyle(
-                color: isSelected?AappColor.dark_grey:Color(0xFFACB3C0),
+                color: isSelected ? AppColors.dark_grey : Color(0xFFACB3C0),
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
@@ -42,9 +42,9 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            isSelected ? Apptext.open :Apptext.closed,
+            isSelected ? Apptext.open : Apptext.closed,
             style: TextStyle(
-              color: isSelected ? AappColor.dark_grey : AappColor.mid_grey,
+              color: isSelected ? AppColors.dark_grey : AppColors.mid_grey,
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w400,
@@ -59,10 +59,10 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
               width: 32,
               height: 16,
               activeColor: Colors.white,
-              inactiveColor: AappColor.dark_grey,
-              activeTrackColor: AappColor.brand2,
-              inactiveTrackColor:null,
-              borderColor: isSelected ? AappColor.brand2 : AappColor.dark_grey,
+              inactiveColor: AppColors.dark_grey,
+              activeTrackColor: AppColors.brand2,
+              inactiveTrackColor: null,
+              borderColor: isSelected ? AppColors.brand2 : AppColors.dark_grey,
               borderWidth: 2.0,
               thumbBorderColor: Colors.red,
               thumbBorderWidth: 5.0,

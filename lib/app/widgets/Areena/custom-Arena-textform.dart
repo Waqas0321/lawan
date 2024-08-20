@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/colors.dart';
+
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final String? icon;
@@ -59,7 +60,9 @@ class CustomTextFormField extends StatelessWidget {
           ],
           if (icon != null) ...[
             Container(
-              child: SvgPicture.asset(icon!,                               color: AappColor.mid_grey,
+              child: SvgPicture.asset(
+                icon!,
+                color: AppColors.mid_grey,
               ),
             ),
           ],

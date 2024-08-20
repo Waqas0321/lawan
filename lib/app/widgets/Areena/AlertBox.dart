@@ -7,7 +7,13 @@ import 'package:lawan/app/widgets/Areena/ArenaFilled1.dart';
 import '../../utils/images.dart';
 import 'areenaButton.dart';
 
-void showCustomAlertDialog(BuildContext context,final String text1,final String text2, final bool image,final String buttonText1, final String buttonText2) {
+void showCustomAlertDialog(
+    BuildContext context,
+    final String text1,
+    final String text2,
+    final bool image,
+    final String buttonText1,
+    final String buttonText2) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -17,12 +23,8 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
         ),
         child: Container(
           width: 361,
-          padding: const EdgeInsets.only(
-            top: 24,
-            left: 16,
-            right: 16,
-            bottom: 16
-          ),
+          padding:
+              const EdgeInsets.only(top: 24, left: 16, right: 16, bottom: 16),
           decoration: ShapeDecoration(
             color: Color(0xB2F2F3F2),
             shape: RoundedRectangleBorder(
@@ -44,15 +46,19 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
                 ),
               ),
               SizedBox(height: 8),
-             image? SvgPicture.asset(
-                Images.frame1,
-                // color: AappColor.bluee, // Replace with your color if needed
-              ):SizedBox(height: 4,),
+              image
+                  ? SvgPicture.asset(
+                      Images.frame1,
+                      // color: AappColor.bluee, // Replace with your color if needed
+                    )
+                  : SizedBox(
+                      height: 4,
+                    ),
               SizedBox(height: 8),
               Text(
                 text2,
                 style: TextStyle(
-                  color:AappColor.mid_grey,
+                  color: AppColors.mid_grey,
                   fontSize: 12,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w400,
@@ -64,8 +70,8 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
                 height: 49,
                 text: buttonText1,
                 color: Colors.white,
-                borderColor:AappColor.borderColor,
-                textColor:AappColor.black,
+                borderColor: AppColors.borderColor,
+                textColor: AppColors.black,
                 onTap: () {
                   Get.to(AreenaFilled1());
                 },
@@ -80,7 +86,7 @@ void showCustomAlertDialog(BuildContext context,final String text1,final String 
                 textColor: Colors.white,
                 onTap: () {
                   Get.back();
-                  },
+                },
               ),
             ],
           ),

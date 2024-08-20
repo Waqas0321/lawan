@@ -4,12 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
-
 import '../../../widgets/Areena/AddArena1.dart';
-import '../../../widgets/Areena/AlertBox.dart';
 
 class ScreenBody extends StatelessWidget {
   ScreenBody({
@@ -125,7 +122,7 @@ class ScreenBody extends StatelessWidget {
                 fit: BoxFit.cover,
                 height: 64,
                 width: 64,
-                color: AappColor.brand2,
+                color: AppColors.brand2,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Text(
@@ -170,7 +167,7 @@ class ScreenBody extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 8.0),
                         child: SvgPicture.asset(
                           Images.multi_devices,
-                          color: AappColor.brand2,
+                          color: AppColors.brand2,
                           height: 64,
                           width: 64,
                         ),
@@ -243,7 +240,7 @@ class ScreenBody extends StatelessWidget {
                       Expanded(
                         child: SvgPicture.asset(
                           Images.dollar_signs,
-                          color: AappColor.brand2,
+                          color: AppColors.brand2,
                           // height: 57,
                           // fit: BoxFit.cover,
                           width: MediaQuery.of(context).size.width,
@@ -264,10 +261,12 @@ class ScreenBody extends StatelessWidget {
           child: Container(
             height: containerHeight,
             width: MediaQuery.of(context).size.width,
-            margin:EdgeInsets.only(left:1),
+            margin: EdgeInsets.only(left: 1),
             decoration: ShapeDecoration(
-              image:DecorationImage(
-                image:AssetImage(Images.vector,),
+              image: DecorationImage(
+                image: AssetImage(
+                  Images.vector,
+                ),
               ),
               gradient: LinearGradient(
                 begin: Alignment(0.00, -1.00),
@@ -279,12 +278,18 @@ class ScreenBody extends StatelessWidget {
               ),
             ),
             child: Padding(
-              padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height*0.02),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.02),
               child: Column(
-                crossAxisAlignment:CrossAxisAlignment.center,
-                mainAxisAlignment:MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(Images.add,height:35,width:30,fit:BoxFit.contain,),
+                  SvgPicture.asset(
+                    Images.add,
+                    height: 35,
+                    width: 30,
+                    fit: BoxFit.contain,
+                  ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.009,
                   ),
@@ -307,12 +312,14 @@ class ScreenBody extends StatelessWidget {
       ],
     );
   }
+
   void showCustomAlertDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.transparent, // Make the background transparent
+          backgroundColor:
+              Colors.transparent, // Make the background transparent
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32), // Custom border radius
           ),
@@ -323,7 +330,8 @@ class ScreenBody extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Color(0xB2F2F3F2), // Custom background color
-                    borderRadius: BorderRadius.circular(32), // Match the border radius
+                    borderRadius:
+                        BorderRadius.circular(32), // Match the border radius
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x19000000),
@@ -410,5 +418,4 @@ class ScreenBody extends StatelessWidget {
       },
     );
   }
-
 }
