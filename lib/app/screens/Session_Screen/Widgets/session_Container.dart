@@ -15,11 +15,10 @@ class SessionContainer extends StatelessWidget {
 
         Container(
           height: 92,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          padding: const EdgeInsets.all(12),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 1, color: Color(0xFF9CA3AF)),
               borderRadius: BorderRadius.circular(24),
             ),
           ),
