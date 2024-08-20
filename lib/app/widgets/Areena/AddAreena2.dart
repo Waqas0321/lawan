@@ -53,14 +53,14 @@ class _AddAreena2State extends State<AddAreena2> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize=MediaQuery.of(context).size;
+    final screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: BackdropFilter(
-        filter:ImageFilter.blur(sigmaY:10,sigmaX:10),
+        filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
         child: Container(
-          width: MediaQuery.of(context).size.width -16,
-          margin:EdgeInsets.only(bottom:16,left:1,right: 1),
-          height: MediaQuery.of(context).size.height*0.78,
+          width: MediaQuery.of(context).size.width - 16,
+          margin: EdgeInsets.only(bottom: 16, left: 1, right: 1),
+          height: MediaQuery.of(context).size.height * 0.78,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             color: Color(0xB2F2F3F2),
@@ -121,7 +121,7 @@ class _AddAreena2State extends State<AddAreena2> {
                 ),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.sunday,
-                  rightText:Apptext.closed,
+                  rightText: Apptext.closed,
                   isSelected: _isSelectedSunday,
                   onChanged: (bool value) {
                     setState(() {
@@ -140,7 +140,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.02),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -148,7 +148,8 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                     SizedBox(
@@ -171,12 +172,13 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.tuesdayoday,
                   rightText: Apptext.open,
@@ -187,7 +189,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -195,7 +197,8 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                     SizedBox(
@@ -218,12 +221,13 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.wednesday,
                   rightText: Apptext.open,
@@ -234,7 +238,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -242,7 +246,8 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                     SizedBox(
@@ -265,12 +270,13 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.friday,
                   rightText: Apptext.open,
@@ -281,16 +287,16 @@ class _AddAreena2State extends State<AddAreena2> {
                     });
                   },
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
                   children: [
                     Expanded(
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                     SizedBox(
@@ -313,12 +319,13 @@ class _AddAreena2State extends State<AddAreena2> {
                       child: TimeSlot(
                         timeSlots: _timeSlots,
                         selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged, isImage: true,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.014),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.014),
                 CustomSwitchTimeslotRow(
                   leftText: Apptext.sunday,
                   rightText: Apptext.open,
@@ -339,22 +346,23 @@ class _AddAreena2State extends State<AddAreena2> {
                         text: Apptext.cancel,
                         color: null,
                         borderColor: Color(0xFFE9EAF0),
-
-                        textColor: AappColor.black,
+                        textColor: AppColors.black,
                         onTap: () {
                           Get.back();
                         },
                       ),
                     ),
-                    SizedBox(width: 16,),
+                    SizedBox(
+                      width: 16,
+                    ),
                     Expanded(
                       child: CustomAreenaButton(
                         text: Apptext.next,
-                        color: AappColor.black,
-                        borderColor: AappColor.black,
-                        textColor: AappColor.white,
+                        color: AppColors.black,
+                        borderColor: AppColors.black,
+                        textColor: AppColors.white,
                         onTap: () {
-                        Get.back();
+                          Get.back();
                           _openBottomSheet(context);
                         },
                       ),
@@ -368,17 +376,18 @@ class _AddAreena2State extends State<AddAreena2> {
       ),
     );
   }
+
   void _openBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isDismissible: true,
       enableDrag: true,
-      isScrollControlled: true, // Allows the bottom sheet to use full screen height
+      isScrollControlled:
+          true, // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return AddAreena3();
       },
     );
   }
-
 }

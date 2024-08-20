@@ -17,12 +17,12 @@ class CustomCard extends StatelessWidget {
   CustomCard({
     required this.count,
     required this.text,
-     this.color,
+    this.color,
     required this.linecolor,
     required this.countcolor,
     required this.textcolor,
     required this.fontWeight,
-    this.showborder=false,
+    this.showborder = false,
     required this.padding,
   });
 
@@ -39,13 +39,13 @@ class CustomCard extends StatelessWidget {
               width: 42,
               height: 42,
               decoration: ShapeDecoration(
-                color:color,
+                color: color,
                 shape: RoundedRectangleBorder(
-                  side:showborder? BorderSide(width:1, color: AappColor.white):BorderSide.none,
+                  side: showborder
+                      ? BorderSide(width: 1, color: AppColors.white)
+                      : BorderSide.none,
                   borderRadius: BorderRadius.circular(80),
                 ),
-
-
               ),
               child: Center(
                 child: SizedBox(
@@ -71,16 +71,16 @@ class CustomCard extends StatelessWidget {
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.all(10),
-              child:Divider(
-                thickness:1,
+              child: Divider(
+                thickness: 1,
                 indent: 0.1,
-                color:linecolor,
+                color: linecolor,
               ),
             )),
           ],
         ),
         SizedBox(
-          height:MediaQuery.of(context).size.height*0.018,
+          height: MediaQuery.of(context).size.height * 0.018,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -90,10 +90,10 @@ class CustomCard extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  color:textcolor,
+                  color: textcolor,
                   fontSize: 14,
                   fontFamily: 'Lufga',
-                  fontWeight:fontWeight,
+                  fontWeight: fontWeight,
                   height: 0.11,
                 ),
               ),

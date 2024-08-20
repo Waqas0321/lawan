@@ -13,7 +13,8 @@ import 'AlertBox.dart';
 import 'ArenaFilled1.dart';
 import 'areenaButton.dart';
 
-void showCustomEditAlertDialog(BuildContext context, final String text1, final String text2) {
+void showCustomEditAlertDialog(
+    BuildContext context, final String text1, final String text2) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -23,7 +24,6 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
         ),
         child: Container(
           width: 361,
-
           padding: const EdgeInsets.only(
             top: 24,
             left: 16,
@@ -43,18 +43,25 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
             children: [
               Row(
                 children: [
-                  Image(image: AssetImage(Images.pencil,),color:AappColor.white,),
-                    SizedBox(width: 8,),
-                    Text(
-                      text1,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w500,
-                        height: 0.09,
-                      ),
-                    )
+                  Image(
+                    image: AssetImage(
+                      Images.pencil,
+                    ),
+                    color: AppColors.white,
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    text1,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w500,
+                      height: 0.09,
+                    ),
+                  )
                 ],
               ),
               SizedBox(height: 16),
@@ -62,7 +69,8 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
                 width: double.infinity,
                 child: Container(
                   height: 44,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -70,20 +78,19 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
                     ),
                   ),
                   child: Center(
-                    child: Row(
-                      children: [
-                        Text(
-                                text2,
-                                style: TextStyle(
-                                   color: Colors.black,
-                                 fontSize: 14,
-                                   fontFamily: 'Lufga',
-                                   fontWeight: FontWeight.w500,
-                                ),
+                      child: Row(
+                    children: [
+                      Text(
+                        text2,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w500,
                         ),
-                      ],
-                    )
-                  ),
+                      ),
+                    ],
+                  )),
                 ),
               ),
               SizedBox(height: 24),
@@ -93,8 +100,8 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
                   height: 49,
                   text: "Cancel",
                   color: Colors.white,
-                  borderColor:AappColor.borderColor,
-                  textColor:AappColor.black,
+                  borderColor: AppColors.borderColor,
+                  textColor: AppColors.black,
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -111,7 +118,7 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
                   textColor: Colors.white,
                   onTap: () {
                     Navigator.pop(context);
-                  _openBottomSheet(context);
+                    _openBottomSheet(context);
                   },
                 ),
               ),
@@ -122,6 +129,7 @@ void showCustomEditAlertDialog(BuildContext context, final String text1, final S
     },
   );
 }
+
 void _openBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
@@ -132,8 +140,8 @@ void _openBottomSheet(BuildContext context) {
     backgroundColor: Colors.transparent,
     builder: (BuildContext context) {
       return Container(
-          width: MediaQuery.of(context).size.width - 16,
-          height: 105,
+        width: MediaQuery.of(context).size.width - 16,
+        height: 105,
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Color(0xB2F2F3F2),
@@ -144,40 +152,47 @@ void _openBottomSheet(BuildContext context) {
             ),
           ),
         ),
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: CustomAreenaButton(
-                    text: Apptext.cancel,
-                    color: AappColor.white,
-                    borderColor: Color(0xFFE9EAF0),
-                    textColor: AappColor.black,
-                    onTap: () {
-                      Get.back();
-                    },
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: CustomAreenaButton(
+                  text: Apptext.cancel,
+                  color: AppColors.white,
+                  borderColor: Color(0xFFE9EAF0),
+                  textColor: AppColors.black,
+                  onTap: () {
+                    Get.back();
+                  },
                 ),
-                SizedBox(width: 16,),
-                Expanded(
-                  child: CustomAreenaButton(
-                    text: "Save & Update",
-                    color: AappColor.black,
-                    borderColor: Color(0xFFE9EAF0),
-                    textColor: AappColor.white,
-                    onTap: () {
-                      showCustomAlertDialog(context,"Confirm Update?",'Proceed with applying the changes.',false,'Cancel','Confirm');
-                    },
-                  ),
+              ),
+              SizedBox(
+                width: 16,
+              ),
+              Expanded(
+                child: CustomAreenaButton(
+                  text: "Save & Update",
+                  color: AppColors.black,
+                  borderColor: Color(0xFFE9EAF0),
+                  textColor: AppColors.white,
+                  onTap: () {
+                    showCustomAlertDialog(
+                        context,
+                        "Confirm Update?",
+                        'Proceed with applying the changes.',
+                        false,
+                        'Cancel',
+                        'Confirm');
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+        ),
       );
     },
   );
 }
-

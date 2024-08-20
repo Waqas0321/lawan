@@ -13,6 +13,7 @@ import 'TimeSlotTwoAreena.dart';
 import 'areenaButton.dart';
 import 'custom_container_Add_Areena3.dart';
 import 'custom_header_count.dart';
+
 class RateSection extends StatefulWidget {
   const RateSection({super.key});
 
@@ -40,11 +41,13 @@ class _RateSectionState extends State<RateSection> {
       _selectedTimeSlot = newValue;
     });
   }
+
   void _onTimeSlotChangedTwo(String newValue) {
     setState(() {
       _selectedhrsTimeSlot = newValue;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -54,7 +57,7 @@ class _RateSectionState extends State<RateSection> {
         Text(
           "Court Rate",
           style: TextStyle(
-            color: AappColor.black,
+            color: AppColors.black,
             fontSize: 16,
             fontFamily: 'Lufga',
             fontWeight: FontWeight.w500,
@@ -63,7 +66,7 @@ class _RateSectionState extends State<RateSection> {
         Text(
           "Customize to fit your needs",
           style: TextStyle(
-            color: AappColor.mid_grey,
+            color: AppColors.mid_grey,
             fontSize: 12,
             fontFamily: 'Lufga',
             fontWeight: FontWeight.w400,
@@ -105,7 +108,10 @@ class _RateSectionState extends State<RateSection> {
         ),
         SizedBox(
             width: double.infinity,
-            child: CustomContainerAreena3( text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',
+            child: CustomContainerAreena3(
+              text1: 'Listing Price',
+              text2: 'RM220',
+              text3: '20% hosting fee by Lawan included',
             )),
         SizedBox(
           height: 16,
@@ -143,7 +149,11 @@ class _RateSectionState extends State<RateSection> {
         ),
         SizedBox(
             width: double.infinity,
-            child: CustomContainerAreena3(text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',)),
+            child: CustomContainerAreena3(
+              text1: 'Listing Price',
+              text2: 'RM220',
+              text3: '20% hosting fee by Lawan included',
+            )),
       ],
     );
   }

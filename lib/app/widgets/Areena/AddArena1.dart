@@ -142,10 +142,10 @@ class _AddAreena1State extends State<AddAreena1> {
                           height: MediaQuery.of(context).size.height * 0.14,
                           padding: const EdgeInsets.all(24),
                           decoration: ShapeDecoration(
-                            color: AappColor.white,
+                            color: AppColors.white,
                             shape: RoundedRectangleBorder(
                               side: const BorderSide(
-                                  width: 1, color: AappColor.white),
+                                  width: 1, color: AppColors.white),
                               borderRadius: BorderRadius.circular(32),
                             ),
                           ),
@@ -161,7 +161,7 @@ class _AddAreena1State extends State<AddAreena1> {
                                 decoration: const BoxDecoration(),
                                 child: SvgPicture.asset(
                                   Images.gallery,
-                                  color: AappColor.mid_grey,
+                                  color: AppColors.mid_grey,
                                 ),
                               ),
                               SizedBox(
@@ -263,7 +263,7 @@ class _AddAreena1State extends State<AddAreena1> {
                             Expanded(
                               child: ArenaINOutButton(
                                 height:
-                                MediaQuery.of(context).size.height * 0.05,
+                                    MediaQuery.of(context).size.height * 0.05,
                                 text: 'Court Turf',
                                 isSelected: _selectedCourtButtonTruff,
                                 onPressed: () {
@@ -281,7 +281,7 @@ class _AddAreena1State extends State<AddAreena1> {
                             ),
                             SizedBox(
                                 width:
-                                MediaQuery.of(context).size.width * 0.02),
+                                    MediaQuery.of(context).size.width * 0.02),
                             Expanded(
                               child: ArenaINOutButton(
                                 text: 'Cement',
@@ -311,9 +311,9 @@ class _AddAreena1State extends State<AddAreena1> {
                             Expanded(
                               child: CustomAreenaButton(
                                 text: Apptext.next,
-                                color: AappColor.black,
+                                color: AppColors.black,
                                 borderColor: Color(0xFFE9EAF0),
-                                textColor: AappColor.white,
+                                textColor: AppColors.white,
                                 onTap: () async {
                                   Navigator.pop(context);
                                   _openBottomSheet(context);

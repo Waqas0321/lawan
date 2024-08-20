@@ -38,6 +38,7 @@ class _AddAreena3State extends State<AddAreena3> {
       _selectedTimeSlot = newValue;
     });
   }
+
   void _onTimeSlotChangedTwo(String newValue) {
     setState(() {
       _selectedhrsTimeSlot = newValue;
@@ -47,11 +48,11 @@ class _AddAreena3State extends State<AddAreena3> {
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter:ImageFilter.blur(sigmaY:6,sigmaX:6),
+      filter: ImageFilter.blur(sigmaY: 6, sigmaX: 6),
       child: Container(
         width: MediaQuery.of(context).size.width - 16,
         height: 711,
-        margin:EdgeInsets.only(bottom:20),
+        margin: EdgeInsets.only(bottom: 20),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Color(0xB2F2F3F2),
@@ -66,7 +67,8 @@ class _AddAreena3State extends State<AddAreena3> {
               spreadRadius: 0,
             )
           ],
-        ),      child: Padding(
+        ),
+        child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +77,7 @@ class _AddAreena3State extends State<AddAreena3> {
                 thisCount: "3",
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height*0.04,
+                height: MediaQuery.of(context).size.height * 0.04,
               ),
               Text(
                 'Configure the rate',
@@ -98,7 +100,7 @@ class _AddAreena3State extends State<AddAreena3> {
                 ),
               ),
               SizedBox(
-                height:MediaQuery.of(context).size.height*0.005,
+                height: MediaQuery.of(context).size.height * 0.005,
               ),
               Text(
                 'Weekend Rate',
@@ -116,7 +118,7 @@ class _AddAreena3State extends State<AddAreena3> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TimeSlotTwo(
-                      padding:10,
+                      padding: 10,
                       isRight: true,
                       isClock: false,
                       timeSlots: weeksRate,
@@ -143,8 +145,11 @@ class _AddAreena3State extends State<AddAreena3> {
               ),
               SizedBox(
                   width: double.infinity,
-                  child: CustomContainerAreena3( text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',
-              )),
+                  child: CustomContainerAreena3(
+                    text1: 'Listing Price',
+                    text2: 'RM220',
+                    text3: '20% hosting fee by Lawan included',
+                  )),
               SizedBox(
                 height: 16,
               ),
@@ -156,8 +161,7 @@ class _AddAreena3State extends State<AddAreena3> {
                   children: [
                     TimeSlotTwo(
                       isRight: true,
-                      padding:10,
-
+                      padding: 10,
                       isClock: false,
                       timeSlots: weeksRate,
                       selectedTimeSlot: _selectedTimeSlot,
@@ -183,7 +187,11 @@ class _AddAreena3State extends State<AddAreena3> {
               ),
               SizedBox(
                   width: double.infinity,
-                  child: CustomContainerAreena3(text1: 'Listing Price',text2: 'RM220',text3: '20% hosting fee by Lawan included',)),
+                  child: CustomContainerAreena3(
+                    text1: 'Listing Price',
+                    text2: 'RM220',
+                    text3: '20% hosting fee by Lawan included',
+                  )),
               Spacer(),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -192,9 +200,9 @@ class _AddAreena3State extends State<AddAreena3> {
                   Expanded(
                     child: CustomAreenaButton(
                       text: Apptext.cancel,
-                      color:null,
+                      color: null,
                       borderColor: Color(0xFFE9EAF0),
-                      textColor: AappColor.black,
+                      textColor: AppColors.black,
                       onTap: () {
                         Get.back();
                       },
@@ -204,10 +212,9 @@ class _AddAreena3State extends State<AddAreena3> {
                   Expanded(
                     child: CustomAreenaButton(
                       text: Apptext.add_arena,
-                      color: AappColor.black,
-                      borderColor:AappColor.black,
-
-                      textColor: AappColor.white,
+                      color: AppColors.black,
+                      borderColor: AppColors.black,
+                      textColor: AppColors.white,
                       onTap: () {
                         Get.to(AreenaFilled1());
                       },
@@ -221,13 +228,12 @@ class _AddAreena3State extends State<AddAreena3> {
       ),
     );
   }
-
-
 }
 
 class customText extends StatelessWidget {
   const customText({
-    super.key, required this.text,
+    super.key,
+    required this.text,
   });
   final String text;
 
@@ -235,20 +241,17 @@ class customText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: Padding(
-        padding: const EdgeInsets.only(left: 8.0,bottom: 4),
+        padding: const EdgeInsets.only(left: 8.0, bottom: 4),
         child: Text(
           text,
           style: TextStyle(
-            color: AappColor.dark_grey,
-            fontSize: 14,
-            fontFamily: 'Lufga',
-            fontWeight: FontWeight.w400,
-            height: 1.5
-          ),
+              color: AppColors.dark_grey,
+              fontSize: 14,
+              fontFamily: 'Lufga',
+              fontWeight: FontWeight.w400,
+              height: 1.5),
         ),
       ),
     );
   }
 }
-
-
