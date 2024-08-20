@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.1 <4.0.0'
+  sdk: ^3.5.0
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -36,16 +36,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   animated_neumorphic: ^0.2.0
-  animated_toggle_switch: ^0.8.2
+  animated_toggle_switch: ^0.8.3
 
   get: ^4.6.6
   flutter_responsive: ^1.1.0
   flutter_screenutil: ^5.9.3
+  auto_size_text: ^3.0.0
   adaptive_sizer: ^0.0.4
-  device_preview:
+  device_preview: ^1.2.0
+  google_fonts: ^6.2.1
   responsive_framework: ^1.4.0  # Use the latest version
   flutter_svg: ^2.0.10+1
-  responsive_builder:
+  responsive_builder: ^0.7.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
