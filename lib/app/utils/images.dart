@@ -35,5 +35,6 @@ static const String pencil = "$mainImage/pencil.svg";
 static const String picture = "$mainImage/Picture.png";
 static const String map = "$mainImage/map-pin.png";
 static const String layerImage = "$mainImage/Layer_1.png";
-
+static const String plus="$mainImage/plus.svg";
+static const String trash="$mainImage/trash.svg";
 }

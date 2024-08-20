@@ -7,7 +7,14 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final String? icon;
   final String? text;
-  CustomTextFormField({required this.hintText, this.icon, this.text});
+  final FontWeight fontWeight;
+  final Color color;
+  CustomTextFormField(
+      {required this.hintText,
+        this.icon,
+        this.text,
+        this.color = const Color(0xFFACB3C0),
+        this.fontWeight = FontWeight.w500});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+          // side: BorderSide(width: 1, color: Color(0xFFE9EAF0)),
           borderRadius: BorderRadius.circular(80),
         ),
       ),
@@ -32,15 +39,15 @@ class CustomTextFormField extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: hintText,
                 hintStyle: TextStyle(
-                  color: Color(0xFFACB3C0),
+                  color:color,
                   fontSize: 14,
                   fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
+                  fontWeight:fontWeight,
                   height: 0.11,
                 ),
                 border: InputBorder.none,
                 contentPadding:
-                    EdgeInsets.only(bottom: 13), // Center vertically
+                EdgeInsets.only(bottom: 13), // Center vertically
               ),
             ),
           ),

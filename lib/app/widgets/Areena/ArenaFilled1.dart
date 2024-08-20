@@ -116,7 +116,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                               // ),
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   TimeSlotHome(
                                     timeSlots: weeksRate,
@@ -124,33 +124,37 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     onChanged: _onTimeSlotChanged,
                                     isImage: false,
                                     isWidth: MediaQuery.of(context).size.width *
-                                        0.34,
+                                        0.30,
                                     image: "⚽",
                                   ),
                                   Container(
                                     height: 44,
                                     width: MediaQuery.of(context).size.width *
-                                        0.20,
+                                        0.16,
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius:
-                                            BorderRadius.circular(300)),
+                                        BorderRadius.circular(300)),
                                     child: Padding(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.only(left: 2),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           Image(
                                             image: AssetImage(Images.avtar),
-                                            height: 32,
-                                            width: 32,
+                                            height: 38,
+                                            width: 34,
+                                            fit: BoxFit.contain,
                                           ),
                                           SvgPicture.asset(
                                             Images.chevron_down,
                                             height: 16,
                                             width: 16,
-                                          )
+                                          ),
+                                          SizedBox(
+                                            width: 1,
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -183,7 +187,6 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                       child: GestureDetector(
                                           onTap: () {
                                             showCustomEditAlertDialog(
-                                                context,
                                                 "Edit Arena Name",
                                                 'MBPJ Sports Complex');
                                           },
@@ -211,12 +214,12 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                         height: 44,
                                         text: 'KLFA Court',
                                         color: AppColors.white,
-                                        textColor: Color(0xFF545F71),
+                                        textColor: AppColors.dark_grey,
                                       )),
                                 ],
                               ),
                               SizedBox(
-                                height: 12,
+                                height: screenheight * 0.02,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -228,7 +231,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                         height: 44,
                                         text: 'Sports Arena Mahkota Cheras',
                                         color: AppColors.white,
-                                        textColor: AppColors.black,
+                                        textColor: AppColors.dark_grey,
                                       )),
                                   SizedBox(width: 12),
                                   CustomContainer(
@@ -247,7 +250,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 ],
                               ),
                               SizedBox(
-                                height: 16,
+                                height: screenheight * 0.02,
                               ),
                               Text(
                                 'Court',
@@ -259,13 +262,16 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                   height: 1.5,
                                 ),
                               ),
+                              SizedBox(
+                                height: screenheight * 0.01,
+                              ),
                               Row(
                                 children: [
                                   Expanded(
-                                      flex: 2,
+                                      flex: 3,
                                       child: GestureDetector(
                                           onTap: () {
-                                            showCustomEditAlertDialog(context,
+                                            showCustomEditAlertDialog(
                                                 "Edit Court Name", '1');
                                           },
                                           child: SvgPicture.asset(
@@ -289,7 +295,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     height: 44,
                                     text: "2",
                                     color: AppColors.white,
-                                    textColor: AppColors.black,
+                                    textColor: AppColors.dark_grey,
                                     circular: true,
                                   ),
                                   SizedBox(
@@ -300,7 +306,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     height: 44,
                                     text: "3",
                                     color: AppColors.white,
-                                    textColor: AppColors.black,
+                                    textColor: AppColors.dark_grey,
                                     circular: true,
                                   ),
                                   SizedBox(
@@ -329,8 +335,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           Column(
                             children: [
                               Container(
-                                height: MediaQuery.of(context).size.height,
-                                color: Colors.transparent,
+                                height:
+                                MediaQuery.of(context).size.height / 1.9,
+                                // color: const Color(0xFFF2F3F2),
                                 child: DefaultTabController(
                                     length: 3,
                                     child: Column(
@@ -371,19 +378,19 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
   }
 
   void showCustomAlertDialog(
-    BuildContext context,
-    final String text1,
-    final String text2,
-    final bool image,
-    final String buttonText1,
-    final String buttonText2,
-  ) {
+      BuildContext context,
+      final String text1,
+      final String text2,
+      final bool image,
+      final String buttonText1,
+      final String buttonText2,
+      ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor:
-              Colors.transparent, // Make the background transparent
+          Colors.transparent, // Make the background transparent
           contentPadding: EdgeInsets.zero, // Remove default padding
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32), // Custom border radius
@@ -392,11 +399,11 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
             filter: ImageFilter.blur(sigmaY: 2, sigmaX: 2),
             child: Container(
               width:
-                  MediaQuery.of(context).size.width * 0.85, // Adjust width here
+              MediaQuery.of(context).size.width * 0.85, // Adjust width here
               decoration: BoxDecoration(
                 color: Color(0xB2F2F3F2), // Custom background color
                 borderRadius:
-                    BorderRadius.circular(32), // Match the border radius
+                BorderRadius.circular(32), // Match the border radius
                 boxShadow: [
                   BoxShadow(
                     color: Color(0x19000000),
@@ -406,7 +413,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -426,9 +433,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   image
                       ? SvgPicture.asset(
-                          Images.frame1,
-                          // color: AappColor.bluee, // Replace with your color if needed
-                        )
+                    Images.frame1,
+                    // color: AppColors.bluee, // Replace with your color if needed
+                  )
                       : SizedBox(height: 4),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   Text(
@@ -481,19 +488,22 @@ class CustomContainer extends StatelessWidget {
     required this.width,
     required this.height,
     this.text = '',
-    required this.color,
+    this.color,
     required this.textColor,
     this.circular = false,
     this.icon = false,
+    this.image=Images.areena,
+    this.imageColor= Colors.white
   });
   final double width;
   final double height;
   final String text;
-  final Color color;
+  final Color? color;
   final Color textColor;
   final bool circular;
   final bool icon;
-
+  final String image;
+  final Color imageColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -503,28 +513,30 @@ class CustomContainer extends StatelessWidget {
       decoration: ShapeDecoration(
         color: color,
         shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: AppColors.white),
           borderRadius:
-              circular ? BorderRadius.circular(100) : BorderRadius.circular(32),
+          circular ? BorderRadius.circular(100) : BorderRadius.circular(32),
         ),
       ),
       child: Center(
         child: icon
-            ? Icon(
-                Icons.add,
-                size: 20,
-                color: Colors.white,
-              )
+            ? SvgPicture.asset(
+          image,
+          height: 20,
+          width: 20,
+          color:color,
+        )
             : Text(
-                text,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 14,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                  height: 0.11,
-                ),
-              ),
+          text,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: textColor,
+            fontSize: 14,
+            fontFamily: 'Lufga',
+            fontWeight: FontWeight.w400,
+            height: 0.11,
+          ),
+        ),
       ),
     );
   }

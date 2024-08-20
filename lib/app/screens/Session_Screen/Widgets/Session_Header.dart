@@ -44,7 +44,6 @@ class _SessionHeaderState extends State<SessionHeader> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TimeSlotHome(
-              color: Colors.white,
               timeSlots: weeksRate,
               selectedTimeSlot: _selectedTimeSlot,
               onChanged: _onTimeSlotChanged,
