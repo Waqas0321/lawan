@@ -12,6 +12,9 @@ class Images {
   static const String  oval="$mainImage/oval.png";
   static const String frame1="$mainImage/frame1.svg";
   static const String users="$mainImage/users.svg";
+  static const String QRCode="$mainImage/QRCode.svg";
+  static const String chat="$mainImage/chat.svg";
+  static const String dots_vertical_outline ="$mainImage/dots-vertical-outline.svg";
 
   //home Screen
   static const String ball="$mainImage/ball.png";
@@ -38,4 +41,6 @@ static const String map = "$mainImage/map-pin.png";
 static const String layerImage = "$mainImage/Layer_1.png";
 static const String plus="$mainImage/plus.svg";
 static const String trash="$mainImage/trash.svg";
+static const String upload="$mainImage/upload.svg";
+static const String users_group_outline="$mainImage/users-group-outline.svg";
 }

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:overlay_group_avatar/overlay_group_avatar.dart';
 
 import '../../../utils/images.dart';
+import 'BottomNave_Container.dart';
 class SessionContainer extends StatefulWidget {
   SessionContainer({
     super.key,
@@ -14,6 +15,19 @@ class SessionContainer extends StatefulWidget {
 }
 
 class _SessionContainerState extends State<SessionContainer> {
+  void _openBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      enableDrag: true,
+      isScrollControlled: true,
+      // Allows the bottom sheet to use full screen height
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return BottomnaveContainer();
+      },
+    );
+  }
   bool showAll = false;
   List<ImageProvider> memberImages = [
     AssetImage(Images.avatar),
@@ -219,19 +233,24 @@ class _SessionContainerState extends State<SessionContainer> {
                   ),
                 ),
               ),
-              Container(
-                width: 48,
-                height: 68,
-                padding: const EdgeInsets.all(12),
-                clipBehavior: Clip.antiAlias,
-                decoration: ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
-                    borderRadius: BorderRadius.circular(20),
+              GestureDetector(
+                onTap: () {
+                  _openBottomSheet(context);
+                },
+                child: Container(
+                  width: 48,
+                  height: 68,
+                  padding: const EdgeInsets.all(12),
+                  clipBehavior: Clip.antiAlias,
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Icon(Icons.remove_red_eye_outlined,size: 24,color: Color(0xff545F71),),
+                  child: Center(
+                    child: Icon(Icons.remove_red_eye_outlined,size: 24,color: Color(0xff545F71),),
+                  ),
                 ),
               ),
 
