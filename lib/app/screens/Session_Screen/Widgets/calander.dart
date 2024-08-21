@@ -59,10 +59,12 @@ class _CustomCalenderState extends State<CustomCalender> {
                   },
                   child: CircularArrowsContainer(
                       icon: Icon(
+
                         Icons.arrow_back_ios,
                         size: 16,
                         color: Color(0xff545F71),
                       ))),
+
               SizedBox(width: 3),
               GestureDetector(
                   onTap: () {
@@ -87,12 +89,15 @@ class _CustomCalenderState extends State<CustomCalender> {
                   width: 193,
                   height: 45,
                   padding:
+
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+
                   decoration: ShapeDecoration(
                       color: Colors.black,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                         borderRadius: BorderRadius.circular(80),
+
                       ),
                       shadows: [
                         BoxShadow(
@@ -109,6 +114,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                         height: 20,
                         color: Colors.white,
                       ),
+
                       dropdownColor: Colors.black,
                       value: monthsName[int.parse(_selectedMonth) - 1],
                       onChanged: (value) {
@@ -152,7 +158,9 @@ class _CustomCalenderState extends State<CustomCalender> {
                 height: 44,
                 width: 44,
                 padding:
+
                 const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+
                 decoration: ShapeDecoration(
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
@@ -169,6 +177,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                     color: Colors.white,
                     size: 16,
                   ),
+
                 ),
               ),
             ],
@@ -211,6 +220,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
+
                 ),
                   );
                 } else {
@@ -225,6 +235,7 @@ class _CustomCalenderState extends State<CustomCalender> {
 
               todayDecoration: BoxDecoration(
               ),
+
               todayTextStyle: TextStyle(
               ),
               weekendTextStyle: TextStyle(
@@ -320,6 +331,21 @@ class _CustomCalenderState extends State<CustomCalender> {
             child: Container(
               width: 40,
               height: 6,
+              decoration: ShapeDecoration(
+                color: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100),
+
+                ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isCalendarExpanded = !_isCalendarExpanded;
+              });
+            },
+            child: Container(
+              width: 40,
+              height: 4,
               decoration: ShapeDecoration(
                 color: Colors.black,
                 shape: RoundedRectangleBorder(
