@@ -31,6 +31,12 @@ class _CustomCalenderState extends State<CustomCalender> {
     'December'
   ];
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
@@ -53,10 +59,12 @@ class _CustomCalenderState extends State<CustomCalender> {
                   },
                   child: CircularArrowsContainer(
                       icon: Icon(
-                    Icons.arrow_back_ios,
-                    size: 16,
-                    color: Color(0xff545F71),
-                  ))),
+
+                        Icons.arrow_back_ios,
+                        size: 16,
+                        color: Color(0xff545F71),
+                      ))),
+
               SizedBox(width: 3),
               GestureDetector(
                   onTap: () {
@@ -81,12 +89,15 @@ class _CustomCalenderState extends State<CustomCalender> {
                   width: 193,
                   height: 45,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+
                   decoration: ShapeDecoration(
                       color: Colors.black,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(width: 1, color: Color(0xFFE0E0E0)),
                         borderRadius: BorderRadius.circular(80),
+
                       ),
                       shadows: [
                         BoxShadow(
@@ -103,6 +114,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                         height: 20,
                         color: Colors.white,
                       ),
+
                       dropdownColor: Colors.black,
                       value: monthsName[int.parse(_selectedMonth) - 1],
                       onChanged: (value) {
@@ -146,7 +158,9 @@ class _CustomCalenderState extends State<CustomCalender> {
                 height: 44,
                 width: 44,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+
                 decoration: ShapeDecoration(
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
@@ -163,6 +177,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                     color: Colors.white,
                     size: 16,
                   ),
+
                 ),
               ),
             ],
@@ -170,98 +185,157 @@ class _CustomCalenderState extends State<CustomCalender> {
           SizedBox(height: 16),
           _isCalendarExpanded
               ? TableCalendar(
-                  firstDay: DateTime(2020, 10, 16),
-                  lastDay: DateTime(2030, 3, 14),
-                  focusedDay: _focusedDay,
-                  headerVisible: false,
-                  calendarStyle: CalendarStyle(
-                    selectedTextStyle: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                    todayTextStyle: TextStyle(
-                      fontSize: 16,
+            firstDay: DateTime(2020, 10, 16),
+            lastDay: DateTime(2030, 3, 14),
+            onDaySelected: (selectedDay, focusedDay) {
+              print('Day selected: $selectedDay');
+              setState(() {
+                _focusedDay = selectedDay;
+                _selectedMonth = '${selectedDay.month}';
+
+              });
+            },
+            focusedDay: _focusedDay,
+            calendarBuilders: CalendarBuilders(
+              markerBuilder: (context, day, events) {
+                if (day == _focusedDay) {
+                  return Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 9),
+                    decoration: ShapeDecoration(
                       color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
                     ),
-                    weekendTextStyle: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                    ),
-                  ),
-                  daysOfWeekHeight: 50,
-                  rowHeight: 50,
-                )
+                child: Center(
+                        child: Text(
+                          _focusedDay.day.toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+
+                ),
+                  );
+                } else {
+                  return null;
+                }
+              },
+            ),
+
+            headerVisible: false,
+            calendarStyle: CalendarStyle(
+
+
+              todayDecoration: BoxDecoration(
+              ),
+
+              todayTextStyle: TextStyle(
+              ),
+              weekendTextStyle: TextStyle(
+                color: Color(0xFF545F71),
+                fontSize: 12,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w400,
+                height: 0.12,
+              ),
+            ),
+            daysOfWeekHeight: 50,
+            rowHeight: 50,
+          )
               : Container(
-                  height: 109, // Adjust this to fit your two-line layout
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CalanderText(
-                            text: "Sun",
-                          ),
-                          CalanderText(
-                            text: "Mon",
-                          ),
-                          CalanderText(
-                            text: "Tue",
-                          ),
-                          CalanderText(
-                            text: "Wed",
-                          ),
-                          CalanderText(
-                            text: "Thu",
-                          ),
-                          CalanderText(
-                            text: "Fri",
-                          ),
-                          CalanderText(
-                            text: "Sat",
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CalanderText(
-                            text: "17",
-                            isDate: true,
-                          ),
-                          CalanderText(
-                            text: "18",
-                            isDate: true,
-                          ),
-                          CalanderText(
-                            text: "19",
-                            isDate: true,
-                          ),
-                          CalanderText(
-                            text: "20",
-                            isDate: true,
-                          ),
-                          CalanderText(
-                            text: "21",
-                            isDate: true,
-                          ),
-                          CalanderText(
-                            text: "22",
-                            isDate: true,
-                          ),
-                          CalanderText(
-                            text: "23",
-                            isDate: true,
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+            height: 75, // Adjust this to fit your two-line layout
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CalanderText(
+                      text: "Sun",
+                    ),
+                    CalanderText(
+                      text: "Mon",
+                    ),
+                    CalanderText(
+                      text: "Tue",
+                    ),
+                    CalanderText(
+                      text: "Wed",
+                    ),
+                    CalanderText(
+                      text: "Thu",
+                    ),
+                    CalanderText(
+                      text: "Fri",
+                    ),
+                    CalanderText(
+                      text: "Sat",
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 32,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CalanderText(
+                      text: "17",
+                      isDate: true,
+                    ),
+                    CalanderText(
+                      text: "18",
+                      isDate: true,
+                    ),
+                    CalanderText(
+                      text: "19",
+                      isDate: true,
+                    ),
+                    CalanderText(
+                      text: "20",
+                      isDate: true,
+                    ),
+                    CalanderText(
+                      text: "21",
+                      isDate: true,
+                    ),
+                    CalanderText(
+                      text: "22",
+                      isDate: true,
+                    ),
+                    CalanderText(
+                      text: "23",
+                      isDate: true,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 16,),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isCalendarExpanded = !_isCalendarExpanded;
+              });
+            },
+            child: Container(
+              width: 40,
+              height: 6,
+              decoration: ShapeDecoration(
+                color: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100),
+
                 ),
           GestureDetector(
             onTap: () {
@@ -292,6 +366,7 @@ class CalanderText extends StatelessWidget {
     required this.text,
     this.isDate = false,
   });
+
   final String text;
   final bool isDate;
 

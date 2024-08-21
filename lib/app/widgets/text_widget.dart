@@ -14,6 +14,7 @@ class TextWidget extends StatelessWidget {
   final TextOverflow? textOverflow;
   final double minFontSize;
   final double maxFontSize;
+
   const TextWidget({
     super.key,
     required this.title,
@@ -39,12 +40,12 @@ class TextWidget extends StatelessWidget {
       maxFontSize: maxFontSize,
       style: TextStyle(
         fontFamily: "Lufga",
+
         color: textColor,
         fontSize: fontSize,
         fontWeight: fontWeight,
         decorationColor: underLineColor,
-        decoration:
-            showUnderline ? TextDecoration.underline : TextDecoration.none,
+        decoration: showUnderline ? TextDecoration.underline : TextDecoration.none,
       ),
     );
   }

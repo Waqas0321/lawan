@@ -38,7 +38,9 @@ dependencies:
   animated_neumorphic: ^0.2.0
   animated_toggle_switch: ^0.8.3
   auto_size_text: ^3.0.0
+
   fl_chart: ^0.68.0
+
   get: ^4.6.6
   table_calendar: ^3.1.2
   flutter_responsive: ^1.1.0
@@ -48,6 +50,8 @@ dependencies:
   responsive_framework: ^1.4.0  # Use the latest version
   flutter_svg: ^2.0.10+1
   responsive_builder: ^0.7.1
+  overlay_group_avatar: ^0.0.4
+  acrylic_any: ^0.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

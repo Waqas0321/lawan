@@ -6,12 +6,14 @@ class ArenaINOutButton extends StatelessWidget {
   final String text;
   final bool isSelected;
   final VoidCallback onPressed;
+  final Color borderColor;
   final double height;
   ArenaINOutButton({
     required this.text,
     required this.isSelected,
-    this.height = 37,
+    this.height=37,
     required this.onPressed,
+    this.borderColor=const Color(0xFFE9EAF0)
   });
 
   @override
@@ -19,26 +21,23 @@ class ArenaINOutButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.28,
+        // width: MediaQuery.of(context).size.width * 0.28,
         height: height,
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        padding: EdgeInsets.symmetric(vertical: 8,horizontal: 12),
         decoration: ShapeDecoration(
-          color: isSelected ? Colors.black : null, // Background color
+          color: isSelected ? Colors.black :null, // Background color
           shape: RoundedRectangleBorder(
-            side: !isSelected
-                ? BorderSide(width: 1, color: Color(0xFFE9EAF0))
-                : BorderSide.none, // Border color
+            side: !isSelected?BorderSide(width: 1, color:borderColor):BorderSide.none, // Border color
             borderRadius: BorderRadius.circular(32),
           ),
         ),
         child: Center(
-          child: Text(
+          child:
+          Text(
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: isSelected
-                  ? AppColors.white
-                  : AppColors.dark_grey, // Text color
+              color: isSelected ? AppColors.white :AppColors.dark_grey, // Text color
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w400,

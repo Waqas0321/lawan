@@ -14,6 +14,7 @@ import 'package:lawan/app/utils/images.dart';
 import '../../widgets/Areena/AddArena1.dart';
 import '../../widgets/Areena/circularContainer.dart';
 import '../../widgets/Areena/custom_bottom_nav.dart';
+import '../Session_Screen/SessionScreen.dart';
 import 'Widgets/homeScreenHeader.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -56,6 +57,7 @@ class HomeScreen extends StatelessWidget {
             child: Stack(children: [
               SingleChildScrollView(
                 child: SafeArea(
+
                   child: Obx(() {
                     if (controller.selectedItem.value == "Arena") {
                       return Padding(
@@ -80,6 +82,7 @@ class HomeScreen extends StatelessWidget {
                       return Sessionscreen();
                     }
                   }),
+
                 ),
               ),
               CustomBottomNavigation(
