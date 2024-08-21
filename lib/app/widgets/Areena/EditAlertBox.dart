@@ -2,13 +2,15 @@ import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
 import '../../utils/text.dart';
 import 'ArenaFilled1.dart';
 import 'areenaButton.dart';
 
-void showCustomEditAlertDialog(final String text1, final String text2) {
+void showCustomEditAlertDialog(final String text1, final String text2,
+    {bool isConfirmed = false}) {
   Get.dialog(AlertDialog(
     backgroundColor: Colors.transparent,
     contentPadding: EdgeInsets.zero, // Remove default padding
@@ -43,7 +45,8 @@ void showCustomEditAlertDialog(final String text1, final String text2) {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
+            isConfirmed
+                ? Row(
               children: [
                 SvgPicture.asset(
                   Images.pencil,
@@ -64,6 +67,12 @@ void showCustomEditAlertDialog(final String text1, final String text2) {
                   ),
                 )
               ],
+            )
+                : TextWidget(
+              title: Apptext.confirm_update,
+              fontWeight: FontWeight.w400,
+              textColor: AppColors.dark_grey,
+              fontSize: 12,
             ),
             SizedBox(height: 16),
             SizedBox(
@@ -112,23 +121,24 @@ void showCustomEditAlertDialog(final String text1, final String text2) {
             SizedBox(
               width: double.infinity,
               child: Row(
-                crossAxisAlignment:CrossAxisAlignment.center,
-                mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CustomContainer(
                     width: 44,
-                    image:Images.trash,
+                    image: Images.trash,
                     icon: true,
                     height: 44,
                     text: "2",
                     color: null,
                     textColor: AppColors.dark_grey,
-                    imageColor:AppColors.dark_grey,
+                    imageColor: AppColors.dark_grey,
                     circular: true,
                   ),
                   CustomAreenaButton(
                     height: 49,
                     text: "Update",
+                    width:Get.width/1.9,
                     color: Colors.black,
                     borderColor: AppColors.black,
                     textColor: Colors.white,
@@ -191,7 +201,14 @@ void _openBottomSheet() {
                   color: AppColors.black,
                   borderColor: AppColors.black,
                   textColor: AppColors.white,
-                  onTap: () {},
+                  onTap: () {
+                    Get.back();
+                    showCustomEditAlertDialog(
+                      "Cancel",
+                      "confirm",
+                      isConfirmed: false,
+                    );
+                  },
                 ),
               ),
             ],

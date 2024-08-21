@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../utils/colors.dart';
 
 class TextWidget extends StatelessWidget {
@@ -15,6 +14,7 @@ class TextWidget extends StatelessWidget {
   final TextOverflow? textOverflow;
   final double minFontSize;
   final double maxFontSize;
+
   const TextWidget({
     super.key,
     required this.title,
@@ -38,13 +38,13 @@ class TextWidget extends StatelessWidget {
       softWrap: true,
       minFontSize: minFontSize,
       maxFontSize: maxFontSize,
-      style: GoogleFonts.poppins(
+      style: TextStyle(
+        fontFamily: 'Lufga',
         color: textColor,
         fontSize: fontSize,
         fontWeight: fontWeight,
         decorationColor: underLineColor,
-        decoration:
-            showUnderline ? TextDecoration.underline : TextDecoration.none,
+        decoration: showUnderline ? TextDecoration.underline : TextDecoration.none,
       ),
     );
   }

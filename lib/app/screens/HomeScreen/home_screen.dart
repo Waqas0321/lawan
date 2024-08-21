@@ -13,6 +13,7 @@ import 'package:lawan/app/utils/images.dart';
 import '../../widgets/Areena/AddArena1.dart';
 import '../../widgets/Areena/circularContainer.dart';
 import '../../widgets/Areena/custom_bottom_nav.dart';
+import '../Session_Screen/SessionScreen.dart';
 import 'Widgets/homeScreenHeader.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -78,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                           } else if (controller.selectedItem.value == "Sales") {
                             return SaleMain();
                           } else {
-                            return SessionMain();
+                            return Sessionscreen();
                           }
                         }),
                       ],

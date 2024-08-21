@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
+import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
 import 'package:lawan/app/widgets/Areena/AddArena1.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Sessionscreen(),
+      home: HomeScreen(),
     );
   }
 }

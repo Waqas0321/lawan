@@ -52,4 +52,6 @@ class Apptext {
   static const String earnIncome1 = "     Earn income";
   static const String by = " by";
   static const String earnIncome2 = "\n     listing as many arena that you own";
+  static const String confirm_update="Confirm Update?";
+
 }
