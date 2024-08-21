@@ -18,19 +18,16 @@ class Sessionscreen extends StatefulWidget {
 }
 
 class _SessionscreenState extends State<Sessionscreen> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
-
-      color: Color(0xFFF2F3F2),
-      child: Padding(
-        padding: EdgeInsets.only(
-            top: Get.width * 0.02,
-            left: Get.width * 0.03,
-            right: Get.width * 0.03),
-        child: Column(
-          children: [
+        color: Color(0xFFF2F3F2),
+        child: Padding(
+          padding: EdgeInsets.only(
+              top: Get.width * 0.02,
+              left: Get.width * 0.03,
+              right: Get.width * 0.03),
+          child: Column(children: [
             SessionHeader(),
             CustomCalender(),
             Column(
@@ -49,7 +46,6 @@ class _SessionscreenState extends State<Sessionscreen> {
                           fontWeight: FontWeight.w500,
                           height: 0.09,
                         ),
-
                       ),
                       SizedBox(width: 16),
                       Text(
@@ -67,37 +63,35 @@ class _SessionscreenState extends State<Sessionscreen> {
                 ),
                 SizedBox(height: 16),
                 SizedBox(
-                  height: 21,
-                  child: Text(
-                    'No Sessions',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 0.12,
-                    ),
-
-                  ],
-                ),
+                    height: 21,
+                    child: Text(
+                      'No Sessions',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontFamily: 'Lufga',
+                        fontWeight: FontWeight.w400,
+                        height: 0.12,
+                      ),
+                    )),
                 Expanded(
                   child: ListView.builder(
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                    return Container(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 16),
-                          DateDayTextContainer(),
-                          SizedBox(height: 16),
-                          SessionContainer(),
-                          SizedBox(height: 8),
-                          SessionContainer(),
-                        ],
-
-                      ),
-                    );
-                  },),
+                      return Container(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16),
+                            DateDayTextContainer(),
+                            SizedBox(height: 16),
+                            SessionContainer(),
+                            SizedBox(height: 8),
+                            SessionContainer(),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
@@ -146,10 +140,7 @@ class _SessionscreenState extends State<Sessionscreen> {
               height: 8,
             ),
             SessionContainer(),
-          ],
-        ),
-      ),
-    );
+          ]),
+        ));
   }
 }
-
