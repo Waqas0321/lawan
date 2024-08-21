@@ -182,51 +182,50 @@ class _CustomCalenderState extends State<CustomCalender> {
               print('Day selected: $selectedDay');
               setState(() {
                 _focusedDay = selectedDay;
+                _selectedMonth = '${selectedDay.month}';
+
               });
             },
             focusedDay: _focusedDay,
             calendarBuilders: CalendarBuilders(
-
-
-              selectedBuilder: (context, day, focusedDay) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Center(
-                    child: Text(
-                      focusedDay.day.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
+              markerBuilder: (context, day, events) {
+                if (day == _focusedDay) {
+                  return Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 9),
+                    decoration: ShapeDecoration(
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                  ),
-                );
+                child: Center(
+                        child: Text(
+                          _focusedDay.day.toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                ),
+                  );
+                } else {
+                  return null;
+                }
               },
             ),
+
             headerVisible: false,
             calendarStyle: CalendarStyle(
-              selectedDecoration: BoxDecoration(
-                color: Colors.blue, // Change this color to your desired color
-                borderRadius: BorderRadius.circular(16),
-              ),
-              selectedTextStyle: TextStyle(
-                fontSize: 14,
-                color: Colors.white,
-              ),
+
 
               todayDecoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(16),
               ),
               todayTextStyle: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w500,
-                height: 0.11,
               ),
               weekendTextStyle: TextStyle(
                 color: Color(0xFF545F71),
@@ -240,7 +239,7 @@ class _CustomCalenderState extends State<CustomCalender> {
             rowHeight: 50,
           )
               : Container(
-            height: 109, // Adjust this to fit your two-line layout
+            height: 75, // Adjust this to fit your two-line layout
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -311,6 +310,7 @@ class _CustomCalenderState extends State<CustomCalender> {
               ],
             ),
           ),
+          SizedBox(height: 16,),
           GestureDetector(
             onTap: () {
               setState(() {
@@ -319,7 +319,7 @@ class _CustomCalenderState extends State<CustomCalender> {
             },
             child: Container(
               width: 40,
-              height: 4,
+              height: 6,
               decoration: ShapeDecoration(
                 color: Colors.black,
                 shape: RoundedRectangleBorder(
