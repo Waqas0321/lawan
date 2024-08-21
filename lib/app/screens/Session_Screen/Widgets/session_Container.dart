@@ -18,8 +18,7 @@ class _SessionContainerState extends State<SessionContainer> {
   List<ImageProvider> memberImages = [
     AssetImage(Images.avatar),
     AssetImage(Images.avatar2),
-    AssetImage(Images.avatar3),
-    AssetImage(Images.ball),
+
     // Add more images here...
   ];
 

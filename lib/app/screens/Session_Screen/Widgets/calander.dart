@@ -30,6 +30,11 @@ class _CustomCalenderState extends State<CustomCalender> {
     'November',
     'December'
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -173,14 +178,16 @@ class _CustomCalenderState extends State<CustomCalender> {
               ? TableCalendar(
             firstDay: DateTime(2020, 10, 16),
             lastDay: DateTime(2030, 3, 14),
-            focusedDay: _focusedDay,
             onDaySelected: (selectedDay, focusedDay) {
               print('Day selected: $selectedDay');
               setState(() {
                 _focusedDay = selectedDay;
               });
             },
+            focusedDay: _focusedDay,
             calendarBuilders: CalendarBuilders(
+
+
               selectedBuilder: (context, day, focusedDay) {
                 return Container(
                   decoration: BoxDecoration(
@@ -189,7 +196,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                   ),
                   child: Center(
                     child: Text(
-                      day.day.toString(),
+                      focusedDay.day.toString(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -201,13 +208,18 @@ class _CustomCalenderState extends State<CustomCalender> {
             ),
             headerVisible: false,
             calendarStyle: CalendarStyle(
-              todayDecoration: BoxDecoration(
-                color: Colors.black,
+              selectedDecoration: BoxDecoration(
+                color: Colors.blue, // Change this color to your desired color
                 borderRadius: BorderRadius.circular(16),
               ),
               selectedTextStyle: TextStyle(
                 fontSize: 14,
                 color: Colors.white,
+              ),
+
+              todayDecoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(16),
               ),
               todayTextStyle: TextStyle(
                 color: Colors.white,
