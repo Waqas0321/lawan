@@ -9,17 +9,22 @@ class CustomChart extends StatefulWidget {
 
 class _CustomChartState extends State<CustomChart> {
   int selectedIndex = -1;
-  int currentView = 0; // 0 for Weekly, 1 for Monthly, 2 for Yearly
-  List<double> currentData = [8, 10, 14, 15, 13, 10, 16]; // Example data
-  List<double> previousData = [
-    7,
-    9,
-    13,
+  int currentView = 1; // 0 for Weekly, 1 for Monthly, 2 for Yearly
+  List<double> currentData = [
+    8,
+    10,
     14,
-    12,
-    9,
-    15
-  ]; // Example data for previous period
+    15,
+    13,
+    10,
+    16,
+    4,
+    7,
+    16,
+    4,
+    7
+  ]; // Example data
+  List<double> previousData = [7, 9, 13, 14, 12, 9, 15, 16, 4, 7, 16, 4, 7];
 
   List<String> weeklyLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   List<String> monthlyLabels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
@@ -42,13 +47,33 @@ class _CustomChartState extends State<CustomChart> {
   @override
   Widget build(BuildContext context) {
     final labels = currentLabels;
-    final double barWidth = Get.width * 0.12;
-    final double barSpacing = Get.width * 0.09;
-    final double heightScale =
-        Get.height * 0.01; // Adjusted scale for smaller height
+
+    // Adjust bar width and spacing based on current view
+    double barWidth;
+    double barSpacing;
+
+    switch (currentView) {
+      case 0: // Weekly
+        barWidth = Get.width * 0.12;
+        barSpacing = Get.width * 0.05;
+        break;
+      case 1: // Monthly
+        barWidth = Get.width * 0.18;
+        barSpacing = Get.width * 0.10;
+        break;
+      case 2: // Yearly
+        barWidth = Get.width * 0.08;
+        barSpacing = Get.width * 0.03;
+        break;
+      default:
+        barWidth = Get.width * 0.12;
+        barSpacing = Get.width * 0.05;
+    }
+
+    final double heightScale = Get.height * 0.01;
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -74,7 +99,7 @@ class _CustomChartState extends State<CustomChart> {
         ),
         SizedBox(height: Get.height * 0.02),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: List.generate(labels.length, (index) {
             final currentBarHeight = currentData[index] * heightScale;
             final previousBarHeight = previousData[index] * heightScale;
@@ -103,11 +128,10 @@ class _CustomChartState extends State<CustomChart> {
                         ),
                       ),
                       SizedBox(
-                        width: Get.width * 0.002,
-                      )
+                        width: barSpacing * 0.25,
+                      ),
                     ],
                   ),
-
                   SizedBox(height: barSpacing),
                   // Current Bar (Bottom to Top)
                   Container(
@@ -134,7 +158,7 @@ class _CustomChartState extends State<CustomChart> {
         ),
         SizedBox(height: Get.height * 0.02),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: List.generate(labels.length, (index) {
             return Container(
               width: barWidth,

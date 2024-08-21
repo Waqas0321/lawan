@@ -4,19 +4,19 @@ class Images {
   static const String avatar2 = "$mainImage/Avatar2.png";
   static const String avatar3 = "$mainImage/Avatar3.png";
 
-  static const String  frame="$mainImage/frame.png";
-  static const String add="$mainImage/add.svg";
-  static const String line="$mainImage/line.png";
-  static const String gallery="$mainImage/gallery.svg";
-  static const String location="$mainImage/location.svg";
-  static const String chevron_sort="$mainImage/chevron-sort.png";
-  static const String  oval="$mainImage/oval.png";
-  static const String frame1="$mainImage/frame1.svg";
-  static const String users="$mainImage/users.svg";
-  static const String QRCode="$mainImage/QRCode.svg";
-  static const String chat="$mainImage/chat.svg";
-  static const String dots_vertical_outline ="$mainImage/dots-vertical-outline.svg";
-
+  static const String frame = "$mainImage/frame.png";
+  static const String add = "$mainImage/add.svg";
+  static const String line = "$mainImage/line.png";
+  static const String gallery = "$mainImage/gallery.svg";
+  static const String location = "$mainImage/location.svg";
+  static const String chevron_sort = "$mainImage/chevron-sort.png";
+  static const String oval = "$mainImage/oval.png";
+  static const String frame1 = "$mainImage/frame1.svg";
+  static const String users = "$mainImage/users.svg";
+  static const String QRCode = "$mainImage/QRCode.svg";
+  static const String chat = "$mainImage/chat.svg";
+  static const String dots_vertical_outline =
+      "$mainImage/dots-vertical-outline.svg";
 
   //home Screen
   static const String ball = "$mainImage/ball.png";
@@ -37,20 +37,22 @@ class Images {
   static const String dropdown = "$mainImage/dropdown.svg";
   // Arena Filled
 
+  static const String add_Image = "$mainImage/Add Image.png";
+  static const String pencil = "$mainImage/pencil.svg";
+  static const String picture = "$mainImage/Picture.png";
+  static const String map = "$mainImage/map-pin.png";
+  static const String layerImage = "$mainImage/Layer_1.png";
+  static const String plus = "$mainImage/plus.svg";
+  static const String trash = "$mainImage/trash.svg";
+  static const String upload = "$mainImage/upload.svg";
+  static const String users_group_outline =
+      "$mainImage/users-group-outline.svg";
+  static const String calendar = "$mainImage/calendar.svg";
+  static const String currency_dollar = "$mainImage/currency-dollar.svg";
+  static const String location_marker = "$mainImage/location-marker.svg";
+  static const String phone_outline = "$mainImage/phone-outline.svg";
+  static const String identification = "$mainImage/identification.svg";
 
-static const String add_Image = "$mainImage/Add Image.png";
-static const String pencil = "$mainImage/pencil.svg";
-static const String picture = "$mainImage/Picture.png";
-static const String map = "$mainImage/map-pin.png";
-static const String layerImage = "$mainImage/Layer_1.png";
-static const String plus="$mainImage/plus.svg";
-static const String trash="$mainImage/trash.svg";
-static const String upload="$mainImage/upload.svg";
-static const String users_group_outline="$mainImage/users-group-outline.svg";
-static const String calendar="$mainImage/calendar.svg";
-static const String currency_dollar="$mainImage/currency-dollar.svg";
-static const String location_marker="$mainImage/location-marker.svg";
-static const String phone_outline="$mainImage/phone-outline.svg";
-static const String identification="$mainImage/identification.svg";
+  static const String left = "$mainImage/left.svg";
+  static const String right = "$mainImage/right.svg";
 }
-
