@@ -43,4 +43,9 @@ static const String plus="$mainImage/plus.svg";
 static const String trash="$mainImage/trash.svg";
 static const String upload="$mainImage/upload.svg";
 static const String users_group_outline="$mainImage/users-group-outline.svg";
+static const String calendar="$mainImage/calendar.svg";
+static const String currency_dollar="$mainImage/currency-dollar.svg";
+static const String location_marker="$mainImage/location-marker.svg";
+static const String phone_outline="$mainImage/phone-outline.svg";
+static const String identification="$mainImage/identification.svg";
 }

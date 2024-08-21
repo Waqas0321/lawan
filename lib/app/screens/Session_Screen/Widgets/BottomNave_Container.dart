@@ -2,9 +2,17 @@ import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/images.dart';
+import 'package:lawan/app/widgets/Areena/ArenaFilled1.dart';
 
-class BottomnaveContainer extends StatelessWidget {
+class BottomnaveContainer extends StatefulWidget {
   const BottomnaveContainer({super.key});
+
+  @override
+  State<BottomnaveContainer> createState() => _BottomnaveContainerState();
+}
+
+class _BottomnaveContainerState extends State<BottomnaveContainer> {
+  final List<String> DropDownItems = ['Call', 'Message', "Chat"];
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +27,10 @@ class BottomnaveContainer extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width - 16,
               height: 556,
-              padding: const EdgeInsets.only(left: 16, right: 16, ),
+              padding: const EdgeInsets.only(
+                left: 16,
+                right: 16,
+              ),
               decoration: ShapeDecoration(
                 color: Color(0xB2F2F3F2),
                 shape: RoundedRectangleBorder(
@@ -224,43 +235,160 @@ class BottomnaveContainer extends StatelessWidget {
                             ),
                             SizedBox(width: 3),
                             Container(
-                              width: 36,
-                              height: 36,
-                              padding: const EdgeInsets.all(12),
-                              clipBehavior: Clip.antiAlias,
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                      width: 1, color: Color(0xFFDEE1E2)),
-                                  borderRadius: BorderRadius.circular(20),
+                                width: 155,
+                                height: 42,
+                                padding: const EdgeInsets.all(12),
+                                clipBehavior: Clip.antiAlias,
+                                decoration: ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    side: BorderSide(
+                                        width: 1, color: Color(0xFFDEE1E2)),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
                                 ),
-                              ),
-                              child: SvgPicture.asset(
-                                Images.dots_vertical_outline,
-                                height: 16,
-                                width: 16,
-                              ),
-                            )
+                                child: Center(
+                                    child: DropdownButtonHideUnderline(
+                                  child: DropdownButton<String>(
+                                    icon: SvgPicture.asset(
+                                      Images.dots_vertical_outline,
+                                      width: 12,
+                                      height: 12,
+                                      color: Colors.black,
+                                    ),
+                                    onChanged: (String? newValue) {
+                                      // Handle the selected value here
+                                      print(newValue);
+                                    },
+                                    // Set to null to prevent the button's value from changing
+                                    items: [
+                                      DropdownMenuItem(
+                                        child: Row(
+                                          children: [
+                                            SvgPicture.asset(
+                                              Images.phone_outline,
+                                              height: 16,
+                                              width: 16,
+                                              color: Color(0xff545F71),
+                                            ),
+                                            SizedBox(width: 4,),
+                                            Text(
+                                              'Call',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 14,
+                                                fontFamily: 'Lufga',
+                                                fontWeight: FontWeight.w500,
+                                                height: 0.07,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        value: 'call',
+                                      ),
+                                      DropdownMenuItem(
+                                        child: Row(
+                                          children: [
+                                            SvgPicture.asset(
+                                              Images.identification,
+                                              height: 16,
+                                              width: 16,
+                                              color: Color(0xff545F71),
+                                            ),
+                                            SizedBox(width: 4,),
+                                            Text(
+                                              'Identification',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 14,
+                                                fontFamily: 'Lufga',
+                                                fontWeight: FontWeight.w500,
+                                                height: 0.07,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        value: 'Identification',
+                                      ),
+                                    ],
+                                    // onTap: () {
+                                    //   showMenu(context: context,
+                                    //       position: RelativeRect.fromLTRB(
+                                    //           100, 100, 100, 100),
+                                    //       items: [
+                                    //         PopupMenuItem(
+                                    //           child: Text('Item 1'),
+                                    //           value: 'Item 1',
+                                    //         ),
+                                    //         PopupMenuItem(
+                                    //           child: Text('Item 2'),
+                                    //           value: 'Item 2',
+                                    //         ),
+                                    //
+                                    //       ]
+                                    //
+                                    //   ).then((value) {
+                                    //
+                                    //   },);
+                                    // }, // Empty list to prevent dropdown menu from showing
+                                  ),
+                                )))
                           ],
                         )
                       ],
                     ),
                   ),
                   SizedBox(height: 16),
-                  Expanded(
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 8,
-                          crossAxisSpacing: 8,
-                          childAspectRatio: 1.9),
-                      itemCount: 4,
-                      itemBuilder: (context, index) {
-                        return BottomContainer();
-                      },
-                    ),
+                  // Expanded(
+                  //   child: GridView.builder(
+                  //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //         crossAxisCount: 2,
+                  //         mainAxisSpacing: 8,
+                  //         crossAxisSpacing: 8,
+                  //         childAspectRatio: 1.9),
+                  //     itemCount: 4,
+                  //     itemBuilder: (context, index) {
+                  //       return BottomContainer();
+                  //     },
+                  //   ),
+                  // ),
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          BottomContainer(
+                            image: Images.calendar,
+                            text1: "Date",
+                            text2: "Tue,  25 Sep 2024",
+                          ),
+                          SizedBox(width: 8),
+                          BottomContainer(
+                            isSecond: true,
+                            image: Images.clock,
+                            text1: "Time",
+                            text2: "9:00 AM - 11:00 AM",
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                      Row(
+                        children: [
+                          BottomContainer(
+                            image: Images.location_marker,
+                            text1: "Location",
+                            text2: "Petaling Jaya,\n Selangor",
+                          ),
+                          SizedBox(width: 8),
+                          BottomContainer(
+                            isFourth: true,
+                            image: Images.currency_dollar,
+                            text1: "Price",
+                            text2: "RM220",
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-
+                  SizedBox(height: 16),
                 ],
               ),
             ),
@@ -292,8 +420,8 @@ class BottomnaveContainer extends StatelessWidget {
                     width: 16,
                   ),
                   Expanded(
-                      child:
-                          BottomButtons(isExpanded: true, image: Images.users_group_outline)),
+                      child: BottomButtons(
+                          isExpanded: true, image: Images.users_group_outline)),
                 ],
               ),
             )
@@ -321,9 +449,11 @@ class BottomButtons extends StatelessWidget {
       height: 49,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: ShapeDecoration(
-        color: isExpanded? Colors.black: Colors.transparent,
+        color: isExpanded ? Colors.black : Colors.transparent,
         shape: RoundedRectangleBorder(
-          side:isExpanded?BorderSide() : BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+          side: isExpanded
+              ? BorderSide()
+              : BorderSide(width: 1, color: Color(0xFFDEE1E2)),
           borderRadius: BorderRadius.circular(32),
         ),
       ),
@@ -331,7 +461,12 @@ class BottomButtons extends StatelessWidget {
           child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(image,color:isExpanded? Color(0xffACB4C0): Color(0xff545F71),height: 16,width: 16,),
+          SvgPicture.asset(
+            image,
+            color: isExpanded ? Color(0xffACB4C0) : Color(0xff545F71),
+            height: 16,
+            width: 16,
+          ),
           isExpanded
               ? SizedBox(
                   width: 8,
@@ -361,13 +496,26 @@ class BottomButtons extends StatelessWidget {
 class BottomContainer extends StatelessWidget {
   const BottomContainer({
     super.key,
+    this.isFirst = false,
+    this.isSecond = false,
+    this.isFourth = false,
+    required this.image,
+    required this.text1,
+    required this.text2,
   });
+
+  final bool isFirst;
+  final bool isSecond;
+  final bool isFourth;
+  final String image;
+  final String text1;
+  final String text2;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        width: 180,
+        width: 165,
         height: 88,
         padding: const EdgeInsets.all(12),
         decoration: ShapeDecoration(
@@ -382,13 +530,14 @@ class BottomContainer extends StatelessWidget {
             Row(
               children: [
                 SvgPicture.asset(
-                  Images.clock,
+                  image,
                   height: 16,
                   width: 16,
                   color: Color(0xff545F71),
                 ),
+                SizedBox(width: 2),
                 Text(
-                  'Time',
+                  text1,
                   style: TextStyle(
                       color: Color(0xFF545F71),
                       fontSize: 12,
@@ -401,46 +550,50 @@ class BottomContainer extends StatelessWidget {
             SizedBox(height: 4),
             Expanded(
               child: Text(
-                '9:00 AM - 11:00 AM',
+                text2,
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 14,
+                    fontSize: isFourth ? 20 : 14,
                     fontFamily: 'Lufga',
                     fontWeight: FontWeight.w500,
                     decoration: TextDecoration.none),
               ),
             ),
             SizedBox(height: 4),
-            Container(
-              width: 37,
-              height: 16,
-              padding: const EdgeInsets.symmetric(horizontal: 6),
-              clipBehavior: Clip.antiAlias,
-              decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: 1,
-                    strokeAlign: BorderSide.strokeAlignOutside,
-                    color: Color(0xFFDEE1E2),
-                  ),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  '2 hr',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF545F71),
-                    fontSize: 11,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w500,
-                    decoration: TextDecoration.none,
-                    letterSpacing: 0.50,
-                  ),
-                ),
-              ),
-            )
+            isSecond
+                ? Container(
+                    width: 37,
+                    height: 16,
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          width: 1,
+                          strokeAlign: BorderSide.strokeAlignOutside,
+                          color: Color(0xFFDEE1E2),
+                        ),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        '2 hr',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF545F71),
+                          fontSize: 11,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w500,
+                          decoration: TextDecoration.none,
+                          letterSpacing: 0.50,
+                        ),
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    height: 1,
+                  )
           ],
         ),
       ),
