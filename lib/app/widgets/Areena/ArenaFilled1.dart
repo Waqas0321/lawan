@@ -101,7 +101,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   bottom: false,
                   child: Padding(
                     padding: EdgeInsets.only(
-                        left: 16, right: 16, ),
+                        left: 16, right: 16),
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
