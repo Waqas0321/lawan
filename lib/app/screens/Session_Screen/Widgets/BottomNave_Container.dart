@@ -297,7 +297,10 @@ class _BottomnaveContainerState extends State<BottomnaveContainer> {
                           onTap: () {
                             Get.back();
                           },
-                          child: BottomButtons(image: Images.x,)))
+                          child: BottomButtons(
+                            height: 42,
+                            width: 42,
+                            image: Images.x,)))
                 ]
               ),
             ),

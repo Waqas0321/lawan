@@ -5,16 +5,20 @@ class BottomButtons extends StatelessWidget {
     super.key,
     required this.image,
     this.isExpanded = false,
+    this.height = 49,
+    this.width = 48,
   });
 
   final String image;
+  final double height;
+  final double width;
   final bool isExpanded;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 48,
-      height: 49,
+      width: width,
+      height: height,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: ShapeDecoration(
         color: isExpanded ? Colors.black : Colors.transparent,
