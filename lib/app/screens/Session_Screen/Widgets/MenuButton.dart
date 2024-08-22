@@ -31,13 +31,15 @@ class MenuButton extends StatelessWidget {
             PopupMenuItem(
               child: Container(
                 margin: EdgeInsets.all(0),
+                padding: EdgeInsets.all(0),
                 width: 250,
-                height: 40,
+                height: 16,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         SvgPicture.asset(
                           Images.phone_outline,
@@ -45,7 +47,7 @@ class MenuButton extends StatelessWidget {
                           width: 16,
                           color: Color(0xff545F71),
                         ),
-                        SizedBox(width: 4,),
+                        SizedBox(width: 8),
                         Text(
                           'Call',
                           style: TextStyle(
@@ -53,13 +55,13 @@ class MenuButton extends StatelessWidget {
                             fontSize: 14,
                             fontFamily: 'Lufga',
                             fontWeight: FontWeight.w500,
-                            height: 0.07,
+                            height: 1,
                           ),
                         ),
 
                       ],
                     ),
-                    Divider(),
+
 
                   ],
                 ),
@@ -70,34 +72,40 @@ class MenuButton extends StatelessWidget {
             PopupMenuItem(
               child: Container(
                 margin: EdgeInsets.all(0),
+                padding: EdgeInsets.all(8),
                 width: 250,
-                height: 30,
+                height: 65,
 
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(
-                          Images.identification,
-                          height: 16,
-                          width: 16,
-                          color: Color(0xff545F71),
-                        ),
-                        SizedBox(width: 4,),
-                        Text(
-                          'Identification',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'Lufga',
-                            fontWeight: FontWeight.w500,
-                            height: 0.07,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Divider(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            Images.identification,
+                            height: 16,
+                            width: 16,
+                            color: Color(0xff545F71),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          SizedBox(width: 4,),
+                          Text(
+                            'Identification',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w500,
+                              height: 0.07,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 4)
+                    ],
+                  ),
                 ),
               ),
               value: 'Identification',
