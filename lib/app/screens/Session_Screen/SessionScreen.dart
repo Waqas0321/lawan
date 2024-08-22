@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../widgets/Session_and_MenualBooking/DateDayContainer.dart';
-import '../../widgets/Session_and_MenualBooking/Session_Header.dart';
-import '../../widgets/Session_and_MenualBooking/calander.dart';
-import '../../widgets/Session_and_MenualBooking/session_Container.dart';
+import '../../widgets/Session_Screen/DateDayContainer.dart';
+import '../../widgets/Session_Screen/Session_Header.dart';
+import '../../widgets/Session_Screen/calander.dart';
+import '../../widgets/Session_Screen/session_Container.dart';
 class Sessionscreen extends StatefulWidget {
   const Sessionscreen({super.key});
 

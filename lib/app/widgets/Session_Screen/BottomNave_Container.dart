@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/utils/images.dart';
-import 'package:lawan/app/widgets/Session_and_MenualBooking/timeZone_containers.dart';
-
+import 'package:lawan/app/widgets/Session_Screen/timeZone_containers.dart';
 import 'Bottom_Buttons.dart';
 import 'MenuButton.dart';
 
