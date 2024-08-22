@@ -38,7 +38,7 @@ class TimeSlotHome extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left:2,right:4),
+          padding: const EdgeInsets.only(left:2,right:12),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedTimeSlot,
@@ -57,7 +57,7 @@ class TimeSlotHome extends StatelessWidget {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 3.0,left: 3),
+                    padding: const EdgeInsets.only(left: 3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

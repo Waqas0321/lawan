@@ -13,6 +13,7 @@ import 'package:lawan/app/widgets/Areena/rate_section.dart';
 
 import '../../../main.dart';
 import '../../screens/HomeScreen/Widgets/circularContainer.dart';
+import '../../screens/HomeScreen/Widgets/homeScreenHeader.dart';
 import '../../utils/images.dart';
 import 'AddArena1.dart';
 import 'AlertBox.dart';
@@ -97,9 +98,10 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
               ),
               child: Stack(children: [
                 SafeArea(
+                  bottom: false,
                   child: Padding(
                     padding: EdgeInsets.only(
-                        left: 16, right: 16, top: 2, bottom: 24),
+                        left: 16, right: 16, ),
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
@@ -115,55 +117,59 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                               //   },
                               //   child: Text("Test the Alert"),
                               // ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TimeSlotHome(
-                                    timeSlots: weeksRate,
-                                    selectedTimeSlot: _selectedTimeSlot,
-                                    onChanged: _onTimeSlotChanged,
-                                    isImage: false,
-                                    isWidth: MediaQuery.of(context).size.width *
-                                        0.30,
-                                    image: "⚽",
-                                  ),
-                                  Container(
-                                    height: 44,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.16,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(300)),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 2),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Image(
-                                            image: AssetImage(Images.avtar),
-                                            height: 38,
-                                            width: 34,
-                                            fit: BoxFit.contain,
-                                          ),
-                                          SvgPicture.asset(
-                                            Images.chevron_down,
-                                            height: 16,
-                                            width: 16,
-                                          ),
-                                          SizedBox(
-                                            width: 1,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                              // Row(
+                              //   mainAxisAlignment:
+                              //       MainAxisAlignment.spaceBetween,
+                              //   children: [
+                              //     TimeSlotHome(
+                              //       timeSlots: weeksRate,
+                              //       selectedTimeSlot: _selectedTimeSlot,
+                              //       onChanged: _onTimeSlotChanged,
+                              //       isImage: false,
+                              //       isWidth: MediaQuery.of(context).size.width *
+                              //           0.30,
+                              //       image: "⚽",
+                              //     ),
+                              //     Container(
+                              //       height: 44,
+                              //       width: MediaQuery.of(context).size.width *
+                              //           0.16,
+                              //       decoration: BoxDecoration(
+                              //           color: Colors.white,
+                              //           borderRadius:
+                              //               BorderRadius.circular(300)),
+                              //       child: Padding(
+                              //         padding: EdgeInsets.only(left: 2),
+                              //         child: Row(
+                              //           mainAxisAlignment:
+                              //               MainAxisAlignment.spaceBetween,
+                              //           children: [
+                              //             Image(
+                              //               image: AssetImage(Images.avtar),
+                              //               height: 38,
+                              //               width: 34,
+                              //               fit: BoxFit.contain,
+                              //             ),
+                              //             SvgPicture.asset(
+                              //               Images.chevron_down,
+                              //               height: 16,
+                              //               width: 16,
+                              //             ),
+                              //             SizedBox(
+                              //               width: 1,
+                              //             ),
+                              //           ],
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
+                              ScreenHeader(
+                                isTextVisible: false,
+
                               ),
                               SizedBox(
-                                height: screenheight * 0.02,
+                                height: screenheight * 0.005,
                               ),
                               SizedBox(
                                 width: 361,

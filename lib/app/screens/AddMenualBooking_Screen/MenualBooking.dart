@@ -19,7 +19,10 @@ class MenualbookingScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              ScreenHeader(),
+              ScreenHeader(
+                isTextVisible: false,
+
+              ),
               CustomCalender(),
               SizedBox(height: 16),
               Column(
@@ -71,15 +74,12 @@ class MenualbookingScreen extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 10,
                   itemBuilder: (context, index) {
                     return Container(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 24,
-                          ),
+                          SizedBox(height: 32),
                           DateDayTextContainer(),
                           SessionContainer(),
                           SizedBox(height: 8),

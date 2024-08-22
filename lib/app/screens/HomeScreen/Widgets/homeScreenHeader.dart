@@ -23,7 +23,7 @@ class ScreenHeader extends StatelessWidget {
                   selectedTimeSlot: controller.selectedTimeSlot.value,
                   onChanged: controller.onTimeSlotChanged,
                   isImage: false,
-                  isWidth: MediaQuery.of(context).size.width * 0.32,
+                  isWidth: MediaQuery.of(context).size.width * 0.35,
                   image: "⚽",
                 )),
             Container(
