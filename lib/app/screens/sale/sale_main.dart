@@ -1,12 +1,12 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/sales/sales_controller.dart';
 import 'package:lawan/app/screens/sale/widgets/sale_header.dart';
-import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
+import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/chart/bar_chart.dart';
 import 'package:lawan/app/widgets/container/circular_container.dart';
+import 'package:lawan/app/widgets/container/sales_container.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 
 class SaleMain extends StatelessWidget {
@@ -20,7 +20,7 @@ class SaleMain extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment(0.00, -1.00),
           end: Alignment(0, 1),
-          colors: [Color(0xCC0C1B22), Color(0x0044D8BE)],
+          colors: [Color(0xCC0C1B22), Colors.white],
         ),
       ),
       child: Padding(
@@ -271,19 +271,105 @@ class SaleMain extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: Get.height * 0.05,
+                      height: Get.height * 0.01,
                     ),
-                    CustomChart()
+                    CustomChart(),
                   ],
                 ),
               ),
             ),
             SizedBox(
-              height: Get.height * 0.02,
+              height: Responsive.h2,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFFDEE1E2),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              padding: const EdgeInsets.all(2),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(3, (index) {
+                  return Obx(() => Container(
+                        decoration: BoxDecoration(
+                          color: controller.tabBarIndex.value == index
+                              ? Colors.white
+                              : Colors.transparent,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 22, vertical: 12),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          onTap: () {
+                            controller.selectTabBar(index);
+                          },
+                          child: Row(
+                            children: [
+                              TextWidget(
+                                title: controller.tabBarItem[index],
+                                textColor: controller.tabBarIndex.value == index
+                                    ? Colors.black
+                                    : const Color(0xFF545F71),
+                              ),
+                              controller.tabBarItem[index] == "Ongoing"
+                                  ? SizedBox(
+                                      width: Responsive.h1,
+                                    )
+                                  : Container(),
+                              controller.tabBarItem[index] == "Ongoing"
+                                  ? Container(
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(18),
+                                          color: Colors.transparent,
+                                          border: Border.all(
+                                              color: controller
+                                                          .tabBarIndex.value ==
+                                                      index
+                                                  ? Colors.black
+                                                  : Colors.white)),
+                                      child: TextWidget(
+                                        title: "257",
+                                        textColor:
+                                            controller.tabBarIndex.value ==
+                                                    index
+                                                ? Colors.black
+                                                : const Color(0xFF545F71),
+                                      ),
+                                    )
+                                  : const SizedBox.shrink()
+                            ],
+                          ),
+                        ),
+                      ));
+                }),
+              ),
             ),
             SizedBox(
-              height: Get.height,
+              height: Responsive.h1,
             ),
+            Row(
+              children: [
+                TextWidget(
+                  title: "24 Sep",
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                SizedBox(
+                  width: Responsive.h2,
+                ),
+                TextWidget(
+                  title: "Mon, Today",
+                  textColor: Color(0xFF545F71),
+                )
+              ],
+            ),
+            SizedBox(
+              height: Responsive.h1,
+            ),
+            SalesContainer()
           ],
         ),
       ),

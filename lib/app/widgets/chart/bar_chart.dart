@@ -1,178 +1,231 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:get/get.dart';
-import 'package:lawan/app/widgets/text_widget.dart';
+import 'package:lawan/app/utils/responsive_utils.dart';
+import '../../controller/sales/sales_controller.dart';
+import '../text_widget.dart';
 
-class CustomChart extends StatefulWidget {
-  @override
-  _CustomChartState createState() => _CustomChartState();
-}
-
-class _CustomChartState extends State<CustomChart> {
-  int selectedIndex = -1;
-  int currentView = 1; // 0 for Weekly, 1 for Monthly, 2 for Yearly
-  List<double> currentData = [
-    8,
-    10,
-    14,
-    15,
-    13,
-    10,
-    16,
-    4,
-    7,
-    16,
-    4,
-    7
-  ]; // Example data
-  List<double> previousData = [7, 9, 13, 14, 12, 9, 15, 16, 4, 7, 16, 4, 7];
-
-  List<String> weeklyLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  List<String> monthlyLabels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-  List<String> yearlyLabels =
-      List.generate(12, (index) => (index + 1).toString());
-
-  List<String> get currentLabels {
-    switch (currentView) {
-      case 0:
-        return weeklyLabels;
-      case 1:
-        return monthlyLabels;
-      case 2:
-        return yearlyLabels;
-      default:
-        return [];
-    }
-  }
+class CustomChart extends StatelessWidget {
+  final SalesController controller = Get.put(SalesController());
 
   @override
   Widget build(BuildContext context) {
-    final labels = currentLabels;
+    return Obx(
+      () {
+        List<double> currentData = controller.getCurrentData();
+        List<double> previousData = controller.getPreviousData();
+        log("Previous data is $previousData");
+        List<String> labels = _getLabels();
+        double barWidth = (Get.width * 1) / (currentData.length * 2);
 
-    // Adjust bar width and spacing based on current view
-    double barWidth;
-    double barSpacing;
-
-    switch (currentView) {
-      case 0: // Weekly
-        barWidth = Get.width * 0.12;
-        barSpacing = Get.width * 0.05;
-        break;
-      case 1: // Monthly
-        barWidth = Get.width * 0.18;
-        barSpacing = Get.width * 0.10;
-        break;
-      case 2: // Yearly
-        barWidth = Get.width * 0.08;
-        barSpacing = Get.width * 0.03;
-        break;
-      default:
-        barWidth = Get.width * 0.12;
-        barSpacing = Get.width * 0.05;
-    }
-
-    final double heightScale = Get.height * 0.01;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            _buildLegend(
-              gradient: const LinearGradient(
-                begin: Alignment(0.00, -1.00),
-                end: Alignment(0, 1),
-                colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
-              ),
-              label: "Current",
-            ),
-            SizedBox(width: Get.width * 0.02),
-            _buildLegend(
-              color: const Color(0xFFACB3C0),
-              label: "Previous",
-            ),
-            SizedBox(width: Get.width * 0.02),
-            _buildLegend(
-              color: Colors.black,
-              label: "Selected",
-            ),
-          ],
-        ),
-        SizedBox(height: Get.height * 0.02),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: List.generate(labels.length, (index) {
-            final currentBarHeight = currentData[index] * heightScale;
-            final previousBarHeight = previousData[index] * heightScale;
-
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
-              child: Column(
+        return SizedBox(
+          height: Responsive.customHeight(36),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Previous Bar (Top to Bottom)
-                  Row(
-                    children: [
-                      Container(
-                        width: barWidth,
-                        height: previousBarHeight,
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment(0.00, -1.00),
-                            end: Alignment(0, 1),
-                            colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
-                          ),
-                          borderRadius: BorderRadius.circular(400),
-                        ),
-                      ),
-                      SizedBox(
-                        width: barSpacing * 0.25,
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: barSpacing),
-                  // Current Bar (Bottom to Top)
-                  Container(
-                    width: barWidth,
-                    height: currentBarHeight,
-                    decoration: BoxDecoration(
-                      gradient: index == selectedIndex
-                          ? const LinearGradient(
-                              begin: Alignment(0.00, -1.00),
-                              end: Alignment(0, 1),
-                              colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
-                            )
-                          : null,
-                      color: index != selectedIndex
-                          ? Color(0xFFACB3C0)
-                          : Color(0xFFACB3C0),
-                      borderRadius: BorderRadius.circular(400),
+                  _buildLegend(
+                    gradient: const LinearGradient(
+                      begin: Alignment(0.00, -1.00),
+                      end: Alignment(0, 1),
+                      colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
                     ),
+                    label: "Current",
+                  ),
+                  SizedBox(width: Get.width * 0.02),
+                  _buildLegend(
+                    color: const Color(0xFFACB3C0),
+                    label: "Previous",
+                  ),
+                  SizedBox(width: Get.width * 0.02),
+                  _buildLegend(
+                    color: Colors.black,
+                    label: "Selected",
                   ),
                 ],
               ),
-            );
-          }),
-        ),
-        SizedBox(height: Get.height * 0.02),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: List.generate(labels.length, (index) {
-            return Container(
-              width: barWidth,
-              child: Center(
-                child: TextWidget(
-                  title: labels[index],
-                  textColor: Color(0xFFACB3C0),
+              SizedBox(
+                height: Get.height * 0.02,
+              ),
+              SizedBox(
+                height: Responsive.customHeight(14),
+                child: BarChart(
+                  BarChartData(
+                    barGroups: List.generate(currentData.length, (index) {
+                      return BarChartGroupData(
+                        x: index,
+                        barsSpace: 10,
+                        barRods: [
+                          BarChartRodData(
+                            toY: currentData[index],
+                            width: barWidth,
+                            color: controller.selectedBarIndex.value == index
+                                ? Colors.black
+                                : null,
+                            gradient: controller.selectedBarIndex.value == index
+                                ? null
+                                : LinearGradient(
+                                    begin: Alignment(0.00, -1.00),
+                                    end: Alignment(0, 1),
+                                    colors: [
+                                      Color(0xFF0C1B22),
+                                      Color(0xFF44D8BE)
+                                    ],
+                                  ),
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                        ],
+                      );
+                    }),
+                    titlesData: FlTitlesData(
+                      bottomTitles: AxisTitles(
+                        sideTitles:
+                            SideTitles(showTitles: false), // Hide bottom titles
+                      ),
+                      leftTitles: AxisTitles(
+                        sideTitles:
+                            SideTitles(showTitles: false), // Hide left titles
+                      ),
+                      rightTitles: AxisTitles(
+                        sideTitles:
+                            SideTitles(showTitles: false), // Hide right titles
+                      ),
+                      topTitles: AxisTitles(
+                        sideTitles:
+                            SideTitles(showTitles: false), // Hide top titles
+                      ),
+                    ),
+                    borderData: FlBorderData(show: false),
+                    gridData: FlGridData(show: false),
+                    barTouchData: BarTouchData(
+                      touchTooltipData: BarTouchTooltipData(
+                        getTooltipColor: (group) {
+                          // Customize the tooltip background color based on the group
+                          if (controller.selectedBarIndex.value ==
+                              group.x.toInt()) {
+                            return Colors.black;
+                          } else {
+                            return Colors.transparent;
+                          }
+                        },
+                        tooltipPadding: EdgeInsets.zero,
+                        tooltipMargin: 0,
+                        getTooltipItem: (_, __, ___, ____) => null,
+                      ),
+                      touchCallback: (event, response) {
+                        if (response != null && response.spot != null) {
+                          controller
+                              .selectBar(response.spot!.touchedBarGroupIndex);
+                        }
+                      },
+                    ),
+                  ),
                 ),
               ),
-            );
-          }),
-        ),
-      ],
+              SizedBox(
+                height: Get.height * 0.03,
+              ),
+              SizedBox(
+                height: Responsive.customHeight(14),
+                child: BarChart(
+                  BarChartData(
+                    barGroups: List.generate(previousData.length, (index) {
+                      final maxHeight = Responsive.customHeight(14);
+                      final barHeight = previousData[index] > maxHeight
+                          ? maxHeight
+                          : previousData[index];
+
+                      return BarChartGroupData(
+                        x: index,
+                        barsSpace: 10,
+                        barRods: [
+                          BarChartRodData(
+                            toY: maxHeight - barHeight,
+                            fromY: maxHeight,
+                            width: barWidth,
+                            color: const Color(0xFFACB3C0),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ],
+                      );
+                    }),
+                    titlesData: FlTitlesData(
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          getTitlesWidget: (double value, TitleMeta meta) {
+                            final index = value.toInt();
+                            return SideTitleWidget(
+                                axisSide: meta.axisSide,
+                                child: TextWidget(
+                                  title: labels[index],
+                                  fontSize: 12,
+                                  textColor:
+                                      controller.selectedBarIndex.value == index
+                                          ? Colors.black
+                                          : Color(0xFFACB3C0),
+                                ));
+                          },
+                        ),
+                      ),
+                      leftTitles: AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                      rightTitles: AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                      topTitles: AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                    ),
+                    borderData: FlBorderData(show: false),
+                    gridData: FlGridData(show: false),
+                    barTouchData: BarTouchData(
+                      touchTooltipData: BarTouchTooltipData(
+                        getTooltipColor: (group) {
+                          // Customize the tooltip background color based on the group
+                          if (controller.selectedBarIndex.value ==
+                              group.x.toInt()) {
+                            return Colors.black;
+                          } else {
+                            return Colors.transparent;
+                          }
+                        },
+                        tooltipPadding: EdgeInsets.zero,
+                        tooltipMargin: 0,
+                        getTooltipItem: (_, __, ___, ____) => null,
+                      ),
+                      touchCallback: (event, response) {
+                        if (response != null && response.spot != null) {
+                          controller
+                              .selectBar(response.spot!.touchedBarGroupIndex);
+                        }
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
+  }
+
+  List<String> _getLabels() {
+    final controller = Get.find<SalesController>();
+    switch (controller.selectedMonthIndex.value) {
+      case 1:
+        return controller.monthlyLabels;
+      case 2:
+        return controller.yearlyLabels;
+      case 0:
+      default:
+        return controller.weeklyLabels;
+    }
   }
 
   Widget _buildLegend(
@@ -180,18 +233,18 @@ class _CustomChartState extends State<CustomChart> {
     return Row(
       children: [
         Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
             gradient: gradient,
             color: color,
             shape: BoxShape.circle,
           ),
         ),
-        SizedBox(width: Get.width * 0.02),
+        SizedBox(width: Get.width * 0.01),
         TextWidget(
           title: label,
           fontSize: 12,
-          textColor: Color(0xFF545F71),
+          textColor: const Color(0xFF545F71),
         ),
       ],
     );
