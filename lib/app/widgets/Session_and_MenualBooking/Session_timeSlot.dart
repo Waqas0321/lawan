@@ -1,9 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:table_calendar/table_calendar.dart';
-
-import '../../../utils/images.dart';
 
 class TimeSlotSession extends StatefulWidget {
   const TimeSlotSession({

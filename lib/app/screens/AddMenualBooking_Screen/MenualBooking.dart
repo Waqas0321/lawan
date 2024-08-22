@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:lawan/app/screens/AddMenualBooking_Screen/Controller/MenualBooking_Controller.dart';
 import '../../widgets/Session_and_MenualBooking/DateDayContainer.dart';
 import '../../widgets/Session_and_MenualBooking/Session_Header.dart';
 import '../../widgets/Session_and_MenualBooking/calander.dart';
 import '../../widgets/Session_and_MenualBooking/session_Container.dart';
-class Sessionscreen extends StatefulWidget {
-  const Sessionscreen({super.key});
+class Menualbooking extends StatelessWidget {
+   Menualbooking({super.key});
 
-  @override
-  State<Sessionscreen> createState() => _SessionscreenState();
-}
-
-class _SessionscreenState extends State<Sessionscreen> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<MenualBookinController>();
     return Container(
       height:MediaQuery.of(context).size.height,
       child: Scaffold(
-      backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Column(
             children: [
@@ -78,20 +74,20 @@ class _SessionscreenState extends State<Sessionscreen> {
                   child: ListView.builder(
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                    return Container(
-                      width: Get.width,
-                      child: Column(
-                        children: [
-                          SizedBox(height: 16),
-                          DateDayTextContainer(),
-                          SizedBox(height: 16),
-                          SessionContainer(),
-                          SizedBox(height: 8),
-                          SessionContainer(),
-                        ],
-                      ),
-                    );
-                  },),
+                      return Container(
+                        width: Get.width,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16),
+                            DateDayTextContainer(),
+                            SizedBox(height: 16),
+                            SessionContainer(),
+                            SizedBox(height: 8),
+                            SessionContainer(),
+                          ],
+                        ),
+                      );
+                    },),
                 ),
               ),
             ],
@@ -101,8 +97,3 @@ class _SessionscreenState extends State<Sessionscreen> {
     );
   }
 }
-
-
-
-
-

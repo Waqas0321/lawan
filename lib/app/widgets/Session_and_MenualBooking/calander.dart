@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-
-import '../../../utils/images.dart';
+import '../../utils/images.dart';
 import 'Session_Header.dart';
 
 class CustomCalender extends StatefulWidget {

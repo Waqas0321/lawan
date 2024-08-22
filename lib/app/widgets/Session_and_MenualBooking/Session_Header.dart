@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../utils/images.dart';
-import '../../../widgets/Areena/TimeSlotHomeDropDown.dart';
+
+import '../../utils/images.dart';
+import '../Areena/TimeSlotHomeDropDown.dart';
 
 class SessionHeader extends StatefulWidget {
   SessionHeader({super.key});
