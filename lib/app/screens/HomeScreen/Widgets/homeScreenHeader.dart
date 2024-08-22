@@ -31,7 +31,6 @@ class _ScreenHeaderState extends State<ScreenHeader> {
       _selectedTimeSlot = newValue;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
+import 'package:lawan/app/utils/text.dart';
 import 'package:lawan/app/widgets/Areena/custom_tabbar.dart';
 import 'package:lawan/app/widgets/Areena/details_section.dart';
 import 'package:lawan/app/widgets/Areena/hour_section.dart';
@@ -116,7 +117,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                               // ),
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   TimeSlotHome(
                                     timeSlots: weeksRate,
@@ -134,12 +135,12 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius:
-                                        BorderRadius.circular(300)),
+                                            BorderRadius.circular(300)),
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 2),
                                       child: Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Image(
                                             image: AssetImage(Images.avtar),
@@ -187,8 +188,22 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                       child: GestureDetector(
                                           onTap: () {
                                             showCustomEditAlertDialog(
-                                                "Edit Arena Name",
-                                                'MBPJ Sports Complex');
+                                              "Edit Arena Name",
+                                              'MBPJ Sports Complex',
+                                              isConfirmed: false,
+                                              () {
+                                                Get.back();
+                                                showCustomEditAlertDialog(
+                                                    "Edit Arena Name",
+                                                    'MBPJ Sports Complex',
+                                                    isConfirmed: true,
+                                                    () {},
+                                                    titleText: Apptext
+                                                        .Proceed_with_applying_the_changes,
+                                                    updateButtonText:
+                                                        Apptext.Delete,updateButtonBorderColor:AppColors.red,updateButtonColor:null,updateButtonTextColor:AppColors.red);
+                                              },
+                                            );
                                           },
                                           child: SvgPicture.asset(
                                             Images.pencil,
@@ -237,9 +252,12 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                   CustomContainer(
                                     width: 44,
                                     height: 44,
-                                    icon: true,
+                                    text: "1",
+                                    icon:true,
+                                    image:Images.plus,
+                                    imageColor:AppColors.white,
                                     color: AppColors.black,
-                                    textColor: AppColors.white,
+                                    textColor: AppColors.black,
                                     circular: true,
                                   ),
                                   Expanded(
@@ -272,7 +290,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                       child: GestureDetector(
                                           onTap: () {
                                             showCustomEditAlertDialog(
-                                                "Edit Court Name", '1');
+                                                "Edit Court Name", '1', () {});
                                           },
                                           child: SvgPicture.asset(
                                             Images.pencil,
@@ -315,9 +333,12 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                   CustomContainer(
                                     width: 44,
                                     height: 44,
-                                    icon: true,
+                                    text: "1",
+                                    icon:true,
+                                    image:Images.plus,
+                                    imageColor:AppColors.white,
                                     color: AppColors.black,
-                                    textColor: AppColors.white,
+                                    textColor: AppColors.black,
                                     circular: true,
                                   ),
                                   Expanded(
@@ -336,7 +357,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                             children: [
                               Container(
                                 height:
-                                MediaQuery.of(context).size.height / 1.9,
+                                    MediaQuery.of(context).size.height / 1.9,
                                 // color: const Color(0xFFF2F3F2),
                                 child: DefaultTabController(
                                     length: 3,
@@ -378,19 +399,19 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
   }
 
   void showCustomAlertDialog(
-      BuildContext context,
-      final String text1,
-      final String text2,
-      final bool image,
-      final String buttonText1,
-      final String buttonText2,
-      ) {
+    BuildContext context,
+    final String text1,
+    final String text2,
+    final bool image,
+    final String buttonText1,
+    final String buttonText2,
+  ) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor:
-          Colors.transparent, // Make the background transparent
+              Colors.transparent, // Make the background transparent
           contentPadding: EdgeInsets.zero, // Remove default padding
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32), // Custom border radius
@@ -399,11 +420,11 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
             filter: ImageFilter.blur(sigmaY: 2, sigmaX: 2),
             child: Container(
               width:
-              MediaQuery.of(context).size.width * 0.85, // Adjust width here
+                  MediaQuery.of(context).size.width * 0.85, // Adjust width here
               decoration: BoxDecoration(
                 color: Color(0xB2F2F3F2), // Custom background color
                 borderRadius:
-                BorderRadius.circular(32), // Match the border radius
+                    BorderRadius.circular(32), // Match the border radius
                 boxShadow: [
                   BoxShadow(
                     color: Color(0x19000000),
@@ -433,9 +454,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   image
                       ? SvgPicture.asset(
-                    Images.frame1,
-                    // color: AppColors.bluee, // Replace with your color if needed
-                  )
+                          Images.frame1,
+                          // color: AppColors.bluee, // Replace with your color if needed
+                        )
                       : SizedBox(height: 4),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   Text(
@@ -483,18 +504,17 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
 }
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({
-    super.key,
-    required this.width,
-    required this.height,
-    this.text = '',
-    this.color,
-    required this.textColor,
-    this.circular = false,
-    this.icon = false,
-    this.image=Images.areena,
-    this.imageColor= Colors.white
-  });
+  const CustomContainer(
+      {super.key,
+      required this.width,
+      required this.height,
+      this.text = '',
+      this.color,
+      required this.textColor,
+      this.circular = false,
+      this.icon = false,
+      this.image = Images.areena,
+      this.imageColor = Colors.black});
   final double width;
   final double height;
   final String text;
@@ -515,28 +535,28 @@ class CustomContainer extends StatelessWidget {
         shape: RoundedRectangleBorder(
           side: BorderSide(width: 1, color: AppColors.white),
           borderRadius:
-          circular ? BorderRadius.circular(100) : BorderRadius.circular(32),
+              circular ? BorderRadius.circular(100) : BorderRadius.circular(32),
         ),
       ),
       child: Center(
         child: icon
             ? SvgPicture.asset(
-          image,
-          height: 20,
-          width: 20,
-          color:color,
-        )
+                image,
+                height: 20,
+                width: 20,
+                color: imageColor,
+              )
             : Text(
-          text,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 14,
-            fontFamily: 'Lufga',
-            fontWeight: FontWeight.w400,
-            height: 0.11,
-          ),
-        ),
+                text,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 14,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w400,
+                  height: 0.11,
+                ),
+              ),
       ),
     );
   }

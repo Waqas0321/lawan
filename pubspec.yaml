@@ -45,8 +45,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   adaptive_sizer: ^0.0.4
   device_preview: ^1.2.0
+  flutter_cupertino_datetime_picker: ^3.0.0
   responsive_framework: ^1.4.0  # Use the latest version
   flutter_svg: ^2.0.10+1
+  bar_chart:
   responsive_builder: ^0.7.1
   overlay_group_avatar: ^0.0.4
   acrylic_any: ^0.0.1

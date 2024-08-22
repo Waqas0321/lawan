@@ -1,22 +1,17 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
-import 'package:lawan/app/widgets/Areena/AddArena1.dart';
-
 void main() {
-  runApp(
-      DevicePreview(
-        enabled: true,
-        builder: (context) => ScreenUtilInit(
-          designSize: Size(375, 812), // Design size for scaling
-          builder: (context, child) => MyApp(),
-        ),
-      ),
+  runApp(MyApp()
+      // DevicePreview(
+      //   enabled: true,
+      //   builder: (context) => ScreenUtilInit(
+      //     designSize: Size(375, 812), // Design size for scaling
+      //     builder: (context, child) => MyApp(),
+      //   ),
+      // ),
       );
 }
 
@@ -44,7 +39,7 @@ void showCustomAlertDialogssss(BuildContext context) {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32),
         ),
-        content: AddAreena1(),
+        content: Sessionscreen(),
       );
     },
   );
