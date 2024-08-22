@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/screens/Session_Screen/Widgets/BottomNave_Container.dart';
 import 'package:lawan/app/screens/Session_Screen/Widgets/DateDayContainer.dart';
 import 'package:lawan/app/screens/Session_Screen/Widgets/Session_Header.dart';
@@ -20,7 +22,7 @@ class _SessionscreenState extends State<Sessionscreen> {
     return Container(
       height:MediaQuery.of(context).size.height,
       child: Scaffold(
-        backgroundColor: Color(0xFFF2F3F2),
+      backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(left: 16,right: 16),
@@ -76,23 +78,26 @@ class _SessionscreenState extends State<Sessionscreen> {
                     ),
                   ],
                 ),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                    return Container(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 16),
-                          DateDayTextContainer(),
-                          SizedBox(height: 16),
-                          SessionContainer(),
-                          SizedBox(height: 8),
-                          SessionContainer(),
-                        ],
-                      ),
-                    );
-                  },),
+                Container(
+                  child: Expanded(
+                    child: ListView.builder(
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                      return Container(
+                        width: Get.width,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16),
+                            DateDayTextContainer(),
+                            SizedBox(height: 16),
+                            SessionContainer(),
+                            SizedBox(height: 8),
+                            SessionContainer(),
+                          ],
+                        ),
+                      );
+                    },),
+                  ),
                 ),
               ],
             ),
