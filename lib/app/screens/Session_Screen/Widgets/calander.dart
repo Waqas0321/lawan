@@ -175,10 +175,10 @@ class _CustomCalenderState extends State<CustomCalender> {
           ),
           SizedBox(height: 16),
            _isCalendarExpanded? TableCalendar(
-
             startingDayOfWeek: StartingDayOfWeek.monday,
             firstDay: DateTime(2020, 10, 16),
             lastDay: DateTime(2030, 3, 14),
+             focusedDay: _focusedDay,
             onDaySelected: (selectedDay, focusedDay) {
               print('Day selected: $selectedDay');
               setState(() {
@@ -187,7 +187,7 @@ class _CustomCalenderState extends State<CustomCalender> {
 
               });
             },
-            focusedDay: _focusedDay,
+
             calendarBuilders: CalendarBuilders(
               markerBuilder: (context, day, events) {
                 if (day == _focusedDay) {
@@ -214,34 +214,37 @@ class _CustomCalenderState extends State<CustomCalender> {
                         ),
                 ),
                   );
-                } else {
+                }
+                else {
                   return null;
                 }
               },
                 todayBuilder: (context,day,events){
-                  return Container(
-                    width: 40,
-                    height: 40,
-                    padding: const EdgeInsets.symmetric(horizontal: 9),
-                    decoration: ShapeDecoration(
-                      color: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        _focusedDay.day.toString(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
+                  if(_focusedDay == DateTime.now()){
+                    return Container(
+                      width: 40,
+                      height: 40,
+                      padding: const EdgeInsets.symmetric(horizontal: 9),
+                      decoration: ShapeDecoration(
+                        color: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
-                    ),
-                  );
+                      child: Center(
+                        child: Text(
+                          _focusedDay.day.toString(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
                 }
             ),
 
@@ -263,12 +266,13 @@ class _CustomCalenderState extends State<CustomCalender> {
             ),
             daysOfWeekHeight: 50,
             rowHeight:50,
-          ) : TableCalendar(
-
-             calendarFormat: CalendarFormat.week,
+          ) :
+           TableCalendar(
              startingDayOfWeek: StartingDayOfWeek.monday,
+             calendarFormat: CalendarFormat.week,
              firstDay: DateTime(2020, 10, 16),
              lastDay: DateTime(2030, 3, 14),
+             focusedDay: _focusedDay,
              onDaySelected: (selectedDay, focusedDay) {
                print('Day selected: $selectedDay');
                setState(() {
@@ -278,62 +282,64 @@ class _CustomCalenderState extends State<CustomCalender> {
                });
              },
 
-             focusedDay: _focusedDay,
              calendarBuilders: CalendarBuilders(
-               markerBuilder: (context, day, events) {
-                 if (day == _focusedDay) {
-                   return Container(
-                     width: 40,
-                     height: 40,
-                     padding: const EdgeInsets.symmetric(horizontal: 9),
-                     decoration: ShapeDecoration(
-                       color: Colors.black,
-                       shape: RoundedRectangleBorder(
-                         borderRadius: BorderRadius.circular(16),
-                       ),
-                     ),
-                     child: Center(
-                       child: Text(
-                         _focusedDay.day.toString(),
-                         textAlign: TextAlign.center,
-                         style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 14,
-                           fontFamily: 'Inter',
-                           fontWeight: FontWeight.w500,
+                 markerBuilder: (context, day, events) {
+                   if (day == _focusedDay) {
+                     return Container(
+                       width: 40,
+                       height: 40,
+                       padding: const EdgeInsets.symmetric(horizontal: 9),
+                       decoration: ShapeDecoration(
+                         color: Colors.black,
+                         shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(16),
                          ),
                        ),
-                     ),
-                   );
-                 } else {
-                   return null;
-                 }
-               },
-               todayBuilder: (context,day,events){
-                 return Container(
-                   width: 40,
-                   height: 40,
-                   padding: const EdgeInsets.symmetric(horizontal: 9),
-                   decoration: ShapeDecoration(
-                     color: Colors.black,
-                     shape: RoundedRectangleBorder(
-                       borderRadius: BorderRadius.circular(16),
-                     ),
-                   ),
-                   child: Center(
-                     child: Text(
-                       _focusedDay.day.toString(),
-                       textAlign: TextAlign.center,
-                       style: TextStyle(
-                         color: Colors.white,
-                         fontSize: 14,
-                         fontFamily: 'Inter',
-                         fontWeight: FontWeight.w500,
+                       child: Center(
+                         child: Text(
+                           _focusedDay.day.toString(),
+                           textAlign: TextAlign.center,
+                           style: TextStyle(
+                             color: Colors.white,
+                             fontSize: 14,
+                             fontFamily: 'Inter',
+                             fontWeight: FontWeight.w500,
+                           ),
+                         ),
                        ),
-                     ),
-                   ),
-                 );
-               }
+                     );
+                   }
+                   else {
+                     return null;
+                   }
+                 },
+                 todayBuilder: (context,day,events){
+                   if(_focusedDay == DateTime.now()){
+                     return Container(
+                       width: 40,
+                       height: 40,
+                       padding: const EdgeInsets.symmetric(horizontal: 9),
+                       decoration: ShapeDecoration(
+                         color: Colors.black,
+                         shape: RoundedRectangleBorder(
+                           borderRadius: BorderRadius.circular(16),
+                         ),
+                       ),
+                       child: Center(
+                         child: Text(
+                           _focusedDay.day.toString(),
+                           textAlign: TextAlign.center,
+                           style: TextStyle(
+                             color: Colors.white,
+                             fontSize: 14,
+                             fontFamily: 'Inter',
+                             fontWeight: FontWeight.w500,
+                           ),
+                         ),
+                       ),
+                     );
+                   }
+                 }
              ),
 
              headerVisible: false,
@@ -352,8 +358,8 @@ class _CustomCalenderState extends State<CustomCalender> {
                  height: 0.12,
                ),
              ),
-                 daysOfWeekHeight: 50,
-                 rowHeight:50,
+             daysOfWeekHeight: 50,
+             rowHeight:50,
            ),
           SizedBox(height: 16,),
           GestureDetector(
