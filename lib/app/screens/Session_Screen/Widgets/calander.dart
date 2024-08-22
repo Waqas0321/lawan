@@ -50,7 +50,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                       if (currentMonth > 1) {
                         _selectedMonth = '${currentMonth - 1}';
                         _focusedDay =
-                            DateTime(DateTime.now().year, currentMonth - 1, 1);
+                            DateTime(DateTime.now().year, currentMonth - 1, DateTime.now().day);
                       } else {
                         _selectedMonth = "12";
                         _focusedDay = DateTime(DateTime.now().year - 1, 1, 1);
@@ -71,7 +71,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                       if (currentMonth < 12) {
                         _selectedMonth = '${currentMonth + 1}';
                         _focusedDay =
-                            DateTime(DateTime.now().year, currentMonth + 1, 1);
+                            DateTime(DateTime.now().year, currentMonth + 1, DateTime.now().day);
                       } else {
                         _selectedMonth = "1";
                         _focusedDay = DateTime(DateTime.now().year + 1, 1, 1);
@@ -215,37 +215,41 @@ class _CustomCalenderState extends State<CustomCalender> {
                 ),
                   );
                 }
-                else {
+                else{
                   return null;
                 }
               },
-                todayBuilder: (context,day,events){
-                  if(_focusedDay == DateTime.now()){
-                    return Container(
-                      width: 40,
-                      height: 40,
-                      padding: const EdgeInsets.symmetric(horizontal: 9),
-                      decoration: ShapeDecoration(
-                        color: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+              todayBuilder: (context, day, focusedDay) {
+                if(focusedDay != _focusedDay){
+                  return Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 9),
+                    decoration: ShapeDecoration(
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        _focusedDay.day.toString(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                      child: Center(
-                        child: Text(
-                          _focusedDay.day.toString(),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    );
-                  }
+                    ),
+                  );
+                }else{
+                   print(focusedDay);
                 }
+
+
+              },
             ),
 
             headerVisible: false,
@@ -283,63 +287,67 @@ class _CustomCalenderState extends State<CustomCalender> {
              },
 
              calendarBuilders: CalendarBuilders(
-                 markerBuilder: (context, day, events) {
-                   if (day == _focusedDay) {
-                     return Container(
-                       width: 40,
-                       height: 40,
-                       padding: const EdgeInsets.symmetric(horizontal: 9),
-                       decoration: ShapeDecoration(
-                         color: Colors.black,
-                         shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(16),
+               markerBuilder: (context, day, events) {
+                 if (day == _focusedDay) {
+                   return Container(
+                     width: 40,
+                     height: 40,
+                     padding: const EdgeInsets.symmetric(horizontal: 9),
+                     decoration: ShapeDecoration(
+                       color: Colors.black,
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(16),
+                       ),
+                     ),
+                     child: Center(
+                       child: Text(
+                         _focusedDay.day.toString(),
+                         textAlign: TextAlign.center,
+                         style: TextStyle(
+                           color: Colors.white,
+                           fontSize: 14,
+                           fontFamily: 'Inter',
+                           fontWeight: FontWeight.w500,
                          ),
                        ),
-                       child: Center(
-                         child: Text(
-                           _focusedDay.day.toString(),
-                           textAlign: TextAlign.center,
-                           style: TextStyle(
-                             color: Colors.white,
-                             fontSize: 14,
-                             fontFamily: 'Inter',
-                             fontWeight: FontWeight.w500,
-                           ),
-                         ),
-                       ),
-                     );
-                   }
-                   else {
-                     return null;
-                   }
-                 },
-                 todayBuilder: (context,day,events){
-                   if(_focusedDay == DateTime.now()){
-                     return Container(
-                       width: 40,
-                       height: 40,
-                       padding: const EdgeInsets.symmetric(horizontal: 9),
-                       decoration: ShapeDecoration(
-                         color: Colors.black,
-                         shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(16),
-                         ),
-                       ),
-                       child: Center(
-                         child: Text(
-                           _focusedDay.day.toString(),
-                           textAlign: TextAlign.center,
-                           style: TextStyle(
-                             color: Colors.white,
-                             fontSize: 14,
-                             fontFamily: 'Inter',
-                             fontWeight: FontWeight.w500,
-                           ),
-                         ),
-                       ),
-                     );
-                   }
+                     ),
+                   );
                  }
+                 else{
+                   return null;
+                 }
+               },
+               todayBuilder: (context, day, focusedDay) {
+                 if(focusedDay != _focusedDay){
+                   return Container(
+                     width: 40,
+                     height: 40,
+                     padding: const EdgeInsets.symmetric(horizontal: 9),
+                     decoration: ShapeDecoration(
+                       color: Colors.black,
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(16),
+                       ),
+                     ),
+                     child: Center(
+                       child: Text(
+                         _focusedDay.day.toString(),
+                         textAlign: TextAlign.center,
+                         style: TextStyle(
+                           color: Colors.white,
+                           fontSize: 14,
+                           fontFamily: 'Inter',
+                           fontWeight: FontWeight.w500,
+                         ),
+                       ),
+                     ),
+                   );
+                 }else{
+                   print(focusedDay);
+                 }
+
+
+               },
              ),
 
              headerVisible: false,
