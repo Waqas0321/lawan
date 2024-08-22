@@ -56,12 +56,12 @@ class _CustomCalenderState extends State<CustomCalender> {
                       }
                     });
                   },
-                  child:
-                       Icon(
+                  child: CircularArrowsContainer(
+                      icon: Icon(
                         Icons.arrow_back_ios,
                         size: 16,
                         color: Color(0xff545F71),
-                      )),
+                      ))),
               SizedBox(width: 3),
               GestureDetector(
                   onTap: () {
@@ -77,8 +77,9 @@ class _CustomCalenderState extends State<CustomCalender> {
                       }
                     });
                   },
-                  child: Icon(Icons.arrow_forward_ios,
-                          size: 16, color: Color(0xff545F71))),
+                  child: CircularArrowsContainer(
+                      icon: Icon(Icons.arrow_forward_ios,
+                          size: 16, color: Color(0xff545F71)))),
               SizedBox(width: 16),
               Expanded(
                 child: Container(

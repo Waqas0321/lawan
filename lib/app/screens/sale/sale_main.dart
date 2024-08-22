@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/sales/sales_controller.dart';
-import 'package:lawan/app/screens/sale/widgets/sale_header.dart';
 import 'package:lawan/app/utils/images.dart';
 
 import '../../widgets/Areena/circularContainer.dart';
@@ -31,7 +30,6 @@ class SaleMain extends StatelessWidget {
             right: Get.width * 0.03),
         child: Column(
           children: [
-            SalesHeader(),
             SizedBox(
               height: Get.height * 0.02,
             ),
