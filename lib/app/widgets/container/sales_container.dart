@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 
@@ -30,8 +31,50 @@ class SalesContainer extends StatelessWidget {
                 height: Responsive.h1,
               ),
               Container(
-                decoration: ,
-              )
+                padding: EdgeInsets.symmetric(horizontal: 13, vertical: 2),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: Color(0xffd99125)),
+                child: TextWidget(
+                  title: "Ongoing",
+                  textColor: Colors.white,
+                ),
+              ),
+              SizedBox(
+                height: Responsive.h1,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17),
+                  border: Border.all(color: Colors.black),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    TextWidget(
+                      title: "Rxm12",
+                      textColor: Colors.black,
+                    ),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    Container(
+                      width: Responsive.h10,
+                      height: 2,
+                      color: Colors.black,
+                    ),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    TextWidget(
+                      title: "Rxm12",
+                      textColor: Colors.black,
+                    ),
+                  ],
+                ),
+              ),
             ],
           )
         ],
