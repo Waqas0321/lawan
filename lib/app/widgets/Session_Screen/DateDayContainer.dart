@@ -9,6 +9,7 @@ class DateDayTextContainer extends StatelessWidget {
     return SizedBox(
       height: 24,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             '24 Jun',

@@ -39,8 +39,7 @@ class TextWidget extends StatelessWidget {
       minFontSize: minFontSize,
       maxFontSize: maxFontSize,
       style: TextStyle(
-        fontFamily: "Lufga",
-
+        fontFamily: 'Lufga',
         color: textColor,
         fontSize: fontSize,
         fontWeight: fontWeight,

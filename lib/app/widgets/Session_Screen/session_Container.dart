@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:overlay_group_avatar/overlay_group_avatar.dart';
-
-import '../../../utils/images.dart';
+import '../../utils/images.dart';
 import 'BottomNave_Container.dart';
 class SessionContainer extends StatefulWidget {
   SessionContainer({
@@ -42,7 +39,6 @@ class _SessionContainerState extends State<SessionContainer> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Container(
           height: 92,
           padding: const EdgeInsets.all(12),
