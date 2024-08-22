@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -55,11 +56,11 @@ class _AddAreena2State extends State<AddAreena2> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
+      child: acrylicAny(
+        blurlevel:200,
         child: Container(
           width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(bottom: 16, left: 1, right: 1),
+          margin: EdgeInsets.only(bottom: 20),
           height: MediaQuery.of(context).size.height * 0.78,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(

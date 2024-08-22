@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -76,11 +77,11 @@ class _AddAreena1State extends State<AddAreena1> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+            margin: EdgeInsets.only(left: 10,right:10,bottom:12),
+            child: acrylicAny(
+              blurlevel:6,
               child: Container(
-                width: MediaQuery.of(context).size.width - 16,
+                // width: MediaQuery.of(context).size.width - 16,
                 height: MediaQuery.of(context).size.height * 0.87,
                 decoration: ShapeDecoration(
                   color: Color(0xB2F2F3F2),
@@ -218,29 +219,25 @@ class _AddAreena1State extends State<AddAreena1> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Expanded(
-                              child: ArenaINOutButton(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                text: 'Indoor',
-                                isSelected: _selectedButtonIndoor,
-                                onPressed: () {
-                                  _onButtonPressINOutdoor("Indoor");
-                                },
-                              ),
+                            ArenaINOutButton(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.05,
+                              text: 'Indoor',
+                              isSelected: _selectedButtonIndoor,
+                              onPressed: () {
+                                _onButtonPressINOutdoor("Indoor");
+                              },
                             ),
                             SizedBox(
                                 width:
                                     MediaQuery.of(context).size.width * 0.02),
-                            Expanded(
-                              child: ArenaINOutButton(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.05,
-                                  text: 'Outdoor',
-                                  isSelected: _selectedButtonOutdoor,
-                                  onPressed: () =>
-                                      _onButtonPressINOutdoor("Outdoor")),
-                            ),
+                            ArenaINOutButton(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.05,
+                                text: 'Outdoor',
+                                isSelected: _selectedButtonOutdoor,
+                                onPressed: () =>
+                                    _onButtonPressINOutdoor("Outdoor")),
                             const Expanded(child: SizedBox(width: 70)),
                           ],
                         ),
@@ -260,34 +257,31 @@ class _AddAreena1State extends State<AddAreena1> {
                         ),
                         Row(
                           children: [
-                            Expanded(
-                              child: ArenaINOutButton(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.05,
-                                text: 'Court Turf',
-                                isSelected: _selectedCourtButtonTruff,
-                                onPressed: () {
-                                  _onButtonPressCourt("Truf");
-                                },
-                              ),
+                            ArenaINOutButton(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.05,
+                              text: 'Court Turf',
+                              isSelected: _selectedCourtButtonTruff,
+                              onPressed: () {
+                                _onButtonPressCourt("Truf");
+                              },
                             ),
                             SizedBox(width: 6),
-                            Expanded(
-                              child: ArenaINOutButton(
-                                text: 'Court Grass',
-                                isSelected: _selectedCourtButtonGrass,
-                                onPressed: () => _onButtonPressCourt("Grass"),
-                              ),
+                            ArenaINOutButton(
+                              height:
+                              MediaQuery.of(context).size.height * 0.05,                              text: 'Court Grass',
+                              isSelected: _selectedCourtButtonGrass,
+                              onPressed: () => _onButtonPressCourt("Grass"),
                             ),
                             SizedBox(
                                 width:
                                     MediaQuery.of(context).size.width * 0.02),
-                            Expanded(
-                              child: ArenaINOutButton(
-                                text: 'Cement',
-                                isSelected: _selectedCourtButtonCement,
-                                onPressed: () => _onButtonPressCourt("Cement"),
-                              ),
+                            ArenaINOutButton(
+                              height:
+                              MediaQuery.of(context).size.height * 0.05,
+                              text: 'Cement',
+                              isSelected: _selectedCourtButtonCement,
+                              onPressed: () => _onButtonPressCourt("Cement"),
                             ),
                           ],
                         ),

@@ -1,3 +1,4 @@
+import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,20 +18,6 @@ import '../Session_Screen/SessionScreen.dart';
 import 'Widgets/homeScreenHeader.dart';
 
 class HomeScreen extends StatelessWidget {
-  void _openBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isDismissible: true,
-      enableDrag: true,
-      isScrollControlled: true,
-      // Allows the bottom sheet to use full screen height
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        return AddAreena1();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<BottomNavigationController>();
@@ -56,39 +43,44 @@ class HomeScreen extends StatelessWidget {
             child: Stack(children: [
               SingleChildScrollView(
                 child: SafeArea(
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width * 0.02,
-                        left: MediaQuery.of(context).size.width * 0.03,
-                        right: MediaQuery.of(context).size.width * 0.03),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Obx(() {
-                          if (controller.selectedItem.value == "Arena") {
-                            return Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                ScreenHeader(),
-                                SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.01),
-                                ScreenBody(),
-                              ],
-                            );
-                          } else if (controller.selectedItem.value == "Sales") {
-                            return SaleMain();
-                          } else {
-                            return Sessionscreen();
-                          }
-                        }),
-                      ],
+                  child: acrylicAny(
+                    blurlevel:20,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.width * 0.02,
+                          left: MediaQuery.of(context).size.width * 0.03,
+                          right: MediaQuery.of(context).size.width * 0.03),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Obx(() {
+                            if (controller.selectedItem.value == "Arena") {
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ScreenHeader(),
+                                  SizedBox(
+                                      height: MediaQuery.of(context).size.height *
+                                          0.01),
+                                  ScreenBody(),
+                                ],
+                              );
+                            } else if (controller.selectedItem.value == "Sales") {
+                              return SaleMain();
+                            } else {
+                              return Sessionscreen();
+                            }
+                          }),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
               CustomBottomNavigation(
+                iconSize:20,
                 textStyle: TextStyle(
+
                   fontSize: 15,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w400,
