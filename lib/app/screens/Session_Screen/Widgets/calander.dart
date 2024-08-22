@@ -174,8 +174,9 @@ class _CustomCalenderState extends State<CustomCalender> {
             ],
           ),
           SizedBox(height: 16),
-          _isCalendarExpanded
-              ? TableCalendar(
+           _isCalendarExpanded? TableCalendar(
+
+            startingDayOfWeek: StartingDayOfWeek.monday,
             firstDay: DateTime(2020, 10, 16),
             lastDay: DateTime(2030, 3, 14),
             onDaySelected: (selectedDay, focusedDay) {
@@ -217,6 +218,31 @@ class _CustomCalenderState extends State<CustomCalender> {
                   return null;
                 }
               },
+                todayBuilder: (context,day,events){
+                  return Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 9),
+                    decoration: ShapeDecoration(
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        _focusedDay.day.toString(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  );
+                }
             ),
 
             headerVisible: false,
@@ -236,80 +262,99 @@ class _CustomCalenderState extends State<CustomCalender> {
               ),
             ),
             daysOfWeekHeight: 50,
-            rowHeight: 50,
-          )
-              : Container(
-            height: 75, // Adjust this to fit your two-line layout
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CalanderText(
-                      text: "Sun",
-                    ),
-                    CalanderText(
-                      text: "Mon",
-                    ),
-                    CalanderText(
-                      text: "Tue",
-                    ),
-                    CalanderText(
-                      text: "Wed",
-                    ),
-                    CalanderText(
-                      text: "Thu",
-                    ),
-                    CalanderText(
-                      text: "Fri",
-                    ),
-                    CalanderText(
-                      text: "Sat",
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 32,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CalanderText(
-                      text: "17",
-                      isDate: true,
-                    ),
-                    CalanderText(
-                      text: "18",
-                      isDate: true,
-                    ),
-                    CalanderText(
-                      text: "19",
-                      isDate: true,
-                    ),
-                    CalanderText(
-                      text: "20",
-                      isDate: true,
-                    ),
-                    CalanderText(
-                      text: "21",
-                      isDate: true,
-                    ),
-                    CalanderText(
-                      text: "22",
-                      isDate: true,
-                    ),
-                    CalanderText(
-                      text: "23",
-                      isDate: true,
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
+            rowHeight:50,
+          ) : TableCalendar(
+
+             calendarFormat: CalendarFormat.week,
+             startingDayOfWeek: StartingDayOfWeek.monday,
+             firstDay: DateTime(2020, 10, 16),
+             lastDay: DateTime(2030, 3, 14),
+             onDaySelected: (selectedDay, focusedDay) {
+               print('Day selected: $selectedDay');
+               setState(() {
+                 _focusedDay = selectedDay;
+                 _selectedMonth = '${selectedDay.month}';
+
+               });
+             },
+
+             focusedDay: _focusedDay,
+             calendarBuilders: CalendarBuilders(
+               markerBuilder: (context, day, events) {
+                 if (day == _focusedDay) {
+                   return Container(
+                     width: 40,
+                     height: 40,
+                     padding: const EdgeInsets.symmetric(horizontal: 9),
+                     decoration: ShapeDecoration(
+                       color: Colors.black,
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(16),
+                       ),
+                     ),
+                     child: Center(
+                       child: Text(
+                         _focusedDay.day.toString(),
+                         textAlign: TextAlign.center,
+                         style: TextStyle(
+                           color: Colors.white,
+                           fontSize: 14,
+                           fontFamily: 'Inter',
+                           fontWeight: FontWeight.w500,
+                         ),
+                       ),
+                     ),
+                   );
+                 } else {
+                   return null;
+                 }
+               },
+               todayBuilder: (context,day,events){
+                 return Container(
+                   width: 40,
+                   height: 40,
+                   padding: const EdgeInsets.symmetric(horizontal: 9),
+                   decoration: ShapeDecoration(
+                     color: Colors.black,
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(16),
+                     ),
+                   ),
+                   child: Center(
+                     child: Text(
+                       _focusedDay.day.toString(),
+                       textAlign: TextAlign.center,
+                       style: TextStyle(
+                         color: Colors.white,
+                         fontSize: 14,
+                         fontFamily: 'Inter',
+                         fontWeight: FontWeight.w500,
+                       ),
+                     ),
+                   ),
+                 );
+               }
+             ),
+
+             headerVisible: false,
+             calendarStyle: CalendarStyle(
+
+
+               todayDecoration: BoxDecoration(
+               ),
+               todayTextStyle: TextStyle(
+               ),
+               weekendTextStyle: TextStyle(
+                 color: Color(0xFF545F71),
+                 fontSize: 12,
+                 fontFamily: 'Lufga',
+                 fontWeight: FontWeight.w400,
+                 height: 0.12,
+               ),
+             ),
+                 daysOfWeekHeight: 50,
+                 rowHeight:50,
+           ),
           SizedBox(height: 16,),
           GestureDetector(
             onTap: () {

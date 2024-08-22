@@ -48,4 +48,5 @@ static const String currency_dollar="$mainImage/currency-dollar.svg";
 static const String location_marker="$mainImage/location-marker.svg";
 static const String phone_outline="$mainImage/phone-outline.svg";
 static const String identification="$mainImage/identification.svg";
+static const String x="$mainImage/x.svg";
 }
