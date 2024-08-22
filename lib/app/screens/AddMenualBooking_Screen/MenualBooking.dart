@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/screens/AddMenualBooking_Screen/Controller/MenualBooking_Controller.dart';
+import 'package:lawan/app/utils/colors.dart';
 import '../../widgets/Session_Screen/DateDayContainer.dart';
 import '../../widgets/Session_Screen/Session_Header.dart';
 import '../../widgets/Session_Screen/calander.dart';
 import '../../widgets/Session_Screen/session_Container.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
-class Menualbooking extends StatelessWidget {
-   Menualbooking({super.key});
-
+class MenualbookingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<MenualBookinController>();
-    return Container(
-      height:MediaQuery.of(context).size.height,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SafeArea(
+    return Scaffold(
+      backgroundColor:  const Color(0xFFF2F3F2),
+      body: SafeArea(
+        bottom: false,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
               ScreenHeader(),
@@ -70,18 +70,16 @@ class Menualbooking extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(
-                child: Expanded(
+             Expanded(
                   child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return Container(
-                        width: Get.width,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(height: 16),
+                            SizedBox(height: 24,),
                             DateDayTextContainer(),
-                            SizedBox(height: 16),
                             SessionContainer(),
                             SizedBox(height: 8),
                             SessionContainer(),
@@ -90,7 +88,6 @@ class Menualbooking extends StatelessWidget {
                       );
                     },),
                 ),
-              ),
             ],
           ),
         ),
