@@ -173,7 +173,8 @@ class _CustomCalenderState extends State<CustomCalender> {
             ],
           ),
           SizedBox(height: 16),
-           _isCalendarExpanded? TableCalendar(
+          TableCalendar(
+            calendarFormat: _isCalendarExpanded? CalendarFormat.month:CalendarFormat.week,
             startingDayOfWeek: StartingDayOfWeek.monday,
             firstDay: DateTime(2020, 10, 16),
             lastDay: DateTime(2030, 3, 14),
@@ -269,105 +270,105 @@ class _CustomCalenderState extends State<CustomCalender> {
             ),
             daysOfWeekHeight: 50,
             rowHeight:50,
-          ) :
-           TableCalendar(
-             startingDayOfWeek: StartingDayOfWeek.monday,
-             calendarFormat: CalendarFormat.week,
-             firstDay: DateTime(2020, 10, 16),
-             lastDay: DateTime(2030, 3, 14),
-             focusedDay: _focusedDay,
-             onDaySelected: (selectedDay, focusedDay) {
-               print('Day selected: $selectedDay');
-               setState(() {
-                 _focusedDay = selectedDay;
-                 _selectedMonth = '${selectedDay.month}';
-
-               });
-             },
-
-             calendarBuilders: CalendarBuilders(
-               markerBuilder: (context, day, events) {
-                 if (day == _focusedDay) {
-                   return Container(
-                     width: 40,
-                     height: 40,
-                     padding: const EdgeInsets.symmetric(horizontal: 9),
-                     decoration: ShapeDecoration(
-                       color: Colors.black,
-                       shape: RoundedRectangleBorder(
-                         borderRadius: BorderRadius.circular(16),
-                       ),
-                     ),
-                     child: Center(
-                       child: Text(
-                         _focusedDay.day.toString(),
-                         textAlign: TextAlign.center,
-                         style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 14,
-                           fontFamily: 'Inter',
-                           fontWeight: FontWeight.w500,
-                         ),
-                       ),
-                     ),
-                   );
-                 }
-                 else{
-                   return null;
-                 }
-               },
-               todayBuilder: (context, day, focusedDay) {
-                 if(focusedDay != _focusedDay){
-                   return Container(
-                     width: 40,
-                     height: 40,
-                     padding: const EdgeInsets.symmetric(horizontal: 9),
-                     decoration: ShapeDecoration(
-                       color: Colors.black,
-                       shape: RoundedRectangleBorder(
-                         borderRadius: BorderRadius.circular(16),
-                       ),
-                     ),
-                     child: Center(
-                       child: Text(
-                         _focusedDay.day.toString(),
-                         textAlign: TextAlign.center,
-                         style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 14,
-                           fontFamily: 'Inter',
-                           fontWeight: FontWeight.w500,
-                         ),
-                       ),
-                     ),
-                   );
-                 }else{
-                   print(focusedDay);
-                 }
-
-
-               },
-             ),
-
-             headerVisible: false,
-             calendarStyle: CalendarStyle(
-
-
-               todayDecoration: BoxDecoration(
-               ),
-               todayTextStyle: TextStyle(
-               ),
-               weekendTextStyle: TextStyle(
-                 color: Color(0xFF545F71),
-                 fontSize: 12,
-                 fontFamily: 'Lufga',
-                 fontWeight: FontWeight.w400,
-                 height: 0.12,
-               ),
-             ),
-             daysOfWeekHeight: 50,
-             rowHeight:50,
-           ),
+          ),
+           // TableCalendar(
+           //   startingDayOfWeek: StartingDayOfWeek.monday,
+           //   calendarFormat: CalendarFormat.week,
+           //   firstDay: DateTime(2020, 10, 16),
+           //   lastDay: DateTime(2030, 3, 14),
+           //   focusedDay: _focusedDay,
+           //   onDaySelected: (selectedDay, focusedDay) {
+           //     print('Day selected: $selectedDay');
+           //     setState(() {
+           //       _focusedDay = selectedDay;
+           //       _selectedMonth = '${selectedDay.month}';
+           //
+           //     });
+           //   },
+           //
+           //   calendarBuilders: CalendarBuilders(
+           //     markerBuilder: (context, day, events) {
+           //       if (day == _focusedDay) {
+           //         return Container(
+           //           width: 40,
+           //           height: 40,
+           //           padding: const EdgeInsets.symmetric(horizontal: 9),
+           //           decoration: ShapeDecoration(
+           //             color: Colors.black,
+           //             shape: RoundedRectangleBorder(
+           //               borderRadius: BorderRadius.circular(16),
+           //             ),
+           //           ),
+           //           child: Center(
+           //             child: Text(
+           //               _focusedDay.day.toString(),
+           //               textAlign: TextAlign.center,
+           //               style: TextStyle(
+           //                 color: Colors.white,
+           //                 fontSize: 14,
+           //                 fontFamily: 'Inter',
+           //                 fontWeight: FontWeight.w500,
+           //               ),
+           //             ),
+           //           ),
+           //         );
+           //       }
+           //       else{
+           //         return null;
+           //       }
+           //     },
+           //     todayBuilder: (context, day, focusedDay) {
+           //       if(focusedDay != _focusedDay){
+           //         return Container(
+           //           width: 40,
+           //           height: 40,
+           //           padding: const EdgeInsets.symmetric(horizontal: 9),
+           //           decoration: ShapeDecoration(
+           //             color: Colors.black,
+           //             shape: RoundedRectangleBorder(
+           //               borderRadius: BorderRadius.circular(16),
+           //             ),
+           //           ),
+           //           child: Center(
+           //             child: Text(
+           //               _focusedDay.day.toString(),
+           //               textAlign: TextAlign.center,
+           //               style: TextStyle(
+           //                 color: Colors.white,
+           //                 fontSize: 14,
+           //                 fontFamily: 'Inter',
+           //                 fontWeight: FontWeight.w500,
+           //               ),
+           //             ),
+           //           ),
+           //         );
+           //       }else{
+           //         print(focusedDay);
+           //       }
+           //
+           //
+           //     },
+           //   ),
+           //
+           //   headerVisible: false,
+           //   calendarStyle: CalendarStyle(
+           //
+           //
+           //     todayDecoration: BoxDecoration(
+           //     ),
+           //     todayTextStyle: TextStyle(
+           //     ),
+           //     weekendTextStyle: TextStyle(
+           //       color: Color(0xFF545F71),
+           //       fontSize: 12,
+           //       fontFamily: 'Lufga',
+           //       fontWeight: FontWeight.w400,
+           //       height: 0.12,
+           //     ),
+           //   ),
+           //   daysOfWeekHeight: 50,
+           //   rowHeight:50,
+           // ),
           SizedBox(height: 16,),
           GestureDetector(
             onTap: () {
