@@ -81,9 +81,8 @@ class _SessionscreenState extends State<Sessionscreen> {
                       width: Get.width,
                       child: Column(
                         children: [
-                          SizedBox(height: 16),
+                          SizedBox(height: 24),
                           DateDayTextContainer(),
-                          SizedBox(height: 16),
                           SessionContainer(),
                           SizedBox(height: 8),
                           SessionContainer(),

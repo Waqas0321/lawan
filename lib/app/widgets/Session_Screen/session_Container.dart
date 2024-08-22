@@ -39,7 +39,6 @@ class _SessionContainerState extends State<SessionContainer> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Container(
           height: 92,
           padding: const EdgeInsets.all(12),
