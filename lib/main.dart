@@ -7,14 +7,15 @@ import 'package:lawan/app/screens/AddMenualBooking_Screen/MenualBooking.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
 void main() {
-  runApp(
-      DevicePreview(
-        enabled: true,
-        builder: (context) => ScreenUtilInit(
-          designSize: Size(375, 812), // Design size for scaling
-          builder: (context, child) => MyApp(),
-        ),
-      ),
+
+  runApp(MyApp()
+  //     DevicePreview(
+  //       enabled: true,
+  //       builder: (context) => ScreenUtilInit(
+  //         designSize: Size(375, 812), // Design size for scaling
+  //         builder: (context, child) => MyApp(),
+  //       ),
+  //     ),
       );
 }
 

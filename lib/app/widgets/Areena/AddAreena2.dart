@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,18 +7,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
 import 'package:lawan/app/widgets/Areena/custom_header_count.dart';
-
 import '../../utils/colors.dart';
-import '../../utils/images.dart';
 import '../../utils/text.dart';
-import 'Add-Arena-Container.dart';
 import 'AddAreena3.dart';
-import 'AddArena1.dart';
 import 'TimeSlotRow.dart';
-import 'ar-in-out-button.dart';
 import 'areenaButton.dart';
-import 'custom-Arena-textform.dart';
-import 'customToggle.dart';
 
 class AddAreena2 extends StatefulWidget {
   @override
@@ -57,10 +49,10 @@ class _AddAreena2State extends State<AddAreena2> {
     final screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: acrylicAny(
-        blurlevel:200,
+        blurlevel: 10000,
         child: Container(
-          width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(bottom: 20),
+          // width: MediaQuery.of(context).size.width - 16,
+          margin: EdgeInsets.only(left: 10,right:10,bottom:12),
           height: MediaQuery.of(context).size.height * 0.78,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
@@ -71,7 +63,6 @@ class _AddAreena2State extends State<AddAreena2> {
             shadows: [
               BoxShadow(
                 color: Color(0x19000000),
-                blurRadius: 10,
                 offset: Offset(0, -0.50),
                 spreadRadius: 0,
               )
