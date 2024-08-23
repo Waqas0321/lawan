@@ -49,4 +49,6 @@ static const String location_marker="$mainImage/location-marker.svg";
 static const String phone_outline="$mainImage/phone-outline.svg";
 static const String identification="$mainImage/identification.svg";
 static const String x="$mainImage/x.svg";
+static const String adjustments ="$mainImage/adjustments.svg";
+static const String greenery ="$mainImage/greenery.png";
 }

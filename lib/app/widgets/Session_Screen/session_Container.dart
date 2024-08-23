@@ -4,27 +4,16 @@ import '../../utils/images.dart';
 import 'BottomNave_Container.dart';
 class SessionContainer extends StatefulWidget {
   SessionContainer({
-    super.key,
+    super.key, required this.eyeOnTap,
   });
+  final GestureTapCallback eyeOnTap;
 
   @override
   State<SessionContainer> createState() => _SessionContainerState();
 }
 
 class _SessionContainerState extends State<SessionContainer> {
-  void _openBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isDismissible: true,
-      enableDrag: true,
-      isScrollControlled: true,
-      // Allows the bottom sheet to use full screen height
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        return BottomnaveContainer();
-      },
-    );
-  }
+
   bool showAll = false;
   List<ImageProvider> memberImages = [
     AssetImage(Images.avatar),
@@ -230,9 +219,7 @@ class _SessionContainerState extends State<SessionContainer> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  _openBottomSheet(context);
-                },
+                onTap: widget.eyeOnTap,
                 child: Container(
                   width: 48,
                   height: 68,

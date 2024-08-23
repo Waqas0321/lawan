@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/manual/MenualBooking_Controller.dart';
-import 'package:lawan/app/utils/colors.dart';
 import '../../widgets/Session_Screen/DateDayContainer.dart';
-import '../../widgets/Session_Screen/Session_Header.dart';
 import '../../widgets/Session_Screen/calander.dart';
 import '../../widgets/Session_Screen/session_Container.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
 
-class MenualbookingScreen extends StatelessWidget {
+class MenualBookingScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<MenualBookinController>();
     return Scaffold(
       backgroundColor: const Color(0xFFF2F3F2),
       body: SafeArea(
@@ -81,9 +81,9 @@ class MenualbookingScreen extends StatelessWidget {
                         children: [
                           SizedBox(height: 32),
                           DateDayTextContainer(),
-                          SessionContainer(),
+                          SessionContainer(eyeOnTap: () => controller.openBottomSheet(context) ),
                           SizedBox(height: 8),
-                          SessionContainer(),
+                          SessionContainer(eyeOnTap: () => controller.openBottomSheet(context)),
                         ],
                       ),
                     );

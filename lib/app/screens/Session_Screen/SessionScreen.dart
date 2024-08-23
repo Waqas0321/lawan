@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../widgets/Session_Screen/BottomNave_Container.dart';
 import '../../widgets/Session_Screen/DateDayContainer.dart';
 import '../../widgets/Session_Screen/Session_Header.dart';
 import '../../widgets/Session_Screen/calander.dart';
@@ -14,6 +15,19 @@ class Sessionscreen extends StatefulWidget {
 }
 
 class _SessionscreenState extends State<Sessionscreen> {
+  void _openBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      enableDrag: true,
+      isScrollControlled: true,
+      // Allows the bottom sheet to use full screen height
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return BottomnaveContainer();
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -88,9 +102,9 @@ class _SessionscreenState extends State<Sessionscreen> {
                             children: [
                               SizedBox(height: 32),
                               DateDayTextContainer(),
-                              SessionContainer(),
+                              SessionContainer(eyeOnTap: () => _openBottomSheet),
                               SizedBox(height: 8),
-                              SessionContainer(),
+                              SessionContainer(eyeOnTap: () => _openBottomSheet),
                             ],
                           ),
                         );
