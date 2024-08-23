@@ -63,7 +63,7 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
                   thisCount: "2",
                   text1: 'Slot',
                   text2: 'Arena',
-                  text3: 'Details',
+                  text3: 'Details ',
                 ),
                 SizedBox(height: 28),
                 Column(

@@ -123,147 +123,150 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
                   offset: Offset(0, -0.50),
                 )
               ]),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                customHeaderCount(
-                  thisCount: "1",
-                  text1: 'Slot',
-                  text2: 'Arena',
-                  text3: 'Details',
-                ),
-                SizedBox(height: 28),
-                TextWidget(
-                  title: 'Select Date',
-                  textColor: AppColors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-
-                ),
-                TextWidget(
-                  title: 'Choose the time and slot',
-                  textColor: AppColors.textSecondColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-
-                ),
-                SizedBox(height: 8),
-                UnExpandableCustomCalender(
-                  isSecondDessign: true,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    HourContainer(
-                      isSelected: selected1HR,
-                        onPressFun: (){
-                          _onButtonPressHR("1hr");
-                        },
-                        text: '1 hr'),
-                    HourContainer(
-                        isSelected: selected2HR,
-                        onPressFun: (){
-                          _onButtonPressHR("2hr");
-                        },
-                        text: '2 hr'),
-                    HourContainer(
-                        isSelected: selected3HR,
-                        onPressFun: (){
-                          _onButtonPressHR("3hr");
-                        },
-                        text: '3 hr'),
-                    HourContainer(
-                        isSelected: selected4HR,
-                        onPressFun: (){
-                          _onButtonPressHR("4hr");
-                        },
-                        text: '4 hr'),
-                    HourContainer(
-                        isSelected: selected5HR,
-                        onPressFun: (){
-                          _onButtonPressHR("5hr");
-                        },
-                        text: '5 hr'),
-                  ],
-                ),
-                SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'to',
-                      style: TextStyle(
-                        color: Color(0xFF545F71),
-                        fontSize: 14,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w400,
-                        height: 0.11,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
-                    ),
-                  ],
-                ),
-
-
-              ],
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: CustomAreenaButton(
-                    text: Apptext.cancel,
-                    color: null,
-                    borderColor: Color(0xFFE9EAF0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  customHeaderCount(
+                    thisCount: "1",
+                    text1: 'Slot',
+                    text2: 'Arena',
+                    text3: 'Details',
+                  ),
+                  SizedBox(height: 28),
+                  TextWidget(
+                    title: 'Select Date',
                     textColor: AppColors.black,
-                    onTap: () {
-                      Get.back();
-                    },
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+
                   ),
-                ),
-                SizedBox(
-                  width: 16,
-                ),
-                Expanded(
-                  child: CustomAreenaButton(
-                    text: Apptext.next,
-                    color: AppColors.black,
-                    borderColor: AppColors.black,
-                    textColor: AppColors.white,
-                    onTap: () {
-                      Get.back();
-                      openBottomSheet(context);
-                    },
+                  TextWidget(
+                    title: 'Choose the time and slot',
+                    textColor: AppColors.textSecondColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+
                   ),
-                ),
-              ],
-            ),
-          ],
+                  SizedBox(height: 8),
+                  UnExpandableCustomCalender(
+                    isSecondDessign: true,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      HourContainer(
+                        isSelected: selected1HR,
+                          onPressFun: (){
+                            _onButtonPressHR("1hr");
+                          },
+                          text: '1 hr'),
+                      HourContainer(
+                          isSelected: selected2HR,
+                          onPressFun: (){
+                            _onButtonPressHR("2hr");
+                          },
+                          text: '2 hr'),
+                      HourContainer(
+                          isSelected: selected3HR,
+                          onPressFun: (){
+                            _onButtonPressHR("3hr");
+                          },
+                          text: '3 hr'),
+                      HourContainer(
+                          isSelected: selected4HR,
+                          onPressFun: (){
+                            _onButtonPressHR("4hr");
+                          },
+                          text: '4 hr'),
+                      HourContainer(
+                          isSelected: selected5HR,
+                          onPressFun: (){
+                            _onButtonPressHR("5hr");
+                          },
+                          text: '5 hr'),
+                    ],
+                  ),
+                  SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: TimeSlot(
+                          timeSlots: _timeSlots,
+                          selectedTimeSlot: _selectedTimeSlot,
+                          onChanged: _onTimeSlotChanged,
+                          isImage: true,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'to',
+                        style: TextStyle(
+                          color: Color(0xFF545F71),
+                          fontSize: 14,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                          height: 0.11,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: TimeSlot(
+                          timeSlots: _timeSlots,
+                          selectedTimeSlot: _selectedTimeSlot,
+                          onChanged: _onTimeSlotChanged,
+                          isImage: true,
+                        ),
+                      ),
+                    ],
+                  ),
+
+
+                ],
+              ),
+              SizedBox(height: 32),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: CustomAreenaButton(
+                      text: Apptext.cancel,
+                      color: null,
+                      borderColor: Color(0xFFE9EAF0),
+                      textColor: AppColors.black,
+                      onTap: () {
+                        Get.back();
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Expanded(
+                    child: CustomAreenaButton(
+                      text: Apptext.next,
+                      color: AppColors.black,
+                      borderColor: AppColors.black,
+                      textColor: AppColors.white,
+                      onTap: () {
+                        Get.back();
+                        openBottomSheet(context);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         )
       ),
     );

@@ -5,8 +5,10 @@ import 'package:lawan/app/widgets/MenualBooking_Screen/search_TextField.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
 import '../../utils/text.dart';
+import '../Areena/EditAlertBox.dart';
 import '../Areena/areenaButton.dart';
 import '../Areena/custom_header_count.dart';
+import 'Custom_AlertBox.dart';
 
 class MenualBottomSheet3 extends StatefulWidget {
   const MenualBottomSheet3({super.key});
@@ -58,10 +60,10 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                         textColor: AppColors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-
                       ),
                       TextWidget(
-                        title: 'Sync with online booking. Key in the details below.',
+                        title:
+                            'Sync with online booking. Key in the details below.',
                         textColor: AppColors.textSecondColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
@@ -76,7 +78,10 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(hintText: 'Enter Name',isThirdSheet: true,)),
+                          child: SearchTextField(
+                            hintText: 'Enter Name',
+                            isThirdSheet: true,
+                          )),
                       SizedBox(height: 12),
                       TextWidget(
                         title: 'Contact Number',
@@ -87,7 +92,10 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(hintText: 'Enter Contact Number',isThirdSheet: true,)),
+                          child: SearchTextField(
+                            hintText: 'Enter Contact Number',
+                            isThirdSheet: true,
+                          )),
                       SizedBox(height: 12),
                       TextWidget(
                         title: 'Identification Number',
@@ -98,7 +106,10 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(hintText: 'Enter Identification Number',isThirdSheet: true,)),
+                          child: SearchTextField(
+                            hintText: 'Enter Identification Number',
+                            isThirdSheet: true,
+                          )),
                       SizedBox(height: 12),
                       TextWidget(
                         title: 'Price',
@@ -109,11 +120,12 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(hintText: 'Enter Price Received',isThirdSheet: true,)),
-
+                          child: SearchTextField(
+                            hintText: 'Enter Price Received',
+                            isThirdSheet: true,
+                          )),
                     ],
                   ),
-
                 ],
               ),
               Row(
@@ -141,15 +153,16 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       borderColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () {
-                        Get.back();
+                        Get.dialog(CustomAlertBox());
                       },
                     ),
                   ),
                 ],
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 }
+
+

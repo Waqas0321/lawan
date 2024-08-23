@@ -51,4 +51,5 @@ static const String identification="$mainImage/identification.svg";
 static const String x="$mainImage/x.svg";
 static const String adjustments ="$mainImage/adjustments.svg";
 static const String greenery ="$mainImage/greenery.png";
+static const String refresh ="$mainImage/refresh-ccw.svg";
 }
