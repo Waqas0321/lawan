@@ -10,8 +10,14 @@ class customHeaderCount extends StatelessWidget {
   customHeaderCount({
     super.key,
     required this.thisCount,
+    this.text1 = 'Details',
+    this.text2 = 'Hour',
+    this.text3 = 'Rate',
   });
   final String thisCount;
+  final String text1;
+  final String text2;
+  final String text3;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class customHeaderCount extends StatelessWidget {
             child: CustomCard(
               count: '1',
               showborder: thisCount == "1" ? false : true,
-              text: Apptext.details,
+              text: text1,
               color: thisCount == "1" ? AppColors.brand2 : null,
               linecolor: AppColors.grey3,
               countcolor:
@@ -40,7 +46,7 @@ class customHeaderCount extends StatelessWidget {
             child: CustomCard(
               count: '2',
               showborder: thisCount == "2" ? false : true,
-              text: Apptext.hour,
+              text: text2,
               color: thisCount == "2" ? AppColors.brand2 : null,
               countcolor:
                   thisCount == "2" ? AppColors.white : AppColors.dark_grey,
@@ -54,7 +60,7 @@ class customHeaderCount extends StatelessWidget {
           Expanded(
             child: CustomCard(
               count: '3',
-              text: Apptext.rate,
+              text: text3,
               showborder: thisCount == "3" ? false : true,
               color: thisCount == "3" ? AppColors.brand2 : null,
               linecolor: Colors.transparent,

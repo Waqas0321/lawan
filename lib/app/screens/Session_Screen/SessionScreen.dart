@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../widgets/Session_Screen/BottomNave_Container.dart';
 import '../../widgets/Session_Screen/DateDayContainer.dart';
 import '../../widgets/Session_Screen/Session_Header.dart';
-import '../../widgets/Session_Screen/calander.dart';
+import '../../widgets/Session_Screen/Expandable_calander.dart';
 import '../../widgets/Session_Screen/session_Container.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
 
@@ -44,7 +44,7 @@ class _SessionscreenState extends State<Sessionscreen> {
                     isTextVisible: false,
 
                   ),
-                  CustomCalender(),
+                  ExpandableCustomCalender(),
                   SizedBox(height: 16),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

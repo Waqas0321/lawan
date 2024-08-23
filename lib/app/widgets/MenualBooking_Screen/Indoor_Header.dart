@@ -14,7 +14,7 @@ class IndoorHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: SearchTextField()),
+        Expanded(child: SearchTextField(hintText: 'PJ',)),
         SizedBox(width: 16,),
         Container(
           width: MediaQuery.of(context).size.width * 0.23,
@@ -29,7 +29,7 @@ class IndoorHeader extends StatelessWidget {
           child: Center(
             child: Row(
               children: [
-                SvgPicture.asset(Images.adjustments,height: 20,width: 20,),
+                Expanded(child: SvgPicture.asset(Images.adjustments,height: 20,width: 20,)),
                 TextWidget(
                   title: 'Filter',
                   fontSize: 14,

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 class SearchTextField extends StatelessWidget {
   const SearchTextField({
-    super.key,
+    super.key, required this.hintText,
+    this.isThirdSheet = false,
   });
+  final String hintText;
+  final bool isThirdSheet;
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +36,15 @@ class SearchTextField extends StatelessWidget {
         ),
         decoration: InputDecoration(
             border: InputBorder.none,
-            hintText: 'PJ',
+            hintText: hintText,
             hintStyle: TextStyle(
-              color: Colors.black,
+              color:isThirdSheet? Color(0xFFACB3C0):Colors.black,
               fontSize: 14,
               fontFamily: 'Lufga',
-              fontWeight: FontWeight.w500,
+              fontWeight: isThirdSheet?FontWeight.w400: FontWeight.w500,
             ),
-          prefixIcon:  Icon(Icons.search,size: 20,color: Color(0xff545F71),),
-          suffixIcon: SvgPicture.asset(Images.x,height: 16,width: 16,color: Color(0xff545F71),),
+          prefixIcon:  !isThirdSheet? Icon(Icons.search,size: 20,color: Color(0xff545F71),):null,
+          suffixIcon: !isThirdSheet? SvgPicture.asset(Images.x,height: 16,width: 16,color: Color(0xff545F71),):null,
 
         ),
       ),

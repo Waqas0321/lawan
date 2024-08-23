@@ -1,23 +1,16 @@
 import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/screens/AddMenualBooking_Screen/Indoor_Screen.dart';
 import 'package:lawan/app/screens/AddMenualBooking_Screen/Outdoor_Screen.dart';
 import 'package:lawan/app/utils/colors.dart';
-import 'package:lawan/app/widgets/Areena/AddArena1.dart';
-import 'package:lawan/app/widgets/Areena/TimeSlotAreena.dart';
-import 'package:lawan/app/widgets/Session_Screen/calander.dart';
+import 'package:lawan/app/widgets/MenualBooking_Screen/Menual_BottomSheet3.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
-
 import '../../utils/text.dart';
 import '../Areena/areenaButton.dart';
 import '../Areena/custom_header_count.dart';
 import '../Areena/custom_tabbar.dart';
-import '../Areena/details_section.dart';
-import '../Areena/hour_section.dart';
-import 'HourButtons.dart';
+
 
 class MenualBottomsheet2 extends StatefulWidget {
   const MenualBottomsheet2({super.key});
@@ -27,17 +20,6 @@ class MenualBottomsheet2 extends StatefulWidget {
 }
 
 class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
-  late bool selected1HR = false;
-  late bool selected2HR = true;
-  late bool selected3HR = false;
-  late bool selected4HR = false;
-  late bool selected5HR = false;
-  final List<String> _timeSlots = [
-    '8:00 AM',
-    '9:00 AM',
-    '10:00 AM',
-    '11:00 AM'
-  ];
   void openBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -47,62 +29,9 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
       // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        return MenualBottomsheet2();
+        return MenualBottomSheet3();
       },
     );
-  }
-
-  // Currently selected time slot
-  String _selectedTimeSlot = '8:00 AM';
-
-  void _onTimeSlotChanged(String newValue) {
-    setState(() {
-      _selectedTimeSlot = newValue;
-    });
-  }
-
-  void _onButtonPressHR(String text) {
-    setState(() {
-      switch (text) {
-        case "1hr":
-          selected1HR = true;
-          selected2HR = false;
-          selected3HR = false;
-          selected4HR = false;
-          selected5HR = false;
-          break;
-        case "2hr":
-          selected1HR = false;
-          selected2HR = true;
-          selected3HR = false;
-          selected4HR = false;
-          selected5HR = false;
-          break;
-        case "3hr":
-          selected1HR = false;
-          selected2HR = false;
-          selected3HR = true;
-          selected4HR = false;
-          selected5HR = false;
-          break;
-        case "4hr":
-          selected1HR = false;
-          selected2HR = false;
-          selected3HR = false;
-          selected4HR = true;
-          selected5HR = false;
-          break;
-        case "5hr":
-          selected1HR = false;
-          selected2HR = false;
-          selected3HR = false;
-          selected4HR = false;
-          selected5HR = true;
-          break;
-        default:
-          break;
-      }
-    });
   }
 
   @override
@@ -132,6 +61,9 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
               children: [
                 customHeaderCount(
                   thisCount: "2",
+                  text1: 'Slot',
+                  text2: 'Arena',
+                  text3: 'Details',
                 ),
                 SizedBox(height: 28),
                 Column(
@@ -211,7 +143,8 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
                         ),
                         SizedBox(height: 16,)
                       ],
-                    )
+                    ),
+
 
                   ],
                 )

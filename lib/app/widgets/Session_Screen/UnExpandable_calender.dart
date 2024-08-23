@@ -4,21 +4,20 @@ import 'package:table_calendar/table_calendar.dart';
 import '../../utils/images.dart';
 import 'Session_Header.dart';
 
-class CustomCalender extends StatefulWidget {
-  const CustomCalender({super.key,
+class UnExpandableCustomCalender extends StatefulWidget {
+  const UnExpandableCustomCalender({super.key,
     this.isSecondDessign = false,
   });
 
   final bool isSecondDessign;
 
   @override
-  State<CustomCalender> createState() => _CustomCalenderState();
+  State<UnExpandableCustomCalender> createState() => _UnExpandableCustomCalenderState();
 }
 
-class _CustomCalenderState extends State<CustomCalender> {
+class _UnExpandableCustomCalenderState extends State<UnExpandableCustomCalender> {
   DateTime _focusedDay = DateTime.now();
   String _selectedMonth = '${DateTime.now().month}';
-  bool _isCalendarExpanded = true;
 
   final List<String> monthsName = [
     'January',
@@ -313,11 +312,11 @@ class _CustomCalenderState extends State<CustomCalender> {
           ),
           SizedBox(height: 16),
           TableCalendar(
-            calendarFormat: _isCalendarExpanded? CalendarFormat.month:CalendarFormat.week,
+            calendarFormat: CalendarFormat.month,
             startingDayOfWeek: StartingDayOfWeek.monday,
             firstDay: DateTime(2020, 10, 16),
             lastDay: DateTime(2030, 3, 14),
-             focusedDay: _focusedDay,
+            focusedDay: _focusedDay,
             onDaySelected: (selectedDay, focusedDay) {
               print('Day selected: $selectedDay');
               setState(() {
@@ -340,18 +339,18 @@ class _CustomCalenderState extends State<CustomCalender> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                child: Center(
-                        child: Text(
-                          _focusedDay.day.toString(),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                          ),
+                    child: Center(
+                      child: Text(
+                        _focusedDay.day.toString(),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
                         ),
-                ),
+                      ),
+                    ),
                   );
                 }
                 else{
@@ -384,7 +383,7 @@ class _CustomCalenderState extends State<CustomCalender> {
                     ),
                   );
                 }else{
-                   return null;
+                  return null;
                 }
 
 
@@ -397,8 +396,8 @@ class _CustomCalenderState extends State<CustomCalender> {
               todayTextStyle: TextStyle(),
 
               defaultDecoration: widget.isSecondDessign? BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(16)
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(16)
               ): BoxDecoration(
 
               ),
@@ -424,122 +423,7 @@ class _CustomCalenderState extends State<CustomCalender> {
             daysOfWeekHeight: 50,
             rowHeight:50,
           ),
-           // TableCalendar(
-           //   startingDayOfWeek: StartingDayOfWeek.monday,
-           //   calendarFormat: CalendarFormat.week,
-           //   firstDay: DateTime(2020, 10, 16),
-           //   lastDay: DateTime(2030, 3, 14),
-           //   focusedDay: _focusedDay,
-           //   onDaySelected: (selectedDay, focusedDay) {
-           //     print('Day selected: $selectedDay');
-           //     setState(() {
-           //       _focusedDay = selectedDay;
-           //       _selectedMonth = '${selectedDay.month}';
-           //
-           //     });
-           //   },
-           //
-           //   calendarBuilders: CalendarBuilders(
-           //     markerBuilder: (context, day, events) {
-           //       if (day == _focusedDay) {
-           //         return Container(
-           //           width: 40,
-           //           height: 40,
-           //           padding: const EdgeInsets.symmetric(horizontal: 9),
-           //           decoration: ShapeDecoration(
-           //             color: Colors.black,
-           //             shape: RoundedRectangleBorder(
-           //               borderRadius: BorderRadius.circular(16),
-           //             ),
-           //           ),
-           //           child: Center(
-           //             child: Text(
-           //               _focusedDay.day.toString(),
-           //               textAlign: TextAlign.center,
-           //               style: TextStyle(
-           //                 color: Colors.white,
-           //                 fontSize: 14,
-           //                 fontFamily: 'Inter',
-           //                 fontWeight: FontWeight.w500,
-           //               ),
-           //             ),
-           //           ),
-           //         );
-           //       }
-           //       else{
-           //         return null;
-           //       }
-           //     },
-           //     todayBuilder: (context, day, focusedDay) {
-           //       if(focusedDay != _focusedDay){
-           //         return Container(
-           //           width: 40,
-           //           height: 40,
-           //           padding: const EdgeInsets.symmetric(horizontal: 9),
-           //           decoration: ShapeDecoration(
-           //             color: Colors.black,
-           //             shape: RoundedRectangleBorder(
-           //               borderRadius: BorderRadius.circular(16),
-           //             ),
-           //           ),
-           //           child: Center(
-           //             child: Text(
-           //               _focusedDay.day.toString(),
-           //               textAlign: TextAlign.center,
-           //               style: TextStyle(
-           //                 color: Colors.white,
-           //                 fontSize: 14,
-           //                 fontFamily: 'Inter',
-           //                 fontWeight: FontWeight.w500,
-           //               ),
-           //             ),
-           //           ),
-           //         );
-           //       }else{
-           //         print(focusedDay);
-           //       }
-           //
-           //
-           //     },
-           //   ),
-           //
-           //   headerVisible: false,
-           //   calendarStyle: CalendarStyle(
-           //
-           //
-           //     todayDecoration: BoxDecoration(
-           //     ),
-           //     todayTextStyle: TextStyle(
-           //     ),
-           //     weekendTextStyle: TextStyle(
-           //       color: Color(0xFF545F71),
-           //       fontSize: 12,
-           //       fontFamily: 'Lufga',
-           //       fontWeight: FontWeight.w400,
-           //       height: 0.12,
-           //     ),
-           //   ),
-           //   daysOfWeekHeight: 50,
-           //   rowHeight:50,
-           // ),
           SizedBox(height: 16,),
-         widget.isSecondDessign? SizedBox(): GestureDetector(
-            onTap: () {
-              setState(() {
-                _isCalendarExpanded = !_isCalendarExpanded;
-              });
-            },
-            child: Container(
-              width: 40,
-              height: 6,
-              decoration: ShapeDecoration(
-                color: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(100),
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );
