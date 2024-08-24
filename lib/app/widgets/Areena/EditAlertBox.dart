@@ -24,7 +24,9 @@ void showCustomEditAlertDialog(
     double?
         updateButtonWidth, // Optional, dynamically calculated based on isConfirmed if not provided
     String? titleText, // Optional title text for the confirmed state
-    String? title1}) {
+    String? title1,
+    bool conFirmOnTapBottomSheet = true,
+    }) {
   Get.dialog(AlertDialog(
     backgroundColor: Colors.transparent,
     contentPadding: EdgeInsets.zero,
@@ -37,9 +39,9 @@ void showCustomEditAlertDialog(
         width: 361,
         padding: const EdgeInsets.only(
           top: 24,
-          left: 10,
-          right: 10,
-          bottom: 10,
+          left: 16,
+          right: 16,
+          bottom: 16,
         ),
         decoration: BoxDecoration(
           color: AppColors.alertcolor,
@@ -160,18 +162,27 @@ void showCustomEditAlertDialog(
                       ),
                     ),
                   SizedBox(width:Get.width*0.02,),
-                  CustomAreenaButton(
-                    height: buttonHeight,
-                    text: updateButtonText,
-                    width: updateButtonWidth ??
-                        (!isConfirmed ? Get.width / 1.75 : Get.width / 1.4),
-                    color: updateButtonColor,
-                    borderColor: updateButtonBorderColor,
-                    textColor: updateButtonTextColor,
-                    onTap: () {
-                      Get.back();
-                      _openBottomSheet();
-                    },
+                  Expanded(
+                    child: CustomAreenaButton(
+                      height: buttonHeight,
+                      text: updateButtonText,
+                      width: updateButtonWidth ??
+                          (!isConfirmed ? Get.width / 1.75 : Get.width / 1.4),
+                      color: updateButtonColor,
+                      borderColor: updateButtonBorderColor,
+                      textColor: updateButtonTextColor,
+                      onTap: () {
+                        Get.back();
+                        if(conFirmOnTapBottomSheet){
+                          _openBottomSheet();
+                        }else{
+                          return null;
+                        }
+
+
+
+                      },
+                    ),
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/search_TextField.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
@@ -8,7 +9,6 @@ import '../../utils/text.dart';
 import '../Areena/EditAlertBox.dart';
 import '../Areena/areenaButton.dart';
 import '../Areena/custom_header_count.dart';
-import 'Custom_AlertBox.dart';
 
 class MenualBottomSheet3 extends StatefulWidget {
   const MenualBottomSheet3({super.key});
@@ -70,7 +70,7 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       ),
                       SizedBox(height: 12),
                       TextWidget(
-                        title: 'Name',
+                        title: 'First Name',
                         textColor: AppColors.textSecondColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -78,7 +78,21 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(
+                          child: MenualBookigTextField(
+                            hintText: 'Enter Name',
+                            isThirdSheet: true,
+                          )),
+                      SizedBox(height: 12),
+                      TextWidget(
+                        title: 'Last Name',
+                        textColor: AppColors.textSecondColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      SizedBox(height: 4),
+                      SizedBox(
+                          width: double.infinity,
+                          child: MenualBookigTextField(
                             hintText: 'Enter Name',
                             isThirdSheet: true,
                           )),
@@ -92,7 +106,12 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(
+                          child: MenualBookigTextField(
+                            isPrefixIcon: true,
+                            preFixIconImagePath: Images.phone_outline,
+                            preFixIconImageHeight: 24,
+                            preFixIconImageWith: 24,
+                            preFixIconColor: AppColors.mid_grey,
                             hintText: 'Enter Contact Number',
                             isThirdSheet: true,
                           )),
@@ -106,7 +125,12 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(
+                          child: MenualBookigTextField(
+                            isPrefixIcon: true,
+                            preFixIconImagePath: Images.identification,
+                            preFixIconImageHeight: 24,
+                            preFixIconImageWith: 24,
+                            preFixIconColor: AppColors.mid_grey,
                             hintText: 'Enter Identification Number',
                             isThirdSheet: true,
                           )),
@@ -120,8 +144,8 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: SearchTextField(
-                            hintText: 'Enter Price Received',
+                          child: MenualBookigTextField(
+                            hintText: 'RM',
                             isThirdSheet: true,
                           )),
                     ],
@@ -153,7 +177,19 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       borderColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () {
-                        Get.dialog(CustomAlertBox());
+                        showCustomEditAlertDialog(
+                            conFirmOnTapBottomSheet: false,
+                            title1: "Confirm Booking",
+                            "Edit Arena Name",
+                            'MBPJ Sports Complex',
+                            isConfirmed: true,
+                            () {},
+                            titleText:
+                                "Are you sure you want to add this booking?",
+                            updateButtonText: "Confirm",
+                            updateButtonBorderColor: AppColors.black,
+                            updateButtonColor: AppColors.black,
+                            updateButtonTextColor: AppColors.white);
                       },
                     ),
                   ),
@@ -164,5 +200,3 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
     );
   }
 }
-
-

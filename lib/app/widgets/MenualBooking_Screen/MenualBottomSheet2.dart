@@ -70,14 +70,14 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextWidget(
-                      title: 'Select Date',
+                      title: 'Choose arena',
                       textColor: AppColors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
 
                     ),
                     TextWidget(
-                      title: 'Choose the time and slot',
+                      title: 'Set where it should take place',
                       textColor: AppColors.textSecondColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,

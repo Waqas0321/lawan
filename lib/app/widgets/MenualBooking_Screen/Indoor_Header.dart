@@ -18,7 +18,7 @@ class IndoorHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: SearchTextField(hintText: 'PJ',)),
+        Expanded(child: MenualBookigTextField(isPrefixIcon: true, hintText: 'PJ',)),
         SizedBox(width: 16,),
         GestureDetector(
           onTap: () {
