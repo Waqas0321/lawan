@@ -100,7 +100,7 @@ class CustomBottomNavigation extends StatelessWidget {
                   Expanded(
                     child: CircularContainer(
                       heightpadding:2,
-                      image: Images.sales, // Replace with your asset path
+                      image:"${Images.mainImage}/sales.svg", // Replace with your asset path
                       color: controller.selectedItem.value == "Sales"
                           ? Colors.black
                           : Colors.white,

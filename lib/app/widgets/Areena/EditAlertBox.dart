@@ -161,6 +161,7 @@ void showCustomEditAlertDialog(
                         circular: true,
                       ),
                     ),
+<<<<<<< Updated upstream
                   SizedBox(width:Get.width*0.02,),
                   Expanded(
                     child: CustomAreenaButton(
@@ -183,6 +184,21 @@ void showCustomEditAlertDialog(
 
                       },
                     ),
+=======
+                  SizedBox(width:Get.width*0.01,),
+                  CustomAreenaButton(
+                    height: buttonHeight,
+                    text: updateButtonText,
+                    width: updateButtonWidth ??
+                        (!isConfirmed ? Get.width / 1.65 : Get.width / 1.366),
+                    color: updateButtonColor,
+                    borderColor: updateButtonBorderColor,
+                    textColor: updateButtonTextColor,
+                    onTap: () {
+                      Get.back();
+                      _openBottomSheet();
+                    },
+>>>>>>> Stashed changes
                   ),
                 ],
               ),
