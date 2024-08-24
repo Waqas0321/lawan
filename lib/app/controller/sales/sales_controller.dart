@@ -68,8 +68,8 @@ class SalesController extends GetxController {
     }
   }
 
-  void updateSelectedMonth(String month) {
-    selectedMonthIndex.value = monthsName.indexOf(month);
+  void updateSelectedMonth(int index) {
+    selectedMonthIndex.value = index;
   }
 
   void selectBar(int index) {
