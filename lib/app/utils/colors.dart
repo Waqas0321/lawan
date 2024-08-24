@@ -3,7 +3,7 @@ import 'dart:ui';
 class AppColors {
   static const Color gainsboro = Color(0xffF2F3F2);
   static const Color white = Color(0xffFFFFFF);
-  static const Color alertcolor=Color(0xB2F2F3F2);
+  static const Color alertcolor = Color(0xB2F2F3F2);
 
   static const Color black = Color(0xff000000);
   static const Color bluee = Color(0xff2A65F8);
@@ -19,9 +19,9 @@ class AppColors {
   static const Color grey3 = Color(0xffDEE1E3);
   static const Color txtColor = Color(0xFF545F71);
   static const Color containerTextColor = Color(0xFFACB3C0);
-  static const Color red=Color(0xff0ffF05B5B);
-  static const Color shadowColor=Color(0x19000000);
-  static const Color textSecondColor=Color(0xFF545F71);
-  static const Color hRBTNBorder=Color(0xFFDEE1E2);
 
+  static const Color red = Color(0xff0ffF05B5B);
+  static const Color shadowColor = Color(0x19000000);
+  static const Color textSecondColor = Color(0xFF545F71);
+  static const Color hRBTNBorder = Color(0xFFDEE1E2);
 }

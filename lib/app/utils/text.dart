@@ -53,8 +53,5 @@ class Apptext {
   static const String by = " by";
   static const String earnIncome2 = "\n     listing as many arena that you own";
   static const String confirm_update="Confirm Update?";
-  static const String Proceed_with_applying_the_changes="Proceed with applying the changes.";
-  static const String Confirm="Confirm";
-  static const String Delete="Delete";
 
 }

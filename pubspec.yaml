@@ -38,17 +38,17 @@ dependencies:
   animated_neumorphic: ^0.2.0
   animated_toggle_switch: ^0.8.3
   auto_size_text: ^3.0.0
-  google_fonts:
+
+  fl_chart: ^0.68.0
+
   get: ^4.6.6
   table_calendar: ^3.1.2
   flutter_responsive: ^1.1.0
   flutter_screenutil: ^5.9.3
   adaptive_sizer: ^0.0.4
   device_preview: ^1.2.0
-  flutter_cupertino_datetime_picker: ^3.0.0
   responsive_framework: ^1.4.0  # Use the latest version
   flutter_svg: ^2.0.10+1
-  bar_chart:
   responsive_builder: ^0.7.1
   overlay_group_avatar: ^0.0.4
   acrylic_any: ^0.0.1

@@ -95,8 +95,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
             SafeArea(
               bottom: false,
               child: Padding(
-                padding: EdgeInsets.only(
-                    left: 16, right: 16),
+                padding: EdgeInsets.only(left: 16, right: 16),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -160,8 +159,8 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           //   ],
                           // ),
                           ScreenHeader(
-                            isTextVisible: false,
-                          ),
+                              // isTextVisible: false,
+                              ),
                           SizedBox(
                             height: screenheight * 0.005,
                           ),
@@ -193,18 +192,23 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                           "Edit Arena Name",
                                           'MBPJ Sports Complex',
                                           isConfirmed: false,
-                                          () {
-                                            Get.back();
-                                            showCustomEditAlertDialog(
-                                                "Edit Arena Name",
-                                                'MBPJ Sports Complex',
-                                                isConfirmed: true,
-                                                () {},
-                                                titleText: Apptext
-                                                    .Proceed_with_applying_the_changes,
-                                                updateButtonText:
-                                                    Apptext.Delete,updateButtonBorderColor:AppColors.red,updateButtonColor:null,updateButtonTextColor:AppColors.red);
-                                          },
+                                          // () {
+                                          //   Get.back();
+                                          //   showCustomEditAlertDialog(
+                                          //       "Edit Arena Name",
+                                          //       'MBPJ Sports Complex',
+                                          //       isConfirmed: true,
+                                          //       () {},
+                                          //       titleText: Apptext
+                                          //           .Proceed_with_applying_the_changes,
+                                          //       updateButtonText:
+                                          //           Apptext.Delete,
+                                          //       updateButtonBorderColor:
+                                          //           AppColors.red,
+                                          //       updateButtonColor: null,
+                                          //       updateButtonTextColor:
+                                          //           AppColors.red);
+                                          // },
                                         );
                                       },
                                       child: SvgPicture.asset(
@@ -255,9 +259,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 width: 44,
                                 height: 44,
                                 text: "1",
-                                icon:true,
-                                image:Images.plus,
-                                imageColor:AppColors.white,
+                                icon: true,
+                                image: Images.plus,
+                                imageColor: AppColors.white,
                                 color: AppColors.black,
                                 textColor: AppColors.black,
                                 circular: true,
@@ -336,9 +340,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 width: 44,
                                 height: 44,
                                 text: "1",
-                                icon:true,
-                                image:Images.plus,
-                                imageColor:AppColors.white,
+                                icon: true,
+                                image: Images.plus,
+                                imageColor: AppColors.white,
                                 color: AppColors.black,
                                 textColor: AppColors.black,
                                 circular: true,
@@ -358,8 +362,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                       Column(
                         children: [
                           Container(
-                            height:
-                                MediaQuery.of(context).size.height / 1.7,
+                            height: MediaQuery.of(context).size.height / 1.7,
                             // color: const Color(0xFFF2F3F2),
                             child: DefaultTabController(
                                 length: 3,
