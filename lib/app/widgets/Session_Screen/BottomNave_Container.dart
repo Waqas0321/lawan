@@ -7,14 +7,14 @@ import 'package:lawan/app/widgets/Session_Screen/timeZone_containers.dart';
 import 'Bottom_Buttons.dart';
 import 'MenuButton.dart';
 
-class BottomnaveContainer extends StatefulWidget {
-  const BottomnaveContainer({super.key});
+class SessionBottomSheetContainer extends StatefulWidget {
+  const SessionBottomSheetContainer({super.key});
 
   @override
-  State<BottomnaveContainer> createState() => _BottomnaveContainerState();
+  State<SessionBottomSheetContainer> createState() => _SessionBottomSheetContainerState();
 }
 
-class _BottomnaveContainerState extends State<BottomnaveContainer> {
+class _SessionBottomSheetContainerState extends State<SessionBottomSheetContainer> {
 
   @override
   Widget build(BuildContext context) {

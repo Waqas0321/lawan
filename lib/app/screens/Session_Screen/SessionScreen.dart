@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:lawan/app/bindings/app_bindings.dart';
+import 'package:lawan/app/controller/Session_Screen/SessionScreen_Controller.dart';
 import '../../widgets/Session_Screen/BottomNave_Container.dart';
 import '../../widgets/Session_Screen/DateDayContainer.dart';
-import '../../widgets/Session_Screen/Session_Header.dart';
 import '../../widgets/Session_Screen/Expandable_calander.dart';
 import '../../widgets/Session_Screen/session_Container.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
@@ -15,21 +17,10 @@ class Sessionscreen extends StatefulWidget {
 }
 
 class _SessionscreenState extends State<Sessionscreen> {
-  void _openBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isDismissible: true,
-      enableDrag: true,
-      isScrollControlled: true,
-      // Allows the bottom sheet to use full screen height
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        return BottomnaveContainer();
-      },
-    );
-  }
+
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<SessionScreenController>();
     return Container(
         height: MediaQuery.of(context).size.height,
         child: Scaffold(
@@ -102,9 +93,13 @@ class _SessionscreenState extends State<Sessionscreen> {
                             children: [
                               SizedBox(height: 32),
                               DateDayTextContainer(),
-                              SessionContainer(eyeOnTap: () => _openBottomSheet),
+                              SessionContainer(eyeOnTap: () {
+                                controller.openBottomSheet(context);
+                              },),
                               SizedBox(height: 8),
-                              SessionContainer(eyeOnTap: () => _openBottomSheet),
+                              SessionContainer(eyeOnTap: () {
+                                controller.openBottomSheet(context);
+                              },),
                             ],
                           ),
                         );
