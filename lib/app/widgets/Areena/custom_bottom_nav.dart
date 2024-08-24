@@ -36,7 +36,7 @@ class CustomBottomNavigation extends StatelessWidget {
     return Positioned(
       left:
           MediaQuery.of(context).size.width / 3.9, // Adjust position as needed
-      bottom: 20,
+      bottom: 10,
       child: Container(
         margin: margin,
         width: MediaQuery.of(context).size.width * widthFactor,
@@ -54,6 +54,7 @@ class CustomBottomNavigation extends StatelessWidget {
                 children: [
                   Expanded(
                     child: CircularContainer(
+                      heightpadding:3,
                       image: Images.play,
                       color: controller.selectedItem.value == "Session"
                           ? Colors.black
@@ -76,6 +77,7 @@ class CustomBottomNavigation extends StatelessWidget {
                   ),
                   Expanded(
                     child: CircularContainer(
+                      heightpadding: 2,
                       image: Images.areena, // Replace with your asset path
                       color: controller.selectedItem.value == "Arena"
                           ? Colors.black
@@ -97,7 +99,8 @@ class CustomBottomNavigation extends StatelessWidget {
                   ),
                   Expanded(
                     child: CircularContainer(
-                      image: Images.sales, // Replace with your asset path
+                      heightpadding:2,
+                      image:"${Images.mainImage}/sales.svg", // Replace with your asset path
                       color: controller.selectedItem.value == "Sales"
                           ? Colors.black
                           : Colors.white,

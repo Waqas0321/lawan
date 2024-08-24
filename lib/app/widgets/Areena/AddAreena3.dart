@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -47,12 +48,12 @@ class _AddAreena3State extends State<AddAreena3> {
 
   @override
   Widget build(BuildContext context) {
-    return BackdropFilter(
-      filter: ImageFilter.blur(sigmaY: 6, sigmaX: 6),
+    return acrylicAny(
+      blurlevel:10,
       child: Container(
-        width: MediaQuery.of(context).size.width - 16,
+        // width: MediaQuery.of(context).size.width - 16,
         height: 711,
-        margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.only(left: 10,right:10,bottom:12),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Color(0xB2F2F3F2),
@@ -68,161 +69,164 @@ class _AddAreena3State extends State<AddAreena3> {
             )
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              customHeaderCount(
-                thisCount: "3",
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.04,
-              ),
-              Text(
-                'Configure the rate',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w500,
-                  height: 1,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaY: 6, sigmaX: 6),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                customHeaderCount(
+                  thisCount: "3",
                 ),
-              ),
-              Text(
-                'Customize to fit your needs',
-                style: TextStyle(
-                  color: Color(0xFF545F71),
-                  fontSize: 12,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                  height: 2,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.04,
                 ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
-              ),
-              Text(
-                'Weekend Rate',
-                style: TextStyle(
-                  color: Color(0xFF545F71),
-                  fontSize: 14,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                  height: 2,
+                Text(
+                  'Configure the rate',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w500,
+                    height: 1,
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: Row(
+                Text(
+                  'Customize to fit your needs',
+                  style: TextStyle(
+                    color: Color(0xFF545F71),
+                    fontSize: 12,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w400,
+                    height: 2,
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.005,
+                ),
+                Text(
+                  'Weekend Rate',
+                  style: TextStyle(
+                    color: Color(0xFF545F71),
+                    fontSize: 14,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w400,
+                    height: 2,
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TimeSlotTwo(
+                        padding: 10,
+                        isRight: true,
+                        isClock: false,
+                        timeSlots: weeksRate,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
+                      ),
+                      SizedBox(
+                        width: 12,
+                      ),
+                      TimeSlotTwo(
+                        isLeft: true,
+                        isClock: false,
+                        timeSlots: weekshours,
+                        selectedTimeSlot: _selectedhrsTimeSlot,
+                        onChanged: _onTimeSlotChangedTwo,
+                        isImage: true,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                    width: double.infinity,
+                    child: CustomContainerAreena3(
+                      text1: 'Listing Price',
+                      text2: 'RM220',
+                      text3: '20% hosting fee by Lawan included',
+                    )),
+                SizedBox(
+                  height: 16,
+                ),
+                customText(text: "Weekend Rate"),
+                SizedBox(
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TimeSlotTwo(
+                        isRight: true,
+                        padding: 10,
+                        isClock: false,
+                        timeSlots: weeksRate,
+                        selectedTimeSlot: _selectedTimeSlot,
+                        onChanged: _onTimeSlotChanged,
+                        isImage: true,
+                      ),
+                      SizedBox(
+                        width: 12,
+                      ),
+                      TimeSlotTwo(
+                        isLeft: true,
+                        isClock: false,
+                        timeSlots: weekshours,
+                        selectedTimeSlot: _selectedhrsTimeSlot,
+                        onChanged: _onTimeSlotChangedTwo,
+                        isImage: true,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                    width: double.infinity,
+                    child: CustomContainerAreena3(
+                      text1: 'Listing Price',
+                      text2: 'RM220',
+                      text3: '20% hosting fee by Lawan included',
+                    )),
+                Spacer(),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TimeSlotTwo(
-                      padding: 10,
-                      isRight: true,
-                      isClock: false,
-                      timeSlots: weeksRate,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged,
-                      isImage: true,
+                    Expanded(
+                      child: CustomAreenaButton(
+                        text: Apptext.cancel,
+                        color: null,
+                        borderColor: Color(0xFFE9EAF0),
+                        textColor: AppColors.black,
+                        onTap: () {
+                          Get.back();
+                        },
+                      ),
                     ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    TimeSlotTwo(
-                      isLeft: true,
-                      isClock: false,
-                      timeSlots: weekshours,
-                      selectedTimeSlot: _selectedhrsTimeSlot,
-                      onChanged: _onTimeSlotChangedTwo,
-                      isImage: true,
+                    SizedBox(width: 12),
+                    Expanded(
+                      child: CustomAreenaButton(
+                        text: Apptext.add_arena,
+                        color: AppColors.black,
+                        borderColor: AppColors.black,
+                        textColor: AppColors.white,
+                        onTap: () {
+                          Get.to(AreenaFilled1());
+                        },
+                      ),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              SizedBox(
-                  width: double.infinity,
-                  child: CustomContainerAreena3(
-                    text1: 'Listing Price',
-                    text2: 'RM220',
-                    text3: '20% hosting fee by Lawan included',
-                  )),
-              SizedBox(
-                height: 16,
-              ),
-              customText(text: "Weekend Rate"),
-              SizedBox(
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TimeSlotTwo(
-                      isRight: true,
-                      padding: 10,
-                      isClock: false,
-                      timeSlots: weeksRate,
-                      selectedTimeSlot: _selectedTimeSlot,
-                      onChanged: _onTimeSlotChanged,
-                      isImage: true,
-                    ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    TimeSlotTwo(
-                      isLeft: true,
-                      isClock: false,
-                      timeSlots: weekshours,
-                      selectedTimeSlot: _selectedhrsTimeSlot,
-                      onChanged: _onTimeSlotChangedTwo,
-                      isImage: true,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              SizedBox(
-                  width: double.infinity,
-                  child: CustomContainerAreena3(
-                    text1: 'Listing Price',
-                    text2: 'RM220',
-                    text3: '20% hosting fee by Lawan included',
-                  )),
-              Spacer(),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: CustomAreenaButton(
-                      text: Apptext.cancel,
-                      color: null,
-                      borderColor: Color(0xFFE9EAF0),
-                      textColor: AppColors.black,
-                      onTap: () {
-                        Get.back();
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 12),
-                  Expanded(
-                    child: CustomAreenaButton(
-                      text: Apptext.add_arena,
-                      color: AppColors.black,
-                      borderColor: AppColors.black,
-                      textColor: AppColors.white,
-                      onTap: () {
-                        Get.to(AreenaFilled1());
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

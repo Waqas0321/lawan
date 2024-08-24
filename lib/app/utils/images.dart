@@ -56,4 +56,10 @@ class Images {
   static const String left = "$mainImage/left.svg";
   static const String right = "$mainImage/right.svg";
   static const String card = "$mainImage/card.svg";
+
+  static const String x = "$mainImage/x.svg";
+  static const String adjustments = "$mainImage/adjustments.svg";
+  static const String greenery = "$mainImage/greenery.png";
+  static const String refresh = "$mainImage/refresh-ccw.svg";
+  static const String search = "$mainImage/search.svg";
 }

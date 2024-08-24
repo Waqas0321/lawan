@@ -11,6 +11,7 @@ class CircularContainer extends StatelessWidget {
     this.textColor = Colors.black,
     this.imageWidth = 16.0,
     this.imageHeight = 16.0,
+    this.heightpadding=0.2
   });
 
   final Color color;
@@ -20,7 +21,7 @@ class CircularContainer extends StatelessWidget {
   final double imageWidth;
   final double imageHeight;
   final VoidCallback? onTap;
-
+  final double heightpadding;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -42,6 +43,7 @@ class CircularContainer extends StatelessWidget {
                 width: imageWidth,
                 colorFilter: ColorFilter.mode(textColor, BlendMode.srcIn),
               ),
+              SizedBox(height:heightpadding,),
               Text(
                 text,
                 textAlign: TextAlign.center,

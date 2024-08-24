@@ -9,15 +9,30 @@ import '../../utils/text.dart';
 import 'ArenaFilled1.dart';
 import 'areenaButton.dart';
 
-void showCustomEditAlertDialog(final String text1, final String text2,
-    {bool isConfirmed = false}) {
+void showCustomEditAlertDialog(
+    final String text1, final String text2, VoidCallback onTap,
+    {bool isConfirmed = false,
+    double buttonHeight = 49,
+    String cancelButtonText = "Cancel",
+    Color? cancelButtonColor,
+    Color cancelButtonBorderColor = AppColors.borderColor,
+    Color cancelButtonTextColor = AppColors.black,
+    String updateButtonText = "Update",
+    Color? updateButtonColor = Colors.black,
+    Color updateButtonBorderColor = AppColors.black,
+    Color updateButtonTextColor = Colors.white,
+    double?
+        updateButtonWidth, // Optional, dynamically calculated based on isConfirmed if not provided
+    String? titleText, // Optional title text for the confirmed state
+    String? title1,
+    bool conFirmOnTapBottomSheet = true,
+    }) {
   Get.dialog(AlertDialog(
     backgroundColor: Colors.transparent,
-    contentPadding: EdgeInsets.zero, // Remove default padding
+    contentPadding: EdgeInsets.zero,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(32), // Custom border radius
+      borderRadius: BorderRadius.circular(32),
     ),
-
     content: acrylicAny(
       blurlevel: 3,
       child: Container(
@@ -29,8 +44,8 @@ void showCustomEditAlertDialog(final String text1, final String text2,
           bottom: 16,
         ),
         decoration: BoxDecoration(
-          color: AppColors.alertcolor, // Custom background color
-          borderRadius: BorderRadius.circular(32), // Match the border radius
+          color: AppColors.alertcolor,
+          borderRadius: BorderRadius.circular(32),
           boxShadow: [
             BoxShadow(
               color: Color(0x19000000),
@@ -45,49 +60,48 @@ void showCustomEditAlertDialog(final String text1, final String text2,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            isConfirmed
-                ? Row(
-              children: [
-                SvgPicture.asset(
-                  Images.pencil,
-                  color: AppColors.white,
-                ),
-                // Image(image: AssetImage(Images.pencil,),color:AppColors.white,),
-                SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  text1,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w500,
-                    height: 0.09,
+            if (!isConfirmed)
+              Row(
+                children: [
+                  SvgPicture.asset(
+                    Images.pencil,
+                    color: AppColors.white,
                   ),
-                )
-              ],
-            )
-                : TextWidget(
-              title: Apptext.confirm_update,
-              fontWeight: FontWeight.w400,
-              textColor: AppColors.dark_grey,
-              fontSize: 12,
-            ),
+                  SizedBox(width: 8),
+                  Text(
+                    text1,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w500,
+                      height: 0.09,
+                    ),
+                  ),
+                ],
+              )
+            else
+              TextWidget(
+                title: title1 ?? Apptext.confirm_update,
+                fontWeight: FontWeight.w500,
+                textColor: AppColors.black,
+                fontSize: 16,
+              ),
             SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              child: Container(
-                height: 44,
-                padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(80),
+            if (!isConfirmed)
+              SizedBox(
+                width: double.infinity,
+                child: Container(
+                  height: 44,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80),
+                    ),
                   ),
-                ),
-                child: Center(
+                  child: Center(
                     child: Row(
                       children: [
                         Text(
@@ -100,18 +114,26 @@ void showCustomEditAlertDialog(final String text1, final String text2,
                           ),
                         ),
                       ],
-                    )),
+                    ),
+                  ),
+                ),
               ),
-            ),
+            if (isConfirmed)
+              TextWidget(
+                title: titleText ?? "title",
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                textColor: AppColors.dark_grey,
+              ),
             SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
               child: CustomAreenaButton(
-                height: 49,
-                text: "Cancel",
-                color: null,
-                borderColor: AppColors.borderColor,
-                textColor: AppColors.black,
+                height: buttonHeight,
+                text: cancelButtonText,
+                color: cancelButtonColor,
+                borderColor: cancelButtonBorderColor,
+                textColor: cancelButtonTextColor,
                 onTap: () {
                   Get.back();
                 },
@@ -124,24 +146,53 @@ void showCustomEditAlertDialog(final String text1, final String text2,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CustomContainer(
-                    width: 44,
-                    image: Images.trash,
-                    icon: true,
-                    height: 44,
-                    text: "2",
-                    color: null,
-                    textColor: AppColors.dark_grey,
-                    imageColor: AppColors.dark_grey,
-                    circular: true,
+                  if (!isConfirmed)
+                    InkWell(
+                      onTap: onTap,
+                      child: CustomContainer(
+                        width: 44,
+                        image: Images.trash,
+                        icon: true,
+                        height: 44,
+                        text: "2",
+                        color: null,
+                        textColor: AppColors.dark_grey,
+                        imageColor: AppColors.dark_grey,
+                        circular: true,
+                      ),
+                    ),
+                  SizedBox(width:Get.width*0.02,),
+                  Expanded(
+                    child: CustomAreenaButton(
+                      height: buttonHeight,
+                      text: updateButtonText,
+                      width: updateButtonWidth ??
+                          (!isConfirmed ? Get.width / 1.75 : Get.width / 1.4),
+                      color: updateButtonColor,
+                      borderColor: updateButtonBorderColor,
+                      textColor: updateButtonTextColor,
+                      onTap: () {
+                        Get.back();
+                        if(conFirmOnTapBottomSheet){
+                          _openBottomSheet();
+                        }else{
+                          return null;
+                        }
+
+
+
+                      },
+                    ),
                   ),
+                  SizedBox(width:Get.width*0.01,),
                   CustomAreenaButton(
-                    height: 49,
-                    text: "Update",
-                    width:Get.width/1.9,
-                    color: Colors.black,
-                    borderColor: AppColors.black,
-                    textColor: Colors.white,
+                    height: buttonHeight,
+                    text: updateButtonText,
+                    width: updateButtonWidth ??
+                        (!isConfirmed ? Get.width / 1.65 : Get.width / 1.366),
+                    color: updateButtonColor,
+                    borderColor: updateButtonBorderColor,
+                    textColor: updateButtonTextColor,
                     onTap: () {
                       Get.back();
                       _openBottomSheet();
@@ -204,10 +255,15 @@ void _openBottomSheet() {
                   onTap: () {
                     Get.back();
                     showCustomEditAlertDialog(
-                      "Cancel",
-                      "confirm",
-                      isConfirmed: false,
-                    );
+                        "Edit Arena Name",
+                        'MBPJ Sports Complex',
+                        isConfirmed: true,
+                        () {},
+                        titleText: Apptext.Proceed_with_applying_the_changes,
+                        updateButtonText: Apptext.Confirm,
+                        updateButtonBorderColor: AppColors.black,
+                        updateButtonColor: AppColors.black,
+                        updateButtonTextColor: AppColors.white);
                   },
                 ),
               ),
