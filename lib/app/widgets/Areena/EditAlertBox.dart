@@ -161,7 +161,6 @@ void showCustomEditAlertDialog(
                         circular: true,
                       ),
                     ),
-<<<<<<< Updated upstream
                   SizedBox(width:Get.width*0.02,),
                   Expanded(
                     child: CustomAreenaButton(
@@ -184,7 +183,7 @@ void showCustomEditAlertDialog(
 
                       },
                     ),
-=======
+                  ),
                   SizedBox(width:Get.width*0.01,),
                   CustomAreenaButton(
                     height: buttonHeight,
@@ -198,7 +197,6 @@ void showCustomEditAlertDialog(
                       Get.back();
                       _openBottomSheet();
                     },
->>>>>>> Stashed changes
                   ),
                 ],
               ),
