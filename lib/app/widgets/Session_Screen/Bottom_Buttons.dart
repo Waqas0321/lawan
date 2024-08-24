@@ -8,12 +8,10 @@ class BottomButtons extends StatelessWidget {
     this.height = 49,
     this.width = 48,
   });
-
   final String image;
   final double height;
   final double width;
   final bool isExpanded;
-
   @override
   Widget build(BuildContext context) {
     return Container(

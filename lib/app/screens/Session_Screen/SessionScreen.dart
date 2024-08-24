@@ -35,8 +35,13 @@ class _SessionscreenState extends State<Sessionscreen> {
                     isTextVisible: false,
 
                   ),
+<<<<<<< Updated upstream
                   ExpandableCustomCalender(),
                   SizedBox(height: 16),
+=======
+                  CustomCalender(),
+                  // SizedBox(height: 16),
+>>>>>>> Stashed changes
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

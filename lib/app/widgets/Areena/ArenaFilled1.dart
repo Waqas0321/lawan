@@ -79,328 +79,324 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFF2F3F2),
-      body: ColorFiltered(
-          colorFilter: ColorFilter.mode(
-            Colors.transparent.withOpacity(0.001), // Simulate brightness
-            BlendMode.colorBurn,
+      body: Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment(0.0, 0.8), // Start near the bottom
+              end: Alignment(0.0, 1), // End at the bottom edge
+              colors: [
+                Colors.black.withOpacity(0.0), // Fully transparent color
+                Colors.black.withOpacity(0.4), // Slightly visible gradient
+              ],
+            ),
           ),
-          child: Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment(0.0, 0.8), // Start near the bottom
-                  end: Alignment(0.0, 1), // End at the bottom edge
-                  colors: [
-                    Colors.black.withOpacity(0.0), // Fully transparent color
-                    Colors.black.withOpacity(0.4), // Slightly visible gradient
-                  ],
-                ),
-              ),
-              child: Stack(children: [
-                SafeArea(
-                  bottom: false,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        left: 16, right: 16),
-                    child: SingleChildScrollView(
-                      child: Column(
+          child: Stack(children: [
+            SafeArea(
+              bottom: false,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    left: 16, right: 16),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          // InkWell(
+                          //   onTap: () {
+                          //     // _openBottomSheet(context);
+                          //     showCustomAlertDialog(
+                          //         context, "Arena Added Successfully!", "You can now start earning from this arena", true, "Add Another Court", "Done");
+                          //   },
+                          //   child: Text("Test the Alert"),
+                          // ),
+                          // Row(
+                          //   mainAxisAlignment:
+                          //       MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     TimeSlotHome(
+                          //       timeSlots: weeksRate,
+                          //       selectedTimeSlot: _selectedTimeSlot,
+                          //       onChanged: _onTimeSlotChanged,
+                          //       isImage: false,
+                          //       isWidth: MediaQuery.of(context).size.width *
+                          //           0.30,
+                          //       image: "⚽",
+                          //     ),
+                          //     Container(
+                          //       height: 44,
+                          //       width: MediaQuery.of(context).size.width *
+                          //           0.16,
+                          //       decoration: BoxDecoration(
+                          //           color: Colors.white,
+                          //           borderRadius:
+                          //               BorderRadius.circular(300)),
+                          //       child: Padding(
+                          //         padding: EdgeInsets.only(left: 2),
+                          //         child: Row(
+                          //           mainAxisAlignment:
+                          //               MainAxisAlignment.spaceBetween,
+                          //           children: [
+                          //             Image(
+                          //               image: AssetImage(Images.avtar),
+                          //               height: 38,
+                          //               width: 34,
+                          //               fit: BoxFit.contain,
+                          //             ),
+                          //             SvgPicture.asset(
+                          //               Images.chevron_down,
+                          //               height: 16,
+                          //               width: 16,
+                          //             ),
+                          //             SizedBox(
+                          //               width: 1,
+                          //             ),
+                          //           ],
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
+                          ScreenHeader(
+                            isTextVisible: false,
+                          ),
+                          SizedBox(
+                            height: screenheight * 0.005,
+                          ),
+                          // SvgPicture.asset(Images.sales),
+                          // Text("data"),
+                          SizedBox(
+                            width: 361,
+                            child: Text(
+                              'Arena',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontFamily: 'Lufga',
+                                fontWeight: FontWeight.w500,
+                                height: 1.3,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenheight * 00.009,
+                          ),
+                          Row(
                             children: [
-                              // InkWell(
-                              //   onTap: () {
-                              //     // _openBottomSheet(context);
-                              //     showCustomAlertDialog(
-                              //         context, "Arena Added Successfully!", "You can now start earning from this arena", true, "Add Another Court", "Done");
-                              //   },
-                              //   child: Text("Test the Alert"),
-                              // ),
-                              // Row(
-                              //   mainAxisAlignment:
-                              //       MainAxisAlignment.spaceBetween,
-                              //   children: [
-                              //     TimeSlotHome(
-                              //       timeSlots: weeksRate,
-                              //       selectedTimeSlot: _selectedTimeSlot,
-                              //       onChanged: _onTimeSlotChanged,
-                              //       isImage: false,
-                              //       isWidth: MediaQuery.of(context).size.width *
-                              //           0.30,
-                              //       image: "⚽",
-                              //     ),
-                              //     Container(
-                              //       height: 44,
-                              //       width: MediaQuery.of(context).size.width *
-                              //           0.16,
-                              //       decoration: BoxDecoration(
-                              //           color: Colors.white,
-                              //           borderRadius:
-                              //               BorderRadius.circular(300)),
-                              //       child: Padding(
-                              //         padding: EdgeInsets.only(left: 2),
-                              //         child: Row(
-                              //           mainAxisAlignment:
-                              //               MainAxisAlignment.spaceBetween,
-                              //           children: [
-                              //             Image(
-                              //               image: AssetImage(Images.avtar),
-                              //               height: 38,
-                              //               width: 34,
-                              //               fit: BoxFit.contain,
-                              //             ),
-                              //             SvgPicture.asset(
-                              //               Images.chevron_down,
-                              //               height: 16,
-                              //               width: 16,
-                              //             ),
-                              //             SizedBox(
-                              //               width: 1,
-                              //             ),
-                              //           ],
-                              //         ),
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
-                              ScreenHeader(
-                                isTextVisible: false,
-
-                              ),
-                              SizedBox(
-                                height: screenheight * 0.005,
-                              ),
-                              SizedBox(
-                                width: 361,
-                                child: Text(
-                                  'Arena',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Lufga',
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.3,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: screenheight * 00.009,
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                      flex: 2,
-                                      child: GestureDetector(
-                                          onTap: () {
+                              Expanded(
+                                  flex: 2,
+                                  child: GestureDetector(
+                                      onTap: () {
+                                        showCustomEditAlertDialog(
+                                          "Edit Arena Name",
+                                          'MBPJ Sports Complex',
+                                          isConfirmed: false,
+                                          () {
+                                            Get.back();
                                             showCustomEditAlertDialog(
-                                              "Edit Arena Name",
-                                              'MBPJ Sports Complex',
-                                              isConfirmed: false,
-                                              () {
-                                                Get.back();
-                                                showCustomEditAlertDialog(
-                                                    "Edit Arena Name",
-                                                    'MBPJ Sports Complex',
-                                                    isConfirmed: true,
-                                                    () {},
-                                                    titleText: Apptext
-                                                        .Proceed_with_applying_the_changes,
-                                                    updateButtonText:
-                                                        Apptext.Delete,updateButtonBorderColor:AppColors.red,updateButtonColor:null,updateButtonTextColor:AppColors.red);
-                                              },
-                                            );
+                                                "Edit Arena Name",
+                                                'MBPJ Sports Complex',
+                                                isConfirmed: true,
+                                                () {},
+                                                titleText: Apptext
+                                                    .Proceed_with_applying_the_changes,
+                                                updateButtonText:
+                                                    Apptext.Delete,updateButtonBorderColor:AppColors.red,updateButtonColor:null,updateButtonTextColor:AppColors.red);
                                           },
-                                          child: SvgPicture.asset(
-                                            Images.pencil,
-                                            height: 20,
-                                            width: 20,
-                                            fit: BoxFit.scaleDown,
-                                          ))),
-                                  // SizedBox(width: 12),
-                                  Expanded(
-                                      flex: 7,
-                                      child: CustomContainer(
-                                        width: 178,
-                                        height: 44,
-                                        text: 'MBPJ Sports Complex',
-                                        color: AppColors.black,
-                                        textColor: AppColors.white,
-                                      )),
-                                  SizedBox(width: 12),
-                                  Expanded(
-                                      flex: 4,
-                                      child: CustomContainer(
-                                        width: 178,
-                                        height: 44,
-                                        text: 'KLFA Court',
-                                        color: AppColors.white,
-                                        textColor: AppColors.dark_grey,
-                                      )),
-                                ],
-                              ),
-                              SizedBox(
-                                height: screenheight * 0.02,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                      flex: 5,
-                                      child: CustomContainer(
-                                        width: 100,
-                                        height: 44,
-                                        text: 'Sports Arena Mahkota Cheras',
-                                        color: AppColors.white,
-                                        textColor: AppColors.dark_grey,
-                                      )),
-                                  SizedBox(width: 12),
-                                  CustomContainer(
-                                    width: 44,
+                                        );
+                                      },
+                                      child: SvgPicture.asset(
+                                        Images.pencil,
+                                        height: 20,
+                                        width: 20,
+                                        fit: BoxFit.scaleDown,
+                                      ))),
+                              // SizedBox(width: 12),
+                              Expanded(
+                                  flex: 7,
+                                  child: CustomContainer(
+                                    width: 178,
                                     height: 44,
-                                    text: "1",
-                                    icon:true,
-                                    image:Images.plus,
-                                    imageColor:AppColors.white,
-                                    color: AppColors.black,
-                                    textColor: AppColors.black,
-                                    circular: true,
-                                  ),
-                                  Expanded(
-                                      flex: 1,
-                                      child: SizedBox(
-                                        width: 6,
-                                      )),
-                                ],
-                              ),
-                              SizedBox(
-                                height: screenheight * 0.02,
-                              ),
-                              Text(
-                                'Court',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontFamily: 'Lufga',
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.5,
-                                ),
-                              ),
-                              SizedBox(
-                                height: screenheight * 0.01,
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                      flex: 3,
-                                      child: GestureDetector(
-                                          onTap: () {
-                                            showCustomEditAlertDialog(
-                                                "Edit Court Name", '1', () {});
-                                          },
-                                          child: SvgPicture.asset(
-                                            Images.pencil,
-                                            height: 20,
-                                            width: 20,
-                                          ))),
-                                  CustomContainer(
-                                    width: 44,
-                                    height: 44,
-                                    text: "1",
+                                    text: 'MBPJ Sports Complex',
                                     color: AppColors.black,
                                     textColor: AppColors.white,
-                                    circular: true,
-                                  ),
-                                  SizedBox(
-                                    width: 12,
-                                  ),
-                                  CustomContainer(
-                                    width: 44,
+                                  )),
+                              SizedBox(width: 12),
+                              Expanded(
+                                  flex: 4,
+                                  child: CustomContainer(
+                                    width: 178,
                                     height: 44,
-                                    text: "2",
+                                    text: 'KLFA Court',
                                     color: AppColors.white,
                                     textColor: AppColors.dark_grey,
-                                    circular: true,
-                                  ),
-                                  SizedBox(
-                                    width: 12,
-                                  ),
-                                  CustomContainer(
-                                    width: 44,
-                                    height: 44,
-                                    text: "3",
-                                    color: AppColors.white,
-                                    textColor: AppColors.dark_grey,
-                                    circular: true,
-                                  ),
-                                  SizedBox(
-                                    width: 12,
-                                  ),
-                                  CustomContainer(
-                                    width: 44,
-                                    height: 44,
-                                    text: "1",
-                                    icon:true,
-                                    image:Images.plus,
-                                    imageColor:AppColors.white,
-                                    color: AppColors.black,
-                                    textColor: AppColors.black,
-                                    circular: true,
-                                  ),
-                                  Expanded(
-                                      flex: 5,
-                                      child: SizedBox(
-                                        width: 8,
-                                      )),
-                                ],
-                              )
+                                  )),
                             ],
                           ),
                           SizedBox(
-                            height: 24,
+                            height: screenheight * 0.02,
                           ),
-                          Column(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Container(
-                                height:
-                                    MediaQuery.of(context).size.height / 1.9,
-                                // color: const Color(0xFFF2F3F2),
-                                child: DefaultTabController(
-                                    length: 3,
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CustomTabBar(
-                                            tabs: ["Details", 'Hour', 'Rate']),
-                                        Expanded(
-                                          child: TabBarView(
-                                            children: [
-                                              DetailsSction(),
-                                              HourSection(),
-                                              RateSection()
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    )),
-                              )
+                              Expanded(
+                                  flex: 5,
+                                  child: CustomContainer(
+                                    width: 100,
+                                    height: 44,
+                                    text: 'Sports Arena Mahkota Cheras',
+                                    color: AppColors.white,
+                                    textColor: AppColors.dark_grey,
+                                  )),
+                              SizedBox(width: 12),
+                              CustomContainer(
+                                width: 44,
+                                height: 44,
+                                text: "1",
+                                icon:true,
+                                image:Images.plus,
+                                imageColor:AppColors.white,
+                                color: AppColors.black,
+                                textColor: AppColors.black,
+                                circular: true,
+                              ),
+                              Expanded(
+                                  flex: 1,
+                                  child: SizedBox(
+                                    width: 6,
+                                  )),
+                            ],
+                          ),
+                          SizedBox(
+                            height: screenheight * 0.02,
+                          ),
+                          Text(
+                            'Court',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                            ),
+                          ),
+                          SizedBox(
+                            height: screenheight * 0.01,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                  flex: 3,
+                                  child: GestureDetector(
+                                      onTap: () {
+                                        showCustomEditAlertDialog(
+                                            "Edit Court Name", '1', () {});
+                                      },
+                                      child: SvgPicture.asset(
+                                        Images.pencil,
+                                        height: 20,
+                                        width: 20,
+                                      ))),
+                              CustomContainer(
+                                width: 44,
+                                height: 44,
+                                text: "1",
+                                color: AppColors.black,
+                                textColor: AppColors.white,
+                                circular: true,
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              CustomContainer(
+                                width: 44,
+                                height: 44,
+                                text: "2",
+                                color: AppColors.white,
+                                textColor: AppColors.dark_grey,
+                                circular: true,
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              CustomContainer(
+                                width: 44,
+                                height: 44,
+                                text: "3",
+                                color: AppColors.white,
+                                textColor: AppColors.dark_grey,
+                                circular: true,
+                              ),
+                              SizedBox(
+                                width: 12,
+                              ),
+                              CustomContainer(
+                                width: 44,
+                                height: 44,
+                                text: "1",
+                                icon:true,
+                                image:Images.plus,
+                                imageColor:AppColors.white,
+                                color: AppColors.black,
+                                textColor: AppColors.black,
+                                circular: true,
+                              ),
+                              Expanded(
+                                  flex: 5,
+                                  child: SizedBox(
+                                    width: 8,
+                                  )),
                             ],
                           )
                         ],
                       ),
-                    ),
+                      SizedBox(
+                        height: 24,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height:
+                                MediaQuery.of(context).size.height / 1.7,
+                            // color: const Color(0xFFF2F3F2),
+                            child: DefaultTabController(
+                                length: 3,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    CustomTabBar(
+                                        tabs: ["Details", 'Hour', 'Rate']),
+                                    Expanded(
+                                      child: TabBarView(
+                                        children: [
+                                          DetailsSction(),
+                                          HourSection(),
+                                          RateSection()
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                )),
+                          )
+                        ],
+                      )
+                    ],
                   ),
                 ),
-                CustomBottomNavigation(
-                  textStyle: TextStyle(
-                    fontSize: 15,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w400,
-                    height: 1,
-                    letterSpacing: -0.24,
-                  ),
-                ),
-              ]))),
+              ),
+            ),
+            CustomBottomNavigation(
+              textStyle: TextStyle(
+                fontSize: 15,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w400,
+                height: 1,
+                letterSpacing: -0.24,
+              ),
+            ),
+          ])),
     );
   }
 
