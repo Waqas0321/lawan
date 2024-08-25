@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../../utils/images.dart';
@@ -128,12 +129,9 @@ class _UnExpandableCustomCalenderState extends State<UnExpandableCustomCalender>
                       }
                     });
                   },
-                  child: CircularArrowsContainer(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        size: 16,
-                        color: Color(0xff545F71),
-                      ))),
+                  child:  CircularArrowsContainer(
+                      icon: SvgPicture.asset(Images.chevron_left,
+                          color: Color(0xff545F71)))),
               SizedBox(width: 3),
               GestureDetector(
                   onTap: () {
@@ -149,9 +147,9 @@ class _UnExpandableCustomCalenderState extends State<UnExpandableCustomCalender>
                       }
                     });
                   },
-                  child: CircularArrowsContainer(
-                      icon: Icon(Icons.arrow_forward_ios,
-                          size: 16, color: Color(0xff545F71)))),
+                  child:  CircularArrowsContainer(
+                      icon: SvgPicture.asset(Images.chevron_right,
+                          color: Color(0xff545F71)))),
 
               widget.isSecondDessign? SizedBox(width: 0,):SizedBox(width: 16),
               !widget.isSecondDessign?Container(
@@ -194,12 +192,9 @@ class _UnExpandableCustomCalenderState extends State<UnExpandableCustomCalender>
                       }
                     });
                   },
-                  child: CircularArrowsContainer(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        size: 16,
-                        color: Color(0xff545F71),
-                      ))),
+                  child:  CircularArrowsContainer(
+                      icon: SvgPicture.asset(Images.chevron_left,
+                          color: Color(0xff545F71)))),
               SizedBox(width: 3),
               GestureDetector(
                   onTap: () {
@@ -215,9 +210,9 @@ class _UnExpandableCustomCalenderState extends State<UnExpandableCustomCalender>
                       }
                     });
                   },
-                  child: CircularArrowsContainer(
-                      icon: Icon(Icons.arrow_forward_ios,
-                          size: 16, color: Color(0xff545F71)))),
+                  child:  CircularArrowsContainer(
+                      icon: SvgPicture.asset(Images.chevron_right,
+                          color: Color(0xff545F71)))),
               SizedBox(width: 16),
               Expanded(
                 child: Container(

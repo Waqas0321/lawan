@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lawan/app/utils/colors.dart';
 
 
 import '../../utils/images.dart';
@@ -9,7 +10,7 @@ class CircularArrowsContainer extends StatelessWidget {
   const CircularArrowsContainer({
     super.key, required this.icon,
   });
-  final Icon icon;
+  final SvgPicture icon;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class CircularArrowsContainer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+          side: BorderSide(width: 1, color:AppColors.grey3),
           borderRadius: BorderRadius.circular(32),
         ),
       ),

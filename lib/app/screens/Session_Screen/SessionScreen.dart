@@ -17,7 +17,6 @@ class Sessionscreen extends StatefulWidget {
 }
 
 class _SessionscreenState extends State<Sessionscreen> {
-
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SessionScreenController>();
@@ -33,10 +32,8 @@ class _SessionscreenState extends State<Sessionscreen> {
                 children: [
                   ScreenHeader(
                     isTextVisible: false,
-
                   ),
                   ExpandableCustomCalender(),
-                  SizedBox(height: 16),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -93,13 +90,17 @@ class _SessionscreenState extends State<Sessionscreen> {
                             children: [
                               SizedBox(height: 32),
                               DateDayTextContainer(),
-                              SessionContainer(eyeOnTap: () {
-                                controller.openBottomSheet(context);
-                              },),
+                              SessionContainer(
+                                eyeOnTap: () {
+                                  controller.openBottomSheet(context);
+                                },
+                              ),
                               SizedBox(height: 8),
-                              SessionContainer(eyeOnTap: () {
-                                controller.openBottomSheet(context);
-                              },),
+                              SessionContainer(
+                                eyeOnTap: () {
+                                  controller.openBottomSheet(context);
+                                },
+                              ),
                             ],
                           ),
                         );
