@@ -12,6 +12,7 @@ import 'package:lawan/app/widgets/Areena/hour_section.dart';
 import 'package:lawan/app/widgets/Areena/rate_section.dart';
 
 import '../../../main.dart';
+import '../../controller/bottom_bar/bottom_navigation_controller.dart';
 import '../../screens/HomeScreen/Widgets/circularContainer.dart';
 import '../../screens/HomeScreen/Widgets/homeScreenHeader.dart';
 import '../../utils/images.dart';
@@ -77,26 +78,27 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
   Widget build(BuildContext context) {
     final screenheight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    final controller = Get.find<BottomNavigationController>();
+
     return Scaffold(
       backgroundColor: const Color(0xFFF2F3F2),
       body: Container(
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment(0.0, 0.8), // Start near the bottom
-              end: Alignment(0.0, 1), // End at the bottom edge
+              begin: const Alignment(0.0, 0.8), // Start near the bottom
+              end: const Alignment(0.0, 1), // End at the bottom edge
               colors: [
                 Colors.black.withOpacity(0.0), // Fully transparent color
                 Colors.black.withOpacity(0.4), // Slightly visible gradient
               ],
             ),
           ),
-          child: Stack(children: [
+          child: Stack(alignment: AlignmentDirectional.topCenter, children: [
             SafeArea(
               bottom: false,
               child: Padding(
-                padding: EdgeInsets.only(
-                    left: 16, right: 16),
+                padding: const EdgeInsets.only(left: 16, right: 16),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -167,7 +169,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           ),
                           // SvgPicture.asset(Images.sales),
                           // Text("data"),
-                          SizedBox(
+                          const SizedBox(
                             width: 361,
                             child: Text(
                               'Arena',
@@ -203,7 +205,12 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                                 titleText: Apptext
                                                     .Proceed_with_applying_the_changes,
                                                 updateButtonText:
-                                                    Apptext.Delete,updateButtonBorderColor:AppColors.red,updateButtonColor:null,updateButtonTextColor:AppColors.red);
+                                                    Apptext.Delete,
+                                                updateButtonBorderColor:
+                                                    AppColors.red,
+                                                updateButtonColor: null,
+                                                updateButtonTextColor:
+                                                    AppColors.red);
                                           },
                                         );
                                       },
@@ -214,7 +221,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                         fit: BoxFit.scaleDown,
                                       ))),
                               // SizedBox(width: 12),
-                              Expanded(
+                              const Expanded(
                                   flex: 7,
                                   child: CustomContainer(
                                     width: 178,
@@ -223,8 +230,8 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                     color: AppColors.black,
                                     textColor: AppColors.white,
                                   )),
-                              SizedBox(width: 12),
-                              Expanded(
+                              const SizedBox(width: 12),
+                              const Expanded(
                                   flex: 4,
                                   child: CustomContainer(
                                     width: 178,
@@ -238,7 +245,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           SizedBox(
                             height: screenheight * 0.02,
                           ),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Expanded(
@@ -255,9 +262,9 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 width: 44,
                                 height: 44,
                                 text: "1",
-                                icon:true,
-                                image:Images.plus,
-                                imageColor:AppColors.white,
+                                icon: true,
+                                image: Images.plus,
+                                imageColor: AppColors.white,
                                 color: AppColors.black,
                                 textColor: AppColors.black,
                                 circular: true,
@@ -272,7 +279,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           SizedBox(
                             height: screenheight * 0.02,
                           ),
-                          Text(
+                          const Text(
                             'Court',
                             style: TextStyle(
                               color: Colors.black,
@@ -299,7 +306,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                         height: 20,
                                         width: 20,
                                       ))),
-                              CustomContainer(
+                              const CustomContainer(
                                 width: 44,
                                 height: 44,
                                 text: "1",
@@ -307,10 +314,10 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 textColor: AppColors.white,
                                 circular: true,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 12,
                               ),
-                              CustomContainer(
+                              const CustomContainer(
                                 width: 44,
                                 height: 44,
                                 text: "2",
@@ -318,10 +325,10 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 textColor: AppColors.dark_grey,
                                 circular: true,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 12,
                               ),
-                              CustomContainer(
+                              const CustomContainer(
                                 width: 44,
                                 height: 44,
                                 text: "3",
@@ -329,21 +336,21 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                 textColor: AppColors.dark_grey,
                                 circular: true,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 12,
                               ),
-                              CustomContainer(
+                              const CustomContainer(
                                 width: 44,
                                 height: 44,
                                 text: "1",
-                                icon:true,
-                                image:Images.plus,
-                                imageColor:AppColors.white,
+                                icon: true,
+                                image: Images.plus,
+                                imageColor: AppColors.white,
                                 color: AppColors.black,
                                 textColor: AppColors.black,
                                 circular: true,
                               ),
-                              Expanded(
+                              const Expanded(
                                   flex: 5,
                                   child: SizedBox(
                                     width: 8,
@@ -352,28 +359,27 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 24,
                       ),
                       Column(
                         children: [
                           Container(
-                            height:
-                                MediaQuery.of(context).size.height / 1.7,
+                            height: MediaQuery.of(context).size.height / 1.7,
                             // color: const Color(0xFFF2F3F2),
                             child: DefaultTabController(
                                 length: 3,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    CustomTabBar(
+                                    const CustomTabBar(
                                         tabs: ["Details", 'Hour', 'Rate']),
                                     Expanded(
                                       child: TabBarView(
                                         children: [
                                           DetailsSction(),
-                                          HourSection(),
-                                          RateSection()
+                                          const HourSection(),
+                                          const RateSection()
                                         ],
                                       ),
                                     )
@@ -388,13 +394,19 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
               ),
             ),
             CustomBottomNavigation(
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                 fontSize: 15,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
                 height: 1,
                 letterSpacing: -0.24,
               ),
+              selectedItem: controller.selectedItem.value,
+              imagePath: controller.imagePaths,
+              title: controller.titles,
+              onItemSelected: (newValue) {
+                controller.changeSelection(newValue);
+              },
             ),
           ])),
     );
@@ -424,11 +436,11 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
               width:
                   MediaQuery.of(context).size.width * 0.85, // Adjust width here
               decoration: BoxDecoration(
-                color: Color(0xB2F2F3F2), // Custom background color
+                color: const Color(0xB2F2F3F2), // Custom background color
                 borderRadius:
                     BorderRadius.circular(32), // Match the border radius
                 boxShadow: [
-                  BoxShadow(
+                  const BoxShadow(
                     color: Color(0x19000000),
                     blurRadius: 0,
                     offset: Offset(0, -0.50),
@@ -436,7 +448,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   ),
                 ],
               ),
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -445,7 +457,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
                     text1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 16,
                       fontFamily: 'Lufga',
@@ -459,11 +471,11 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           Images.frame1,
                           // color: AppColors.bluee, // Replace with your color if needed
                         )
-                      : SizedBox(height: 4),
+                      : const SizedBox(height: 4),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   Text(
                     text2,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xFF545F71),
                       fontSize: 12,
                       fontFamily: 'Lufga',
@@ -483,7 +495,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                       Get.to(HomeScreen());
                     },
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   CustomAreenaButton(
                     width: double.infinity,
                     height: 49,
@@ -535,7 +547,7 @@ class CustomContainer extends StatelessWidget {
       decoration: ShapeDecoration(
         color: color,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: AppColors.white),
+          side: const BorderSide(width: 1, color: AppColors.white),
           borderRadius:
               circular ? BorderRadius.circular(100) : BorderRadius.circular(32),
         ),
