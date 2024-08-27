@@ -1,26 +1,16 @@
 import 'package:acrylic_any/acrylic_any.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:lawan/app/controller/bottom_bar/bottom_navigation_controller.dart';
-import 'package:lawan/app/screens/HomeScreen/Widgets/homeScreen_Body.dart';
-import 'package:lawan/app/screens/sale/sale_main.dart';
-import 'package:lawan/app/screens/sessions/session_main.dart';
-import 'package:lawan/app/utils/images.dart';
-import '../../widgets/Areena/AddArena1.dart';
-import '../../widgets/Areena/circularContainer.dart';
-import '../../widgets/Areena/custom_bottom_nav.dart';
-import '../Session_Screen/SessionScreen.dart';
-import 'Widgets/homeScreenHeader.dart';
+import 'package:lawan/app/controller/friendly/freindly_bottom_nav_controller.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../../widgets/Areena/custom_bottom_nav.dart';
+
+class FriendlyBottomNav extends StatelessWidget {
+  const FriendlyBottomNav({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<BottomNavigationController>();
+    final controller = Get.find<FriendlyBottomNavController>();
     return SafeArea(
       child: Scaffold(
           backgroundColor: const Color(0xFFF2F3F2),
@@ -51,41 +41,27 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() {
-                            if (controller.selectedItem.value == "Arena") {
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.width *
-                                        0.02,
-                                    left: MediaQuery.of(context).size.width *
-                                        0.03,
-                                    right: MediaQuery.of(context).size.width *
-                                        0.03),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ScreenHeader(),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.01),
-                                    ScreenBody(),
-                                  ],
-                                ),
+                            if (controller.selectedItem.value == "Friendly") {
+                              return Center(
+                                child: Text("Friendly"),
                               );
                             } else if (controller.selectedItem.value ==
-                                "Sales") {
-                              return const SaleMain();
+                                "Ranked") {
+                              return Center(
+                                child: Text("Ranked"),
+                              );
+                            } else if (controller.selectedItem.value ==
+                                "Club") {
+                              return Center(
+                                child: Text("Club"),
+                              );
+                            } else if (controller.selectedItem.value == "Top") {
+                              return Center(
+                                child: Text("Top"),
+                              );
                             } else {
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.width *
-                                        0.02,
-                                    left: MediaQuery.of(context).size.width *
-                                        0.03,
-                                    right: MediaQuery.of(context).size.width *
-                                        0.03),
-                                child: const Sessionscreen(),
+                              return Center(
+                                child: Text("Stories"),
                               );
                             }
                           }),
@@ -96,6 +72,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Obx(
                   () => CustomBottomNavigation(
+                    widthFactor: 0.925,
                     iconSize: 20,
                     textStyle: const TextStyle(
                       fontSize: 15,
