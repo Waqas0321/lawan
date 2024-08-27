@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:lawan/app/utils/colors.dart';
+import 'package:lawan/app/utils/images.dart';
 
 class CustomAreenaButton extends StatelessWidget {
   final String text;
@@ -9,6 +12,8 @@ class CustomAreenaButton extends StatelessWidget {
   final Color textColor;
   final double width;
   final double height;
+  final bool beforeIcon;
+  final String imagePath;
 
   CustomAreenaButton({
     required this.text,
@@ -17,7 +22,9 @@ class CustomAreenaButton extends StatelessWidget {
     required this.textColor,
     required this.onTap,
     this.width = 164.50, // Default value if not provided
-    this.height = 49,   // Default value if not provided
+    this.height = 49,
+    this.beforeIcon = false,
+    this.imagePath = Images.user_plus,   // Default value if not provided
   });
 
   @override
@@ -36,14 +43,21 @@ class CustomAreenaButton extends StatelessWidget {
           color: color,
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 14,
-              fontFamily: 'Lufga',
-              fontWeight: FontWeight.w500,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(imagePath,height: 16,width: 16,color: AppColors.dark_grey,),
+              SizedBox(width: 12),
+              Text(
+                text,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 14,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
           ),
         ),
       ),

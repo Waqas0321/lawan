@@ -21,7 +21,6 @@ class MenualBookingScreen extends StatelessWidget {
             children: [
               ScreenHeader(
                 isTextVisible: false,
-
               ),
               ExpandableCustomCalender(),
               SizedBox(height: 16),

@@ -57,4 +57,5 @@ class Images {
   static const String refresh = "$mainImage/refresh-ccw.svg";
   static const String search = "$mainImage/search.svg";
   static const String card = "$mainImage/card.svg";
+  static const String user_plus = "$mainImage/user-plus.svg";
 }
