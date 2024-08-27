@@ -33,15 +33,16 @@ class HomeScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment(0.0, 0.8), // Start near the bottom
-                  end: Alignment(0.0, 1), // End at the bottom edge
+                  begin: const Alignment(0.0, 0.8), // Start near the bottom
+                  end: const Alignment(0.0, 1), // End at the bottom edge
                   colors: [
                     Colors.black.withOpacity(0.0), // Fully transparent color
                     Colors.black.withOpacity(0.4), // Slightly visible gradient
                   ],
                 ),
               ),
-              child: Stack(children: [
+              child:
+                  Stack(alignment: AlignmentDirectional.topCenter, children: [
                 SingleChildScrollView(
                   child: SafeArea(
                     child: acrylicAny(
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                               );
                             } else if (controller.selectedItem.value ==
                                 "Sales") {
-                              return SaleMain();
+                              return const SaleMain();
                             } else {
                               return Padding(
                                 padding: EdgeInsets.only(
@@ -84,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                                         0.03,
                                     right: MediaQuery.of(context).size.width *
                                         0.03),
-                                child: Sessionscreen(),
+                                child: const Sessionscreen(),
                               );
                             }
                           }),
@@ -93,16 +94,24 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                CustomBottomNavigation(
-                  iconSize: 20,
-                  textStyle: TextStyle(
-                    fontSize: 15,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w400,
-                    height: 1,
-                    letterSpacing: -0.24,
+                Obx(
+                  () => CustomBottomNavigation(
+                    iconSize: 20,
+                    textStyle: const TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w400,
+                      height: 1,
+                      letterSpacing: -0.24,
+                    ),
+                    selectedItem: controller.selectedItem.value,
+                    imagePath: controller.imagePaths,
+                    title: controller.titles,
+                    onItemSelected: (newValue) {
+                      controller.changeSelection(newValue);
+                    },
                   ),
-                ),
+                )
               ]),
             ),
           )),
