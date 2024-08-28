@@ -54,24 +54,27 @@ class CustomBottomNavigation extends StatelessWidget {
         ),
         child: Center(
           child: ListView.separated(
+            padding:EdgeInsets.only(left: 2),
             scrollDirection: Axis.horizontal,
             itemCount: title.length,
             itemBuilder: (context, index) {
-              return CircularContainer(
-                heightpadding: 2,
-                image:
-                    imagePath[index], // Use imagePath from the constructor list
-                color:
-                    selectedItem == title[index] ? Colors.black : Colors.white,
-                text: title[index], // Use title from the constructor list
-                textColor:
-                    selectedItem == title[index] ? Colors.white : Colors.black,
-                imageHeight: iconSize,
-                imageWidth: iconSize,
-                onTap: () {
-                  onItemSelected(
-                      title[index]); // Call the provided callback function
-                },
+              return Center(
+                child: CircularContainer(
+                  heightpadding: 2,
+                  image:
+                      imagePath[index], // Use imagePath from the constructor list
+                  color:
+                      selectedItem == title[index] ? Colors.black : Colors.white,
+                  text: title[index], // Use title from the constructor list
+                  textColor:
+                      selectedItem == title[index] ? Colors.white : Colors.black,
+                  imageHeight: iconSize,
+                  imageWidth: iconSize,
+                  onTap: () {
+                    onItemSelected(
+                        title[index]); // Call the provided callback function
+                  },
+                ),
               );
             },
             separatorBuilder: (context, index) => SizedBox(width: spacing),

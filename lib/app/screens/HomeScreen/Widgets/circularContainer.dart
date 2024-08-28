@@ -30,6 +30,7 @@ class CircularContainer extends StatelessWidget {
       child: Container(
         height: 60,
         width: 60,
+        margin:EdgeInsets.only(),
         decoration: BoxDecoration(
             color: color, borderRadius: BorderRadius.circular(400)),
         child: Center(

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_common/get_reset.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
+import '../../screens/AddMenualBooking_Screen/MenualBooking.dart';
 import '../../utils/images.dart';
 import 'Session_Header.dart';
 
@@ -302,28 +307,33 @@ class _ExpandableCustomCalenderState extends State<ExpandableCustomCalender> {
                       ),
                     ),
                     SizedBox(width: 16),
-                    Container(
-                      height: 44,
-                      width: 44,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 8),
-                      decoration: ShapeDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment(0.00, -1.00),
-                          end: Alignment(0, 1),
-                          colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
+                    InkWell(
+                      onTap:(){
+                        Get.to(MenualBookingScreen());
+                      },
+                      child:Container(
+                        height: 44,
+                        width: 44,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 8),
+                        decoration: ShapeDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment(0.00, -1.00),
+                            end: Alignment(0, 1),
+                            colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32),
+                          ),
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(32),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            Images.plus,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          Images.plus,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                    )
                   ],
                 ),
           SizedBox(height: 16),

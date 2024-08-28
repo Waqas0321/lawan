@@ -49,11 +49,11 @@ class _AddAreena3State extends State<AddAreena3> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel:10,
+      blurlevel: 10,
       child: Container(
         // width: MediaQuery.of(context).size.width - 16,
         height: 711,
-        margin: EdgeInsets.only(left: 10,right:10,bottom:12),
+        margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Color(0xB2F2F3F2),
@@ -202,6 +202,7 @@ class _AddAreena3State extends State<AddAreena3> {
                   children: [
                     Expanded(
                       child: CustomAreenaButton(
+                        showIcon: false,
                         text: Apptext.cancel,
                         color: null,
                         borderColor: Color(0xFFE9EAF0),
@@ -214,6 +215,8 @@ class _AddAreena3State extends State<AddAreena3> {
                     SizedBox(width: 12),
                     Expanded(
                       child: CustomAreenaButton(
+                        showIcon: false,
+                        showBorder: false,
                         text: Apptext.add_arena,
                         color: AppColors.black,
                         borderColor: AppColors.black,

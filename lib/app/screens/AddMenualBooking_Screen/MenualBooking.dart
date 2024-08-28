@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/manual/MenualBooking_Controller.dart';
+import '../../controller/bottom_bar/bottom_navigation_controller.dart';
 import '../../widgets/Session_Screen/DateDayContainer.dart';
 import '../../widgets/Session_Screen/Expandable_calander.dart';
 import '../../widgets/Session_Screen/session_Container.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
 
 class MenualBookingScreen extends StatelessWidget {
+  final bottomcontroller = Get.find<BottomNavigationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +82,13 @@ class MenualBookingScreen extends StatelessWidget {
                         children: [
                           SizedBox(height: 32),
                           DateDayTextContainer(),
-                          SessionContainer(eyeOnTap: () => controller.openBottomSheet(context) ),
+                          SessionContainer(
+                              eyeOnTap: () =>
+                                  controller.openBottomSheet(context)),
                           SizedBox(height: 8),
-                          SessionContainer(eyeOnTap: () => controller.openBottomSheet(context)),
+                          SessionContainer(
+                              eyeOnTap: () =>
+                                  controller.openBottomSheet(context)),
                         ],
                       ),
                     );

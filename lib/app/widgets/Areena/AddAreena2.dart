@@ -52,7 +52,7 @@ class _AddAreena2State extends State<AddAreena2> {
         blurlevel: 10000,
         child: Container(
           // width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(left: 10,right:10,bottom:12),
+          margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
           height: MediaQuery.of(context).size.height * 0.78,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
@@ -336,6 +336,7 @@ class _AddAreena2State extends State<AddAreena2> {
                     Expanded(
                       child: CustomAreenaButton(
                         text: Apptext.cancel,
+                        showIcon: false,
                         color: null,
                         borderColor: Color(0xFFE9EAF0),
                         textColor: AppColors.black,
@@ -349,13 +350,17 @@ class _AddAreena2State extends State<AddAreena2> {
                     ),
                     Expanded(
                       child: CustomAreenaButton(
+                        showBorder: false,
+                        showIcon: false,
                         text: Apptext.next,
                         color: AppColors.black,
                         borderColor: AppColors.black,
                         textColor: AppColors.white,
-                        onTap: () {
+                        onTap: () async {
                           Get.back();
-                          _openBottomSheet(context);
+                          Future.delayed(Duration(milliseconds: 100), () async {
+                            await _openBottomSheet(context);
+                          });
                         },
                       ),
                     ),
@@ -369,8 +374,8 @@ class _AddAreena2State extends State<AddAreena2> {
     );
   }
 
-  void _openBottomSheet(BuildContext context) {
-    showModalBottomSheet(
+  Future<void> _openBottomSheet(BuildContext context) async {
+    await showModalBottomSheet(
       context: context,
       isDismissible: true,
       enableDrag: true,

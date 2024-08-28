@@ -36,62 +36,64 @@ class SaleMain extends StatelessWidget {
             top: Get.width * 0.02,
             left: Get.width * 0.03,
             right: Get.width * 0.03),
-        child: Column(
-          children: [
-            SalesHeader(),
-            SizedBox(
-              height: Get.height * 0.02,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                MonthlySalesTabBar(controller: controller),
-                Expanded(
-                  flex: 2,
-                  child: CircularContainer(
-                    bgColor: Colors.black,
-                    borderColor: Colors.black,
-                    svgPath: Images.upload,
-                    onTap: () {},
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SalesHeader(),
+              SizedBox(
+                height: Get.height * 0.02,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MonthlySalesTabBar(controller: controller),
+                  Expanded(
+                    flex: 2,
+                    child: CircularContainer(
+                      bgColor: Colors.black,
+                      borderColor: Colors.black,
+                      svgPath: Images.upload,
+                      onTap: () {},
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: Get.height * 0.02,
-            ),
-            const CustomChart(),
-            SizedBox(
-              height: Responsive.h2,
-            ),
-            CustomSalesTabBar(
-                controller: controller, tabBarItems: controller.tabBarItem),
-            SizedBox(
-              height: Responsive.h1,
-            ),
-            Row(
-              children: [
-                const TextWidget(
-                  title: "24 Sep",
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-                SizedBox(
-                  width: Responsive.h2,
-                ),
-                const TextWidget(
-                  title: "Mon, Today",
-                  textColor: Color(0xFF545F71),
-                )
-              ],
-            ),
-            SizedBox(
-              height: Responsive.h1,
-            ),
-            SalesContainer(
-              salesController: controller,
-            )
-          ],
+                ],
+              ),
+              SizedBox(
+                height: Get.height * 0.02,
+              ),
+              const CustomChart(),
+              SizedBox(
+                height: Responsive.h2,
+              ),
+              CustomSalesTabBar(
+                  controller: controller, tabBarItems: controller.tabBarItem),
+              SizedBox(
+                height: Responsive.h1,
+              ),
+              Row(
+                children: [
+                  const TextWidget(
+                    title: "24 Sep",
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  SizedBox(
+                    width: Responsive.h2,
+                  ),
+                  const TextWidget(
+                    title: "Mon, Today",
+                    textColor: Color(0xFF545F71),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: Responsive.h1,
+              ),
+              SalesContainer(
+                salesController: controller,
+              )
+            ],
+          ),
         ),
       ),
     );

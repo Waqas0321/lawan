@@ -30,7 +30,7 @@ class PublicScreen extends StatelessWidget {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: CustomAreenaButton(
-                    beforeIcon: true,
+                    showIcon: true,
                     text: "Find Friends",
                     color: AppColors.white,
                     borderColor: Color(0xFFDEE1E2),
