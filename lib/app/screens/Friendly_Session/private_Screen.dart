@@ -22,7 +22,7 @@ class PrivateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: PublicSecondScreen(),
+      body: PublicThirdScreen(),
     );
   }
 }

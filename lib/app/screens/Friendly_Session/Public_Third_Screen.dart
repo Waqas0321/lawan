@@ -39,7 +39,12 @@ class PublicThirdScreen extends StatelessWidget {
             child: ListView.builder(
               itemCount: 4,
               itemBuilder: (context, index) {
-                return ListContainer(isFriendlySession: true,);
+                return Column(
+                  children: [
+                    ListContainer(isFriendlySession: true,),
+                    SizedBox(height: 12,),
+                  ],
+                );
               },
             ),
           )
