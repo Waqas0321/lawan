@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/controller/Friendly_Session/friendly_session_controller.dart';
 import 'package:lawan/app/screens/Friendly_Session/private_Screen.dart';
 import 'package:lawan/app/screens/Friendly_Session/public_screen.dart';
