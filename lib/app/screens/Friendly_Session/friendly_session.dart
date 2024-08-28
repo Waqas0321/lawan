@@ -32,7 +32,7 @@ class _FriendlySessionState extends State<FriendlySession> {
                     ScreenHeader(
                       isTextVisible: false,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                   ],
@@ -40,17 +40,19 @@ class _FriendlySessionState extends State<FriendlySession> {
               ),
               Container(
                 height: MediaQuery.of(context).size.height * 0.9,
-                child: DefaultTabController(
-                    length: 2, child: Column(
+                child: const DefaultTabController(
+                    length: 2,
+                    child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: CustomTabBar(tabs: ["Public", "Private"],),
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: CustomTabBar(
+                            tabs: ["Public", "Private"],
+                          ),
                         ),
-                        Expanded(child: TabBarView(children: [
-                          PublicScreen(),
-                          PrivateScreen()
-                        ]))
+                        Expanded(
+                            child: TabBarView(
+                                children: [PublicScreen(), PrivateScreen()]))
                       ],
                     )),
               )
