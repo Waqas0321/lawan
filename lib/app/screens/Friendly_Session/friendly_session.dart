@@ -40,7 +40,7 @@ class _FriendlySessionState extends State<FriendlySession> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.862,
+                height: MediaQuery.of(context).size.height * 0.9,
                 child: DefaultTabController(
                     length: 2, child: Column(
                       children: [

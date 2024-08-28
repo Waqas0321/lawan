@@ -9,14 +9,14 @@ import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
 import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
 void main() {
-  runApp(MyApp()
-      // DevicePreview(
-      //   enabled: true,
-      //   builder: (context) => ScreenUtilInit(
-      //     designSize: Size(375, 812), // Design size for scaling
-      //     builder: (context, child) => MyApp(),
-      //   ),
-      // ),
+  runApp(
+      DevicePreview(
+        enabled: true,
+        builder: (context) => ScreenUtilInit(
+          designSize: Size(375, 812), // Design size for scaling
+          builder: (context, child) => MyApp(),
+        ),
+      ),
       );
 }
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FriendlyBottomNav(),
+      home: FriendlySession(),
     );
   }
 }

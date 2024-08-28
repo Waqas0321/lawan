@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
-import '../../widgets/MenualBooking_Screen/In_Out_DoorContainer.dart';
+import '../../widgets/MenualBooking_Screen/List_Container.dart';
 import '../../widgets/MenualBooking_Screen/Indoor_Header.dart';
 
 class IndoorScreen extends StatelessWidget {
@@ -29,7 +29,7 @@ class IndoorScreen extends StatelessWidget {
                   itemCount: 5,
                   itemBuilder: (context, index) {
                     return Column(
-                      children: [InOut_doorContainer( isOutdoor: false,), SizedBox(height: 4)],
+                      children: [ListContainer( isOutdoor: false,), SizedBox(height: 4)],
                     );
                   },
                 ),

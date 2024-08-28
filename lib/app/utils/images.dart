@@ -19,9 +19,11 @@ class Images {
 
   //home Screen
   static const String ball = "$mainImage/ball.png";
+  static const String player_play = "$mainImage/player-play.svg";
   static const String areenagreen = "$mainImage/areenagreen.svg";
   static const String sales = "$mainImage/sales.svg";
   static const String avtar = "$mainImage/Avatar.png";
+  static const String avtar4 = "$mainImage/Avatar4.png";
   static const String chevron_down = "$mainImage/chevron-down.svg";
   static const String chevron_left = "$mainImage/chevron-left.svg";
   static const String chevron_right = "$mainImage/chevron-right.svg";
