@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lawan/app/controller/friendly/freindly_bottom_nav_controller.dart';
 
 import '../../widgets/Areena/custom_bottom_nav.dart';
+import '../Friendly_Session/friendly_session.dart';
 
 class FriendlyBottomNav extends StatelessWidget {
   const FriendlyBottomNav({super.key});
@@ -12,6 +13,8 @@ class FriendlyBottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<FriendlyBottomNavController>();
     return SafeArea(
+      top:false,
+      bottom:false,
       child: Scaffold(
           backgroundColor: const Color(0xFFF2F3F2),
           body: ColorFiltered(
@@ -42,9 +45,7 @@ class FriendlyBottomNav extends StatelessWidget {
                         children: [
                           Obx(() {
                             if (controller.selectedItem.value == "Friendly") {
-                              return Center(
-                                child: Text("Friendly"),
-                              );
+                              return Center(child: Text("data"),);
                             } else if (controller.selectedItem.value ==
                                 "Ranked") {
                               return Center(
