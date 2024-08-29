@@ -26,88 +26,41 @@ class _FriendlySessionState extends State<FriendlySession> {
       SafeArea(
         bottom: false,
         child: SingleChildScrollView(
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  ScreenHeader(
+                    isTextVisible: false,
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.9,
+              child: const DefaultTabController(
+                  length: 2,
                   child: Column(
                     children: [
-                      ScreenHeader(
-                        isTextVisible: false,
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.9,
-                  child: const DefaultTabController(
-                      length: 2,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: CustomTabBar(
-                              tabs: ["Public", "Private"],
-                            ),
-                          ),
-                          Expanded(
-                              child: TabBarView(
-                                  children: [PublicScreen(), PrivateScreen()]))
-                        ],
-                      )),
-                )
-              ],
-            ),
-              Positioned(
-                bottom: Responsive.customHeight(21),
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        controller.openBottomSheet(context);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.white)),
-                        padding: EdgeInsets.all(10),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              Images.adjustments,
-                              colorFilter:
-                              ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            TextWidget(
-                              title: "Filter",
-                              textColor: Colors.white,
-                            )
-                          ],
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: CustomTabBar(
+                          tabs: ["Public", "Private"],
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    CustomShadowButton(
-                      withCounterBox: true,
-                      width: 210,
-                    )
-                  ],
-                ),
-              )
-            ]
-          ),
+                      Expanded(
+                          child: TabBarView(
+                              children: [PublicScreen(), PrivateScreen()]))
+                    ],
+                  )),
+            )
+          ],
+                      ),
         ),
       );
   }

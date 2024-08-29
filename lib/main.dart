@@ -10,14 +10,14 @@ import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
 
 void main() {
   runApp(
-      // MyApp()
-      DevicePreview(
-        enabled: true,
-        builder: (context) => ScreenUtilInit(
-          designSize: Size(375, 812), // Design size for scaling
-          builder: (context, child) => MyApp(),
-        ),
-      ),
+      MyApp()
+      // DevicePreview(
+      //   enabled: true,
+      //   builder: (context) => ScreenUtilInit(
+      //     designSize: Size(375, 812), // Design size for scaling
+      //     builder: (context, child) => MyApp(),
+      //   ),
+      // ),
       );
 }
 
