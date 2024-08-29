@@ -2,6 +2,7 @@ import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/friendly/freindly_bottom_nav_controller.dart';
+import 'package:lawan/app/screens/share_invite/share_invite_session.dart';
 
 import '../../widgets/Areena/custom_bottom_nav.dart';
 import '../Friendly_Session/friendly_session.dart';
@@ -40,33 +41,37 @@ class FriendlyBottomNav extends StatelessWidget {
                   child: SafeArea(
                     child: acrylicAny(
                       blurlevel: 20,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Obx(() {
-                            if (controller.selectedItem.value == "Friendly") {
-                              return Center(child: Text("data"),);
-                            } else if (controller.selectedItem.value ==
-                                "Ranked") {
-                              return Center(
-                                child: Text("Ranked"),
-                              );
-                            } else if (controller.selectedItem.value ==
-                                "Club") {
-                              return Center(
-                                child: Text("Club"),
-                              );
-                            } else if (controller.selectedItem.value == "Top") {
-                              return Center(
-                                child: Text("Top"),
-                              );
-                            } else {
-                              return Center(
-                                child: Text("Stories"),
-                              );
-                            }
-                          }),
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 14.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Obx(() {
+                              if (controller.selectedItem.value == "Friendly") {
+                                return const ShareInviteSession();
+                              } else if (controller.selectedItem.value ==
+                                  "Ranked") {
+                                return const Center(
+                                  child: Text("Ranked"),
+                                );
+                              } else if (controller.selectedItem.value ==
+                                  "Club") {
+                                return const Center(
+                                  child: Text("Club"),
+                                );
+                              } else if (controller.selectedItem.value ==
+                                  "Top") {
+                                return const Center(
+                                  child: Text("Top"),
+                                );
+                              } else {
+                                return const Center(
+                                  child: Text("Stories"),
+                                );
+                              }
+                            }),
+                          ],
+                        ),
                       ),
                     ),
                   ),

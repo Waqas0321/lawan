@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
+
 class CustomShadowButton extends StatelessWidget {
   const CustomShadowButton({
     super.key,
@@ -16,16 +17,17 @@ class CustomShadowButton extends StatelessWidget {
     return Container(
         width: width,
         height: 44,
-        padding: EdgeInsets.symmetric(vertical: 12,horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Color(0xa614eac5),
                 blurRadius: 18,
                 offset: Offset(0, 5),
                 spreadRadius: -10,
-              ),BoxShadow(
+              ),
+              BoxShadow(
                 color: Color(0x8b2c8170),
                 blurRadius: 32,
                 offset: Offset(0, 25),
@@ -44,7 +46,7 @@ class CustomShadowButton extends StatelessWidget {
                 spreadRadius: -8,
               ),
             ],
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
                 begin: Alignment.topCenter,
                 // Start from top center
                 end: Alignment.bottomCenter,
@@ -56,9 +58,14 @@ class CustomShadowButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(Images.play,color: Colors.white,height: 16,width: 16,),
-              SizedBox(width: 2),
-              Text(
+              SvgPicture.asset(
+                Images.play,
+                color: Colors.white,
+                height: 16,
+                width: 16,
+              ),
+              const SizedBox(width: 2),
+              const Text(
                 'Create a session',
                 style: TextStyle(
                   color: Colors.white,
@@ -68,26 +75,34 @@ class CustomShadowButton extends StatelessWidget {
                   height: 0.11,
                 ),
               ),
-              withCounterBox? SizedBox(width: 8): SizedBox(width: 0,),
-              withCounterBox?Container(
-            width: 34,
-            height: 16,
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
-              ),
-            ),
-          child: TextWidget(
-            title: '+13',
-            textAlign: TextAlign.center,
-            textColor: Color(0xFF0C1B22),
-            fontWeight: FontWeight.w500,
-            fontSize: 11,
-          ),
-          ):SizedBox(width: 0,)
+              withCounterBox
+                  ? const SizedBox(width: 8)
+                  : const SizedBox(
+                      width: 0,
+                    ),
+              withCounterBox
+                  ? Container(
+                      width: 34,
+                      height: 16,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      clipBehavior: Clip.antiAlias,
+                      decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                      ),
+                      child: const TextWidget(
+                        title: '+13',
+                        textAlign: TextAlign.center,
+                        textColor: Color(0xFF0C1B22),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 11,
+                      ),
+                    )
+                  : const SizedBox(
+                      width: 0,
+                    )
             ],
           ),
         ));

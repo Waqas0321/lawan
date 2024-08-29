@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lawan/app/widgets/Friendly_Session/column_button.dart';
 import '../../screens/Friendly_Session/Public_Third_Screen.dart';
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
@@ -8,14 +9,15 @@ import '../text_widget.dart';
 import 'Custom_Circular_Button.dart';
 
 class ListContainer extends StatefulWidget {
-  const ListContainer({
-    super.key,
-    this.isOutdoor = false,
-    this.isFriendlySession = false,
-  });
+  const ListContainer(
+      {super.key,
+      this.isOutdoor = false,
+      this.isFriendlySession = false,
+      this.showButton = false});
 
   final bool isOutdoor;
   final bool isFriendlySession;
+  final bool showButton;
 
   @override
   State<ListContainer> createState() => _ListContainerState();
@@ -64,9 +66,11 @@ class _ListContainerState extends State<ListContainer> {
       width: MediaQuery.of(context).size.width,
       height: widget.isOutdoor
           ? 213
-          : widget.isFriendlySession
+          : widget.isFriendlySession && !widget.showButton
               ? 231
-              : 128,
+              : widget.showButton
+                  ? 260
+                  : 128,
       clipBehavior: Clip.antiAlias,
       decoration: widget.isOutdoor || widget.isFriendlySession
           ? ShapeDecoration(
@@ -85,7 +89,7 @@ class _ListContainerState extends State<ListContainer> {
           Container(
             padding: EdgeInsets.only(bottom: 12, left: 16, right: 16),
             width: MediaQuery.of(context).size.width,
-            height: 120,
+            height: widget.showButton ? 140 : 130,
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
               border: Border.all(width: 1, color: AppColors.white),
@@ -123,6 +127,11 @@ class _ListContainerState extends State<ListContainer> {
                     ),
                   ),
                 ),
+                widget.showButton
+                    ? ColumnButton(
+                        padding: 10,
+                      )
+                    : SizedBox.shrink(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -147,7 +156,7 @@ class _ListContainerState extends State<ListContainer> {
                         ),
                       ),
                     ),
-                    widget.isFriendlySession
+                    widget.isFriendlySession && !widget.showButton
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -331,26 +340,28 @@ class _ListContainerState extends State<ListContainer> {
                               ),
                             ],
                           )
-                        : Row(
-                            children: [
-                              SvgPicture.asset(
-                                Images.location_marker,
-                                color: AppColors.white,
-                                height: 16,
-                                width: 16,
+                        : widget.showButton
+                            ? SizedBox.shrink()
+                            : Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    Images.location_marker,
+                                    color: AppColors.white,
+                                    height: 16,
+                                    width: 16,
+                                  ),
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  TextWidget(
+                                    title: 'Petaling Jaya',
+                                    textAlign: TextAlign.right,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12,
+                                    textColor: AppColors.white,
+                                  )
+                                ],
                               ),
-                              SizedBox(
-                                width: 2,
-                              ),
-                              TextWidget(
-                                title: 'Petaling Jaya',
-                                textAlign: TextAlign.right,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 12,
-                                textColor: AppColors.white,
-                              )
-                            ],
-                          ),
                     widget.isFriendlySession
                         ? Row(
                             children: [
@@ -360,13 +371,15 @@ class _ListContainerState extends State<ListContainer> {
                                 height: 16,
                                 width: 16,
                               ),
-                              SizedBox(width: 6,),
+                              SizedBox(
+                                width: 6,
+                              ),
                               TextWidget(
                                 title: "8/28",
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              textColor: AppColors.white,
-                              textAlign: TextAlign.center,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                                textColor: AppColors.white,
+                                textAlign: TextAlign.center,
                               )
                             ],
                           )
