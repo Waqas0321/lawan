@@ -9,14 +9,15 @@ import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
 import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
 
 void main() {
-  runApp(MyApp()
-      // DevicePreview(
-      //   enabled: true,
-      //   builder: (context) => ScreenUtilInit(
-      //     designSize: Size(375, 812), // Design size for scaling
-      //     builder: (context, child) => MyApp(),
-      //   ),
-      // ),
+  runApp(
+      // MyApp()
+      DevicePreview(
+        enabled: true,
+        builder: (context) => ScreenUtilInit(
+          designSize: Size(375, 812), // Design size for scaling
+          builder: (context, child) => MyApp(),
+        ),
+      ),
       );
 }
 

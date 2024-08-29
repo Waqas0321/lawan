@@ -13,18 +13,22 @@ class customHeaderCount extends StatelessWidget {
     this.text1 = 'Details',
     this.text2 = 'Hour',
     this.text3 = 'Rate',
+    this.text4 = 'Pay',
+    this.hasFourth = false,
   });
   final String thisCount;
   final String text1;
   final String text2;
   final String text3;
+  final String text4;
+  final bool hasFourth;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.1),
+      padding: EdgeInsets.only(left: hasFourth?MediaQuery.of(context).size.width * 0.05 :MediaQuery.of(context).size.width * 0.1),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: hasFourth?MainAxisAlignment.spaceBetween :MainAxisAlignment.center,
         children: [
           SizedBox(width: MediaQuery.of(context).size.width * 0.06),
           Expanded(
@@ -63,7 +67,7 @@ class customHeaderCount extends StatelessWidget {
               text: text3,
               showborder: thisCount == "3" ? false : true,
               color: thisCount == "3" ? AppColors.brand2 : null,
-              linecolor: Colors.transparent,
+              linecolor: hasFourth? AppColors.grey3: Colors.transparent,
               countcolor:
                   thisCount == "3" ? AppColors.white : AppColors.dark_grey,
               textcolor:
@@ -71,7 +75,23 @@ class customHeaderCount extends StatelessWidget {
               fontWeight: thisCount == "3" ? FontWeight.w500 : FontWeight.w400,
               padding: 6,
             ),
-          )
+          ),
+          hasFourth?Expanded(
+            child: CustomCard(
+              count: '4',
+              text: text4,
+              showborder: thisCount == "4" ? false : true,
+              color: thisCount == "4" ? AppColors.brand2 : null,
+              linecolor: Colors.transparent,
+              countcolor:
+              thisCount == "4" ? AppColors.white : AppColors.dark_grey,
+              textcolor:
+              thisCount == "4" ? AppColors.brand2 : AppColors.dark_grey,
+              fontWeight: thisCount == "4" ? FontWeight.w500 : FontWeight.w400,
+              padding: 6,
+            ),
+          ):SizedBox(width: 0,),
+
         ],
       ),
     );

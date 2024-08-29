@@ -29,7 +29,9 @@ class IndoorScreen extends StatelessWidget {
                   itemCount: 5,
                   itemBuilder: (context, index) {
                     return Column(
-                      children: [ListContainer( isOutdoor: false,), SizedBox(height: 4)],
+                      children: [ListContainer(
+                        selectedProperty: true,
+                        isOutdoor: false,), SizedBox(height: 4)],
                     );
                   },
                 ),

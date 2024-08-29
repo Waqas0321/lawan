@@ -26,7 +26,7 @@ class CustomAreenaButton extends StatelessWidget {
     required this.onTap, // Function to execute on button tap
     this.width = 164.50, // Default width of the button
     this.height = 49, // Default height of the button
-    this.showIcon = true, // Whether to show the icon (default: true)
+    this.showIcon = false, // Whether to show the icon (default: true)
     this.imagePath = Images.user_plus, // Default icon path
     this.showBorder = true, // Whether to show the border (default: true)
   });

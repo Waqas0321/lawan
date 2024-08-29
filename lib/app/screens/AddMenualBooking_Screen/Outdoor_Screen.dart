@@ -23,7 +23,8 @@ class OutdoorScreen extends StatelessWidget {
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   return Column(
-                    children: [ListContainer( isOutdoor: true,), SizedBox(height: 8)],
+                    children: [ListContainer(
+                      isOutdoor: true,), SizedBox(height: 8)],
                   );
                 },
               ),

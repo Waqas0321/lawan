@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/Friendly_Session/friendly_session_controller.dart';
 import 'package:lawan/app/screens/Friendly_Session/private_Screen.dart';
 import 'package:lawan/app/screens/Friendly_Session/public_screen.dart';
 import 'package:lawan/app/widgets/Areena/custom_tabbar.dart';
-
+import '../../utils/images.dart';
+import '../../utils/responsive_utils.dart';
+import '../../widgets/Friendly_Session/custom_shadow_button.dart';
+import '../../widgets/text_widget.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
 
 class FriendlySession extends StatefulWidget {
@@ -18,48 +22,93 @@ class _FriendlySessionState extends State<FriendlySession> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<FriendlySessionController>();
-    return Scaffold(
-      backgroundColor: const Color(0xFFF2F3F2),
-      body: SafeArea(
+    return
+      SafeArea(
         bottom: false,
         child: SingleChildScrollView(
-          child: Column(
+          child: Stack(
+            alignment: Alignment.bottomCenter,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Column(
+              Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      ScreenHeader(
+                        isTextVisible: false,
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.9,
+                  child: const DefaultTabController(
+                      length: 2,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            child: CustomTabBar(
+                              tabs: ["Public", "Private"],
+                            ),
+                          ),
+                          Expanded(
+                              child: TabBarView(
+                                  children: [PublicScreen(), PrivateScreen()]))
+                        ],
+                      )),
+                )
+              ],
+            ),
+              Positioned(
+                bottom: Responsive.customHeight(21),
+                child: Row(
                   children: [
-                    ScreenHeader(
-                      isTextVisible: false,
+                    GestureDetector(
+                      onTap: () {
+                        controller.openBottomSheet(context);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: Colors.white)),
+                        padding: EdgeInsets.all(10),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              Images.adjustments,
+                              colorFilter:
+                              ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            TextWidget(
+                              title: "Filter",
+                              textColor: Colors.white,
+                            )
+                          ],
+                        ),
+                      ),
                     ),
-                    const SizedBox(
-                      height: 16,
+                    SizedBox(
+                      width: 20,
                     ),
+                    CustomShadowButton(
+                      withCounterBox: true,
+                      width: 210,
+                    )
                   ],
                 ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.9,
-                child: const DefaultTabController(
-                    length: 2,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: CustomTabBar(
-                            tabs: ["Public", "Private"],
-                          ),
-                        ),
-                        Expanded(
-                            child: TabBarView(
-                                children: [PublicScreen(), PrivateScreen()]))
-                      ],
-                    )),
               )
-            ],
+            ]
           ),
         ),
-      ),
-    );
+      );
   }
 }
