@@ -36,7 +36,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextWidget(
+                      const TextWidget(
                         title: "⚽   Friendly",
                         fontSize: 20,
                       ),
@@ -51,7 +51,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                   SizedBox(
                     height: Responsive.h2,
                   ),
-                  ListContainer(
+                  const ListContainer(
                     isBottomSheet: true,
                   ),
                   SizedBox(
@@ -67,7 +67,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                     height: Responsive.h1,
                   ),
                   Container(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
                       color: Colors.white,
@@ -76,31 +76,32 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         // Leading Avatar
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundImage: AssetImage(Images.avatar),
                           radius: 30,
                         ),
-                        SizedBox(width: 12), // Space between avatar and text
+                        const SizedBox(
+                            width: 12), // Space between avatar and text
 
                         // Title and Subtitle Column
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              TextWidget(
+                              const TextWidget(
                                 title: "Ali Qazwini",
                                 fontWeight: FontWeight.bold, // Optional styling
                               ),
-                              SizedBox(
+                              const SizedBox(
                                   height:
                                       4), // Space between title and subtitle
                               Container(
-                                padding: EdgeInsets.all(4),
+                                padding: const EdgeInsets.all(4),
                                 decoration: BoxDecoration(
                                   border: Border.all(color: Colors.grey),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: TextWidget(
+                                child: const TextWidget(
                                   title: "Arena Owner",
                                   fontSize: 11,
                                   textColor: Color(0xFF545F71),
@@ -140,22 +141,23 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextContainer(text: "25 - 35 years"),
+                      const TextContainer(text: "25 - 35 years"),
                       SizedBox(
                         width: Responsive.h2,
                       ),
-                      TextContainer(text: "Male & Female"),
+                      const TextContainer(text: "Male & Female"),
                       SizedBox(
                         width: Responsive.h2,
                       ),
-                      TextContainer(text: "English & Malay"),
+                      const TextContainer(text: "English & Malay"),
                     ],
                   ),
                   SizedBox(
                     height: Responsive.h1,
                   ),
                   GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
@@ -165,14 +167,14 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       switch (index) {
                         case 0:
-                          return InviteShareGridContainer(
+                          return const InviteShareGridContainer(
                             iconPath: Images.calendar,
                             title: "Date",
                             subtitle: "Tue, 25 Sep 2024",
                             showAdditionalText: false,
                           );
                         case 1:
-                          return InviteShareGridContainer(
+                          return const InviteShareGridContainer(
                             iconPath: Images.time,
                             title: "Time",
                             subtitle: "10:00 AM - 12:00 PM",
@@ -180,7 +182,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                             showAdditionalText: true,
                           );
                         case 2:
-                          return InviteShareGridContainer(
+                          return const InviteShareGridContainer(
                             iconPath: Images.location_marker,
                             title: "Location",
                             subtitle: "Central Park, NYC",
@@ -188,18 +190,18 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                             showAdditionalText: false, // Hide additional text
                           );
                         case 3:
-                          return InviteShareGridContainer(
+                          return const InviteShareGridContainer(
                             iconPath: Images.currency_dollar,
                             title: "Price",
                             subtitle: "RM20/pax",
                             showAdditionalText: false,
                           );
                         default:
-                          return SizedBox(); // Default case to avoid any unexpected error
+                          return const SizedBox(); // Default case to avoid any unexpected error
                       }
                     },
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                   ),
                   SizedBox(
                     height: Responsive.h1,
@@ -233,14 +235,14 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(12)),
-                      padding: EdgeInsets.all(14),
+                      padding: const EdgeInsets.all(14),
                       child: Row(
                         children: [
                           SvgPicture.asset(Images.users_group_outline),
                           SizedBox(
                             width: Responsive.h2,
                           ),
-                          TextWidget(
+                          const TextWidget(
                             title: "Line-Up",
                             textColor: Colors.white,
                           )
