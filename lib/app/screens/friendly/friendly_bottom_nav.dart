@@ -49,7 +49,7 @@ class FriendlyBottomNav extends StatelessWidget {
                           children: [
                             Obx(() {
                               if (controller.selectedItem.value == "Friendly") {
-                                return const FriendlySession();
+                                return const ShareInviteSession();
                               } else if (controller.selectedItem.value ==
                                   "Ranked") {
                                 return const Center(

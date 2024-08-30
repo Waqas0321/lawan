@@ -14,13 +14,16 @@ class ListContainer extends StatefulWidget {
       this.isOutdoor = false,
       this.isFriendlySession = false,
       this.showButton = false,
-        this.selectedProperty = false});
+      this.isBottomSheet = false,
+      this.onTap,
+      this.selectedProperty = false});
 
   final bool isOutdoor;
   final bool isFriendlySession;
+  final bool isBottomSheet;
   final bool showButton;
   final bool selectedProperty;
-
+  final VoidCallback? onTap;
   @override
   State<ListContainer> createState() => _ListContainerState();
 }
@@ -66,11 +69,13 @@ class _ListContainerState extends State<ListContainer> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.selectedProperty? () {
-        setState(() {
-          isSelected = !isSelected;
-        });
-      }:(){},
+      onTap: widget.selectedProperty
+          ? () {
+              setState(() {
+                isSelected = !isSelected;
+              });
+            }
+          : () {},
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: widget.isOutdoor || isSelected
@@ -139,6 +144,7 @@ class _ListContainerState extends State<ListContainer> {
                   widget.showButton
                       ? ColumnButton(
                           padding: 10,
+                          onTap: widget.onTap!,
                         )
                       : isSelected
                           ? Container(
@@ -159,7 +165,13 @@ class _ListContainerState extends State<ListContainer> {
                                       spreadRadius: 0,
                                     )
                                   ]),
-                    child: Center(child: Icon(Icons.check,color: Colors.white,size: 16,),),
+                              child: Center(
+                                child: Icon(
+                                  Icons.check,
+                                  color: Colors.white,
+                                  size: 16,
+                                ),
+                              ),
                             )
                           : SizedBox.shrink(),
                   Row(
@@ -375,7 +387,9 @@ class _ListContainerState extends State<ListContainer> {
                               : Row(
                                   children: [
                                     SvgPicture.asset(
-                                      Images.location_marker,
+                                      !widget.isBottomSheet
+                                          ? Images.location_marker
+                                          : Images.card,
                                       color: AppColors.white,
                                       height: 16,
                                       width: 16,
@@ -384,7 +398,9 @@ class _ListContainerState extends State<ListContainer> {
                                       width: 2,
                                     ),
                                     TextWidget(
-                                      title: 'Petaling Jaya',
+                                      title: widget.isBottomSheet
+                                          ? "3"
+                                          : 'Petaling Jaya',
                                       textAlign: TextAlign.right,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 12,

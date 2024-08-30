@@ -14,6 +14,8 @@ class Images {
   static const String users = "$mainImage/users.svg";
   static const String QRCode = "$mainImage/QRCode.svg";
   static const String chat = "$mainImage/chat.svg";
+  static const String menu = "$mainImage/menu.svg";
+  static const String time = "$mainImage/time.svg";
   static const String dots_vertical_outline =
       "$mainImage/dots-vertical-outline.svg";
 
@@ -49,6 +51,7 @@ class Images {
   static const String users_group_outline =
       "$mainImage/users-group-outline.svg";
   static const String calendar = "$mainImage/calendar.svg";
+  static const String close = "$mainImage/close.svg";
   static const String currency_dollar = "$mainImage/currency-dollar.svg";
   static const String location_marker = "$mainImage/location-marker.svg";
   static const String phone_outline = "$mainImage/phone-outline.svg";

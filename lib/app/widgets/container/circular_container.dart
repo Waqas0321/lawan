@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,7 +10,7 @@ class CircularContainer extends StatelessWidget {
   final Color? bgColor;
   final double size;
   final VoidCallback onTap;
-
+  final double padding;
   const CircularContainer({
     super.key,
     required this.svgPath,
@@ -17,6 +19,7 @@ class CircularContainer extends StatelessWidget {
     this.size = 100.0,
     required this.onTap,
     this.bgColor,
+    this.padding = 18.0,
   });
 
   @override
@@ -25,7 +28,7 @@ class CircularContainer extends StatelessWidget {
       onTap: onTap,
       splashColor: Colors.transparent,
       child: Container(
-        padding: EdgeInsets.all(18),
+        padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
           color: bgColor,
           shape: BoxShape.circle, // Circular shape
