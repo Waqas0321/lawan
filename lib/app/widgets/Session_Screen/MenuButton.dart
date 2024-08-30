@@ -1,6 +1,9 @@
+import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lawan/app/utils/colors.dart';
 import '../../utils/images.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({
@@ -22,21 +25,22 @@ class MenuButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(32),
           ),
           offset: Offset(30, -140),
-          icon: SvgPicture.asset(Images.dots_vertical_outline),
+          icon: SvgPicture.asset(Images.dots_vertical_outline,color:AppColors.dark_grey,),
           clipBehavior: Clip.antiAlias,
           itemBuilder: (context) => [
             PopupMenuItem(
               child: Container(
-                margin: EdgeInsets.all(0),
-                padding: EdgeInsets.all(0),
+                margin: EdgeInsets.zero,
+                padding: EdgeInsets.zero,
                 width: 250,
                 height: 16,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment:CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SvgPicture.asset(
                           Images.phone_outline,
@@ -82,9 +86,7 @@ class MenuButton extends StatelessWidget {
                             width: 16,
                             color: Color(0xff545F71),
                           ),
-                          SizedBox(
-                            width: 4,
-                          ),
+                        SizedBox(width:  8.w,),
                           Text(
                             'Identification',
                             style: TextStyle(

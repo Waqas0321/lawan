@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 class BottomButtons extends StatelessWidget {
   const BottomButtons({
     super.key,
@@ -29,36 +30,36 @@ class BottomButtons extends StatelessWidget {
       ),
       child: Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                image,
-                color: isExpanded ? Color(0xffACB4C0) : Color(0xff545F71),
-                height: 16,
-                width: 16,
-              ),
-              isExpanded
-                  ? SizedBox(
-                width: 8,
-              )
-                  : SizedBox(
-                width: 0,
-              ),
-              isExpanded
-                  ? Text(
-                'Line-Up',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontFamily: 'Lufga',
-                    fontWeight: FontWeight.w500,
-                    decoration: TextDecoration.none),
-              )
-                  : SizedBox(
-                width: 0,
-              )
-            ],
-          )),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            image,
+            color: isExpanded ? Color(0xffACB4C0) : Color(0xff545F71),
+            height: 16,
+            width: 16,
+          ),
+          isExpanded
+              ? SizedBox(
+                  width: 8,
+                )
+              : SizedBox(
+                  width: 0,
+                ),
+          isExpanded
+              ? Text(
+                  'Line-Up',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.none),
+                )
+              : SizedBox(
+                  width: 0,
+                )
+        ],
+      )),
     );
   }
 }

@@ -223,7 +223,7 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
                                 Container(
                                   width: 36,
                                   height: 36,
-                                  padding: const EdgeInsets.all(12),
+                                  padding:  EdgeInsets.all(8),
                                   clipBehavior: Clip.antiAlias,
                                   decoration: ShapeDecoration(
                                     shape: RoundedRectangleBorder(
@@ -234,8 +234,8 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
                                   ),
                                   child: SvgPicture.asset(
                                     Images.chat,
-                                    height: 20,
-                                    width: 20,
+                                    // height: 20,
+                                    // width: 20,
                                   ),
                                 ),
                                 SizedBox(width: 3),

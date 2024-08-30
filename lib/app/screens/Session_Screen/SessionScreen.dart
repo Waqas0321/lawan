@@ -92,13 +92,13 @@ class _SessionscreenState extends State<Sessionscreen> {
                               DateDayTextContainer(),
                               SessionContainer(
                                 eyeOnTap: () {
-                                  controller.openBottomSheet(context);
+                                  // controller.openBottomSheet(context);
                                 },
                               ),
                               SizedBox(height: 8),
                               SessionContainer(
                                 eyeOnTap: () {
-                                  controller.openBottomSheet(context);
+                                   controller.openBottomSheet(context);
                                 },
                               ),
                             ],

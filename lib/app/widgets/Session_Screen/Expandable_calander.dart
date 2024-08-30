@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_common/get_reset.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
+import 'package:lawan/app/controller/Session_Screen/SessionScreen_Controller.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -28,7 +29,7 @@ class _ExpandableCustomCalenderState extends State<ExpandableCustomCalender> {
   DateTime _focusedDay = DateTime.now();
   String _selectedMonth = '${DateTime.now().month}';
   bool _isCalendarExpanded = false;
-
+final controller=Get.find<SessionScreenController>();
   final List<String> monthsName = [
     'January',
     'February',
@@ -309,7 +310,7 @@ class _ExpandableCustomCalenderState extends State<ExpandableCustomCalender> {
                     SizedBox(width: 16),
                     InkWell(
                       onTap:(){
-                        Get.to(MenualBookingScreen());
+                        controller.openBottomSheet(context);
                       },
                       child:Container(
                         height: 44,
