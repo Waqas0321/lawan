@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/List_Container.dart';
+import 'package:lawan/app/widgets/bottom_sheet/friendly_session_bottom_sheet.dart';
 
 import '../../widgets/Friendly_Session/FrindlyContainer.dart';
 import '../../widgets/Friendly_Session/Session_Row.dart';
@@ -40,9 +42,13 @@ class ShareInvitePublicScreen extends StatelessWidget {
               itemCount: 10,
               shrinkWrap: true,
               itemBuilder: (itemBuilder, index) {
-                return const ListContainer(
+                return ListContainer(
                   showButton: true,
                   isFriendlySession: true,
+                  onTap: () {
+                    Get.bottomSheet(FriendlySessionBottomSheet(),
+                        isScrollControlled: true);
+                  },
                 );
               })
         ],
