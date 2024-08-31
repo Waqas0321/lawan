@@ -46,6 +46,7 @@ class Images {
   static const String sales_image = "$mainImage/fi_3446795.png";
   static const String clock = "$mainImage/clock.svg";
   static const String dropdown = "$mainImage/dropdown.svg";
+  static const String edit = "$mainImage/edit.svg";
   static const String headset = "$mainImage/headset.svg";
   static const String fiveStar = "$mainImage/fiveStar.svg";
   static const String referee = "$mainImage/referee.svg";
@@ -60,6 +61,7 @@ class Images {
   static const String map = "$mainImage/map-pin.png";
   static const String layerImage = "$mainImage/Layer_1.png";
   static const String plus = "$mainImage/plus.svg";
+  static const String plusOutline = "$mainImage/plus-outline.svg";
   static const String trash = "$mainImage/trash.svg";
   static const String upload = "$mainImage/upload.svg";
   static const String users_group_outline =
