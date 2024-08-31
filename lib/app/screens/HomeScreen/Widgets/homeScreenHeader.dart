@@ -8,7 +8,8 @@ import '../../../widgets/Areena/TimeSlotHomeDropDown.dart';
 
 class ScreenHeader extends StatelessWidget {
   bool isTextVisible;
-  ScreenHeader({this.isTextVisible = true});
+  final VoidCallback? onProfileTap;
+  ScreenHeader({this.isTextVisible = true, this.onProfileTap});
   @override
   Widget build(BuildContext context) {
     final HeaderController controller = Get.put(HeaderController());
@@ -26,30 +27,34 @@ class ScreenHeader extends StatelessWidget {
                   isWidth: MediaQuery.of(context).size.width * 0.32,
                   image: "⚽",
                 )),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.05,
-              width: MediaQuery.of(context).size.width * 0.16,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(300),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    Images.avatar, // Replace with actual path
-                    height: 32,
-                    width: 40,
-                  ),
-                  SvgPicture.asset(
-                    Images.chevron_down, // Replace with actual path
-                    height: 16,
-                    width: 16,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.004,
-                  ),
-                ],
+            InkWell(
+              splashColor: Colors.transparent,
+              onTap: onProfileTap,
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.05,
+                width: MediaQuery.of(context).size.width * 0.16,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(300),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      Images.avatar, // Replace with actual path
+                      height: 32,
+                      width: 40,
+                    ),
+                    SvgPicture.asset(
+                      Images.chevron_down, // Replace with actual path
+                      height: 16,
+                      width: 16,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.004,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
