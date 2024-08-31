@@ -9,13 +9,16 @@ class CustomAreenaButton extends StatelessWidget {
   final String text; // The text displayed on the button
   final Color? color; // The background color of the button
   final Color borderColor; // The color of the button's border
-  final VoidCallback onTap; // The function that gets called when the button is tapped
+  final VoidCallback
+      onTap; // The function that gets called when the button is tapped
   final Color textColor; // The color of the text on the button
   final double width; // The width of the button (default: 164.50)
   final double height; // The height of the button (default: 49)
   final bool showIcon; // If true, icon will be shown (default: true)
-  final String imagePath; // The path to the SVG icon (default: Images.user_plus)
+  final String
+      imagePath; // The path to the SVG icon (default: Images.user_plus)
   final bool showBorder; // If true, border will be shown (default: true)
+  final Color imageColor;
 
   /// Constructor for the [CustomAreenaButton].
   CustomAreenaButton({
@@ -28,7 +31,9 @@ class CustomAreenaButton extends StatelessWidget {
     this.height = 49, // Default height of the button
     this.showIcon = false, // Whether to show the icon (default: true)
     this.imagePath = Images.user_plus, // Default icon path
-    this.showBorder = true, // Whether to show the border (default: true)
+    this.showBorder = true,
+    this.imageColor =
+        AppColors.dark_grey, // Whether to show the border (default: true)
   });
 
   @override
@@ -38,26 +43,31 @@ class CustomAreenaButton extends StatelessWidget {
       child: Container(
         width: width, // Set the button width
         height: height, // Set the button height
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14), // Padding inside the button
+        padding: const EdgeInsets.symmetric(
+            horizontal: 24, vertical: 14), // Padding inside the button
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
-            side: showBorder ? BorderSide(width: 1, color: borderColor) : BorderSide.none, // Conditional border
+            side: showBorder
+                ? BorderSide(width: 1, color: borderColor)
+                : BorderSide.none, // Conditional border
             borderRadius: BorderRadius.circular(80), // Button border radius
           ),
           color: color, // Button background color
         ),
         child: Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center, // Center the content inside the button
+            mainAxisAlignment: MainAxisAlignment
+                .center, // Center the content inside the button
             children: [
               if (showIcon) // Only show the icon if `showIcon` is true
                 SvgPicture.asset(
                   imagePath,
                   height: 16,
                   width: 16,
-                  color: AppColors.dark_grey,
+                  color: imageColor,
                 ),
-              if (showIcon) SizedBox(width: 12), // Add spacing between icon and text
+              if (showIcon)
+                SizedBox(width: 12), // Add spacing between icon and text
               Text(
                 text,
                 style: TextStyle(
