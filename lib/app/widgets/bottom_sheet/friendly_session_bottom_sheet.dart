@@ -21,121 +21,119 @@ class FriendlySessionBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Responsive.customHeight(94),
-      decoration: const BoxDecoration(
-        color: Color(0xB2F2F3F2),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+      child: Container(
+        height: Responsive.customHeight(86),
+        decoration: const BoxDecoration(
+          color: Color(0xB2F2F3F2),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
         ),
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(14.0),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const TextWidget(
-                        title: "⚽   Friendly",
-                        fontSize: 20,
-                      ),
-                      CircularContainer(
-                        svgPath: Images.close,
-                        onTap: () {
-                          Get.back();
-                        },
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: Responsive.h2,
-                  ),
-                  const ListContainer(
-                    isBottomSheet: true,
-                  ),
-                  SizedBox(
-                    height: Responsive.h1,
-                  ),
-                  ColumnButton(
-                    showBlack: true,
-                    upperText: "Sesssion starting in",
-                    lowerText: "2 days 2 hours 6 mins 3 sec ",
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: Responsive.h1,
-                  ),
-                  const ProfileCard(),
-                  SizedBox(
-                    height: Responsive.h1,
-                  ),
-                  const UserinfoRow(),
-                  SizedBox(
-                    height: Responsive.h1,
-                  ),
-                  const GridviewItems(),
-                  SizedBox(
-                    height: Responsive.h1,
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: Column(
                   children: [
-                    CircularContainer(
-                      svgPath: Images.pencil,
-                      onTap: () {},
-                      borderColor: Colors.grey,
-                    ),
-                    CircularContainer(
-                      svgPath: Images.upload,
-                      onTap: () {},
-                      borderColor: Colors.grey,
-                    ),
-                    CircularContainer(
-                      svgPath: Images.calendar,
-                      onTap: () {},
-                      borderColor: Colors.grey,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Get.bottomSheet(const ShareBottomSheet(),
-                            isScrollControlled: true);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(12)),
-                        padding: const EdgeInsets.all(14),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(Images.users_group_outline),
-                            SizedBox(
-                              width: Responsive.h2,
-                            ),
-                            const TextWidget(
-                              title: "Line-Up",
-                              textColor: Colors.white,
-                            )
-                          ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const TextWidget(
+                          title: "⚽   Friendly",
+                          fontSize: 20,
                         ),
-                      ),
-                    )
+                        CircularContainer(
+                          padding: 12,
+                          svgPath: Images.close,
+                          onTap: () {
+                            Get.back();
+                          },
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: Responsive.h2,
+                    ),
+                    const ListContainer(
+                      isBottomSheet: true,
+                    ),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    ColumnButton(
+                      showBlack: true,
+                      padding: 4,
+                      horizontalPadding: Responsive.h7,
+                      upperText: "Sesssion starting in",
+                      lowerText: "2 days 2 hours 6 mins 3 sec ",
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    const ProfileCard(),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    const UserinfoRow(),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
+                    const GridviewItems(),
+                    SizedBox(
+                      height: Responsive.h1,
+                    ),
                   ],
                 ),
               ),
-            )
-          ],
+              Container(
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CircularContainer(
+                        svgPath: Images.edit,
+                        padding: 12,
+                        onTap: () {},
+                        borderColor: Color(0xFFDEE1E2),
+                      ),
+                      CircularContainer(
+                        padding: 12,
+                        svgPath: Images.upload,
+                        onTap: () {},
+                        borderColor: Color(0xFFDEE1E2),
+                      ),
+                      CircularContainer(
+                        padding: 12,
+                        svgPath: Images.calendar,
+                        onTap: () {},
+                        borderColor: Color(0xFFDEE1E2),
+                      ),
+                      CustomAreenaButton(
+                        text: "Line-up",
+                        color: Colors.black,
+                        imageColor: Colors.white,
+                        showIcon: true,
+                        imagePath: Images.users_group_outline,
+                        borderColor: Colors.transparent,
+                        textColor: Colors.white,
+                        onTap: () {
+                          Get.bottomSheet(const ShareBottomSheet(),
+                              isScrollControlled: true);
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
