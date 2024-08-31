@@ -44,21 +44,20 @@ class InviteShareGridContainer extends StatelessWidget {
           TextWidget(
             title: subtitle,
             fontSize: 14,
+            fontWeight: FontWeight.w700,
+            textAlign: TextAlign.start,
           ),
-          SizedBox(height: Responsive.h1),
           if (showAdditionalText && additionalText != null) ...[
-            Center(
-              child: Container(
-                padding: EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white),
-                ),
-                child: TextWidget(
-                  title: additionalText!,
-                  fontSize: 11,
-                  textColor: Color(0xFF545F71),
-                ),
+            Container(
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.white),
+              ),
+              child: TextWidget(
+                title: additionalText!,
+                fontSize: 11,
+                textColor: Color(0xFF545F71),
               ),
             ),
           ],

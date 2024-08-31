@@ -16,7 +16,7 @@ class ShareBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Responsive.customHeight(94),
+      height: Responsive.customHeight(87),
       decoration: const BoxDecoration(
         color: Color(0xB2F2F3F2),
         borderRadius: BorderRadius.only(
@@ -56,6 +56,7 @@ class ShareBottomSheet extends StatelessWidget {
                   Transform.translate(
                     offset: Offset(Responsive.customHeight(17), 0),
                     child: CircularContainer(
+                      padding: 10,
                       svgPath: Images.close,
                       onTap: () {
                         Get.back();

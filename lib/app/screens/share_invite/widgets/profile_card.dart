@@ -6,26 +6,27 @@ import '../../../widgets/container/circular_container.dart';
 import '../../../widgets/text_widget.dart';
 
 class ProfileCard extends StatelessWidget {
-  final bool showIcons;
-  final bool showBorder;
-  final Color backgroundColor;
-  final Color borderColor;
-  final Color titleColor;
-  final Color subtitleColor;
-  final Color iconBorderColor;
-  final Color subtitleBackground;
+  final bool showIcons, showBorder;
+  final String firstImagePath, secondImagePath;
+  final Color backgroundColor,
+      borderColor,
+      titleColor,
+      subtitleColor,
+      iconBorderColor,
+      subtitleBackground;
 
-  const ProfileCard({
-    super.key,
-    this.showIcons = true,
-    this.showBorder = false,
-    this.backgroundColor = Colors.white,
-    this.borderColor = Colors.grey,
-    this.titleColor = Colors.black,
-    this.subtitleBackground = Colors.transparent,
-    this.subtitleColor = const Color(0xFF545F71),
-    this.iconBorderColor = Colors.grey,
-  });
+  const ProfileCard(
+      {super.key,
+      this.showIcons = true,
+      this.showBorder = false,
+      this.backgroundColor = Colors.white,
+      this.borderColor = Colors.grey,
+      this.titleColor = Colors.black,
+      this.subtitleBackground = Colors.transparent,
+      this.subtitleColor = const Color(0xFF545F71),
+      this.iconBorderColor = Colors.grey,
+      this.firstImagePath = Images.chat,
+      this.secondImagePath = Images.menu});
 
   @override
   Widget build(BuildContext context) {
@@ -83,17 +84,17 @@ class ProfileCard extends StatelessWidget {
               children: [
                 CircularContainer(
                   padding: 10,
-                  svgPath: Images.chat,
+                  svgPath: firstImagePath,
                   onTap: () {},
                   borderColor:
-                      iconBorderColor, // Customizable icon border color
+                      Color(0xFFDEE1E2), // Customizable icon border color
                 ),
                 SizedBox(width: Responsive.h1), // Space between icons
                 CircularContainer(
                   padding: 10,
-                  svgPath: Images.menu,
+                  svgPath: secondImagePath,
                   borderColor:
-                      iconBorderColor, // Customizable icon border color
+                      Color(0xFFDEE1E2), // Customizable icon border color
                   onTap: () {},
                 ),
               ],

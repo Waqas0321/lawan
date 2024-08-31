@@ -18,7 +18,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
       height: Responsive.customHeight(94),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment(0.00, -1.00),
           end: Alignment(0, -0.5),
           colors: [
@@ -187,6 +187,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
                         return const ProfileCard(
                           subtitleBackground: Colors.white,
                           showBorder: true,
+                          secondImagePath: Images.plusOutline,
                           backgroundColor: Colors.transparent,
                           iconBorderColor: Color(0xFFDEE1E2),
                         );
@@ -216,16 +217,16 @@ class ShowProfileBottomSheet extends StatelessWidget {
                       height: Responsive.h2,
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
                           color: Colors.transparent,
-                          border: Border.all(color: Color(0xFFDEE1E2))),
+                          border: Border.all(color: const Color(0xFFDEE1E2))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SvgPicture.asset(Images.headset),
-                          TextWidget(title: "Give Feedback")
+                          const TextWidget(title: "Give Feedback")
                         ],
                       ),
                     ),
