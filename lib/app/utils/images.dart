@@ -21,15 +21,22 @@ class Images {
 
   //home Screen
   static const String ball = "$mainImage/ball.png";
+  static const String link = "$mainImage/link.svg";
+  static const String messages = "$mainImage/messages.svg";
+  static const String whatsapp = "$mainImage/whatsapp.svg";
+  static const String telegram = "$mainImage/telegram.svg";
   static const String player_play = "$mainImage/player-play.svg";
   static const String areenagreen = "$mainImage/areenagreen.svg";
   static const String sales = "$mainImage/sales.svg";
   static const String avtar = "$mainImage/Avatar.png";
   static const String avtar4 = "$mainImage/Avatar4.png";
   static const String chevron_down = "$mainImage/chevron-down.svg";
+  static const String chevron_up = "$mainImage/chevron-up.svg";
   static const String chevron_left = "$mainImage/chevron-left.svg";
   static const String chevron_right = "$mainImage/chevron-right.svg";
   static const String dollar_signs = "$mainImage/dollar.svg";
+  static const String bell = "$mainImage/bell.svg";
+  static const String setting = "$mainImage/setting.svg";
   static const String play = "$mainImage/play.svg";
   static const String areena = "$mainImage/areena.svg";
   static const String vector = "$mainImage/Vector.png";
@@ -39,6 +46,13 @@ class Images {
   static const String sales_image = "$mainImage/fi_3446795.png";
   static const String clock = "$mainImage/clock.svg";
   static const String dropdown = "$mainImage/dropdown.svg";
+  static const String headset = "$mainImage/headset.svg";
+  static const String fiveStar = "$mainImage/fiveStar.svg";
+  static const String referee = "$mainImage/referee.svg";
+  static const String flag = "$mainImage/flag.svg";
+  static const String user = "$mainImage/user.svg";
+  static const String female = "$mainImage/female.svg";
+  static const String request = "$mainImage/request.svg";
   // Arena Filled
   static const String add_Image = "$mainImage/Add Image.png";
   static const String pencil = "$mainImage/pencil.svg";
