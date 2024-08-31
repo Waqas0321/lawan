@@ -4,6 +4,7 @@ import 'package:lawan/app/widgets/text_widget.dart';
 
 class ColumnButton extends StatelessWidget {
   final double padding;
+  final double? horizontalPadding;
   final bool showBlack;
   final VoidCallback onTap;
   final String upperText;
@@ -11,6 +12,7 @@ class ColumnButton extends StatelessWidget {
 
   const ColumnButton(
       {super.key,
+      this.horizontalPadding,
       this.padding = 12,
       this.showBlack = false,
       this.upperText = "The session has begun",
@@ -22,8 +24,8 @@ class ColumnButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding:
-            EdgeInsets.symmetric(vertical: padding, horizontal: Responsive.h7),
+        padding: EdgeInsets.symmetric(
+            vertical: padding, horizontal: horizontalPadding ?? Responsive.h8),
         decoration: BoxDecoration(
             color: showBlack ? Colors.black : null,
             borderRadius: BorderRadius.circular(30),
