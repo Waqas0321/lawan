@@ -13,7 +13,7 @@ class GridviewItems extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 1.5,
+        childAspectRatio: 1.7,
       ),
       itemCount: 4, // Four items to be displayed in the grid
       itemBuilder: (BuildContext context, int index) {
@@ -37,7 +37,7 @@ class GridviewItems extends StatelessWidget {
             return const InviteShareGridContainer(
               iconPath: Images.location_marker,
               title: "Location",
-              subtitle: "Central Park, NYC",
+              subtitle: "Petaling Jaya, Selangor",
               additionalText: "5 miles away",
               showAdditionalText: false, // Hide additional text
             );
