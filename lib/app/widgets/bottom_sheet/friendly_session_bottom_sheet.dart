@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/screens/share_invite/widgets/profile_card.dart';
+import 'package:lawan/app/screens/share_invite/widgets/userinfo_row.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/Areena/areenaButton.dart';
 import 'package:lawan/app/widgets/Friendly_Session/column_button.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/List_Container.dart';
+import 'package:lawan/app/widgets/bottom_sheet/share_bottom_sheet.dart';
 import 'package:lawan/app/widgets/container/invite_share_container.dart';
 import 'package:lawan/app/widgets/container/text_container.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 
+import '../../screens/share_invite/widgets/gridview_items.dart';
 import '../container/circular_container.dart';
 
 class FriendlySessionBottomSheet extends StatelessWidget {
@@ -66,143 +70,15 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Colors.white,
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        // Leading Avatar
-                        const CircleAvatar(
-                          backgroundImage: AssetImage(Images.avatar),
-                          radius: 30,
-                        ),
-                        const SizedBox(
-                            width: 12), // Space between avatar and text
-
-                        // Title and Subtitle Column
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const TextWidget(
-                                title: "Ali Qazwini",
-                                fontWeight: FontWeight.bold, // Optional styling
-                              ),
-                              const SizedBox(
-                                  height:
-                                      4), // Space between title and subtitle
-                              Container(
-                                padding: const EdgeInsets.all(4),
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: const TextWidget(
-                                  title: "Arena Owner",
-                                  fontSize: 11,
-                                  textColor: Color(0xFF545F71),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        SizedBox(
-                          height: Responsive.h1,
-                        ),
-                        Row(
-                          children: [
-                            CircularContainer(
-                              padding: 10,
-                              svgPath: Images.chat,
-                              onTap: () {},
-                              borderColor: Colors.grey,
-                            ),
-                            SizedBox(
-                                width: Responsive.h1), // Space between icons
-                            CircularContainer(
-                              padding: 10,
-                              svgPath: Images.menu,
-                              borderColor: Colors.grey,
-                              onTap: () {},
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  const ProfileCard(),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const TextContainer(text: "25 - 35 years"),
-                      SizedBox(
-                        width: Responsive.h2,
-                      ),
-                      const TextContainer(text: "Male & Female"),
-                      SizedBox(
-                        width: Responsive.h2,
-                      ),
-                      const TextContainer(text: "English & Malay"),
-                    ],
-                  ),
+                  const UserinfoRow(),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 1.5,
-                    ),
-                    itemCount: 4, // Four items to be displayed in the grid
-                    itemBuilder: (BuildContext context, int index) {
-                      switch (index) {
-                        case 0:
-                          return const InviteShareGridContainer(
-                            iconPath: Images.calendar,
-                            title: "Date",
-                            subtitle: "Tue, 25 Sep 2024",
-                            showAdditionalText: false,
-                          );
-                        case 1:
-                          return const InviteShareGridContainer(
-                            iconPath: Images.time,
-                            title: "Time",
-                            subtitle: "10:00 AM - 12:00 PM",
-                            additionalText: "1 hr",
-                            showAdditionalText: true,
-                          );
-                        case 2:
-                          return const InviteShareGridContainer(
-                            iconPath: Images.location_marker,
-                            title: "Location",
-                            subtitle: "Central Park, NYC",
-                            additionalText: "5 miles away",
-                            showAdditionalText: false, // Hide additional text
-                          );
-                        case 3:
-                          return const InviteShareGridContainer(
-                            iconPath: Images.currency_dollar,
-                            title: "Price",
-                            subtitle: "RM20/pax",
-                            showAdditionalText: false,
-                          );
-                        default:
-                          return const SizedBox(); // Default case to avoid any unexpected error
-                      }
-                    },
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                  ),
+                  const GridviewItems(),
                   SizedBox(
                     height: Responsive.h1,
                   ),
@@ -231,22 +107,28 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                       onTap: () {},
                       borderColor: Colors.grey,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(12)),
-                      padding: const EdgeInsets.all(14),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(Images.users_group_outline),
-                          SizedBox(
-                            width: Responsive.h2,
-                          ),
-                          const TextWidget(
-                            title: "Line-Up",
-                            textColor: Colors.white,
-                          )
-                        ],
+                    GestureDetector(
+                      onTap: () {
+                        Get.bottomSheet(const ShareBottomSheet(),
+                            isScrollControlled: true);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(12)),
+                        padding: const EdgeInsets.all(14),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(Images.users_group_outline),
+                            SizedBox(
+                              width: Responsive.h2,
+                            ),
+                            const TextWidget(
+                              title: "Line-Up",
+                              textColor: Colors.white,
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],
