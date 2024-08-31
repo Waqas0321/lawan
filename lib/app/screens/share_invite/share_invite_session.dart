@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:lawan/app/screens/share_invite/share_invite_public_screen.dart';
 import 'package:lawan/app/widgets/Friendly_Session/custom_shadow_button.dart';
+import 'package:lawan/app/widgets/bottom_sheet/show_profile.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 
 import '../../utils/images.dart';
@@ -24,6 +26,10 @@ class ShareInviteSession extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: ScreenHeader(
                   isTextVisible: false,
+                  onProfileTap: () {
+                    Get.bottomSheet(ShowProfileBottomSheet(),
+                        isScrollControlled: true);
+                  },
                 ),
               ),
               const SizedBox(
