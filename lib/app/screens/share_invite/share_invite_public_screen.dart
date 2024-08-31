@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/List_Container.dart';
 import 'package:lawan/app/widgets/bottom_sheet/friendly_session_bottom_sheet.dart';
-
 import '../../widgets/Friendly_Session/FrindlyContainer.dart';
 import '../../widgets/Friendly_Session/Session_Row.dart';
-import '../../widgets/Friendly_Session/user_container.dart';
 
 class ShareInvitePublicScreen extends StatelessWidget {
   const ShareInvitePublicScreen({super.key});
