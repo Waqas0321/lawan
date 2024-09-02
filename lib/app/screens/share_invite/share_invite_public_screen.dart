@@ -35,20 +35,29 @@ class ShareInvitePublicScreen extends StatelessWidget {
             height: Responsive.h2,
           ),
           const SessionsRow(),
-          ListView.builder(
-              physics: ScrollPhysics(),
-              itemCount: 10,
-              shrinkWrap: true,
-              itemBuilder: (itemBuilder, index) {
-                return ListContainer(
-                  showButton: true,
-                  isFriendlySession: true,
-                  onTap: () {
-                    Get.bottomSheet(FriendlySessionBottomSheet(),
-                        isScrollControlled: true);
-                  },
-                );
-              })
+          SizedBox(
+            height: Responsive.h1,
+          ),
+          ListView.separated(
+            physics: ScrollPhysics(),
+            itemCount: 10,
+            shrinkWrap: true,
+            itemBuilder: (itemBuilder, index) {
+              return ListContainer(
+                showButton: true,
+                isFriendlySession: true,
+                onTap: () {
+                  Get.bottomSheet(FriendlySessionBottomSheet(),
+                      isScrollControlled: true);
+                },
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return SizedBox(
+                height: Responsive.h2,
+              );
+            },
+          )
         ],
       ),
     );
