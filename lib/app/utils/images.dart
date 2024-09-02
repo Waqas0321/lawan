@@ -61,6 +61,7 @@ class Images {
   static const String map = "$mainImage/map-pin.png";
   static const String layerImage = "$mainImage/Layer_1.png";
   static const String plus = "$mainImage/plus.svg";
+  static const String qr = "$mainImage/qr.svg";
   static const String plusOutline = "$mainImage/plus-outline.svg";
   static const String trash = "$mainImage/trash.svg";
   static const String upload = "$mainImage/upload.svg";
