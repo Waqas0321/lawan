@@ -8,8 +8,10 @@ class BottomButtons extends StatelessWidget {
     this.isExpanded = false,
     this.height = 49,
     this.width = 48,
+    this.text  ='Sine-Up',
   });
   final String image;
+  final String text;
   final double height;
   final double width;
   final bool isExpanded;
@@ -47,7 +49,7 @@ class BottomButtons extends StatelessWidget {
                 ),
           isExpanded
               ? Text(
-                  'Line-Up',
+                  text,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,

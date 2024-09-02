@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:lawan/app/controller/friendly/freindly_bottom_nav_controller.dart';
 import 'package:lawan/app/screens/Friendly_Session/friendly_session.dart';
 import 'package:lawan/app/screens/share_invite/share_invite_session.dart';
-
 import '../../widgets/Areena/custom_bottom_nav.dart';
 import '../Friendly_Session/friendly_session.dart';
 
@@ -49,7 +48,7 @@ class FriendlyBottomNav extends StatelessWidget {
                           children: [
                             Obx(() {
                               if (controller.selectedItem.value == "Friendly") {
-                                return const ShareInviteSession();
+                                return const FriendlySession();
                               } else if (controller.selectedItem.value ==
                                   "Ranked") {
                                 return const Center(

@@ -10,19 +10,21 @@ class FilterBoxButtonsRow extends StatelessWidget {
     this.textFirstButton = 'All',
     this.textSecondButton = 'Johor',
     this.textThirdButton = ' Kedah',
+    this.haveAllButton = true,
   });
 
   final String text;
   final String textFirstButton;
   final String textSecondButton;
   final String textThirdButton;
+  final bool haveAllButton;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         SizedBox(
-          width: 52,
+          width: 53,
           child: TextWidget(
             title: text,
             fontWeight: FontWeight.w500,
@@ -31,10 +33,10 @@ class FilterBoxButtonsRow extends StatelessWidget {
           ),
         ),
         SizedBox(width: 24),
-        CustomCircularButton(
+        haveAllButton? CustomCircularButton(
             width: 49,
             height: 44,
-            text: textFirstButton, onPressFun: () {}, isSelected: true),
+            text: textFirstButton, onPressFun: () {}, isSelected: true): SizedBox(width: 0,),
         SizedBox(width: 12),
         Expanded(
           child: CustomCircularButton(
