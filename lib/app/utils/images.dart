@@ -84,4 +84,8 @@ class Images {
   static const String club = "$mainImage/club.svg";
   static const String stories = "$mainImage/stories.svg";
   static const String top = "$mainImage/top.svg";
+  static const String male = "$mainImage/male.svg";
+  static const String female_icon = "$mainImage/female_Icon.svg";
+  static const String english_flag = "$mainImage/english_flag.svg";
+  static const String tag = "$mainImage/tag.svg";
 }

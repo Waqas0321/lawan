@@ -1,14 +1,20 @@
 import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/screens/Friendly_Session/payment_screen.dart';
 import 'package:lawan/app/utils/images.dart';
+import 'package:lawan/app/widgets/Areena/TimeSlotRow.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/search_TextField.dart';
+import 'package:lawan/app/widgets/Session_Screen/Bottom_Buttons.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
 import '../../utils/text.dart';
 import '../Areena/EditAlertBox.dart';
+import '../Areena/TimeSlotAreena.dart';
 import '../Areena/areenaButton.dart';
+import '../Areena/custom_container_Add_Areena3.dart';
 import '../Areena/custom_header_count.dart';
+import '../MenualBooking_Screen/FilterBoxButtonsRow.dart';
 
 class FriendlySessionSetting extends StatefulWidget {
   const FriendlySessionSetting({super.key});
@@ -17,7 +23,48 @@ class FriendlySessionSetting extends StatefulWidget {
   State<FriendlySessionSetting> createState() => _FriendlySessionSettingState();
 }
 
+
 class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
+  bool _isSelectedAgeRange = false;
+  bool _isSelectedConfigueSlots = false;
+  final List<String> _timeSlots = [
+    '25 Years',
+    '30 Years',
+    '35 Years',
+    '40 Years'
+  ];
+  final List<String> _timeSlotsTwo = [
+    '22',
+    '23',
+    '24',
+    '25'
+  ];
+  final List<String> _timeSlotsThree = [
+    'Max',
+    'Min',
+  ];
+
+// Currently selected time slot
+  String _selectedTimeSlot = '25 Years';
+  String _selectedTimeSlotTwo = '22';
+  String _selectedTimeSlotThree = 'Max';
+
+  void _onTimeSlotChanged(String newValue) {
+    setState(() {
+      _selectedTimeSlot = newValue;
+    });
+  }
+  void _onTimeSlotChangedTwo(String newValue) {
+    setState(() {
+      _selectedTimeSlotTwo = newValue;
+    });
+  }
+    void _onTimeSlotChangedThree(String newValue) {
+      setState(() {
+        _selectedTimeSlotThree = newValue;
+      });
+
+  }
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
@@ -64,8 +111,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                         fontWeight: FontWeight.w500,
                       ),
                       TextWidget(
-                        title:
-                        'Configure session preferences',
+                        title: 'Configure session preferences',
                         textColor: AppColors.textSecondColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
@@ -77,6 +123,178 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      BottomButtons(
+                        image: Images.user_plus,
+                      ),
+                      SizedBox(height: 16,),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          TextWidget(
+                            title: "Gender",
+                            textColor: AppColors.textSecondColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          Spacer(),
+                          BottomButtons(
+                            isExpanded: true,
+                            text: 'Male',
+                            image: Images.male,height: 44,width: 88,),
+                          SizedBox(width: 12,),
+                          BottomButtons(
+                            isExpanded: true,
+                            text: 'Female',
+                            image: Images.female_icon,height: 44,width: 102,),
+                        ],
+                      ),
+                      SizedBox(height: 16,),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          TextWidget(
+                            title: "Language",
+                            textColor: AppColors.textSecondColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          Spacer(),
+                          BottomButtons(
+                            isExpanded: true,
+                            text: 'English',
+                            image: Images.english_flag,height: 44,width: 102,),
+                          SizedBox(width: 12,),
+                          BottomButtons(
+                            isExpanded: true,
+                            text: 'Malay',
+                            image: Images.english_flag,height: 44,width: 102,),
+                        ],
+                      ),
+                      SizedBox(height: 16,),
+                      CustomSwitchTimeslotRow(
+                        leftText: "Age Range",
+                        rightText: Apptext.open,
+                        isSelected: _isSelectedAgeRange,
+                        onChanged: (bool value) {
+                          setState(() {
+                            _isSelectedAgeRange = value;
+                          });
+                        },
+                      ),
+                      SizedBox(height: 16,),
+                      _isSelectedAgeRange?Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: TimeSlot(
+                              isClock: false,
+                              timeSlots: _timeSlots,
+                              selectedTimeSlot: _selectedTimeSlot,
+                              onChanged: _onTimeSlotChanged,
+                              isImage: true,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Text(
+                            'to',
+                            style: TextStyle(
+                              color: Color(0xFF545F71),
+                              fontSize: 14,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w400,
+                              height: 0.11,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Expanded(
+                            child: TimeSlot(
+                              isClock: false,
+                              timeSlots: _timeSlots,
+                              selectedTimeSlot: _selectedTimeSlot,
+                              onChanged: _onTimeSlotChanged,
+                              isImage: true,
+                            ),
+                          ),
+                        ],
+                      ): SizedBox(height: 0,),
+                      SizedBox(height: 16,),
+                      CustomSwitchTimeslotRow(
+                        leftText: "Configure Slots",
+                        rightText: Apptext.open,
+                        isSelected: _isSelectedConfigueSlots,
+                        onChanged: (bool value) {
+                          setState(() {
+                            _isSelectedConfigueSlots = value;
+                          });
+                        },
+                      ),
+                      SizedBox(height: 16,),
+                      _isSelectedConfigueSlots?Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: TimeSlot(
+                              timeSlots: _timeSlotsTwo,
+                              selectedTimeSlot: _selectedTimeSlotTwo,
+                              onChanged: _onTimeSlotChangedTwo,
+                              isImage: true,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Text(
+                            'to',
+                            style: TextStyle(
+                              color: Color(0xFF545F71),
+                              fontSize: 14,
+                              fontFamily: 'Lufga',
+                              fontWeight: FontWeight.w400,
+                              height: 0.11,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Expanded(
+                            child: TimeSlot(
+                              isClock: false,
+                              timeSlots: _timeSlotsThree,
+                              selectedTimeSlot: _selectedTimeSlotThree,
+                              onChanged: _onTimeSlotChangedThree,
+                              isImage: true,
+                            ),
+                          ),
+                        ],
+                      ): SizedBox(height: 0,),
+                      SizedBox(height: 16,),
+                      Row(
+                        children: [
+                        Expanded(
+                          child: CustomContainerAreena3(
+                            hasIcon: true,
+                          text1: 'Price to Pay',
+                          text2: 'RM20 / pax',
+                          text3: '',
+                                                ),
+                        ),
+                          SizedBox(width: 16,),
+                          Expanded(
+                            child: CustomContainerAreena3(
+                              text1: 'Extra Players(s)',
+                              text2: '0',
+                              text3: '',
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ],
@@ -101,24 +319,12 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                   ),
                   Expanded(
                     child: CustomAreenaButton(
-                      text: Apptext.next,
+                      text: "Proceed to Pay",
                       color: AppColors.black,
                       borderColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () {
-                        showCustomEditAlertDialog(
-                            conFirmOnTapBottomSheet: false,
-                            title1: "Confirm Booking",
-                            "Edit Arena Name",
-                            'MBPJ Sports Complex',
-                            isConfirmed: true,
-                                () {},
-                            titleText:
-                            "Are you sure you want to add this booking?",
-                            updateButtonText: "Confirm",
-                            updateButtonBorderColor: AppColors.black,
-                            updateButtonColor: AppColors.black,
-                            updateButtonTextColor: AppColors.white);
+                        Get.to(PaymentScreen());
                       },
                     ),
                   ),
