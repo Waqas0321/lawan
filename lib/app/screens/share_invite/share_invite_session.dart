@@ -10,10 +10,8 @@ import '../../utils/images.dart';
 import '../../utils/responsive_utils.dart';
 import '../../widgets/Areena/custom_tabbar.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
-
 class ShareInviteSession extends StatelessWidget {
   const ShareInviteSession({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -23,7 +21,7 @@ class ShareInviteSession extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding:EdgeInsets.symmetric(horizontal: 16),
                 child: ScreenHeader(
                   isTextVisible: false,
                   onProfileTap: () {

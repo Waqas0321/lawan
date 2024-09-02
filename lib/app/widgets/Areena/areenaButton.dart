@@ -19,7 +19,7 @@ class CustomAreenaButton extends StatelessWidget {
       imagePath; // The path to the SVG icon (default: Images.user_plus)
   final bool showBorder; // If true, border will be shown (default: true)
   final Color imageColor;
-
+  final double borderRadius;
   /// Constructor for the [CustomAreenaButton].
   CustomAreenaButton({
     required this.text, // Text to display inside the button
@@ -33,7 +33,8 @@ class CustomAreenaButton extends StatelessWidget {
     this.imagePath = Images.user_plus, // Default icon path
     this.showBorder = true,
     this.imageColor =
-        AppColors.dark_grey, // Whether to show the border (default: true)
+        AppColors.dark_grey,
+    this.borderRadius=80// Whether to show the border (default: true)
   });
 
   @override
@@ -50,7 +51,7 @@ class CustomAreenaButton extends StatelessWidget {
             side: showBorder
                 ? BorderSide(width: 1, color: borderColor)
                 : BorderSide.none, // Conditional border
-            borderRadius: BorderRadius.circular(80), // Button border radius
+            borderRadius: BorderRadius.circular(borderRadius), // Button border radius
           ),
           color: color, // Button background color
         ),

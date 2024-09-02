@@ -8,7 +8,7 @@ import '../../widgets/Session_Screen/session_Container.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
 
 class MenualBookingScreen extends StatelessWidget {
-  final bottomcontroller = Get.find<BottomNavigationController>();
+  final bottomcontroller = Get.put(BottomNavigationController());
 
   @override
   Widget build(BuildContext context) {

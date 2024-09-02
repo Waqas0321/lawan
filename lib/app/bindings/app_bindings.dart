@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:lawan/app/controller/Friendly_Session/friendly_session_controller.dart';
 import 'package:lawan/app/controller/bottom_bar/bottom_navigation_controller.dart';
 import 'package:lawan/app/controller/friendly/freindly_bottom_nav_controller.dart';
+import 'package:lawan/app/controller/paymentScren/paymentScreen.dart';
 import '../controller/Session_Screen/SessionScreen_Controller.dart';
 import '../controller/sales/sales_controller.dart';
 import 'package:lawan/app/controller/manual/MenualBooking_Controller.dart';
@@ -19,5 +20,8 @@ class InitialBindings extends Bindings {
     Get.put(FriendlySessionController());
     Get.put(MenualBookinController(), permanent: true);
     Get.put(SessionScreenController(), permanent: true);
+    Get.put(
+      PaymentScreenController(),
+    );
   }
 }
