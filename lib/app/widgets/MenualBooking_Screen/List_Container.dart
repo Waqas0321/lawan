@@ -86,18 +86,23 @@ class _ListContainerState extends State<ListContainer> {
                     ? 260
                     : 128,
         clipBehavior: Clip.antiAlias,
-        decoration: widget.isOutdoor || isSelected || widget.isFriendlySession
-            ? ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32),
-                ),
-              )
-            : ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32),
-                ),
-              ),
+        decoration: BoxDecoration(
+          color: widget.isOutdoor || isSelected || widget.isFriendlySession
+              ? Colors.white
+              : Colors.transparent, // Set color to transparent if not applying
+          borderRadius: BorderRadius.circular(32),
+          boxShadow: widget.isOutdoor || isSelected || widget.isFriendlySession
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(
+                        0.2), // Adjust the shadow color and opacity
+                    offset: Offset(0, 4), // Horizontal and vertical offset
+                    blurRadius: 8, // Shadow blur radius
+                    spreadRadius: 0, // Shadow spread radius
+                  ),
+                ]
+              : [],
+        ),
         child: Column(
           children: [
             Container(
