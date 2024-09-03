@@ -13,6 +13,7 @@ class CustomCircularButton extends StatelessWidget {
     this.imagePath = '',
     this.height = 44,
     this.width = 44,
+
   });
 
   final String text;
@@ -22,7 +23,6 @@ class CustomCircularButton extends StatelessWidget {
   final String imagePath;
   final double height;
   final double width;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -34,9 +34,9 @@ class CustomCircularButton extends StatelessWidget {
         decoration: ShapeDecoration(
           color: isSelected ? Colors.black : Colors.transparent,
           shape: RoundedRectangleBorder(
-            side: isSelected
+            side:isSelected
                 ? BorderSide(width: 1, color: Color(0xFFDEE1E2))
-                : BorderSide(width: 0, color: Color(0xFFDEE1E2)),
+                : BorderSide(width: 5, color: Color(0xFFDEE1E2)),
             borderRadius: BorderRadius.circular(32),
           ),
         ),

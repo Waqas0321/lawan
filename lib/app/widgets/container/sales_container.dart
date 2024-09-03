@@ -18,7 +18,7 @@ class SalesContainer extends StatelessWidget {
       physics: const ScrollPhysics(),
       itemBuilder: (itemBuilder, index) {
         return Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(5),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
