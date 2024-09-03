@@ -4,9 +4,12 @@ import '../../utils/colors.dart';
 import '../../utils/images.dart';
 import '../MenualBooking_Screen/Custom_Circular_Button.dart';
 import '../text_widget.dart';
+
 class FrindlySessionContainer extends StatelessWidget {
+  final VoidCallback? onTap;
   const FrindlySessionContainer({
     super.key,
+    this.onTap,
   });
 
   @override
@@ -15,8 +18,7 @@ class FrindlySessionContainer extends StatelessWidget {
       width: 240,
       height: 60,
       margin: EdgeInsets.only(right: 8),
-      padding: const EdgeInsets.symmetric(
-          horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: ShapeDecoration(
         color: Colors.transparent,
         shape: RoundedRectangleBorder(
@@ -45,16 +47,14 @@ class FrindlySessionContainer extends StatelessWidget {
               Container(
                 width: 48,
                 height: 16,
-                padding:
-                const EdgeInsets.symmetric(horizontal: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 6),
                 clipBehavior: Clip.antiAlias,
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
                       width: 1,
-                      strokeAlign:
-                      BorderSide.strokeAlignOutside,
+                      strokeAlign: BorderSide.strokeAlignOutside,
                       color: Color(0xFFDEE1E2),
                     ),
                     borderRadius: BorderRadius.circular(100),
@@ -77,7 +77,8 @@ class FrindlySessionContainer extends StatelessWidget {
               imagePath: Images.plus,
               width: 36,
               height: 36,
-              onPressFun: () {}, isSelected: false),
+              onPressFun: onTap!,
+              isSelected: false),
         ],
       ),
     );
