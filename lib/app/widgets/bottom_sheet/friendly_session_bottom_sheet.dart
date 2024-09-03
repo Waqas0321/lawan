@@ -27,7 +27,8 @@ class FriendlySessionBottomSheet extends StatelessWidget {
       child: Container(
         height: Responsive.customHeight(86),
         decoration: BoxDecoration(
-            color: Color(0xB2F2F3F2), borderRadius: BorderRadius.circular(20)),
+            color: const Color(0xB2F2F3F2),
+            borderRadius: BorderRadius.circular(20)),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -87,7 +88,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20),
@@ -101,7 +102,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                         svgPath: Images.edit,
                         padding: 12,
                         onTap: () {},
-                        borderColor: Color(0xFFDEE1E2),
+                        borderColor: const Color(0xFFDEE1E2),
                       ),
                       CircularContainer(
                         padding: 12,
@@ -110,13 +111,13 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                           Get.bottomSheet(const ShareBottomSheet(),
                               isScrollControlled: true);
                         },
-                        borderColor: Color(0xFFDEE1E2),
+                        borderColor: const Color(0xFFDEE1E2),
                       ),
                       CircularContainer(
                         padding: 12,
                         svgPath: Images.calendar,
                         onTap: () {},
-                        borderColor: Color(0xFFDEE1E2),
+                        borderColor: const Color(0xFFDEE1E2),
                       ),
                       CustomAreenaButton(
                         text: "Line-up",
