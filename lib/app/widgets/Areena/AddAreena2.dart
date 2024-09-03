@@ -49,7 +49,7 @@ class _AddAreena2State extends State<AddAreena2> {
     final screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: acrylicAny(
-        blurlevel: 10000,
+        blurlevel: 5000000000.00,
         child: Container(
           // width: MediaQuery.of(context).size.width - 16,
           margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
@@ -80,7 +80,7 @@ class _AddAreena2State extends State<AddAreena2> {
                   height: MediaQuery.of(context).size.height * 0.035,
                 ),
                 SizedBox(
-                  width: 345,
+                  width: 350,
                   child: Text(
                     'Set Standard Hours',
                     style: TextStyle(
@@ -136,17 +136,13 @@ class _AddAreena2State extends State<AddAreena2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
-                    SizedBox(
-                      width: 12,
-                    ),
+                    SizedBox(width: MediaQuery.of(context).size.height * 0.01),
                     Text(
                       'to',
                       style: TextStyle(
@@ -157,16 +153,12 @@ class _AddAreena2State extends State<AddAreena2> {
                         height: 0.11,
                       ),
                     ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    SizedBox(width: MediaQuery.of(context).size.height * 0.01),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
                   ],
                 ),
@@ -185,17 +177,13 @@ class _AddAreena2State extends State<AddAreena2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
-                    SizedBox(
-                      width: 12,
-                    ),
+                    SizedBox(width: MediaQuery.of(context).size.height * 0.01),
                     Text(
                       'to',
                       style: TextStyle(
@@ -206,16 +194,12 @@ class _AddAreena2State extends State<AddAreena2> {
                         height: 0.11,
                       ),
                     ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    SizedBox(width: MediaQuery.of(context).size.height * 0.01),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
                   ],
                 ),
@@ -234,13 +218,11 @@ class _AddAreena2State extends State<AddAreena2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
                     SizedBox(
                       width: 12,
@@ -258,13 +240,11 @@ class _AddAreena2State extends State<AddAreena2> {
                     SizedBox(
                       width: 12,
                     ),
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
                   ],
                 ),
@@ -283,13 +263,11 @@ class _AddAreena2State extends State<AddAreena2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
                     SizedBox(
                       width: 10,
@@ -307,13 +285,11 @@ class _AddAreena2State extends State<AddAreena2> {
                     SizedBox(
                       width: 10,
                     ),
-                    Expanded(
-                      child: TimeSlot(
-                        timeSlots: _timeSlots,
-                        selectedTimeSlot: _selectedTimeSlot,
-                        onChanged: _onTimeSlotChanged,
-                        isImage: true,
-                      ),
+                    TimeSlot(
+                      timeSlots: _timeSlots,
+                      selectedTimeSlot: _selectedTimeSlot,
+                      onChanged: _onTimeSlotChanged,
+                      isImage: true,
                     ),
                   ],
                 ),

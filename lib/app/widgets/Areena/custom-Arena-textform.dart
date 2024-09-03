@@ -69,16 +69,16 @@ class CustomTextFormField extends StatelessWidget {
             suffixIcon: (icon != null
                 ? Padding(
                     padding: iconPadding ??
-                        EdgeInsets.all(10.0), // Use provided padding or default
+                        EdgeInsets.all(15.0), // Use provided padding or default
                     child: Container(
-                      width: iconSize ?? 24, // Use provided size or default
-                      height: iconSize ?? 24, // Use provided size or default
+                      width: iconSize ?? 20, // Use provided size or default
+                      height: iconSize ?? 20, // Use provided size or default
                       child: SvgPicture.asset(
                         icon!,
                         color: iconColor ??
                             AppColors.mid_grey, // Use provided color or default
-                        fit:
-                            BoxFit.contain, // Fit the icon within the container
+                        // fit:
+                        //     BoxFit.contain, // Fit the icon within the container
                       ),
                     ),
                   )

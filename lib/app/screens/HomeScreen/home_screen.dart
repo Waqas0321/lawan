@@ -46,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() {
-                            if (controller.selectedItem.value == "Arena") {
+                            if (controller.selectedItem.value == "Arena")
+                            {
                               return Padding(
                                 padding: EdgeInsets.only(
                                     top: MediaQuery.of(context).size.width *

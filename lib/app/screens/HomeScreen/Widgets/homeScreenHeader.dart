@@ -32,7 +32,7 @@ class ScreenHeader extends StatelessWidget {
               onTap: onProfileTap,
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.05,
-                width: MediaQuery.of(context).size.width * 0.16,
+                width: MediaQuery.of(context).size.width * 0.17,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(300),
@@ -51,7 +51,7 @@ class ScreenHeader extends StatelessWidget {
                       width: 16,
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.004,
+                      width: MediaQuery.of(context).size.width * 0.02,
                     ),
                   ],
                 ),

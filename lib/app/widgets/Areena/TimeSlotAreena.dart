@@ -23,7 +23,7 @@ class TimeSlot extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.388,
+        width: MediaQuery.of(context).size.width * 0.370,
         height: 45,
         decoration: ShapeDecoration(
           color: Colors.white,

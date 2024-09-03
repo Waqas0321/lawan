@@ -43,7 +43,7 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
                   thisCount == "1" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "1" ? FontWeight.w500 : FontWeight.w400,
-              padding: 2,
+              padding: 0,
             ),
           ),
           Expanded(
@@ -57,7 +57,7 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
                   thisCount == "2" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "2" ? FontWeight.w500 : FontWeight.w400,
-              padding: 7,
+              padding: 8,
               linecolor: AppColors.grey3,
             ),
           ),

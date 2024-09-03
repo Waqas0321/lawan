@@ -22,7 +22,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 5, right: 5), // Adjust height as needed
+      padding: EdgeInsets.only(left: 0, right: 0), // Adjust height as needed
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: Text(
               leftText,
               style: TextStyle(
-                color: isSelected ? AppColors.dark_grey : Color(0xFF8A96A8),
+                color: isSelected ? AppColors.dark_grey : AppColors.mid_grey,
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,

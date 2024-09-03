@@ -139,11 +139,11 @@ class _AddAreena1State extends State<AddAreena1> {
                               ),
                             ),
                             SizedBox(
-                              height:0.01,
+                              height: 0.01,
                             ),
                             Container(
-                              width: Get.width * 0.4,
-                              height: MediaQuery.of(context).size.height * 0.13,
+                              width: Get.width * 0.45,
+                              height: MediaQuery.of(context).size.height * 0.15,
                               padding: const EdgeInsets.all(24),
                               decoration: ShapeDecoration(
                                 color: AppColors.white,
@@ -197,13 +197,13 @@ class _AddAreena1State extends State<AddAreena1> {
                                 validator: (value) {
                                   return Validator.customValidator(
                                     value: value,
-                                    fieldName:Apptext.location,
+                                    fieldName: Apptext.location,
                                     minLength:
-                                    4, // Ensure the username is at least 4 characters long
+                                        4, // Ensure the username is at least 4 characters long
                                     hasNoSpaces:
-                                    true, // Ensure the username does not contain spaces
+                                        true, // Ensure the username does not contain spaces
                                     isRequired:
-                                    true, // Ensure the field is not empty
+                                        true, // Ensure the field is not empty
                                   );
                                 },
                                 icon: Images.location),
@@ -273,14 +273,16 @@ class _AddAreena1State extends State<AddAreena1> {
                                 ),
                                 SizedBox(
                                     width: MediaQuery.of(context).size.width *
-                                        0.02),
+                                        0.03),
                                 ArenaINOutButton(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.05,
-                                    text: 'Outdoor',
-                                    isSelected: _selectedButtonOutdoor,
-                                    onPressed: () =>
-                                        _onButtonPressINOutdoor("Outdoor")),
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.05,
+                                  text: 'Outdoor',
+                                  isSelected: _selectedButtonOutdoor,
+                                  onPressed: () {
+                                    _onButtonPressINOutdoor("Outdoor");
+                                  },
+                                ),
                                 const Expanded(child: SizedBox(width: 70)),
                               ],
                             ),
@@ -310,7 +312,9 @@ class _AddAreena1State extends State<AddAreena1> {
                                     _onButtonPressCourt("Truf");
                                   },
                                 ),
-                                SizedBox(width: 6),
+                                SizedBox(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.03),
                                 ArenaINOutButton(
                                   height:
                                       MediaQuery.of(context).size.height * 0.05,
@@ -320,7 +324,7 @@ class _AddAreena1State extends State<AddAreena1> {
                                 ),
                                 SizedBox(
                                     width: MediaQuery.of(context).size.width *
-                                        0.02),
+                                        0.03),
                                 ArenaINOutButton(
                                   height:
                                       MediaQuery.of(context).size.height * 0.05,
@@ -342,7 +346,7 @@ class _AddAreena1State extends State<AddAreena1> {
                                     color: null,
                                     borderColor: Color(0xFFE9EAF0),
                                     textColor: Colors.black,
-                                    showIcon:false,
+                                    showIcon: false,
                                     onTap: () {
                                       Get.back();
                                     },
@@ -353,14 +357,16 @@ class _AddAreena1State extends State<AddAreena1> {
                                   child: CustomAreenaButton(
                                     text: Apptext.next,
                                     color: AppColors.black,
-                                    showBorder:false,
+                                    showBorder: false,
                                     borderColor: Color(0xFFE9EAF0),
                                     textColor: AppColors.white,
-                                    showIcon:false,
-
+                                    showIcon: false,
                                     onTap: () async {
                                       // Validate the form
-                                      bool isValid = Validator.globalKey.currentState?.validate() ?? false;
+                                      bool isValid = Validator
+                                              .globalKey.currentState
+                                              ?.validate() ??
+                                          false;
 
                                       if (isValid) {
                                         // Form is valid
@@ -380,7 +386,6 @@ class _AddAreena1State extends State<AddAreena1> {
                                     },
                                   ),
                                 ),
-
                               ],
                             ),
                             /*SizedBox(
@@ -398,7 +403,7 @@ class _AddAreena1State extends State<AddAreena1> {
     );
   }
 
-  Future<void> _openBottomSheet(BuildContext context) async{
+  Future<void> _openBottomSheet(BuildContext context) async {
     await showModalBottomSheet(
       context: context,
       isDismissible: true,
@@ -423,5 +428,4 @@ class _AddAreena1State extends State<AddAreena1> {
   //     },
   //   );
   // }
-
 }

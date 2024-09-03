@@ -22,7 +22,7 @@ class CustomContainerAreena3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 86,
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      // padding: const EdgeInsets.symmetric(vertical: 8),
       decoration: ShapeDecoration(
         gradient: LinearGradient(
           begin: Alignment(0.00, -1.00),
@@ -36,57 +36,52 @@ class CustomContainerAreena3 extends StatelessWidget {
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 36),
-              child: Text(
-                text1,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xFFACB3C0),
-                  fontSize: 12,
-                  fontFamily: 'Lufga',
-                  fontWeight: FontWeight.w400,
-                  height: 1.4,
-                ),
+            Text(
+              text1,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color(0xFFACB3C0),
+                fontSize: 12,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w400,
+                height: 1.4,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 6),
-              child: Row(
-                children: [
-
-                  hasIcon? SvgPicture.asset(Images.tag,color: Colors.white,): SizedBox(width: 16,),
-                  SizedBox(width: 4,),
-                  Text(
-                    text2,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w600,
-                      height: 1.2,
-                      letterSpacing: -0.72,
-                    ),
+            hasIcon
+                ? SvgPicture.asset(
+                    Images.tag,
+                    color: Colors.white,
+                  )
+                : SizedBox(
+                    width: 16,
                   ),
-                ],
+            SizedBox(
+              width: 4,
+            ),
+            Text(
+              text2,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontFamily: 'Lufga',
+                fontWeight: FontWeight.w600,
+                height: 1.2,
+                letterSpacing: -0.72,
               ),
             ),
             hasThirdText
-                ? SizedBox(
-                    width: 345,
-                    child: Text(
-                      text3,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color(0xFFDEE1E2),
-                        fontSize: 12,
-                        fontFamily: 'Lufga',
-                        fontWeight: FontWeight.w400,
-                        height: 2,
-                      ),
+                ? Text(
+                    text3,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFFDEE1E2),
+                      fontSize: 12,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w400,
+                      height: 2,
                     ),
                   )
                 : SizedBox(

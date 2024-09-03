@@ -72,7 +72,7 @@ class ScreenBody extends StatelessWidget {
         ),
         // Text(MediaQuery.of(context).size.height.toStringAsFixed(3)),
         Container(
-          height: MediaQuery.of(context).size.height * 0.16,
+          height: MediaQuery.of(context).size.height * 0.19,
           width: MediaQuery.of(context).size.width,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
@@ -84,7 +84,7 @@ class ScreenBody extends StatelessWidget {
             children: [
               IntrinsicHeight(
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.025,
+                  height: MediaQuery.of(context).size.height * 0.031,
                 ),
               ),
               Text.rich(

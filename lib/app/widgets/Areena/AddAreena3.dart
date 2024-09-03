@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:lawan/app/widgets/Areena/ArenaFilled1.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotTwoAreena.dart';
 import 'package:lawan/app/widgets/Areena/custom_container_Add_Areena3.dart';
+import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
 import '../../utils/text.dart';
 import 'AlertBox.dart';
@@ -156,7 +157,8 @@ class _AddAreena3State extends State<AddAreena3> {
                 SizedBox(
                   height: 16,
                 ),
-                customText(text: "Weekend Rate"),
+                TextWidget(title: "Weekend Rate",textColor: Color(0xFF545F71),fontSize:14,fontWeight:FontWeight.w400,),
+               SizedBox(height:5,),
                 SizedBox(
                   width: double.infinity,
                   child: Row(
