@@ -22,16 +22,12 @@ class FriendlySessionBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+      padding: EdgeInsets.only(
+          bottom: Responsive.customHeight(1), left: 10, right: 10),
       child: Container(
         height: Responsive.customHeight(86),
-        decoration: const BoxDecoration(
-          color: Color(0xB2F2F3F2),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
+        decoration: BoxDecoration(
+            color: Color(0xB2F2F3F2), borderRadius: BorderRadius.circular(20)),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -91,9 +87,13 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Colors.white,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20))),
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(7.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -106,7 +106,10 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                       CircularContainer(
                         padding: 12,
                         svgPath: Images.upload,
-                        onTap: () {},
+                        onTap: () {
+                          Get.bottomSheet(const ShareBottomSheet(),
+                              isScrollControlled: true);
+                        },
                         borderColor: Color(0xFFDEE1E2),
                       ),
                       CircularContainer(
@@ -123,10 +126,7 @@ class FriendlySessionBottomSheet extends StatelessWidget {
                         imagePath: Images.users_group_outline,
                         borderColor: Colors.transparent,
                         textColor: Colors.white,
-                        onTap: () {
-                          Get.bottomSheet(const ShareBottomSheet(),
-                              isScrollControlled: true);
-                        },
+                        onTap: () {},
                       ),
                     ],
                   ),
