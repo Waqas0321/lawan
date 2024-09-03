@@ -4,6 +4,7 @@ import 'package:lawan/app/widgets/Friendly_Session/column_button.dart';
 import '../../screens/Friendly_Session/Public_Third_Screen.dart';
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
+import '../../utils/responsive_utils.dart';
 import '../Friendly_Session/Image_Text_Row.dart';
 import '../text_widget.dart';
 import 'Custom_Circular_Button.dart';
@@ -16,6 +17,7 @@ class ListContainer extends StatefulWidget {
       this.showButton = false,
       this.isBottomSheet = false,
       this.onTap,
+        this.index=0,
       this.selectedProperty = false});
 
   final bool isOutdoor;
@@ -24,6 +26,7 @@ class ListContainer extends StatefulWidget {
   final bool showButton;
   final bool selectedProperty;
   final VoidCallback? onTap;
+  final int index;
   @override
   State<ListContainer> createState() => _ListContainerState();
 }
@@ -147,15 +150,22 @@ class _ListContainerState extends State<ListContainer> {
                     ),
                   ),
                   widget.showButton
-                      ? ColumnButton(
+                      ? widget.index/2==0?ColumnButton(
                           padding: 10,
                           onTap: widget.onTap!,
-                        )
+                        ): ColumnButton(
+                    showBlack: true,
+                    padding: 4,
+                    horizontalPadding: Responsive.h7,
+                    upperText: "Sesssion starting in",
+                    lowerText: "2 days 2 hours 6 mins 3 sec ",
+                    onTap: () {},
+                  )
                       : isSelected
                           ? Container(
                               width: 44,
                               height: 44,
-                              padding: const EdgeInsets.symmetric(
+                              padding:EdgeInsets.symmetric(
                                   horizontal: 12, vertical: 8),
                               decoration: ShapeDecoration(
                                   color: Colors.black,

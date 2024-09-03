@@ -16,13 +16,21 @@ class ShareBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Responsive.customHeight(87),
-      decoration: const BoxDecoration(
+      margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
+      height: MediaQuery.of(context).size.height * 0.78,
+      clipBehavior: Clip.antiAlias,
+      decoration: ShapeDecoration(
         color: Color(0xB2F2F3F2),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
         ),
+        shadows: [
+          BoxShadow(
+            color: Color(0x19000000),
+            offset: Offset(0, -0.50),
+            spreadRadius: 0,
+          )
+        ],
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -95,13 +103,14 @@ class ShareBottomSheet extends StatelessWidget {
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  const GridviewItems(),
+                  GridviewItems(),
                   SizedBox(
                     height: Responsive.h2,
                   ),
                 ],
               ),
             ),
+            // Spacer(),
             Container(
               padding: EdgeInsets.all(12),
               color: Colors.white,
@@ -119,9 +128,6 @@ class ShareBottomSheet extends StatelessWidget {
                       columnWithTwoWidget(Images.telegram, "Telegram",
                           showImageOnly: true),
                     ],
-                  ),
-                  SizedBox(
-                    width: Responsive.h1,
                   ),
                   Row(
                     children: [

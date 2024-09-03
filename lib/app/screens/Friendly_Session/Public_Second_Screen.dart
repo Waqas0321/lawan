@@ -28,7 +28,7 @@ class PublicSecondScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return FrindlySessionContainer();
+                  return FrindlySessionContainer(onTap: () {  },);
                 },
               ),
             ),

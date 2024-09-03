@@ -36,7 +36,7 @@ class CustomCircularButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             side:isSelected
                 ? BorderSide(width: 1, color: Color(0xFFDEE1E2))
-                : BorderSide(width: 5, color: Color(0xFFDEE1E2)),
+                : BorderSide(width: 1, color: Color(0xFFDEE1E2)),
             borderRadius: BorderRadius.circular(32),
           ),
         ),

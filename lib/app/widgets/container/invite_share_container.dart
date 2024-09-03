@@ -22,10 +22,11 @@ class InviteShareGridContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 30,
       padding: EdgeInsets.all(7),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: Colors.white),
+        border: Border.all(color: Colors.white, width: 0.6),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +50,7 @@ class InviteShareGridContainer extends StatelessWidget {
           ),
           if (showAdditionalText && additionalText != null) ...[
             Container(
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.only(left: 13, right: 13, top: 3),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.white),

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Session_Screen/timeZone_containers.dart';
+import 'package:lawan/app/widgets/bottom_sheet/share_bottom_sheet.dart';
 import 'Bottom_Buttons.dart';
 import 'MenuButton.dart';
 
@@ -296,7 +297,7 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
                           child: BottomButtons(
                             height: 42,
                             width: 42,
-                            image: Images.x,)))
+                            image: Images.x, onTap: () {  },)))
                 ]
               ),
             ),
@@ -316,21 +317,25 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  BottomButtons(image: Images.trash),
+                  BottomButtons(image: Images.trash, onTap: () {  },),
                   SizedBox(
                     width: 16,
                   ),
-                  BottomButtons(image: Images.upload),
+                  BottomButtons(image: Images.upload, onTap: () {
+                    Get.back();
+                    Get.bottomSheet(const ShareBottomSheet(),
+                      isScrollControlled: true);
+                  },),
                   SizedBox(
                     width: 16,
                   ),
-                  BottomButtons(image: Images.pencil),
+                  BottomButtons(image: Images.pencil, onTap: () {  },),
                   SizedBox(
                     width: 16,
                   ),
                   Expanded(
                       child: BottomButtons(
-                          isExpanded: true, image: Images.users_group_outline)),
+                          isExpanded: true, image: Images.users_group_outline, onTap: () {  },)),
                 ],
               ),
             )

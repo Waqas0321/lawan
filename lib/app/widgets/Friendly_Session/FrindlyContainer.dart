@@ -6,10 +6,10 @@ import '../MenualBooking_Screen/Custom_Circular_Button.dart';
 import '../text_widget.dart';
 
 class FrindlySessionContainer extends StatelessWidget {
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
   const FrindlySessionContainer({
     super.key,
-    this.onTap,
+    required this.onTap,
   });
 
   @override
@@ -77,7 +77,7 @@ class FrindlySessionContainer extends StatelessWidget {
               imagePath: Images.plus,
               width: 36,
               height: 36,
-              onPressFun: onTap!,
+              onPressFun: onTap,
               isSelected: false),
         ],
       ),

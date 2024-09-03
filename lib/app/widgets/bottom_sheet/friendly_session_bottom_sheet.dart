@@ -23,118 +23,117 @@ class FriendlySessionBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          bottom: Responsive.customHeight(1), left: 10, right: 10),
+          bottom: Responsive.customHeight(2), left: 9, right: 9),
       child: Container(
-        height: Responsive.customHeight(86),
+        height: Responsive.customHeight(85),
         decoration: BoxDecoration(
             color: const Color(0xB2F2F3F2),
             borderRadius: BorderRadius.circular(20)),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(14.0),
-                child: Column(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const TextWidget(
+                        title: "⚽   Friendly",
+                        fontSize: 20,
+                      ),
+                      CircularContainer(
+                        padding: 12,
+                        svgPath: Images.close,
+                        onTap: () {
+                          Get.back();
+                        },
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: Responsive.h2,
+                  ),
+                  const ListContainer(
+                    isBottomSheet: true,
+                  ),
+                  SizedBox(
+                    height: Responsive.h1,
+                  ),
+                  ColumnButton(
+                    showBlack: true,
+                    padding: 4,
+                    horizontalPadding: Responsive.h7,
+                    upperText: "Sesssion starting in",
+                    lowerText: "2 days 2 hours 6 mins 3 sec ",
+                    onTap: () {},
+                  ),
+                  SizedBox(
+                    height: Responsive.h1,
+                  ),
+                  const ProfileCard(),
+                  SizedBox(
+                    height: Responsive.h1,
+                  ),
+                  const UserinfoRow(),
+                  SizedBox(
+                    height: Responsive.h1,
+                  ),
+                  const GridviewItems(),
+                  SizedBox(
+                    height: Responsive.h1,
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+            Container(
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20))),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 7.0, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const TextWidget(
-                          title: "⚽   Friendly",
-                          fontSize: 20,
-                        ),
-                        CircularContainer(
-                          padding: 12,
-                          svgPath: Images.close,
-                          onTap: () {
-                            Get.back();
-                          },
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: Responsive.h2,
-                    ),
-                    const ListContainer(
-                      isBottomSheet: true,
-                    ),
-                    SizedBox(
-                      height: Responsive.h1,
-                    ),
-                    ColumnButton(
-                      showBlack: true,
-                      padding: 4,
-                      horizontalPadding: Responsive.h7,
-                      upperText: "Sesssion starting in",
-                      lowerText: "2 days 2 hours 6 mins 3 sec ",
+                    CircularContainer(
+                      svgPath: Images.edit,
+                      padding: 12,
                       onTap: () {},
+                      borderColor: const Color(0xFFDEE1E2),
                     ),
-                    SizedBox(
-                      height: Responsive.h1,
+                    CircularContainer(
+                      padding: 12,
+                      svgPath: Images.upload,
+                      onTap: () {
+                        Get.bottomSheet(const ShareBottomSheet(),
+                            isScrollControlled: true);
+                      },
+                      borderColor: const Color(0xFFDEE1E2),
                     ),
-                    const ProfileCard(),
-                    SizedBox(
-                      height: Responsive.h1,
+                    CircularContainer(
+                      padding: 12,
+                      svgPath: Images.calendar,
+                      onTap: () {},
+                      borderColor: const Color(0xFFDEE1E2),
                     ),
-                    const UserinfoRow(),
-                    SizedBox(
-                      height: Responsive.h1,
-                    ),
-                    const GridviewItems(),
-                    SizedBox(
-                      height: Responsive.h1,
+                    CustomAreenaButton(
+                      text: "Line-up",
+                      color: Colors.black,
+                      imageColor: Colors.white,
+                      showIcon: true,
+                      imagePath: Images.users_group_outline,
+                      borderColor: Colors.transparent,
+                      textColor: Colors.white,
+                      onTap: () {},
                     ),
                   ],
                 ),
               ),
-              Container(
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20))),
-                child: Padding(
-                  padding: const EdgeInsets.all(7.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircularContainer(
-                        svgPath: Images.edit,
-                        padding: 12,
-                        onTap: () {},
-                        borderColor: const Color(0xFFDEE1E2),
-                      ),
-                      CircularContainer(
-                        padding: 12,
-                        svgPath: Images.upload,
-                        onTap: () {
-                          Get.bottomSheet(const ShareBottomSheet(),
-                              isScrollControlled: true);
-                        },
-                        borderColor: const Color(0xFFDEE1E2),
-                      ),
-                      CircularContainer(
-                        padding: 12,
-                        svgPath: Images.calendar,
-                        onTap: () {},
-                        borderColor: const Color(0xFFDEE1E2),
-                      ),
-                      CustomAreenaButton(
-                        text: "Line-up",
-                        color: Colors.black,
-                        imageColor: Colors.white,
-                        showIcon: true,
-                        imagePath: Images.users_group_outline,
-                        borderColor: Colors.transparent,
-                        textColor: Colors.white,
-                        onTap: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

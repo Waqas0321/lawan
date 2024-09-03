@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lawan/app/controller/Friendly_Session/friendly_session_controller.dart';
-import 'package:lawan/app/utils/colors.dart';
-import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Friendly_Session/FrindlyContainer.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/List_Container.dart';
-import 'package:lawan/app/widgets/text_widget.dart';
 
 import '../../widgets/Friendly_Session/Session_Row.dart';
 
@@ -28,7 +23,9 @@ class PublicThirdScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 3,
               itemBuilder: (context, index) {
-                return FrindlySessionContainer();
+                return FrindlySessionContainer(
+                  onTap: () {},
+                );
               },
             ),
           ),
@@ -41,8 +38,12 @@ class PublicThirdScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    ListContainer(isFriendlySession: true,),
-                    SizedBox(height: 12,),
+                    ListContainer(
+                      isFriendlySession: true,
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
                   ],
                 );
               },
@@ -53,5 +54,3 @@ class PublicThirdScreen extends StatelessWidget {
     );
   }
 }
-
-
