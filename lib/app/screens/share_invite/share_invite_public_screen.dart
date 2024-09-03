@@ -26,7 +26,12 @@ class ShareInvitePublicScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return const FrindlySessionContainer();
+                  return FrindlySessionContainer(
+                    onTap: () {
+                      Get.bottomSheet(const FriendlySessionBottomSheet(),
+                          isScrollControlled: true);
+                    },
+                  );
                 },
               ),
             ),
@@ -39,7 +44,7 @@ class ShareInvitePublicScreen extends StatelessWidget {
             height: Responsive.h1,
           ),
           ListView.separated(
-            physics: ScrollPhysics(),
+            physics: const ScrollPhysics(),
             itemCount: 10,
             shrinkWrap: true,
             itemBuilder: (itemBuilder, index) {
@@ -47,7 +52,7 @@ class ShareInvitePublicScreen extends StatelessWidget {
                 showButton: true,
                 isFriendlySession: true,
                 onTap: () {
-                  Get.bottomSheet(FriendlySessionBottomSheet(),
+                  Get.bottomSheet(const FriendlySessionBottomSheet(),
                       isScrollControlled: true);
                 },
               );
