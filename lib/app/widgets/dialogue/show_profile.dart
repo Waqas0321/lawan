@@ -48,7 +48,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
             //   ),
             // ),
             child: SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -253,9 +253,9 @@ class ShowProfileBottomSheet extends StatelessWidget {
             child: Transform.translate(
               offset: Offset(0, Responsive.h3),
               child: Container(
-                padding: EdgeInsets.all(12),
+                padding: const EdgeInsets.all(12),
                 decoration: ShapeDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment(0.00, -1.00),
                     end: Alignment(0, 1),
                     colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
