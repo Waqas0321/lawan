@@ -8,7 +8,7 @@ class BottomButtons extends StatelessWidget {
     this.isExpanded = false,
     this.height = 49,
     this.width = 48,
-    this.text  ='Sine-Up',
+    this.text  ='Line-Up',
     required this.onTap,
     this.backgroundColor = Colors.transparent,
     this.iconColor = Colors.black45
