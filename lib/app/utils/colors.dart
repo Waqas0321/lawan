@@ -13,6 +13,7 @@ class AppColors {
   static const Color mid_grey = Color(0xffACB4C0);
   static const Color bottombox = Color(0xCCE5E6E5);
   static const Color greenColor = Color(0xff57CC86);
+  static const Color deepGreenColor = Color(0xFF23A891);
   static const Color borderColor = Color(0xFFE0E0E0);
   static const Color brand2 = Color(0xff23A991);
   static const Color Grey2 = Color(0xFFE0E0E0);

@@ -34,60 +34,62 @@ class CustomContainerAreena3 extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              text1,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFFACB3C0),
-                fontSize: 12,
-                fontFamily: 'Lufga',
-                fontWeight: FontWeight.w400,
-                height: 1.4,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                text1,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFFACB3C0),
+                  fontSize: 12,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w400,
+                  height: 1.4,
+                ),
               ),
-            ),
-            hasIcon
-                ? SvgPicture.asset(
-                    Images.tag,
-                    color: Colors.white,
-                  )
-                : SizedBox(
-                    width: 16,
-                  ),
-            SizedBox(
-              width: 4,
-            ),
-            Text(
-              text2,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontFamily: 'Lufga',
-                fontWeight: FontWeight.w600,
-                height: 1.2,
-                letterSpacing: -0.72,
-              ),
-            ),
-            hasThirdText
-                ? Text(
-                    text3,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFFDEE1E2),
-                      fontSize: 12,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 2,
+              hasIcon
+                  ? SvgPicture.asset(
+                      Images.tag,
+                      color: Colors.white,
+                    )
+                  : SizedBox(
+                      width: 16,
                     ),
-                  )
-                : SizedBox(
-                    width: 0,
-                  )
-          ],
+              SizedBox(
+                width: 4,
+              ),
+              Text(
+                text2,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontFamily: 'Lufga',
+                  fontWeight: FontWeight.w600,
+                  height: 1.2,
+                  letterSpacing: -0.72,
+                ),
+              ),
+              hasThirdText
+                  ? Text(
+                      text3,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xFFDEE1E2),
+                        fontSize: 12,
+                        fontFamily: 'Lufga',
+                        fontWeight: FontWeight.w400,
+                        height: 2,
+                      ),
+                    )
+                  : SizedBox(
+                      width: 0,
+                    )
+            ],
+          ),
         ),
       ),
     );

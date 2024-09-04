@@ -1,17 +1,22 @@
 import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lawan/app/screens/Friendly_Session/payment_screen.dart';
+import 'package:lawan/app/controller/Friendly_Session/setting_controller.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotRow.dart';
+import 'package:lawan/app/widgets/Friendly_Session/session_created_BottomSheet.dart';
+import 'package:lawan/app/widgets/MenualBooking_Screen/search_TextField.dart';
 import 'package:lawan/app/widgets/Session_Screen/Bottom_Buttons.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
 import '../../utils/text.dart';
+import '../Areena/EditAlertBox.dart';
 import '../Areena/TimeSlotAreena.dart';
 import '../Areena/areenaButton.dart';
 import '../Areena/custom_container_Add_Areena3.dart';
 import '../Areena/custom_header_count.dart';
+import '../MenualBooking_Screen/FilterBoxButtonsRow.dart';
+
 class FriendlySessionSetting extends StatefulWidget {
   const FriendlySessionSetting({super.key});
 
@@ -21,6 +26,7 @@ class FriendlySessionSetting extends StatefulWidget {
 
 
 class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
+  SettingController controller = Get.put(SettingController());
   bool _isSelectedAgeRange = false;
   bool _isSelectedConfigueSlots = false;
   final List<String> _timeSlots = [
@@ -55,10 +61,10 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
       _selectedTimeSlotTwo = newValue;
     });
   }
-    void _onTimeSlotChangedThree(String newValue) {
-      setState(() {
-        _selectedTimeSlotThree = newValue;
-      });
+  void _onTimeSlotChangedThree(String newValue) {
+    setState(() {
+      _selectedTimeSlotThree = newValue;
+    });
 
   }
   @override
@@ -123,7 +129,10 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                         height: 8,
                       ),
                       BottomButtons(
-                        image: Images.user_plus, onTap: () {  },
+                        onTap: () {
+
+                        },
+                        image: Images.user_plus,
                       ),
                       SizedBox(height: 16,),
                       Row(
@@ -137,14 +146,20 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           ),
                           Spacer(),
                           BottomButtons(
+                            onTap: () {
+
+                            },
                             isExpanded: true,
                             text: 'Male',
-                            image: Images.male,height: 44,width: 88, onTap: () {  },),
+                            image: Images.male,height: 44,width: 88,),
                           SizedBox(width: 12,),
                           BottomButtons(
+                            onTap: () {
+
+                            },
                             isExpanded: true,
                             text: 'Female',
-                            image: Images.female_icon,height: 44,width: 102, onTap: () {  },),
+                            image: Images.female_icon,height: 44,width: 102,),
                         ],
                       ),
                       SizedBox(height: 16,),
@@ -159,14 +174,20 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           ),
                           Spacer(),
                           BottomButtons(
+                            onTap: () {
+
+                            },
                             isExpanded: true,
                             text: 'English',
-                            image: Images.english_flag,height: 44,width: 102, onTap: () {  },),
+                            image: Images.english_flag,height: 44,width: 102,),
                           SizedBox(width: 12,),
                           BottomButtons(
+                            onTap: () {
+                              
+                            },
                             isExpanded: true,
                             text: 'Malay',
-                            image: Images.english_flag,height: 44,width: 102, onTap: () {  },),
+                            image: Images.english_flag,height: 44,width: 102,),
                         ],
                       ),
                       SizedBox(height: 16,),
@@ -273,14 +294,14 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       SizedBox(height: 16,),
                       Row(
                         children: [
-                        Expanded(
-                          child: CustomContainerAreena3(
-                            hasIcon: true,
-                          text1: 'Price to Pay',
-                          text2: 'RM20 / pax',
-                          text3: '',
-                                                ),
-                        ),
+                          Expanded(
+                            child: CustomContainerAreena3(
+                              hasIcon: true,
+                              text1: 'Price to Pay',
+                              text2: 'RM20 / pax',
+                              text3: '',
+                            ),
+                          ),
                           SizedBox(width: 16,),
                           Expanded(
                             child: CustomContainerAreena3(
@@ -320,7 +341,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       borderColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () {
-                        Get.to(PaymentScreen());
+                        controller.openBottomSheet(context);
                       },
                     ),
                   ),

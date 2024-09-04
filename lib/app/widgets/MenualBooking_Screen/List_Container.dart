@@ -18,11 +18,14 @@ class ListContainer extends StatefulWidget {
       this.isBottomSheet = false,
       this.onTap,
         this.index=0,
-      this.selectedProperty = false});
+      this.selectedProperty = false,
+        this.isSuccessFull = false,
+      });
 
   final bool isOutdoor;
   final bool isFriendlySession;
   final bool isBottomSheet;
+  final bool isSuccessFull;
   final bool showButton;
   final bool selectedProperty;
   final VoidCallback? onTap;
@@ -402,6 +405,7 @@ class _ListContainerState extends State<ListContainer> {
                               : Row(
                                   children: [
                                     SvgPicture.asset(
+                                      widget.isSuccessFull ? Images.areena:
                                       !widget.isBottomSheet
                                           ? Images.location_marker
                                           : Images.card,
@@ -410,15 +414,15 @@ class _ListContainerState extends State<ListContainer> {
                                       width: 16,
                                     ),
                                     SizedBox(
-                                      width: 2,
+                                      width: 4,
                                     ),
                                     TextWidget(
-                                      title: widget.isBottomSheet
+                                      title: widget.isBottomSheet || widget.isSuccessFull
                                           ? "3"
                                           : 'Petaling Jaya',
                                       textAlign: TextAlign.right,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 12,
+                                      fontSize:widget.isBottomSheet || widget.isSuccessFull? 16: 12,
                                       textColor: AppColors.white,
                                     )
                                   ],
