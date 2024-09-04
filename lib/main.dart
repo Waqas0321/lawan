@@ -10,14 +10,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(
-      // MyApp()
-      DevicePreview(
-        enabled: true,
-        builder: (context) => ScreenUtilInit(
-          designSize: Size(375, 812), // Design size for scaling
-          builder: (context, child) => MyApp(),
-        ),
-      ),
+      MyApp()
+      // DevicePreview(
+      //   enabled: true,
+      //   builder: (context) => ScreenUtilInit(
+      //     designSize: Size(375, 812), // Design size for scaling
+      //     builder: (context, child) => MyApp(),
+      //   ),
+      // ),
       );
 }
 
