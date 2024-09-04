@@ -16,11 +16,15 @@ class ShowProfileBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          bottom: Responsive.customHeight(8), left: 10, right: 10),
+        bottom: Responsive.customHeight(8),
+        left: 10,
+        right: 10,
+      ),
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
+            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 7),
             height: Responsive.customHeight(85),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32),
@@ -74,17 +78,23 @@ class ShowProfileBottomSheet extends StatelessWidget {
                             alignment: Alignment.bottomCenter,
                             children: [
                               const CircleAvatar(
-                                backgroundImage: AssetImage(Images.avatar),
+                                backgroundImage: AssetImage(Images.avatar1),
                                 radius: 30,
                               ),
-                              Container(
-                                padding: const EdgeInsets.all(1),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25),
-                                    color: Colors.white),
-                                child: const TextWidget(
-                                  title: "Novice",
-                                  textColor: Colors.black,
+                              Transform.translate(
+                                offset: Offset(0, 13),
+                                child: Container(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(25),
+                                      color: Colors.white,
+                                      border: Border.all(
+                                          color: Color(0xFFDEE1E2), width: 2)),
+                                  child: const TextWidget(
+                                    title: "Novice",
+                                    textColor: Colors.black,
+                                  ),
                                 ),
                               )
                             ],
@@ -280,7 +290,11 @@ class ShowProfileBottomSheet extends StatelessWidget {
           color: Colors.black, borderRadius: BorderRadius.circular(14)),
       child: Column(
         children: [
-          SvgPicture.asset(svgPath),
+          SvgPicture.asset(
+            svgPath,
+            colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            width: 20,
+          ),
           SizedBox(
             height: Responsive.h1,
           ),

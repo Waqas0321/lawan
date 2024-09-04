@@ -51,9 +51,10 @@ class CustomSalesTabBar extends StatelessWidget {
                           : Container(),
                       tabBarItems[index] == "Ongoing"
                           ? Container(
-                              padding: const EdgeInsets.all(4),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(18),
+                                  borderRadius: BorderRadius.circular(200),
                                   color: Colors.transparent,
                                   border: Border.all(
                                       color:

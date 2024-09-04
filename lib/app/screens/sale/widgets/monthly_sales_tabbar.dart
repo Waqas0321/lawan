@@ -13,12 +13,11 @@ class MonthlySalesTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 7,
+      flex: 10,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25), color: Colors.black),
-        padding: EdgeInsets.symmetric(
-            horizontal: Responsive.h1, vertical: Responsive.h1),
+            borderRadius: BorderRadius.circular(200), color: Colors.black),
+        padding: EdgeInsets.all(6),
         child: Obx(() => Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(3, (index) {
@@ -31,10 +30,10 @@ class MonthlySalesTabBar extends StatelessWidget {
                     controller.updateSelectedMonth(index);
                   },
                   child: Container(
-                    padding: EdgeInsets.all(12),
+                    padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
                     decoration: BoxDecoration(
                       color: !equalIndex ? Colors.transparent : Colors.white,
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(200),
                     ),
                     child: TextWidget(
                       title: monthName,

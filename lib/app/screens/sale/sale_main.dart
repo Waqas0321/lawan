@@ -47,12 +47,16 @@ class SaleMain extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MonthlySalesTabBar(controller: controller),
+                  SizedBox(
+                    width: Get.width * 0.009,
+                  ),
                   Expanded(
                     flex: 2,
                     child: CircularContainer(
                       bgColor: Colors.black,
                       borderColor: Colors.black,
                       svgPath: Images.upload,
+                      svgColor: Colors.white,
                       onTap: () {},
                     ),
                   ),

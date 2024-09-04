@@ -29,11 +29,12 @@ class FriendlyBottomNav extends StatelessWidget {
                       children: [
                         Obx(() {
                           if (controller.selectedItem.value == "Friendly") {
-                            return const FriendlySession();
+                            return const ShareInviteSession();
+                            // return const FriendlySession();
                           } else if (controller.selectedItem.value ==
                               "Ranked") {
                             return const Center(
-                              child:FriendlySession(),
+                              child: FriendlySession(),
                             );
                           } else if (controller.selectedItem.value == "Club") {
                             return const Center(

@@ -24,6 +24,7 @@ class CustomChart extends StatelessWidget {
               children: [
                 Expanded(
                     child: Container(
+                  padding: EdgeInsets.all(8),
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
                       side:
@@ -31,58 +32,55 @@ class CustomChart extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const TextWidget(
-                          title: "Today",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          textAlign: TextAlign.start,
-                          textColor: Color(0xFF545F71),
-                        ),
-                        const TextWidget(
-                          title: "RM120",
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          textAlign: TextAlign.start,
-                        ),
-                        SizedBox(
-                          height: Get.height * 0.01,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 4, horizontal: 8),
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      width: 1, color: Color(0xFFDEE1E2)),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              child: const TextWidget(
-                                title: "- 5%",
-                                textColor: Color(0xFFF05B5B),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const TextWidget(
+                        title: "Today",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        textAlign: TextAlign.start,
+                        textColor: Color(0xFF545F71),
+                      ),
+                      const TextWidget(
+                        title: "RM120",
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        textAlign: TextAlign.start,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.01,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 4, horizontal: 8),
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: const BorderSide(
+                                    width: 1, color: Color(0xFFDEE1E2)),
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            SizedBox(
-                              width: Get.width * 0.02,
+                            child: const TextWidget(
+                              title: "- 5%",
+                              textColor: Color(0xFFF05B5B),
                             ),
-                            const TextWidget(
-                              title: "vs yesterday",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              textAlign: TextAlign.start,
-                              textColor: Color(0xFF545F71),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
+                          SizedBox(
+                            width: Get.width * 0.01,
+                          ),
+                          const TextWidget(
+                            title: "vs yesterday",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            textAlign: TextAlign.start,
+                            textColor: Color(0xFF545F71),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 )),
                 SizedBox(
@@ -140,7 +138,7 @@ class CustomChart extends StatelessWidget {
                             ),
                             const TextWidget(
                               title: "vs last week",
-                              fontSize: 12,
+                              fontSize: 14,
                               fontWeight: FontWeight.w500,
                               textAlign: TextAlign.start,
                               textColor: Color(0xFF545F71),
@@ -162,12 +160,15 @@ class CustomChart extends StatelessWidget {
                 List<double> previousData = controller.getPreviousData();
                 log("Previous data is $previousData");
                 List<String> labels = _getLabels();
-                double barWidth = (Get.width * 1) / (currentData.length * 2);
+                double barWidth = (Get.width * 1) / (currentData.length * 1.5);
 
                 return SizedBox(
-                  height: Responsive.customHeight(36),
+                  height: Responsive.customHeight(38),
                   child: Column(
                     children: [
+                      SizedBox(
+                        height: Get.height * 0.01,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -179,12 +180,12 @@ class CustomChart extends StatelessWidget {
                             ),
                             label: "Current",
                           ),
-                          SizedBox(width: Get.width * 0.02),
+                          SizedBox(width: Responsive.h3),
                           _buildLegend(
                             color: const Color(0xFFACB3C0),
                             label: "Previous",
                           ),
-                          SizedBox(width: Get.width * 0.02),
+                          SizedBox(width: Responsive.h3),
                           _buildLegend(
                             color: Colors.black,
                             label: "Selected",
@@ -192,7 +193,7 @@ class CustomChart extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: Get.height * 0.02,
+                        height: Get.height * 0.03,
                       ),
                       SizedBox(
                         height: Responsive.customHeight(14),
@@ -223,7 +224,7 @@ class CustomChart extends StatelessWidget {
                                                   Color(0xFF44D8BE)
                                                 ],
                                               ),
-                                    borderRadius: BorderRadius.circular(24),
+                                    borderRadius: BorderRadius.circular(400),
                                   ),
                                 ],
                               );
@@ -296,7 +297,7 @@ class CustomChart extends StatelessWidget {
                                     fromY: maxHeight,
                                     width: barWidth,
                                     color: const Color(0xFFACB3C0),
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular(400),
                                   ),
                                 ],
                               );

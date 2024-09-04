@@ -11,12 +11,14 @@ class CircularContainer extends StatelessWidget {
   final double size;
   final VoidCallback onTap;
   final double padding;
+  final Color? svgColor;
   const CircularContainer({
     super.key,
     required this.svgPath,
     this.borderColor = Colors.white,
     this.borderWidth = 2.0,
     this.size = 100.0,
+    this.svgColor,
     required this.onTap,
     this.bgColor,
     this.padding = 18.0,
@@ -41,7 +43,11 @@ class CircularContainer extends StatelessWidget {
           child: ClipOval(
             child: SvgPicture.asset(
               svgPath,
-              fit: BoxFit.cover, // Fit the SVG image
+              colorFilter: svgColor != null
+                  ? ColorFilter.mode(svgColor!, BlendMode.srcIn)
+                  : null, // Apply the color filter only if svgColor is not null
+              fit: BoxFit
+                  .contain, // Choose the appropriate fit option for your use case
             ),
           ),
         ),

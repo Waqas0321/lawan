@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/images.dart';
 import '../../../utils/responsive_utils.dart';
@@ -33,7 +34,7 @@ class ProfileCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(35),
         color: backgroundColor,
         border:
             Border.all(color: showBorder ? borderColor : Colors.transparent),
@@ -42,7 +43,7 @@ class ProfileCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Leading Avatar
-          const CircleAvatar(
+          CircleAvatar(
             backgroundImage: AssetImage(Images.avatar),
             radius: 30,
           ),

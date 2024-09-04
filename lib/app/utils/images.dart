@@ -1,6 +1,8 @@
 class Images {
   static const String mainImage = "assets/Images";
   static const String avatar = "$mainImage/Avatar.png";
+  static const String avatar1 = "$mainImage/Avatar1.png";
+  static const String avatarSvg = "$mainImage/Avatar.svg";
   static const String avatar2 = "$mainImage/Avatar2.png";
   static const String avatar3 = "$mainImage/Avatar3.png";
   static const String frame = "$mainImage/frame.png";

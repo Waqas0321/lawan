@@ -9,8 +9,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(
-      MyApp()
+  runApp(MyApp()
       // DevicePreview(
       //   enabled: true,
       //   builder: (context) => ScreenUtilInit(
@@ -32,6 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: FriendlyBottomNav(),
+      // home: HomeScreen(),
     );
   }
 }
