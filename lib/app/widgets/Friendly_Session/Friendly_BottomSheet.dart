@@ -2,20 +2,28 @@ import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:lawan/app/controller/Friendly_Session/session_created_Controller.dart';
+import 'package:lawan/app/controller/Friendly_Session/setting_controller.dart';
+import 'package:lawan/app/utils/images.dart';
+import 'package:lawan/app/widgets/Areena/TimeSlotRow.dart';
+import 'package:lawan/app/widgets/Friendly_Session/session_created_BottomSheet.dart';
 import 'package:lawan/app/widgets/Friendly_Session/smallGreenContainer.dart';
+import 'package:lawan/app/widgets/MenualBooking_Screen/search_TextField.dart';
+import 'package:lawan/app/widgets/Session_Screen/Bottom_Buttons.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
-import '../../utils/images.dart';
+import '../../utils/text.dart';
+import '../Areena/EditAlertBox.dart';
+import '../Areena/TimeSlotAreena.dart';
+import '../Areena/areenaButton.dart';
+import '../Areena/custom_container_Add_Areena3.dart';
+import '../Areena/custom_header_count.dart';
+import '../MenualBooking_Screen/FilterBoxButtonsRow.dart';
 import '../MenualBooking_Screen/List_Container.dart';
-import '../Session_Screen/Bottom_Buttons.dart';
 import '../Session_Screen/MenuButton.dart';
 import '../Session_Screen/timeZone_containers.dart';
 
-class SessionCreated extends StatelessWidget {
-  SessionCreated({super.key});
-
-  SessionCreatedController controller = Get.put(SessionCreatedController());
+class FriendlyBottomSheet extends StatelessWidget {
+  const FriendlyBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +33,13 @@ class SessionCreated extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.only(bottom: 16),
           width: 377,
-          height: 730,
+          height: 700,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width - 16,
-                height: 640,
+                height: 605,
                 padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
                 decoration: const ShapeDecoration(
                   color: Color(0xB2F2F3F2),
@@ -45,23 +53,33 @@ class SessionCreated extends StatelessWidget {
                 child: Stack(children: [
                   Column(
                     children: [
-                      BottomButtons(
-                        onTap: () {
+                      Row(
+                        children: [
+                          Image.asset(Images.ball,height: 24,width: 24,),
+                          SizedBox(width: 8,),
+                          TextWidget(
+                              title: "Freindly",
+                            textAlign: TextAlign.center,
+                            textColor: AppColors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
 
-                        },
-                          iconColor: AppColors.white,
-                          backgroundColor: AppColors.deepGreenColor,
-                          image: Images.check),
-                      SizedBox(
-                        height: 8,
+                          ),
+                          Spacer(),
+                          GestureDetector(
+                              onTap: () {
+                                Get.back();
+                              },
+                              child:  BottomButtons(
+                                onTap: () {
+
+                                },
+                                height: 42,
+                                width: 42,
+                                image: Images.x,
+                              )),
+                        ],
                       ),
-                      const Center(
-                          child: TextWidget(
-                        title: 'Session Succesfully Created',
-                        textColor: AppColors.textSecondColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      )),
                       const SizedBox(height: 16),
                       ListContainer(
                         isSuccessFull: true,
@@ -147,11 +165,11 @@ class SessionCreated extends StatelessWidget {
                                           side: const BorderSide(
                                             width: 1,
                                             strokeAlign:
-                                                BorderSide.strokeAlignOutside,
+                                            BorderSide.strokeAlignOutside,
                                             color: Color(0xFFDEE1E2),
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(100),
+                                          BorderRadius.circular(100),
                                         ),
                                       ),
                                       child: const Center(
@@ -253,21 +271,7 @@ class SessionCreated extends StatelessWidget {
                       const SizedBox(height: 16),
                     ],
                   ),
-                  Positioned(
-                      top: 13,
-                      right: 0,
-                      child: GestureDetector(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child:  BottomButtons(
-                            onTap: () {
 
-                            },
-                            height: 42,
-                            width: 42,
-                            image: Images.x,
-                          )))
                 ]),
               ),
               Container(
@@ -312,9 +316,9 @@ class SessionCreated extends StatelessWidget {
                     ),
                     Expanded(
                         child: BottomButtons(
-                          onTap: () {
-                            controller.openBottomSheet(context);
-                          },
+                            onTap: () {
+
+                            },
                             isExpanded: true, image: Images.users_group_outline)),
                   ],
                 ),
@@ -326,5 +330,3 @@ class SessionCreated extends StatelessWidget {
     );
   }
 }
-
-
