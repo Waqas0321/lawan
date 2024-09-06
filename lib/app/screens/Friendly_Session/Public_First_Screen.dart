@@ -120,7 +120,9 @@ class PublicFirstScreen extends StatelessWidget {
                         textColor: Color(0xFFDEE1E2),
                       ),
                       SizedBox(height: 28),
-                      CustomShadowButton(),
+                      CustomShadowButton(onTap: () {
+
+                      },),
                     ],
                   )
                 ]),

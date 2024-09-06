@@ -86,6 +86,9 @@ class ShareInviteSession extends StatelessWidget {
                   width: 20,
                 ),
                 CustomShadowButton(
+                  onTap: () {
+
+                  },
                   withCounterBox: true,
                   width: 210,
                 )

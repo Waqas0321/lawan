@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/screens/Friendly_Session/Public_Third_Screen.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/filterBox.dart';
-
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
 import '../../utils/responsive_utils.dart';
@@ -75,6 +73,9 @@ class PrivateScreen extends StatelessWidget {
                       width: 20,
                     ),
                     CustomShadowButton(
+                      onTap: () {
+                        openBottomSheet(context);
+                      },
                       withCounterBox: true,
                       width: 210,
                     )
