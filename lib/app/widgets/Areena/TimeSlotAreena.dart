@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../utils/images.dart';
 
@@ -9,12 +11,14 @@ class TimeSlot extends StatelessWidget {
   final bool isImage;
   final ValueChanged<String> onChanged;
   final bool isClock;
+  final bool forFilterBox;
   TimeSlot({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged,
     required this.isImage,
     this.isClock = true,
+    this.forFilterBox = false,
   });
 
   @override
@@ -23,11 +27,14 @@ class TimeSlot extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.370,
+        width: forFilterBox? Get.width * 0.775 :MediaQuery.of(context).size.width * 0.370,
         height: 45,
         decoration: ShapeDecoration(
           color: Colors.white,
-          shape: RoundedRectangleBorder(
+          shape: forFilterBox? RoundedRectangleBorder(
+            side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            borderRadius: BorderRadius.circular(80),
+          ):RoundedRectangleBorder(
             // side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
           ),

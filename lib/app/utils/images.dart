@@ -92,4 +92,6 @@ class Images {
   static const String english_flag = "$mainImage/english_flag.svg";
   static const String tag = "$mainImage/tag.svg";
   static const String check = "$mainImage/check.svg";
+  static const String UAEFlag = "$mainImage/united kingdom.svg";
+  static const String malaysia = "$mainImage/malaysia.svg";
 }

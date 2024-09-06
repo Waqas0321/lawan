@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/screens/Friendly_Session/Public_Third_Screen.dart';
+import 'package:lawan/app/widgets/MenualBooking_Screen/filterBox.dart';
 
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
@@ -44,7 +45,7 @@ class PrivateScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        openBottomSheet(context);
+                        Get.dialog(FilterBox(isFriendlySession: true,));
                       },
                       child: Container(
                         decoration: BoxDecoration(
