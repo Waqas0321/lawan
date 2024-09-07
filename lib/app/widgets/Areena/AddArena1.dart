@@ -79,7 +79,7 @@ class _AddAreena1State extends State<AddAreena1> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
+                margin: EdgeInsets.only(left: 10, right: 10, bottom: 25),
                 child: acrylicAny(
                   blurlevel: 6,
                   child: Container(
@@ -139,7 +139,7 @@ class _AddAreena1State extends State<AddAreena1> {
                               ),
                             ),
                             SizedBox(
-                              height: 0.01,
+                              height: 3,
                             ),
                             Container(
                               width: Get.width * 0.45,

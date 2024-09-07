@@ -42,7 +42,7 @@ class _SessionscreenState extends State<Sessionscreen> {
                         child: Row(
                           children: [
                             Text(
-                              '23 Jun',
+                              '23 Sep',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 16,
@@ -55,7 +55,7 @@ class _SessionscreenState extends State<Sessionscreen> {
                             Text(
                               'Sun, Today',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Color(0xFF545F71),
                                 fontSize: 14,
                                 fontFamily: 'Lufga',
                                 fontWeight: FontWeight.w400,
@@ -69,9 +69,9 @@ class _SessionscreenState extends State<Sessionscreen> {
                       SizedBox(
                         height: 21,
                         child: Text(
-                          'No Sessions',
+                          'No Session',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xFF545F71),
                             fontSize: 12,
                             fontFamily: 'Lufga',
                             fontWeight: FontWeight.w400,

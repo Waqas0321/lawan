@@ -84,7 +84,7 @@ class ScreenBody extends StatelessWidget {
             children: [
               IntrinsicHeight(
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.031,
+                  height: MediaQuery.of(context).size.height * 0.038,
                 ),
               ),
               Text.rich(

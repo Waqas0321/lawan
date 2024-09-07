@@ -20,7 +20,7 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 4,
+      blurlevel: 8,
       child: Container(
         margin: EdgeInsets.only(bottom: 16),
         width: 377,
@@ -187,7 +187,7 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
                                       width: 38,
                                       height: 16,
                                       padding:
-                                      const EdgeInsets.symmetric(horizontal: 6),
+                                      const EdgeInsets.symmetric(horizontal: 2),
                                       clipBehavior: Clip.antiAlias,
                                       decoration: ShapeDecoration(
                                         shape: RoundedRectangleBorder(

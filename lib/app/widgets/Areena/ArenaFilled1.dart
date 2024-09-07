@@ -99,9 +99,8 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
           ),
           child: Stack(alignment: AlignmentDirectional.topCenter, children: [
             Obx(() {
-              if (controller.selectedItem.value == "Arena")
-              {
-                return    SafeArea(
+              if (controller.selectedItem.value == "Arena") {
+                return SafeArea(
                   bottom: false,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16, right: 16),
@@ -175,6 +174,18 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                               ),
                               // SvgPicture.asset(Images.sales),
                               // Text("data"),
+                              InkWell(
+                                onTap: () {
+                                  showCustomAlertDialog(
+                                      context,
+                                      "Arena Added Successfully!",
+                                      "You can now start earning from this arena",
+                                      true,
+                                      "Add Another Court",
+                                      "Done");
+                                },
+                                child: Text("bottomCheck"),
+                              ),
                               const SizedBox(
                                 width: 361,
                                 child: Text(
@@ -201,22 +212,22 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                                               "Edit Arena Name",
                                               'MBPJ Sports Complex',
                                               isConfirmed: false,
-                                                  () {
+                                              () {
                                                 Get.back();
                                                 showCustomEditAlertDialog(
                                                     "Edit Arena Name",
                                                     'MBPJ Sports Complex',
                                                     isConfirmed: true,
-                                                        () {},
+                                                    () {},
                                                     titleText: Apptext
                                                         .Proceed_with_applying_the_changes,
                                                     updateButtonText:
-                                                    Apptext.Delete,
+                                                        Apptext.Delete,
                                                     updateButtonBorderColor:
-                                                    AppColors.red,
+                                                        AppColors.red,
                                                     updateButtonColor: null,
                                                     updateButtonTextColor:
-                                                    AppColors.red);
+                                                        AppColors.red);
                                               },
                                             );
                                           },
@@ -371,7 +382,8 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                           Column(
                             children: [
                               Container(
-                                height: MediaQuery.of(context).size.height / 1.7,
+                                height:
+                                    MediaQuery.of(context).size.height / 1.7,
                                 // color: const Color(0xFFF2F3F2),
                                 child: DefaultTabController(
                                     length: 3,
@@ -399,26 +411,22 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                     ),
                   ),
                 );
-              } else if (controller.selectedItem.value ==
-                  "Sales") {
+              } else if (controller.selectedItem.value == "Sales") {
                 return SaleMain();
               } else {
-                return Sessionscreen();  // Return an empty widget if none of the conditions match
+                return Sessionscreen(); // Return an empty widget if none of the conditions match
               }
             }),
-
-
             Obx(
-                  () => CustomBottomNavigation(
+              () => CustomBottomNavigation(
                 iconSize: 20,
-                spacing:6,
-                widthFactor:0.52,
+                spacing: 6,
+                widthFactor: 0.52,
                 textStyle: const TextStyle(
                   fontSize: 15,
                   fontFamily: 'Lufga',
                   fontWeight: FontWeight.w400,
                   height: 1,
-
                   letterSpacing: -0.24,
                 ),
                 selectedItem: controller.selectedItem.value,
@@ -430,9 +438,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
               ),
             )
           ])),
-
     );
-
   }
 
   void showCustomAlertDialog(
@@ -476,7 +482,7 @@ class _AreenaFilled1State extends State<AreenaFilled1> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                     Text(
                       text1,
                       style: const TextStyle(

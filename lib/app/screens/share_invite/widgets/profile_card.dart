@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
 import '../../../utils/images.dart';
 import '../../../utils/responsive_utils.dart';
 import '../../../widgets/container/circular_container.dart';
@@ -41,7 +43,7 @@ class ProfileCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Leading Avatar
-          const CircleAvatar(
+          CircleAvatar(
             backgroundImage: AssetImage(Images.avatar),
             radius: 30,
           ),
@@ -86,14 +88,14 @@ class ProfileCard extends StatelessWidget {
                   svgPath: firstImagePath,
                   onTap: () {},
                   borderColor:
-                      const Color(0xFFDEE1E2), // Customizable icon border color
+                      Color(0xFFDEE1E2), // Customizable icon border color
                 ),
                 SizedBox(width: Responsive.h1), // Space between icons
                 CircularContainer(
                   padding: 10,
                   svgPath: secondImagePath,
                   borderColor:
-                      const Color(0xFFDEE1E2), // Customizable icon border color
+                      Color(0xFFDEE1E2), // Customizable icon border color
                   onTap: () {},
                 ),
               ],

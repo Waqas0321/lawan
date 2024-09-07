@@ -19,100 +19,94 @@ class HomeScreen extends StatelessWidget {
       bottom:false,
       child: Scaffold(
           backgroundColor: const Color(0xFFF2F3F2),
-          body: ColorFiltered(
-            colorFilter: ColorFilter.mode(
-              Colors.transparent.withOpacity(0.001), // Simulate brightness
-              BlendMode.colorBurn,
+          body: Container(
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: const Alignment(0.0, 0.8), // Start near the bottom
+                end: const Alignment(0.0, 1), // End at the bottom edge
+                colors: [
+                  Colors.black.withOpacity(0.0), // Fully transparent color
+                  Colors.black.withOpacity(0.4), // Slightly visible gradient
+                ],
+              ),
             ),
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: const Alignment(0.0, 0.8), // Start near the bottom
-                  end: const Alignment(0.0, 1), // End at the bottom edge
-                  colors: [
-                    Colors.black.withOpacity(0.0), // Fully transparent color
-                    Colors.black.withOpacity(0.4), // Slightly visible gradient
-                  ],
+            child:
+                Stack(alignment: AlignmentDirectional.topCenter, children: [
+              SingleChildScrollView(
+                child: SafeArea(
+                  child: acrylicAny(
+                    blurlevel: 20,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Obx(() {
+                          if (controller.selectedItem.value == "Arena")
+                          {
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                  top: MediaQuery.of(context).size.width *
+                                      0.02,
+                                  left: MediaQuery.of(context).size.width *
+                                      0.03,
+                                  right: MediaQuery.of(context).size.width *
+                                      0.03),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ScreenHeader(),
+                                  SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.01),
+                                  ScreenBody(),
+                                ],
+                              ),
+                            );
+                          } else if (controller.selectedItem.value ==
+                              "Sales") {
+                            return const SaleMain();
+                          } else {
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                  top: MediaQuery.of(context).size.width *
+                                      0.02,
+                                  left: MediaQuery.of(context).size.width *
+                                      0.03,
+                                  right: MediaQuery.of(context).size.width *
+                                      0.03),
+                              child: const Sessionscreen(),
+                            );
+                          }
+                        }),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-              child:
-                  Stack(alignment: AlignmentDirectional.topCenter, children: [
-                SingleChildScrollView(
-                  child: SafeArea(
-                    child: acrylicAny(
-                      blurlevel: 20,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Obx(() {
-                            if (controller.selectedItem.value == "Arena")
-                            {
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.width *
-                                        0.02,
-                                    left: MediaQuery.of(context).size.width *
-                                        0.03,
-                                    right: MediaQuery.of(context).size.width *
-                                        0.03),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    ScreenHeader(),
-                                    SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.01),
-                                    ScreenBody(),
-                                  ],
-                                ),
-                              );
-                            } else if (controller.selectedItem.value ==
-                                "Sales") {
-                              return const SaleMain();
-                            } else {
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.width *
-                                        0.02,
-                                    left: MediaQuery.of(context).size.width *
-                                        0.03,
-                                    right: MediaQuery.of(context).size.width *
-                                        0.03),
-                                child: const Sessionscreen(),
-                              );
-                            }
-                          }),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Obx(
-                  () => CustomBottomNavigation(
-                    iconSize: 20,
-                    spacing:6,
-                    widthFactor:0.52,
-                    textStyle: const TextStyle(
-                      fontSize: 15,
-                      fontFamily: 'Lufga',
-                      fontWeight: FontWeight.w400,
-                      height: 1,
+              Obx(
+                () => CustomBottomNavigation(
+                  iconSize: 20,
+                  spacing:6,
+                  widthFactor:0.52,
+                  textStyle: const TextStyle(
+                    fontSize: 15,
+                    fontFamily: 'Lufga',
+                    fontWeight: FontWeight.w400,
+                    height: 1,
 
-                      letterSpacing: -0.24,
-                    ),
-                    selectedItem: controller.selectedItem.value,
-                    imagePath: controller.imagePaths,
-                    title: controller.titles,
-                    onItemSelected: (newValue) {
-                      controller.changeSelection(newValue);
-                    },
+                    letterSpacing: -0.24,
                   ),
-                )
-              ]),
-            ),
+                  selectedItem: controller.selectedItem.value,
+                  imagePath: controller.imagePaths,
+                  title: controller.titles,
+                  onItemSelected: (newValue) {
+                    controller.changeSelection(newValue);
+                  },
+                ),
+              )
+            ]),
           )),
     );
     // return Scaffold(

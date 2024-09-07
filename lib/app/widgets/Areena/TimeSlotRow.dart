@@ -32,7 +32,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: Text(
               leftText,
               style: TextStyle(
-                color: isSelected ? AppColors.dark_grey : AppColors.mid_grey,
+                color: isSelected ? AppColors.dark_grey : Color(0xFF8A96A8),
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,

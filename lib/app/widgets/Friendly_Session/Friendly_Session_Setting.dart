@@ -178,18 +178,16 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
 
                             },
                             isExpanded: true,
-                            imageWithoutColor: true,
                             text: 'English',
-                            image: Images.UAEFlag,height: 44,width: 102,),
+                            image: Images.english_flag,height: 44,width: 102,),
                           SizedBox(width: 12,),
                           BottomButtons(
                             onTap: () {
-
+                              
                             },
-                            imageWithoutColor: true,
                             isExpanded: true,
                             text: 'Malay',
-                            image: Images.malaysia,height: 44,width: 102,),
+                            image: Images.english_flag,height: 44,width: 102,),
                         ],
                       ),
                       SizedBox(height: 16,),

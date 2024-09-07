@@ -78,7 +78,7 @@ class SalesController extends GetxController {
   }
 
   var tabBarIndex = 0.obs;
-  List<String> tabBarItem = ["All", "Ongoing", "Completed"];
+  List<String> tabBarItem = ["All        ", "Ongoing", "Completed"];
   // Method to change the selected index
   void selectTabBar(int index) {
     tabBarIndex.value = index;

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/Friendly_Session/friendly_session_controller.dart';
-import 'package:lawan/app/screens/Friendly_Session/Public_First_Screen.dart';
 import 'package:lawan/app/screens/Friendly_Session/private_Screen.dart';
 import 'package:lawan/app/screens/Friendly_Session/public_screen.dart';
 import 'package:lawan/app/widgets/Areena/custom_tabbar.dart';
@@ -56,7 +55,7 @@ class _FriendlySessionState extends State<FriendlySession> {
                       ),
                       Expanded(
                           child: TabBarView(
-                              children: [ PublicFirstScreen(), PrivateScreen()]))
+                              children: [PublicScreen(), PrivateScreen()]))
                     ],
                   )),
             )

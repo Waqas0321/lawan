@@ -52,7 +52,7 @@ class _AddAreena2State extends State<AddAreena2> {
         blurlevel: 5000000000.00,
         child: Container(
           // width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
+          margin: EdgeInsets.only(left: 10, right: 10, bottom: 25),
           height: MediaQuery.of(context).size.height * 0.78,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(

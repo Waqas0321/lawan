@@ -11,8 +11,7 @@ class BottomButtons extends StatelessWidget {
     this.text  ='Line-Up',
     required this.onTap,
     this.backgroundColor = Colors.transparent,
-    this.iconColor = Colors.black45,
-    this.imageWithoutColor = false
+    this.iconColor = Colors.black45
   });
   final String image;
   final String text;
@@ -22,7 +21,6 @@ class BottomButtons extends StatelessWidget {
   final VoidCallback onTap;
   final Color backgroundColor;
   final Color iconColor;
-  final bool imageWithoutColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -44,11 +42,6 @@ class BottomButtons extends StatelessWidget {
             child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            imageWithoutColor? SvgPicture.asset(
-              image,
-              height: 16,
-              width: 16,
-            ):
             SvgPicture.asset(
               image,
               color: isExpanded ? Color(0xffACB4C0) : iconColor,

@@ -1,6 +1,8 @@
 import 'package:acrylic_any/acrylic_any.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Friendly_Session/Friendly_Session_Arena.dart';
 
 import '../../utils/colors.dart';
@@ -17,8 +19,7 @@ class FriendlySessionSelectDate extends StatefulWidget {
   const FriendlySessionSelectDate({super.key});
 
   @override
-  State<FriendlySessionSelectDate> createState() =>
-      _FriendlySessionSelectDateState();
+  State<FriendlySessionSelectDate> createState() => _FriendlySessionSelectDateState();
 }
 
 class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
@@ -42,7 +43,7 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
       // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        return const FriendlySessionArena();
+        return FriendlySessionArena();
       },
     );
   }
@@ -55,7 +56,6 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
       _selectedTimeSlot = newValue;
     });
   }
-
   void _onButtonPressHR(String text) {
     setState(() {
       switch (text) {
@@ -106,15 +106,18 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
       blurlevel: 3,
       child: Container(
           height: Get.height * 0.91,
-          width: MediaQuery.of(context).size.width - 16,
-          margin: const EdgeInsets.only(bottom: 8),
-          padding: const EdgeInsets.all(16),
+          width: MediaQuery
+              .of(context)
+              .size
+              .width - 16,
+          margin: EdgeInsets.only(bottom: 8),
+          padding: EdgeInsets.all(16),
           decoration: ShapeDecoration(
               color: AppColors.alertcolor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(32),
               ),
-              shadows: const [
+              shadows: [
                 BoxShadow(
                   color: AppColors.shadowColor,
                   blurRadius: 0,
@@ -137,23 +140,24 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                       text4: 'Pay',
                       hasFourth: true,
                     ),
-                    const SizedBox(height: 28),
-                    const TextWidget(
+                    SizedBox(height: 28),
+                    TextWidget(
                       title: 'Select Date',
                       textColor: AppColors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
+
                     ),
-                    const TextWidget(
+                    TextWidget(
                       title: 'Choose the time and slot',
                       textColor: AppColors.textSecondColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
+
                     ),
-                    const SizedBox(height: 8),
-                    const UnExpandableCustomCalender(
-                      isSecondDessign: true,
-                    ),
+                    SizedBox(height: 8),
+                    UnExpandableCustomCalender(
+                      isSecondDessign: true,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -189,7 +193,7 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                             text: '5 hr'),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -201,10 +205,10 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                             isImage: true,
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
-                        const Text(
+                        Text(
                           'to',
                           style: TextStyle(
                             color: Color(0xFF545F71),
@@ -214,7 +218,7 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                             height: 0.11,
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         Expanded(
@@ -227,9 +231,11 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                         ),
                       ],
                     ),
+
+
                   ],
                 ),
-                const SizedBox(height: 32),
+                SizedBox(height: 32),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -238,14 +244,14 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                       child: CustomAreenaButton(
                         text: Apptext.cancel,
                         color: null,
-                        borderColor: const Color(0xFFE9EAF0),
+                        borderColor: Color(0xFFE9EAF0),
                         textColor: AppColors.black,
                         onTap: () {
                           Get.back();
                         },
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 16,
                     ),
                     Expanded(
@@ -264,7 +270,8 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                 ),
               ],
             ),
-          )),
+          )
+      ),
     );
   }
 }

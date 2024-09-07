@@ -54,7 +54,7 @@ class _AddAreena3State extends State<AddAreena3> {
       child: Container(
         // width: MediaQuery.of(context).size.width - 16,
         height: 711,
-        margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
+        margin: EdgeInsets.only(left: 10, right: 10, bottom: 25),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: Color(0xB2F2F3F2),
