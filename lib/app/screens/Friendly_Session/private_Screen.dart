@@ -23,7 +23,7 @@ class PrivateScreen extends StatelessWidget {
       // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        return FriendlySessionSelectDate();
+        return const FriendlySessionSelectDate();
       },
     );
   }
@@ -32,57 +32,55 @@ class PrivateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body: Stack(
-            alignment: Alignment.bottomCenter,
-            children:
-            [
-              PublicThirdScreen(),
-              Positioned(
-                bottom: Responsive.customHeight(21),
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Get.dialog(FilterBox(isFriendlySession: true,));
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.white)),
-                        padding: EdgeInsets.all(10),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              Images.adjustments,
-                              colorFilter:
-                              ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            TextWidget(
-                              title: "Filter",
-                              textColor: Colors.white,
-                            )
-                          ],
+        body: Stack(alignment: Alignment.bottomCenter, children: [
+          const PublicThirdScreen(),
+          Positioned(
+            bottom: Responsive.customHeight(21),
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Get.dialog(const FilterBox(
+                      isFriendlySession: true,
+                    ));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Colors.white)),
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          Images.adjustments,
+                          colorFilter: const ColorFilter.mode(
+                              Colors.white, BlendMode.srcIn),
                         ),
-                      ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const TextWidget(
+                          title: "Filter",
+                          textColor: Colors.white,
+                        )
+                      ],
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    CustomShadowButton(
-                      onTap: () {
-                        openBottomSheet(context);
-                      },
-                      withCounterBox: true,
-                      width: 210,
-                    )
-                  ],
+                  ),
                 ),
-              )
-
-            ]));
+                const SizedBox(
+                  width: 20,
+                ),
+                CustomShadowButton(
+                  onTap: () {
+                    openBottomSheet(context);
+                  },
+                  withCounterBox: true,
+                  width: 210,
+                )
+              ],
+            ),
+          )
+        ]));
   }
 }
