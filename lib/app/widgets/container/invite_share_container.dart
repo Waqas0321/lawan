@@ -38,6 +38,7 @@ class InviteShareGridContainer extends StatelessWidget {
               TextWidget(
                 title: title,
                 textColor: const Color(0xFF545F71),
+                fontSize: 12,
               ),
             ],
           ),
