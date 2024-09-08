@@ -23,7 +23,7 @@ class InviteShareGridContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 30,
-      padding: EdgeInsets.all(7),
+      padding: const EdgeInsets.all(7),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(22),
         border: Border.all(color: Colors.white, width: 0.6),
@@ -37,7 +37,7 @@ class InviteShareGridContainer extends StatelessWidget {
               SizedBox(width: Responsive.h1),
               TextWidget(
                 title: title,
-                textColor: Color(0xFF545F71),
+                textColor: const Color(0xFF545F71),
               ),
             ],
           ),
@@ -45,12 +45,12 @@ class InviteShareGridContainer extends StatelessWidget {
           TextWidget(
             title: subtitle,
             fontSize: 14,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w500,
             textAlign: TextAlign.start,
           ),
           if (showAdditionalText && additionalText != null) ...[
             Container(
-              padding: EdgeInsets.only(left: 13, right: 13, top: 3),
+              padding: const EdgeInsets.only(left: 13, right: 13, top: 3),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.white),
@@ -58,7 +58,7 @@ class InviteShareGridContainer extends StatelessWidget {
               child: TextWidget(
                 title: additionalText!,
                 fontSize: 11,
-                textColor: Color(0xFF545F71),
+                textColor: const Color(0xFF545F71),
               ),
             ),
           ],
