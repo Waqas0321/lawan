@@ -33,54 +33,58 @@ class PrivateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body: Stack(
-            alignment: Alignment.bottomCenter,
-            children:
-            [
-              PublicThirdScreen(),
-              Positioned(
-                bottom: Responsive.customHeight(21),
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        openBottomSheet(context);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.white)),
-                        padding: EdgeInsets.all(10),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              Images.adjustments,
-                              colorFilter:
-                              ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            TextWidget(
-                              title: "Filter",
-                              textColor: Colors.white,
-                            )
-                          ],
-                        ),
+        body: Stack(alignment: Alignment.bottomCenter, children: [
+          PublicThirdScreen(),
+          Positioned(
+            bottom: Responsive.customHeight(17),
+            child: Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    openBottomSheet(context);
+                  },
+                  child:     Container(
+                    width: 90,
+                    height: 44,
+                    padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+                    decoration: ShapeDecoration(
+                      color: Colors.black.withOpacity(0.20000000298023224),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                        borderRadius: BorderRadius.circular(80),
                       ),
                     ),
-                    SizedBox(
-                      width: 20,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          Images.adjustments,
+                          colorFilter:
+                          ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        TextWidget(
+                          title: "Filter",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          textColor: Colors.white,
+                        )
+                      ],
                     ),
-                    CustomShadowButton(
-                      withCounterBox: true,
-                      width: 210,
-                    )
-                  ],
-                ),
-              )
+                )),
 
-            ]));
+                SizedBox(
+                  width: 20,
+                ),
+                CustomShadowButton(
+                  withCounterBox: true,
+                  width: 210,
+                )
+              ],
+            ),
+          )
+        ]));
   }
 }

@@ -28,7 +28,7 @@ class ShareInvitePublicScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return FrindlySessionContainer(
                     onTap: () {
-                      Get.bottomSheet(const FriendlySessionBottomSheet(),
+                      Get.bottomSheet(FriendlySessionBottomSheet(),
                           isScrollControlled: true);
                     },
                   );

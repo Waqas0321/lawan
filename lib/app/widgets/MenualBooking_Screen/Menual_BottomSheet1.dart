@@ -82,14 +82,14 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
           selected4HR = false;
           selected5HR = false;
           break;
-          case "4hr":
+        case "4hr":
           selected1HR = false;
           selected2HR = false;
           selected3HR = false;
           selected4HR = true;
           selected5HR = false;
           break;
-          case "5hr":
+        case "5hr":
           selected1HR = false;
           selected2HR = false;
           selected3HR = false;
@@ -105,11 +105,11 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 3,
+      blurlevel: 10,
       child: Container(
           height: Get.height * 0.9,
           width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(bottom: 8),
+          margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.all(16),
           decoration: ShapeDecoration(
               color: AppColors.alertcolor,
@@ -123,7 +123,6 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
                   offset: Offset(0, -0.50),
                 )
               ]),
-        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,48 +142,47 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
                     textColor: AppColors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-
                   ),
                   TextWidget(
                     title: 'Choose the time and slot',
-                    textColor: AppColors.textSecondColor,
+                    textColor: AppColors.dark_grey,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
-
                   ),
                   SizedBox(height: 8),
                   UnExpandableCustomCalender(
-                    isSecondDessign: true,),
+                    isSecondDessign: true,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       HourContainer(
-                        isSelected: selected1HR,
-                          onPressFun: (){
+                          isSelected: selected1HR,
+                          onPressFun: () {
                             _onButtonPressHR("1hr");
                           },
                           text: '1 hr'),
                       HourContainer(
                           isSelected: selected2HR,
-                          onPressFun: (){
+                          onPressFun: () {
                             _onButtonPressHR("2hr");
                           },
                           text: '2 hr'),
                       HourContainer(
                           isSelected: selected3HR,
-                          onPressFun: (){
+                          onPressFun: () {
                             _onButtonPressHR("3hr");
                           },
                           text: '3 hr'),
                       HourContainer(
                           isSelected: selected4HR,
-                          onPressFun: (){
+                          onPressFun: () {
                             _onButtonPressHR("4hr");
                           },
                           text: '4 hr'),
                       HourContainer(
                           isSelected: selected5HR,
-                          onPressFun: (){
+                          onPressFun: () {
                             _onButtonPressHR("5hr");
                           },
                           text: '5 hr'),
@@ -228,11 +226,9 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
                       ),
                     ],
                   ),
-
-
                 ],
               ),
-              SizedBox(height: 32),
+              Spacer(),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -266,11 +262,7 @@ class _MenualBottomsheet1State extends State<MenualBottomsheet1> {
                 ],
               ),
             ],
-          ),
-        )
-      ),
+          )),
     );
   }
 }
-
-

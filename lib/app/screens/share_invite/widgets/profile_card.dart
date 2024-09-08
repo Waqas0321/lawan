@@ -44,7 +44,7 @@ class ProfileCard extends StatelessWidget {
         children: [
           // Leading Avatar
           CircleAvatar(
-            backgroundImage: AssetImage(Images.avatar),
+            backgroundImage: AssetImage(Images.avatar1),
             radius: 30,
           ),
           const SizedBox(width: 12), // Space between avatar and text
@@ -85,7 +85,7 @@ class ProfileCard extends StatelessWidget {
               children: [
                 CircularContainer(
                   padding: 10,
-                  svgPath: firstImagePath,
+                  svgPath: Images.chat,
                   onTap: () {},
                   borderColor:
                       Color(0xFFDEE1E2), // Customizable icon border color

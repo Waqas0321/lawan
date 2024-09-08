@@ -28,7 +28,7 @@ class MenualBookigTextField extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.58,
       height: 44,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 12),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -45,6 +45,7 @@ class MenualBookigTextField extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         decoration: InputDecoration(
+          contentPadding:EdgeInsets.only(bottom: 10,left:10),
           border: InputBorder.none,
           hintText: hintText,
           hintStyle: TextStyle(

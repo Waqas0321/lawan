@@ -56,15 +56,20 @@ class ShareInviteSession extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: Responsive.customHeight(15),
+            bottom: Responsive.customHeight(17),
             child: Row(
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white)),
-                  padding: EdgeInsets.all(10),
+                  width: 90,
+                  height: 44,
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+                  decoration: ShapeDecoration(
+                    color: Colors.black.withOpacity(0.20000000298023224),
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                      borderRadius: BorderRadius.circular(80),
+                    ),
+                  ),
                   child: Row(
                     children: [
                       SvgPicture.asset(
@@ -77,6 +82,8 @@ class ShareInviteSession extends StatelessWidget {
                       ),
                       TextWidget(
                         title: "Filter",
+                        fontSize:14,
+                        fontWeight:FontWeight.w400,
                         textColor: Colors.white,
                       )
                     ],

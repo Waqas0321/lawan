@@ -21,11 +21,11 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 3,
+      blurlevel: 8,
       child: Container(
           height: Get.height * 0.9,
           width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(bottom: 8),
+          margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.all(16),
           decoration: ShapeDecoration(
               color: AppColors.alertcolor,

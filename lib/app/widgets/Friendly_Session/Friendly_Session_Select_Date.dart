@@ -103,15 +103,15 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 3,
+      blurlevel: 10,
       child: Container(
           height: Get.height * 0.91,
           width: MediaQuery
               .of(context)
               .size
               .width - 16,
-          margin: EdgeInsets.only(bottom: 8),
-          padding: EdgeInsets.all(16),
+          margin: EdgeInsets.only(bottom: 25),
+          padding: EdgeInsets.all(10),
           decoration: ShapeDecoration(
               color: AppColors.alertcolor,
               shape: RoundedRectangleBorder(
@@ -235,7 +235,7 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
 
                   ],
                 ),
-                SizedBox(height: 32),
+                SizedBox(height: 30),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -43,7 +43,7 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
                   thisCount == "1" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "1" ? FontWeight.w500 : FontWeight.w400,
-              padding: 0,
+              padding: 10,
             ),
           ),
           Expanded(
@@ -57,7 +57,7 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
                   thisCount == "2" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "2" ? FontWeight.w500 : FontWeight.w400,
-              padding: 8,
+              padding: 2,
               linecolor: AppColors.grey3,
             ),
           ),
@@ -73,7 +73,7 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
                   thisCount == "3" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "3" ? FontWeight.w500 : FontWeight.w400,
-              padding: 6,
+              padding: 2,
             ),
           ),
           hasFourth?Expanded(
@@ -88,7 +88,7 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
               thisCount == "4" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "4" ? FontWeight.w500 : FontWeight.w400,
-              padding: 6,
+              padding:9,
             ),
           ):SizedBox(width: 0,),
 

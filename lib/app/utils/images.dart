@@ -93,4 +93,5 @@ class Images {
   static const String tag = "$mainImage/tag.svg";
   static const String check = "$mainImage/check.svg";
   static const String eye="$mainImage/eye.svg";
+  static const String exclamation_outline="$mainImage/exclamation-outline.svg";
 }

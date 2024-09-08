@@ -58,7 +58,7 @@ class FriendlyBottomNav extends StatelessWidget {
             ),
             Obx(
               () => CustomBottomNavigation(
-                widthFactor: 0.925,
+                widthFactor: 0.850,
                 iconSize: 20,
                 textStyle: const TextStyle(
                   fontSize: 15,

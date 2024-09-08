@@ -40,15 +40,13 @@ class CircularContainer extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: ClipOval(
-            child: SvgPicture.asset(
-              svgPath,
-              colorFilter: svgColor != null
-                  ? ColorFilter.mode(svgColor!, BlendMode.srcIn)
-                  : null, // Apply the color filter only if svgColor is not null
-              fit: BoxFit
-                  .contain, // Choose the appropriate fit option for your use case
-            ),
+          child: SvgPicture.asset(
+            svgPath,
+            colorFilter: svgColor != null
+                ? ColorFilter.mode(svgColor!, BlendMode.srcIn)
+                : null, // Apply the color filter only if svgColor is not null
+            fit: BoxFit
+                .cover, // Choose the appropriate fit option for your use case
           ),
         ),
       ),

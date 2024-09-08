@@ -59,7 +59,7 @@ class TimeSlot extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       isClock
-                          ? SvgPicture.asset(Images.clock)
+                          ? SvgPicture.asset(Images.exclamation_outline)
                           : const SizedBox(
                               width: 1,
                             ),

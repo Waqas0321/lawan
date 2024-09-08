@@ -2,6 +2,7 @@ import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Session_Screen/timeZone_containers.dart';
 import 'package:lawan/app/widgets/bottom_sheet/share_bottom_sheet.dart';
@@ -317,11 +318,16 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  BottomButtons(image: Images.trash, onTap: () {  },),
+                  BottomButtons(
+                    iconColor:AppColors.dark_grey,
+
+                    image: Images.trash, onTap: () {  },),
                   SizedBox(
                     width: 16,
                   ),
-                  BottomButtons(image: Images.upload, onTap: () {
+                  BottomButtons(
+                    iconColor:AppColors.dark_grey,
+                    image: Images.upload, onTap: () {
                     Get.back();
                     Get.bottomSheet(const ShareBottomSheet(),
                       isScrollControlled: true);
@@ -329,7 +335,10 @@ class _SessionBottomSheetContainerState extends State<SessionBottomSheetContaine
                   SizedBox(
                     width: 16,
                   ),
-                  BottomButtons(image: Images.pencil, onTap: () {  },),
+                  BottomButtons(
+                    iconColor:AppColors.dark_grey,
+
+                    image: Images.pencil, onTap: () {  },),
                   SizedBox(
                     width: 16,
                   ),

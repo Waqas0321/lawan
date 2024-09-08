@@ -24,7 +24,7 @@ class MenuButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32),
           ),
-          offset: Offset(30, -140),
+          offset: Offset(-250, 60),
           icon: SvgPicture.asset(Images.dots_vertical_outline,color:AppColors.dark_grey,),
           clipBehavior: Clip.antiAlias,
           itemBuilder: (context) => [

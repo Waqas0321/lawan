@@ -37,11 +37,11 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 3,
+      blurlevel: 8,
       child: Container(
           height: Get.height * 0.9,
           width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(bottom: 8),
+          margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.only(left: 16,right: 16,top: 16),
           decoration: ShapeDecoration(
               color: AppColors.alertcolor,
@@ -78,7 +78,7 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
                     ),
                     TextWidget(
                       title: 'Set where it should take place',
-                      textColor: AppColors.textSecondColor,
+                      textColor: AppColors.dark_grey,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
 
@@ -108,7 +108,7 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
                                 ],
                               )),
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 40),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -141,7 +141,6 @@ class _MenualBottomsheet2State extends State<MenualBottomsheet2> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 16,)
                       ],
                     ),
 

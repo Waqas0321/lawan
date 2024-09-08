@@ -18,42 +18,15 @@ class CustomShadowButton extends StatelessWidget {
         width: width,
         height: 44,
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0xa614eac5),
-                blurRadius: 18,
-                offset: Offset(0, 5),
-                spreadRadius: -10,
-              ),
-              BoxShadow(
-                color: Color(0x8b2c8170),
-                blurRadius: 32,
-                offset: Offset(0, 25),
-                spreadRadius: -8,
-              ),
-              BoxShadow(
-                color: Color(0x542c8170),
-                blurRadius: 42,
-                offset: Offset(5, 50),
-                spreadRadius: -8,
-              ),
-              BoxShadow(
-                color: Color(0x422c8170),
-                blurRadius: 44,
-                offset: Offset(5, 60),
-                spreadRadius: -8,
-              ),
-            ],
-            gradient: const LinearGradient(
-                begin: Alignment.topCenter,
-                // Start from top center
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xff0C1B22),
-                  Color(0xff44D8BE),
-                ])),
+    decoration: ShapeDecoration(
+    gradient: LinearGradient(
+    begin: Alignment(0.00, -1.00),
+    end: Alignment(0, 1),
+    colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
+    ),
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(80),
+    )),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -92,12 +65,16 @@ class CustomShadowButton extends StatelessWidget {
                           borderRadius: BorderRadius.circular(100),
                         ),
                       ),
-                      child: const TextWidget(
-                        title: '+13',
+                      child:Text(
+                        '+13',
                         textAlign: TextAlign.center,
-                        textColor: Color(0xFF0C1B22),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 11,
+                        style: TextStyle(
+                          color: Color(0xFF0C1B22),
+                          fontSize: 11,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.50,
+                        ),
                       ),
                     )
                   : const SizedBox(

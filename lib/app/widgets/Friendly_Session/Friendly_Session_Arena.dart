@@ -38,11 +38,11 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 3,
+      blurlevel: 10,
       child: Container(
           height: Get.height * 0.9,
           width: MediaQuery.of(context).size.width - 16,
-          margin: EdgeInsets.only(bottom: 8),
+          margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.only(left: 16,right: 16,top: 16),
           decoration: ShapeDecoration(
               color: AppColors.alertcolor,
@@ -91,7 +91,7 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
                       children: [
                         Container(
                           height:
-                          MediaQuery.of(context).size.height / 1.72,
+                          MediaQuery.of(context).size.height / 1.66,
                           // color: const Color(0xFFF2F3F2),
                           child: DefaultTabController(
                               length: 2,
@@ -111,7 +111,7 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
                                 ],
                               )),
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 20),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,7 +144,6 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 16,)
                       ],
                     ),
 

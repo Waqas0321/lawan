@@ -42,7 +42,7 @@ class CustomCard extends StatelessWidget {
                 color: color,
                 shape: RoundedRectangleBorder(
                   side: showborder
-                      ? BorderSide(width: 1, color: AppColors.white)
+                      ? BorderSide(width: 0.7, color: AppColors.white)
                       : BorderSide.none,
                   borderRadius: BorderRadius.circular(80),
                 ),
