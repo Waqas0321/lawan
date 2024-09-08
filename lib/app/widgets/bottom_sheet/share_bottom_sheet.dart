@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/screens/share_invite/widgets/gridview_items.dart';
+import 'package:lawan/app/screens/share_invite/widgets/profile_card.dart';
 import 'package:lawan/app/screens/share_invite/widgets/userinfo_row.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/areenaButton.dart';
@@ -16,15 +17,15 @@ class ShareBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 10, right: 10, bottom: 12),
+      margin: const EdgeInsets.only(left: 10, right: 10, bottom: 12),
       height: MediaQuery.of(context).size.height * 0.78,
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
-        color: Color(0xB2F2F3F2),
+        color: const Color(0xffb9bbb9),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32),
         ),
-        shadows: [
+        shadows: const [
           BoxShadow(
             color: Color(0x19000000),
             offset: Offset(0, -0.50),
@@ -49,17 +50,14 @@ class ShareBottomSheet extends StatelessWidget {
                         ),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(80),
-                          bottomRight: Radius.circular(80),
+                          bottomLeft: Radius.circular(32),
+                          bottomRight: Radius.circular(32),
                         ))),
                     child: const TextWidget(
                       title: "MBPJ Sports Complex",
                       textColor: Colors.white,
                       fontSize: 12,
                     ),
-                  ),
-                  SizedBox(
-                    height: Responsive.h1,
                   ),
                   Transform.translate(
                     offset: Offset(Responsive.customHeight(17), 0),
@@ -72,10 +70,7 @@ class ShareBottomSheet extends StatelessWidget {
                       borderColor: Colors.white,
                     ),
                   ),
-                  SizedBox(
-                    height: Responsive.h1,
-                  ),
-                  SvgPicture.asset(Images.QRCode),
+                  SvgPicture.asset(Images.qrCode1),
                   SizedBox(
                     height: Responsive.h2,
                   ),
@@ -85,7 +80,7 @@ class ShareBottomSheet extends StatelessWidget {
                       SvgPicture.asset(
                         Images.card,
                         colorFilter: const ColorFilter.mode(
-                            Colors.black, BlendMode.srcIn),
+                            Color.fromARGB(84, 95, 113, 1), BlendMode.srcIn),
                       ),
                       SizedBox(
                         width: Responsive.h1,
@@ -93,17 +88,25 @@ class ShareBottomSheet extends StatelessWidget {
                       const TextWidget(
                         title: "3",
                         fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ],
                   ),
                   SizedBox(
                     height: Responsive.h2,
                   ),
+                  ProfileCard(
+                    showIcons: false,
+                    borderColor: Color(0xFF545F71),
+                  ),
+                  SizedBox(
+                    height: Responsive.h1,
+                  ),
                   const UserinfoRow(),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  GridviewItems(),
+                  const GridviewItems(),
                   SizedBox(
                     height: Responsive.h2,
                   ),
@@ -112,7 +115,7 @@ class ShareBottomSheet extends StatelessWidget {
             ),
             // Spacer(),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               color: Colors.white,
               child: Column(
                 children: [
@@ -134,7 +137,7 @@ class ShareBottomSheet extends StatelessWidget {
                       Expanded(
                         flex: 2,
                         child: CircularContainer(
-                            borderColor: Color(0xFFDEE1E2),
+                            borderColor: const Color(0xFFDEE1E2),
                             svgPath: Images.chevron_left,
                             onTap: () {
                               Get.back();
@@ -152,6 +155,7 @@ class ShareBottomSheet extends StatelessWidget {
                             borderColor: Colors.transparent,
                             textColor: Colors.white,
                             imagePath: Images.chat,
+                            imageColor: Colors.white,
                             onTap: () {}),
                       )
                     ],
@@ -174,7 +178,7 @@ class ShareBottomSheet extends StatelessWidget {
             : CircularContainer(
                 svgPath: svgPath,
                 onTap: () {},
-                borderColor: Color(0xFFDEE1E2),
+                borderColor: const Color(0xFFDEE1E2),
               ),
         SizedBox(
           height: Responsive.h1,
