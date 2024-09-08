@@ -125,9 +125,6 @@ class PublicSecondScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 28),
                           CustomShadowButton(
-                            onTap: () {
-
-                            },
                             width: 210,
                             withCounterBox: true,
                           ),

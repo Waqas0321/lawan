@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lawan/app/utils/colors.dart';
 import '../../utils/images.dart';
+import '../../utils/responsive_utils.dart';
+import '../text_widget.dart';
 import 'BottomNave_Container.dart';
 class SessionContainer extends StatefulWidget {
   SessionContainer({
@@ -29,12 +32,12 @@ class _SessionContainerState extends State<SessionContainer> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 92,
+          height: 100,
           padding: const EdgeInsets.all(12),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(23),
             ),
           ),
           child: Row(
@@ -48,10 +51,12 @@ class _SessionContainerState extends State<SessionContainer> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '9:00 AM -\n10:00 PM',
+                      '9:00 AM \n-\n10:00 PM',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 12,
+                        height:1,
                         fontFamily: 'Lufga',
                         fontWeight: FontWeight.w500,
                       ),
@@ -61,9 +66,15 @@ class _SessionContainerState extends State<SessionContainer> {
                       height: 16,
                       padding: const EdgeInsets.symmetric(horizontal: 4),
                       clipBehavior: Clip.antiAlias,
+
                       decoration: ShapeDecoration(
-                        color: Colors.black,
+
+                        // color: Colors.black,
                         shape: RoundedRectangleBorder(
+                          side:BorderSide(
+                            width:1,
+                            color:AppColors.grey3
+                          ),
                           borderRadius: BorderRadius.circular(100),
                         ),
                       ),
@@ -71,7 +82,7 @@ class _SessionContainerState extends State<SessionContainer> {
                         '2 hr',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xFF545F71),
                           fontSize: 11,
                           fontFamily: 'Lufga',
                           fontWeight: FontWeight.w500,
@@ -83,10 +94,10 @@ class _SessionContainerState extends State<SessionContainer> {
                 ),
               ),
               SizedBox(width: 8,),
-              VerticalDivider(),
+              VerticalDivider(color:AppColors.grey3,),
               SizedBox(width: 8,),
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Container(
                   height: 80,
                   color: Colors.white,
@@ -169,14 +180,16 @@ class _SessionContainerState extends State<SessionContainer> {
 
                             ],
                           ),
-                          Spacer(),
-                           SvgPicture.asset(Images.users,height: 16,width: 16,),
+                          SizedBox(width: 20),
+
+                          // Spacer(),
+                           SvgPicture.asset(Images.users,height: 16,width: 16,color:AppColors.mid_grey,),
                           SizedBox(width: 4),
                           Text(
                             '8/10',
                             textAlign: TextAlign.right,
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Color(0xFF545F71),
                               fontSize: 12,
                               fontFamily: 'Lufga',
                               fontWeight: FontWeight.w400,
@@ -186,33 +199,30 @@ class _SessionContainerState extends State<SessionContainer> {
                           SizedBox(width: 8),
                         ],
                       ),
-                      SizedBox(height: 14),
-                      Text(
-                        'Court 1',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontFamily: 'Lufga',
-                          fontWeight: FontWeight.w500,
-                          height: 0.12,
-                        ),
-                      ),
                       SizedBox(height: 10),
                       Row(
                         children: [
-                          Image(image: AssetImage(Images.map),height: 16,width: 16,),
-                          SizedBox(width: 4),
-                          Text(
-                            'MBPJ Sports Complex',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontFamily: 'Lufga',
-                              fontWeight: FontWeight.w400,
-                              height: 0.12,
-                            ),
+                          SvgPicture.asset(Images.card),
+                          SizedBox(width: Responsive.h1),
+                          TextWidget(
+                            title: "1",
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            textColor:AppColors.black,
                           )
-                        ],)
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'MBPJ Sports Complex',
+                        style: TextStyle(
+                          color: Color(0xFF545F71),
+                          fontSize: 12,
+                          fontFamily: 'Lufga',
+                          fontWeight: FontWeight.w400,
+                          height: 0.12,
+                        ),
+                      )
 
                     ],
                   ),
@@ -221,8 +231,8 @@ class _SessionContainerState extends State<SessionContainer> {
               GestureDetector(
                 onTap: widget.eyeOnTap,
                 child: Container(
-                  width: 48,
-                  height: 68,
+                  width: 44,
+                  height: 76,
                   padding: const EdgeInsets.all(12),
                   clipBehavior: Clip.antiAlias,
                   decoration: ShapeDecoration(
@@ -232,7 +242,7 @@ class _SessionContainerState extends State<SessionContainer> {
                     ),
                   ),
                   child: Center(
-                    child: Icon(Icons.remove_red_eye_outlined,size: 24,color: Color(0xff545F71),),
+                    child:SvgPicture.asset(Images.eye),
                   ),
                 ),
               ),

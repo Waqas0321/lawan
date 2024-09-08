@@ -29,7 +29,7 @@ class _ExpandableCustomCalenderState extends State<ExpandableCustomCalender> {
   DateTime _focusedDay = DateTime.now();
   String _selectedMonth = '${DateTime.now().month}';
   bool _isCalendarExpanded = false;
-final controller=Get.find<SessionScreenController>();
+  final controller = Get.find<SessionScreenController>();
   final List<String> monthsName = [
     'January',
     'February',
@@ -162,7 +162,7 @@ final controller=Get.find<SessionScreenController>();
                           });
                         },
                         child: CircularArrowsContainer(
-                            icon: SvgPicture.asset(Images. chevron_left,
+                            icon: SvgPicture.asset(Images.chevron_left,
                                 color: Color(0xff545F71)))),
                     widget.isSecondDessign
                         ? SizedBox(
@@ -309,10 +309,10 @@ final controller=Get.find<SessionScreenController>();
                     ),
                     SizedBox(width: 16),
                     InkWell(
-                      onTap:(){
+                      onTap: () {
                         controller.openBottomSheet(context);
                       },
-                      child:Container(
+                      child: Container(
                         height: 44,
                         width: 44,
                         padding: const EdgeInsets.symmetric(
@@ -357,9 +357,9 @@ final controller=Get.find<SessionScreenController>();
               markerBuilder: (context, day, events) {
                 if (day == _focusedDay) {
                   return Container(
-                    width: 40,
-                    height: 40,
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                     width: 40,
+                     height: 40,
+                    margin:EdgeInsets.only(bottom:04),
                     decoration: ShapeDecoration(
                       color: Colors.black,
                       shape: RoundedRectangleBorder(
@@ -412,8 +412,18 @@ final controller=Get.find<SessionScreenController>();
             ),
             headerVisible: false,
             calendarStyle: CalendarStyle(
-              defaultTextStyle: TextStyle(),
-              todayTextStyle: TextStyle(),
+              defaultTextStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                  height: 0.11),
+              todayTextStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                  height: 0.11),
               defaultDecoration: widget.isSecondDessign
                   ? BoxDecoration(
                       color: AppColors.white,
@@ -431,14 +441,14 @@ final controller=Get.find<SessionScreenController>();
                   : BoxDecoration(),
               weekendTextStyle: TextStyle(
                 color: Color(0xFF545F71),
-                fontSize: 14,
+                fontSize: 12,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
                 height: 0.12,
               ),
             ),
-            daysOfWeekHeight: 50,
-            rowHeight: 50,
+            daysOfWeekHeight: 20,
+            rowHeight: 45,
           ),
           // TableCalendar(
           //   startingDayOfWeek: StartingDayOfWeek.monday,

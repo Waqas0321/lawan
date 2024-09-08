@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:get/get.dart';
+import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import '../../controller/sales/sales_controller.dart';
 import '../text_widget.dart';
@@ -14,8 +15,12 @@ class CustomChart extends StatelessWidget {
     final SalesController controller = Get.find<SalesController>();
 
     return Container(
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(12)),
+      decoration: ShapeDecoration(
+        color: Color(0xB2F2F3F2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(14.0),
         child: Column(
@@ -27,26 +32,26 @@ class CustomChart extends StatelessWidget {
                   padding: EdgeInsets.all(8),
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
-                      side:
-                          const BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                      side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const TextWidget(
+                      TextWidget(
                         title: "Today",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
                         textAlign: TextAlign.start,
-                        textColor: Color(0xFF545F71),
+                        textColor: AppColors.dark_grey,
                       ),
-                      const TextWidget(
+                      TextWidget(
                         title: "RM120",
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
                         textAlign: TextAlign.start,
+                        textColor: AppColors.black,
                       ),
                       SizedBox(
                         height: Get.height * 0.01,
@@ -55,7 +60,7 @@ class CustomChart extends StatelessWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                vertical: 4, horizontal: 8),
+                                vertical: 2, horizontal: 10),
                             decoration: ShapeDecoration(
                               shape: RoundedRectangleBorder(
                                 side: const BorderSide(
@@ -63,17 +68,19 @@ class CustomChart extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            child: const TextWidget(
+                            child: TextWidget(
                               title: "- 5%",
+                              fontSize: 11,
+                              fontWeight: FontWeight.w500,
                               textColor: Color(0xFFF05B5B),
                             ),
                           ),
                           SizedBox(
                             width: Get.width * 0.01,
                           ),
-                          const TextWidget(
+                           TextWidget(
                             title: "vs yesterday",
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500,
                             textAlign: TextAlign.start,
                             textColor: Color(0xFF545F71),
@@ -90,8 +97,7 @@ class CustomChart extends StatelessWidget {
                     child: Container(
                   decoration: ShapeDecoration(
                     shape: RoundedRectangleBorder(
-                      side:
-                          const BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                      side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
@@ -102,16 +108,17 @@ class CustomChart extends StatelessWidget {
                       children: [
                         const TextWidget(
                           title: "Weekly Sales",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
                           textAlign: TextAlign.start,
-                          textColor: Color(0xFF545F71),
+                          textColor: AppColors.dark_grey,
                         ),
                         const TextWidget(
                           title: "RM32,140",
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
                           textAlign: TextAlign.start,
+                          textColor: AppColors.black,
                         ),
                         SizedBox(
                           height: Get.height * 0.01,
@@ -120,7 +127,7 @@ class CustomChart extends StatelessWidget {
                           children: [
                             Container(
                               padding: const EdgeInsets.symmetric(
-                                  vertical: 4, horizontal: 8),
+                                  vertical: 2, horizontal: 5),
                               decoration: ShapeDecoration(
                                 shape: RoundedRectangleBorder(
                                   side: const BorderSide(
@@ -130,6 +137,8 @@ class CustomChart extends StatelessWidget {
                               ),
                               child: const TextWidget(
                                 title: "+ 20%",
+                                fontSize: 11,
+                                fontWeight: FontWeight.w500,
                                 textColor: Color(0xFF23A891),
                               ),
                             ),
@@ -138,7 +147,7 @@ class CustomChart extends StatelessWidget {
                             ),
                             const TextWidget(
                               title: "vs last week",
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.w500,
                               textAlign: TextAlign.start,
                               textColor: Color(0xFF545F71),
@@ -252,7 +261,7 @@ class CustomChart extends StatelessWidget {
                             barTouchData: BarTouchData(
                               touchTooltipData: BarTouchTooltipData(
                                 getTooltipColor: (group) {
-                                  // Customize the tooltip background color based on the group
+                                  // Customize the tooltip background color based  on t he group
                                   if (controller.selectedBarIndex.value ==
                                       group.x.toInt()) {
                                     return Colors.black;
@@ -338,7 +347,7 @@ class CustomChart extends StatelessWidget {
                             barTouchData: BarTouchData(
                               touchTooltipData: BarTouchTooltipData(
                                 getTooltipColor: (group) {
-                                  // Customize the tooltip background color based on the group
+                                  // Customize the tooltip background color based on  t he group
                                   if (controller.selectedBarIndex.value ==
                                       group.x.toInt()) {
                                     return Colors.black;

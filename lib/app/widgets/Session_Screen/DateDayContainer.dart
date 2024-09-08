@@ -12,7 +12,7 @@ class DateDayTextContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '24 Jun',
+            '24 Sep',
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
@@ -25,7 +25,7 @@ class DateDayTextContainer extends StatelessWidget {
           Text(
             'Mon, Tomorrow',
             style: TextStyle(
-              color: Colors.black,
+              color: Color(0xFF545F71),
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w400,

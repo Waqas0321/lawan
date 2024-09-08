@@ -83,12 +83,16 @@ void showCustomEditAlertDialog(
                     ],
                   )
                 else
-                  TextWidget(
-                    title: title1 ?? Apptext.confirm_update,
-                    fontWeight: FontWeight.w500,
-                    textColor: AppColors.black,
-                    fontSize: 16,
-                  ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: TextWidget(
+                      title: title1 ?? Apptext.confirm_update,
+                      fontWeight: FontWeight.w500,
+                      textColor: AppColors.black,
+                      fontSize: 16,
+                    ),
+                ),
                 SizedBox(height: 16),
                 if (!isConfirmed)
                   SizedBox(

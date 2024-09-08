@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/sales/sales_controller.dart';
+import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/images.dart';
@@ -18,7 +19,7 @@ class SalesContainer extends StatelessWidget {
       physics: const ScrollPhysics(),
       itemBuilder: (itemBuilder, index) {
         return Container(
-          padding: const EdgeInsets.all(5),
+          padding: const EdgeInsets.all(0),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
@@ -30,26 +31,29 @@ class SalesContainer extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const TextWidget(
+                   TextWidget(
                     title: "+RM20",
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     textColor: Color(0xFF23A891),
                   ),
                   SizedBox(
-                    height: Responsive.h1,
+                    height: Responsive.h2,
                   ),
                   Obx(
                     () => Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 13, vertical: 2),
+                          horizontal: 10, vertical: 3),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          color: const Color(0xffd99125)),
+                          borderRadius: BorderRadius.circular(10),
+                          color:salesController.tabBarIndex.value==2? Color(0xFF23A891):const Color(0xffd99125),
+                    ),
                       child: TextWidget(
                         title: salesController.tabBarIndex.value == 2
                             ? "Completed"
                             : "Ongoing",
+                        fontSize:10,
+                        fontWeight:FontWeight.w400,
                         textColor: Colors.white,
                       ),
                     ),
@@ -57,42 +61,53 @@ class SalesContainer extends StatelessWidget {
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: const Color(0xFFDEE1E2)),
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: Responsive.h1,
-                        ),
-                        const TextWidget(
-                          title: "Rxm12",
-                          textColor: Colors.black,
-                        ),
-                        SizedBox(
-                          height: Responsive.h1,
-                        ),
-                        Container(
-                          width: Responsive.h10,
-                          height: 1,
-                          color: const Color(0xFFDEE1E2),
-                        ),
-                        SizedBox(
-                          height: Responsive.h1,
-                        ),
-                        const TextWidget(
-                          title: "Rxm12",
-                          textColor: Colors.grey,
-                        ),
-                      ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: const Color(0xFFDEE1E2)),
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: Responsive.h1,
+                          ),
+                           TextWidget(
+                            title: "Rxm12",
+                            fontSize:12,
+                            fontWeight:FontWeight.w500,
+                            textColor: Colors.black,
+                          ),
+                          SizedBox(
+                            height: Responsive.h1,
+                          ),
+                          Container(
+                            width: Responsive.h10,
+                            height: 1,
+                            color: const Color(0xFFDEE1E2),
+                          ),
+                          SizedBox(
+                            height: Responsive.h1,
+                          ),
+                          const TextWidget(
+                            title: "Rxm12",
+                            fontSize:12,
+                            fontWeight:FontWeight.w500,
+                            textColor: Color(0xFFACB3C0),
+
+                          ),
+                          SizedBox(
+                            height: Responsive.h1,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
               const SizedBox(
-                width: 10,
+                width: 5,
               ),
               Container(
                 width: 1.5,
@@ -100,7 +115,7 @@ class SalesContainer extends StatelessWidget {
                 color: const Color(0xFFDEE1E2),
               ),
               const SizedBox(
-                width: 10,
+                width: 5,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,7 +130,7 @@ class SalesContainer extends StatelessWidget {
                       ),
                       const TextWidget(
                         title: "Ali Qazwini",
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                       )
                     ],
@@ -127,36 +142,36 @@ class SalesContainer extends StatelessWidget {
                     children: [
                       SvgPicture.asset(Images.card),
                       SizedBox(width: Responsive.h1),
-                      const TextWidget(
+                       TextWidget(
                         title: "1",
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
+                        textColor:AppColors.black,
                       )
                     ],
                   ),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  const TextWidget(
+                   TextWidget(
                     title: "MBPJ Sports Complex",
-                    fontSize: 14,
+                    fontSize: 12,
+                    fontWeight:FontWeight.w400,
                     textColor: Color(0xFF545F71),
                   ),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                  const Row(
+                   Row(
                     children: [
-                      Icon(
-                        Icons.calendar_today_outlined,
-                        color: Color(0xFF545F71),
-                      ),
+                     SvgPicture.asset(Images.calendar),
                       SizedBox(
                         width: 10,
                       ),
                       TextWidget(
                         title: "Tue,  25 Sep 2024",
-                        fontSize: 14,
+                        fontSize: 12,
+                        fontWeight:FontWeight.w400,
                         textColor: Color(0xFF545F71),
                       ),
                     ],
@@ -166,25 +181,23 @@ class SalesContainer extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Icon(
-                        Icons.access_time,
-                        color: Color(0xFF545F71),
-                      ),
+                      SvgPicture.asset(Images.clock),
                       const SizedBox(
                         width: 10,
                       ),
                       const TextWidget(
                         title: "9:00 AM - 11:00 AM",
-                        fontSize: 14,
+                        fontSize: 12,
+                        fontWeight:FontWeight.w400,
                         textColor: Color(0xFF545F71),
                       ),
                       const SizedBox(
                         width: 7,
                       ),
                       Container(
-                        padding: const EdgeInsets.all(6),
+                        padding:  EdgeInsets.only(left: 8,right:8,top:2,bottom:2),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: const Color(0xFFDEE1E2))),
                         child: const TextWidget(
                           title: "2 hr",
@@ -197,19 +210,22 @@ class SalesContainer extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 7,
+                width: 2,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 10, vertical: Responsive.h10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(color: const Color(0xFFDEE1E2))),
-                child: const Icon(
-                  Icons.remove_red_eye_outlined,
-                  size: 20,
+              Padding(
+                padding: const EdgeInsets.only(left: 2),
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 18, vertical: Responsive.h8),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(color: const Color(0xFFDEE1E2))),
+                  child: SvgPicture.asset(Images.eye),
                 ),
-              )
+              ),
+              const SizedBox(
+                width: 5,
+              ),
             ],
           ),
         );

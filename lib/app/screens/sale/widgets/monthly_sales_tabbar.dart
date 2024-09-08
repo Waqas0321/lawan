@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/sales/sales_controller.dart';
+import 'package:lawan/app/utils/colors.dart';
 
 import '../../../utils/responsive_utils.dart';
 import '../../../widgets/text_widget.dart';
@@ -37,7 +38,7 @@ class MonthlySalesTabBar extends StatelessWidget {
                     ),
                     child: TextWidget(
                       title: monthName,
-                      textColor: equalIndex ? Colors.black : Colors.grey,
+                      textColor: equalIndex ? Colors.black : AppColors.dark_grey,
                     ),
                   ),
                 );
