@@ -15,6 +15,7 @@ class Images {
   static const String frame1 = "$mainImage/frame1.svg";
   static const String users = "$mainImage/users.svg";
   static const String QRCode = "$mainImage/QRCode.svg";
+  static const String qrCode1 = "$mainImage/qrCode1.svg";
   static const String chat = "$mainImage/chat.svg";
   static const String menu = "$mainImage/menu.svg";
   static const String time = "$mainImage/time.svg";
