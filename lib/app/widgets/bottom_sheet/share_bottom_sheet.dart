@@ -79,8 +79,8 @@ class ShareBottomSheet extends StatelessWidget {
                     children: [
                       SvgPicture.asset(
                         Images.card,
-                        colorFilter: const ColorFilter.mode(
-                            Color.fromARGB(84, 95, 113, 1), BlendMode.srcIn),
+                        colorFilter: ColorFilter.mode(
+                            Color(0xff545F71), BlendMode.srcIn),
                       ),
                       SizedBox(
                         width: Responsive.h1,
