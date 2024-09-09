@@ -1,5 +1,8 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 class AppColors {
   static const Color gainsboro = Color(0xffF2F3F2);
   static const Color white = Color(0xffFFFFFF);
@@ -25,5 +28,15 @@ class AppColors {
   static const Color shadowColor=Color(0x19000000);
   static const Color textSecondColor=Color(0xFF545F71);
   static const Color hRBTNBorder=Color(0xFFDEE1E2);
+  static final BoxDecoration gradientDecoration = BoxDecoration(
+    gradient: LinearGradient(
+      begin: const Alignment(0.0, 0.8), // Start near the bottom
+      end: const Alignment(0.0, 1.0), // End at the bottom edge
+      colors: [
+        Colors.black.withOpacity(0.0), // Fully transparent color
+        Colors.black.withOpacity(0.7), // Slightly visible gradient
+      ],
+    ),
+  );
 
 }

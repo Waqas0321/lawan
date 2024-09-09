@@ -55,25 +55,28 @@ class FriendlyBottomSheet extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Image.asset(Images.ball,height: 24,width: 24,),
-                          SizedBox(width: 8,),
+                          Image.asset(
+                            Images.ball,
+                            height: 24,
+                            width: 24,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
                           TextWidget(
-                              title: "Freindly",
+                            title: "Freindly",
                             textAlign: TextAlign.center,
                             textColor: AppColors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
-
                           ),
                           Spacer(),
                           GestureDetector(
                               onTap: () {
                                 Get.back();
                               },
-                              child:  BottomButtons(
-                                onTap: () {
-
-                                },
+                              child: BottomButtons(
+                                onTap: () {},
                                 height: 42,
                                 width: 42,
                                 image: Images.x,
@@ -165,11 +168,11 @@ class FriendlyBottomSheet extends StatelessWidget {
                                           side: const BorderSide(
                                             width: 1,
                                             strokeAlign:
-                                            BorderSide.strokeAlignOutside,
+                                                BorderSide.strokeAlignOutside,
                                             color: Color(0xFFDEE1E2),
                                           ),
                                           borderRadius:
-                                          BorderRadius.circular(100),
+                                              BorderRadius.circular(100),
                                         ),
                                       ),
                                       child: const Center(
@@ -223,11 +226,21 @@ class FriendlyBottomSheet extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallGreenContainer(text: '25 - 35 years',),
-                          SizedBox(width: 8,),
-                          smallGreenContainer(text: "Male & Female",),
-                          SizedBox(width: 8,),
-                          smallGreenContainer(text: 'English & Malay',),
+                          smallGreenContainer(
+                            text: '25 - 35 years',
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          smallGreenContainer(
+                            text: "Male & Female",
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          smallGreenContainer(
+                            text: 'English & Malay',
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -271,7 +284,6 @@ class FriendlyBottomSheet extends StatelessWidget {
                       const SizedBox(height: 16),
                     ],
                   ),
-
                 ]),
               ),
               Container(
@@ -291,35 +303,34 @@ class FriendlyBottomSheet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     BottomButtons(
-                        onTap: () {
-
-                        },
-                        image: Images.trash),
+                      onTap: () {},
+                      image: Images.trash,
+                      iconColor: AppColors.dark_grey,
+                    ),
                     SizedBox(
                       width: 16,
                     ),
                     BottomButtons(
-                        onTap: () {
-
-                        },
-                        image: Images.upload),
+                      onTap: () {},
+                      image: Images.upload,
+                      iconColor: AppColors.dark_grey,
+                    ),
                     SizedBox(
                       width: 16,
                     ),
                     BottomButtons(
-                        onTap: () {
-
-                        },
-                        image: Images.pencil),
+                      onTap: () {},
+                      image: Images.pencil,
+                      iconColor: AppColors.dark_grey,
+                    ),
                     SizedBox(
                       width: 16,
                     ),
                     Expanded(
                         child: BottomButtons(
-                            onTap: () {
-
-                            },
-                            isExpanded: true, image: Images.users_group_outline)),
+                            onTap: () {},
+                            isExpanded: true,
+                            image: Images.users_group_outline)),
                   ],
                 ),
               )

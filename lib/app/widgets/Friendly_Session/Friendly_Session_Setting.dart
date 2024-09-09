@@ -350,7 +350,8 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                         SizedBox(
                                           width: double.infinity,
                                           child: Padding(
-                                            padding: const EdgeInsets.only(left: 8.0),
+                                            padding: EdgeInsets.only(
+                                                left: 8.0),
                                             child: Text(
                                               'Price to pay',
                                               style: TextStyle(
@@ -363,7 +364,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(height: 4),
+                                        SizedBox(height: 4),
                                         Container(
                                           margin: EdgeInsets.only(left: 10),
                                           width: double.infinity,

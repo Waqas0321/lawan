@@ -47,6 +47,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   adaptive_sizer: ^0.0.4
   device_preview: ^1.2.0
+  country_code_picker: ^3.0.0
   flutter_cupertino_datetime_picker: ^3.0.0
   responsive_framework: ^1.4.0  # Use the latest version
   flutter_svg: ^2.0.10+1

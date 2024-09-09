@@ -11,15 +11,15 @@ class UserinfoRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const TextContainer(text: "25 - 35 years"),
+        const TextContainer(text: "25 - 35 years",padding:4,),
         SizedBox(
           width: Responsive.h2,
         ),
-        const TextContainer(text: "Male & Female"),
+        const TextContainer(text: "Male & Female",padding:4),
         SizedBox(
           width: Responsive.h2,
         ),
-        const TextContainer(text: "English & Malay"),
+        const TextContainer(text: "English & Malay",padding:4,),
       ],
     );
   }

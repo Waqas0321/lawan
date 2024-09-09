@@ -19,7 +19,7 @@ class SalesContainer extends StatelessWidget {
       physics: const ScrollPhysics(),
       itemBuilder: (itemBuilder, index) {
         return Container(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(8),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
@@ -28,10 +28,11 @@ class SalesContainer extends StatelessWidget {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment:CrossAxisAlignment.center,
             children: [
               Column(
                 children: [
-                   TextWidget(
+                  TextWidget(
                     title: "+RM20",
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -45,15 +46,17 @@ class SalesContainer extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 3),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color:salesController.tabBarIndex.value==2? Color(0xFF23A891):const Color(0xffd99125),
-                    ),
+                        borderRadius: BorderRadius.circular(10),
+                        color: salesController.tabBarIndex.value == 2
+                            ? Color(0xFF23A891)
+                            : const Color(0xffd99125),
+                      ),
                       child: TextWidget(
                         title: salesController.tabBarIndex.value == 2
                             ? "Completed"
                             : "Ongoing",
-                        fontSize:10,
-                        fontWeight:FontWeight.w400,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
                         textColor: Colors.white,
                       ),
                     ),
@@ -62,44 +65,59 @@ class SalesContainer extends StatelessWidget {
                     height: Responsive.h1,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
+                    padding: const EdgeInsets.only(left: 0),
                     child: Container(
+                      width: 65,
+                      padding: EdgeInsets.only(top: 5, bottom: 5),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(15),
                         border: Border.all(color: const Color(0xFFDEE1E2)),
                       ),
                       child: Column(
                         children: [
+                          SizedBox(height:10,),
+
                           SizedBox(
-                            height: Responsive.h1,
+                            width: 64,
+                            child: Text(
+                              ' RM 180',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 12,
+                                fontFamily: 'Lufga',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
+                              ),
+                            ),
                           ),
-                           TextWidget(
-                            title: "Rxm12",
-                            fontSize:12,
-                            fontWeight:FontWeight.w500,
-                            textColor: Colors.black,
-                          ),
-                          SizedBox(
-                            height: Responsive.h1,
-                          ),
+                          SizedBox(height:10,),
+
                           Container(
                             width: Responsive.h10,
                             height: 1,
                             color: const Color(0xFFDEE1E2),
                           ),
                           SizedBox(
-                            height: Responsive.h1,
-                          ),
-                          const TextWidget(
-                            title: "Rxm12",
-                            fontSize:12,
-                            fontWeight:FontWeight.w500,
-                            textColor: Color(0xFFACB3C0),
-
+                            height: 10,
                           ),
                           SizedBox(
-                            height: Responsive.h1,
+                            width: 64,
+                            child: Text(
+                              'RM 220',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFFACB3C0),
+                                fontSize: 12,
+                                fontFamily: 'Lufga',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08,
+                              ),
+                            ),
                           ),
+                          SizedBox(
+                            height: 10,
+                          )
                         ],
                       ),
                     ),
@@ -107,15 +125,15 @@ class SalesContainer extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                width: 5,
+                width: 15,
               ),
               Container(
                 width: 1.5,
-                height: Responsive.customHeight(20),
+                height: Responsive.customHeight(17),
                 color: const Color(0xFFDEE1E2),
               ),
               const SizedBox(
-                width: 5,
+                width: 15,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -142,36 +160,36 @@ class SalesContainer extends StatelessWidget {
                     children: [
                       SvgPicture.asset(Images.card),
                       SizedBox(width: Responsive.h1),
-                       TextWidget(
+                      TextWidget(
                         title: "1",
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        textColor:AppColors.black,
+                        textColor: AppColors.black,
                       )
                     ],
                   ),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                   TextWidget(
+                  TextWidget(
                     title: "MBPJ Sports Complex",
                     fontSize: 12,
-                    fontWeight:FontWeight.w400,
+                    fontWeight: FontWeight.w400,
                     textColor: Color(0xFF545F71),
                   ),
                   SizedBox(
                     height: Responsive.h1,
                   ),
-                   Row(
+                  Row(
                     children: [
-                     SvgPicture.asset(Images.calendar),
+                      SvgPicture.asset(Images.calendar),
                       SizedBox(
                         width: 10,
                       ),
                       TextWidget(
                         title: "Tue,  25 Sep 2024",
                         fontSize: 12,
-                        fontWeight:FontWeight.w400,
+                        fontWeight: FontWeight.w400,
                         textColor: Color(0xFF545F71),
                       ),
                     ],
@@ -181,21 +199,25 @@ class SalesContainer extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      SvgPicture.asset(Images.clock),
+                      SvgPicture.asset(
+                        Images.clock,
+                        color: AppColors.dark_grey,
+                      ),
                       const SizedBox(
                         width: 10,
                       ),
                       const TextWidget(
                         title: "9:00 AM - 11:00 AM",
                         fontSize: 12,
-                        fontWeight:FontWeight.w400,
+                        fontWeight: FontWeight.w400,
                         textColor: Color(0xFF545F71),
                       ),
                       const SizedBox(
                         width: 7,
                       ),
                       Container(
-                        padding:  EdgeInsets.only(left: 8,right:8,top:2,bottom:2),
+                        padding: EdgeInsets.only(
+                            left: 8, right: 8, top: 2, bottom: 2),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: const Color(0xFFDEE1E2))),
@@ -209,17 +231,19 @@ class SalesContainer extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(
-                width: 2,
-              ),
+             Spacer(),
               Padding(
                 padding: const EdgeInsets.only(left: 2),
                 child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 18, vertical: Responsive.h8),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      border: Border.all(color: const Color(0xFFDEE1E2))),
+                  width: 44,
+                  height: 150,
+                  padding: EdgeInsets.all(12),
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
                   child: SvgPicture.asset(Images.eye),
                 ),
               ),

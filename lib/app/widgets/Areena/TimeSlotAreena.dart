@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lawan/app/utils/colors.dart';
 
 import '../../utils/images.dart';
 
@@ -9,12 +10,16 @@ class TimeSlot extends StatelessWidget {
   final bool isImage;
   final ValueChanged<String> onChanged;
   final bool isClock;
+  final String imagepath;
+  final Color  imagecolor;
   TimeSlot({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged,
     required this.isImage,
     this.isClock = true,
+    this.imagepath=Images.exclamation_outline,
+    this.imagecolor= AppColors.dark_grey,
   });
 
   @override
@@ -59,7 +64,7 @@ class TimeSlot extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       isClock
-                          ? SvgPicture.asset(Images.exclamation_outline)
+                          ? SvgPicture.asset(imagepath,color:imagecolor,)
                           : const SizedBox(
                               width: 1,
                             ),

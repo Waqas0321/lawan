@@ -13,7 +13,10 @@ class CustomCircularButton extends StatelessWidget {
     this.imagePath = '',
     this.height = 44,
     this.width = 44,
-
+   this.imageheight=16,
+    this.imagewidth=16,
+    this.vertical=8,
+    this.horizontal=12,
   });
 
   final String text;
@@ -23,6 +26,10 @@ class CustomCircularButton extends StatelessWidget {
   final String imagePath;
   final double height;
   final double width;
+  final double imageheight;
+  final double imagewidth;
+  final double horizontal;
+  final double vertical;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,7 +37,7 @@ class CustomCircularButton extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        padding:  EdgeInsets.symmetric(horizontal:horizontal, vertical: vertical),
         decoration: ShapeDecoration(
           color: isSelected ? Colors.black : Colors.transparent,
           shape: RoundedRectangleBorder(
@@ -44,8 +51,8 @@ class CustomCircularButton extends StatelessWidget {
           child: isImage
               ? SvgPicture.asset(
                   imagePath,
-                  height: 16,
-                  width: 16,
+                  height: imageheight,
+                  width: imageheight,
                   color: Color(0xff545F71),
                 )
               : TextWidget(

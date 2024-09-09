@@ -16,7 +16,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        bottom: Responsive.customHeight(8),
+        bottom: Responsive.customHeight(5),
         left: 10,
         right: 10,
       ),
@@ -25,7 +25,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.symmetric(vertical: 12, horizontal: 7),
-            height: Responsive.customHeight(85),
+            height: Responsive.customHeight(89),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32),
               gradient: const LinearGradient(
@@ -194,7 +194,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: Responsive.h1,
+                            height: Responsive.h2,
                           ),
                           ListView.separated(
                             shrinkWrap: true,
@@ -287,7 +287,7 @@ class ShowProfileBottomSheet extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-          color: Colors.black, borderRadius: BorderRadius.circular(14)),
+          color: Colors.black, borderRadius: BorderRadius.circular(21)),
       child: Column(
         children: [
           SvgPicture.asset(

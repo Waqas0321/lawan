@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/widgets/Friendly_Session/Friendly_Session_Arena.dart';
 
 import '../../utils/colors.dart';
+import '../../utils/images.dart';
 import '../../utils/text.dart';
 import '../Areena/TimeSlotAreena.dart';
 import '../Areena/areenaButton.dart';
@@ -203,6 +204,7 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                             selectedTimeSlot: _selectedTimeSlot,
                             onChanged: _onTimeSlotChanged,
                             isImage: true,
+                            imagepath: Images.clock,
                           ),
                         ),
                         SizedBox(
@@ -223,6 +225,8 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                         ),
                         Expanded(
                           child: TimeSlot(
+                            imagepath:Images.clock,
+
                             timeSlots: _timeSlots,
                             selectedTimeSlot: _selectedTimeSlot,
                             onChanged: _onTimeSlotChanged,
