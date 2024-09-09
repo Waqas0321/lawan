@@ -1,15 +1,16 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/screens/AddMenualBooking_Screen/MenualBooking.dart';
-import 'package:lawan/app/screens/Friendly_Session/friendly_session.dart';
 import 'package:lawan/app/screens/HomeScreen/home_screen.dart';
 import 'package:lawan/app/screens/Session_Screen/SessionScreen.dart';
 import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 void main() {
   runApp(
+      // MyApp()
       DevicePreview(
         enabled: true,
         builder: (context) => ScreenUtilInit(
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FriendlySession(),
+      home: FriendlyBottomNav(),
+      // home: HomeScreen(),
     );
   }
 }
