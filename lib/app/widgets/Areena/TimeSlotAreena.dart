@@ -9,12 +9,17 @@ class TimeSlot extends StatelessWidget {
   final bool isImage;
   final ValueChanged<String> onChanged;
   final bool isClock;
+  final bool hasBorder;
+  final bool isExpanded;
   TimeSlot({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged,
     required this.isImage,
     this.isClock = true,
+    this.hasBorder = false,
+    this.isExpanded = true,
+
   });
 
   @override
@@ -28,7 +33,7 @@ class TimeSlot extends StatelessWidget {
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            // side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            side: hasBorder? BorderSide(width: 1, color: Color(0xFFE9EAF0)):BorderSide(width: 0, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
           ),
         ),

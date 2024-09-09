@@ -9,14 +9,15 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(MyApp()
-      // DevicePreview(
-      //   enabled: true,
-      //   builder: (context) => ScreenUtilInit(
-      //     designSize: Size(375, 812), // Design size for scaling
-      //     builder: (context, child) => MyApp(),
-      //   ),
-      // ),
+  runApp(
+      // MyApp()
+      DevicePreview(
+        enabled: true,
+        builder: (context) => ScreenUtilInit(
+          designSize: Size(375, 812), // Design size for scaling
+          builder: (context, child) => MyApp(),
+        ),
+      ),
       );
 }
 
@@ -31,7 +32,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: FriendlyBottomNav(),
-      // home: HomeScreen(),
     );
   }
 }

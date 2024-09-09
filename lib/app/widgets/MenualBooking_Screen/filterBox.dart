@@ -2,11 +2,14 @@ import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/FilterBoxBottomContainer.dart';
 import '../../utils/colors.dart';
+import '../Areena/TimeSlotAreena.dart';
 import 'FilterBoxButtonsRow.dart';
 import 'FilterBoxRangesRowTexts.dart';
 
 class FilterBox extends StatefulWidget {
-  const FilterBox({super.key});
+  const FilterBox({super.key, this.isLarge = true});
+  final bool isLarge;
+
 
   @override
   State<FilterBox> createState() => _FilterBoxState();
@@ -15,6 +18,16 @@ class FilterBox extends StatefulWidget {
 class _FilterBoxState extends State<FilterBox> {
   double startValue = 20;
   double endValue = 180;
+  final List<String> _timeSlotsThree = [
+    'Max',
+    'Min',
+  ];
+  String _selectedTimeSlotThree = 'Max';
+  void _onTimeSlotChangedThree(String newValue) {
+    setState(() {
+      _selectedTimeSlotThree = newValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +81,13 @@ class _FilterBoxState extends State<FilterBox> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          TimeSlot(
+                            isClock: false,
+                            timeSlots: _timeSlotsThree,
+                            selectedTimeSlot: _selectedTimeSlotThree,
+                            onChanged: _onTimeSlotChangedThree,
+                            isImage: true,
+                          ),
                           FilterBoxRangesRowTexts(),
                           RangeSlider(
                             values: RangeValues(startValue, endValue),
