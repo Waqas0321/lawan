@@ -5,16 +5,32 @@ import 'package:get/get.dart';
 import 'package:lawan/app/screens/share_invite/share_invite_public_screen.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/Friendly_Session/custom_shadow_button.dart';
+import 'package:lawan/app/widgets/MenualBooking_Screen/filterBox.dart';
 import 'package:lawan/app/widgets/dialogue/show_profile.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 
 import '../../utils/images.dart';
 import '../../utils/responsive_utils.dart';
 import '../../widgets/Areena/custom_tabbar.dart';
+import '../../widgets/Friendly_Session/Friendly_BottomSheet.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
 
 class ShareInviteSession extends StatelessWidget {
-  const ShareInviteSession({super.key});
+  const ShareInviteSession({super.key, required this.byCreatedSession});
+  final bool byCreatedSession;
+  void openBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      enableDrag: true,
+      isScrollControlled: true,
+      // Allows the bottom sheet to use full screen height
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return FriendlyBottomSheet();
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -66,44 +82,54 @@ class ShareInviteSession extends StatelessWidget {
                 children: [
                   acrylicAny(
                     blurlevel: 2,
-                    child: Container(
-                      width: 90,
-                      height: 44,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 12),
-                      decoration: ShapeDecoration(
-                        color: Colors.black.withOpacity(0.20000000298023224),
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
-                          borderRadius: BorderRadius.circular(80),
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.dialog(FilterBox(isFriendly: true,));
+                      },
+                      child: Container(
+                        width: 90,
+                        height: 44,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 12),
+                        decoration: ShapeDecoration(
+                          color: Colors.black.withOpacity(0.20000000298023224),
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                            borderRadius: BorderRadius.circular(80),
+                          ),
                         ),
-                      ),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            Images.adjustments,
-                            colorFilter:
-                                ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          TextWidget(
-                            title: "Filter",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            textColor: Colors.white,
-                          )
-                        ],
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              Images.adjustments,
+                              colorFilter:
+                                  ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            TextWidget(
+                              title: "Filter",
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              textColor: Colors.white,
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     width: 20,
                   ),
-                  CustomShadowButton(
-                    withCounterBox: true,
-                    width: 210,
+                  GestureDetector(
+                    onTap: () {
+                      byCreatedSession? openBottomSheet(context):null;
+                    },
+                    child: CustomShadowButton(
+                      withCounterBox: true,
+                      width: 210,
+                    ),
                   )
                 ],
               ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/Friendly_Session/setting_controller.dart';
+import 'package:lawan/app/screens/Session_Screen/paymentScreen.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotRow.dart';
 import 'package:lawan/app/widgets/Friendly_Session/session_created_BottomSheet.dart';
@@ -318,141 +319,143 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       SizedBox(
                         height: 16,
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            width: 164.50,
-                            height: 64,
-                            padding: const EdgeInsets.all(12),
-                            decoration: ShapeDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment(0.00, -1.00),
-                                end: Alignment(0, 1),
-                                colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(32),
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 20,
-                                  height: 20,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(),
-                                  child: SvgPicture.asset(Images.tag),
+                      SingleChildScrollView(
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 163.50,
+                              height: 64,
+                              padding: const EdgeInsets.all(12),
+                              decoration: ShapeDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment(0.00, -1.00),
+                                  end: Alignment(0, 1),
+                                  colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          width: double.infinity,
-                                          child: Padding(
-                                            padding: EdgeInsets.only(
-                                                left: 8.0),
-                                            child: Text(
-                                              'Price to pay',
-                                              style: TextStyle(
-                                                color: Color(0xFFACB3C0),
-                                                fontSize: 12,
-                                                fontFamily: 'Lufga',
-                                                fontWeight: FontWeight.w400,
-                                                height: 0.08,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(height: 4),
-                                        Container(
-                                          margin: EdgeInsets.only(left: 10),
-                                          width: double.infinity,
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                'RM20',
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(32),
+                                ),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(),
+                                    child: SvgPicture.asset(Images.tag),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 8.0),
+                                              child: Text(
+                                                'Price to pay',
                                                 style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 24,
-                                                  fontFamily: 'Lufga',
-                                                  fontWeight: FontWeight.w600,
-                                                  letterSpacing: -0.72,
-                                                ),
-                                              ),
-                                              const SizedBox(width: 4),
-                                              Text(
-                                                '/ pax',
-                                                style: TextStyle(
-                                                  color: Color(0xFFDEE1E2),
+                                                  color: Color(0xFFACB3C0),
                                                   fontSize: 12,
                                                   fontFamily: 'Lufga',
                                                   fontWeight: FontWeight.w400,
-                                                  letterSpacing: -0.36,
+                                                  height: 0.08,
                                                 ),
                                               ),
-                                            ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                          SizedBox(height: 4),
+                                          Container(
+                                            margin: EdgeInsets.only(left: 10),
+                                            width: double.infinity,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'RM20',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 24,
+                                                    fontFamily: 'Lufga',
+                                                    fontWeight: FontWeight.w600,
+                                                    letterSpacing: -0.72,
+                                                  ),
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  '/ pax',
+                                                  style: TextStyle(
+                                                    color: Color(0xFFDEE1E2),
+                                                    fontSize: 12,
+                                                    fontFamily: 'Lufga',
+                                                    fontWeight: FontWeight.w400,
+                                                    letterSpacing: -0.36,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          Container(
-                            width: 164.50,
-                            height: 64,
-                            decoration: ShapeDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment(0.00, -1.00),
-                                end: Alignment(0, 1),
-                                colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(32),
-                              ),
-                            ),
-                            child: Center(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Extra Player(s)',
-                                    style: TextStyle(
-                                      color: Color(0xFFACB3C0),
-                                      fontSize: 12,
-                                      fontFamily: 'Lufga',
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                  Text(
-                                    '0',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 24,
-                                      fontFamily: 'Lufga',
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: -0.72,
-                                    ),
-                                  )
                                 ],
                               ),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Container(
+                              width: 163.50,
+                              height: 64,
+                              decoration: ShapeDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment(0.00, -1.00),
+                                  end: Alignment(0, 1),
+                                  colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(32),
+                                ),
+                              ),
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Extra Player(s)',
+                                      style: TextStyle(
+                                        color: Color(0xFFACB3C0),
+                                        fontSize: 12,
+                                        fontFamily: 'Lufga',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Text(
+                                      '0',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 24,
+                                        fontFamily: 'Lufga',
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: -0.72,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
@@ -483,7 +486,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       borderColor: AppColors.black,
                       textColor: AppColors.white,
                       onTap: () {
-                        controller.openBottomSheet(context);
+                        Get.to(Paymentscreen());
                       },
                     ),
                   ),

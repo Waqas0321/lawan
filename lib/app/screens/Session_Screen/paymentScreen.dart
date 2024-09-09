@@ -129,7 +129,9 @@ class Paymentscreen extends GetView<PaymentScreenController> {
                     borderColor: Colors.white,
                     textColor: AppColors.white,
                     borderRadius: 10,
-                    onTap: () {},
+                    onTap: () {
+                      paymentController.openBottomSheet(context);
+                    },
                   )
                 ],
               ),

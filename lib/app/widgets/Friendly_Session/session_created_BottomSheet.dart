@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/Friendly_Session/session_created_Controller.dart';
+import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
 import 'package:lawan/app/widgets/Friendly_Session/smallGreenContainer.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
@@ -313,7 +314,7 @@ class SessionCreated extends StatelessWidget {
                     Expanded(
                         child: BottomButtons(
                           onTap: () {
-                            controller.openBottomSheet(context);
+                            Get.to(FriendlyBottomNav(bycreatedSession: true,));
                           },
                             isExpanded: true, image: Images.users_group_outline)),
                   ],

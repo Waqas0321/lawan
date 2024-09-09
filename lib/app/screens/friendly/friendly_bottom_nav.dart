@@ -8,7 +8,8 @@ import '../../widgets/Areena/custom_bottom_nav.dart';
 import '../AddMenualBooking_Screen/MenualBooking.dart';
 
 class FriendlyBottomNav extends StatelessWidget {
-  const FriendlyBottomNav({super.key});
+  const FriendlyBottomNav({super.key, this.bycreatedSession = false});
+  final bool bycreatedSession;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class FriendlyBottomNav extends StatelessWidget {
                         children: [
                           Obx(() {
                             if (controller.selectedItem.value == "Friendly") {
-                              return const ShareInviteSession();
+                              return ShareInviteSession(byCreatedSession: bycreatedSession,);
                               // return const FriendlySession();
                             } else if (controller.selectedItem.value ==
                                 "Ranked") {

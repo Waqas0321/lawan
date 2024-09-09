@@ -24,7 +24,7 @@ class FilterBoxButtonsRow extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: 53,
+          width: 56,
           child: TextWidget(
             title: text,
             fontWeight: FontWeight.w500,

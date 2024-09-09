@@ -14,7 +14,9 @@ class CustomCard extends StatelessWidget {
   final Color? color;
   final double padding;
   final bool showborder;
+  final bool forAway;
   CustomCard({
+    this.forAway = false,
     required this.count,
     required this.text,
     this.color,
