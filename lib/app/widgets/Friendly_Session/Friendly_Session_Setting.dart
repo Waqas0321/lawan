@@ -129,6 +129,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       BottomButtons(
                         onTap: () {},
                         image: Images.user_plus,
+                        iconSize: 22,
                         iconColor: AppColors.dark_grey,
                       ),
                       SizedBox(
@@ -146,6 +147,8 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           Spacer(),
                           BottomButtons(
                             onTap: () {},
+                            chooseIconColor: true,
+                            iconColor: Colors.white,
                             isExpanded: true,
                             text: 'Male',
                             image: Images.male,
@@ -157,6 +160,8 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           ),
                           BottomButtons(
                             onTap: () {},
+                            chooseIconColor: true,
+                            iconColor: Colors.white,
                             isExpanded: true,
                             text: 'Female',
                             image: Images.female_icon,
@@ -180,6 +185,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           Spacer(),
                           BottomButtons(
                             onTap: () {},
+                            chooseIconColor: true,
                             isExpanded: true,
                             text: 'English',
                             image: Images.english_flag,
@@ -191,9 +197,10 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           ),
                           BottomButtons(
                             onTap: () {},
+                            chooseIconColor: true,
                             isExpanded: true,
                             text: 'Malay',
-                            image: Images.english_flag,
+                            image: Images.malaysia_flag,
                             height: 44,
                             width: 102,
                           ),
@@ -203,6 +210,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                         height: 16,
                       ),
                       CustomSwitchTimeslotRow(
+                        forFriendly: true,
                         leftText: "Age Range",
                         rightText: Apptext.open,
                         isSelected: _isSelectedAgeRange,
@@ -262,6 +270,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                         height: 16,
                       ),
                       CustomSwitchTimeslotRow(
+                        forFriendly: true,
                         leftText: "Configure Slots",
                         rightText: Apptext.open,
                         isSelected: _isSelectedConfigueSlots,

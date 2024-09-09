@@ -11,13 +11,17 @@ class BottomButtons extends StatelessWidget {
     this.text  ='Line-Up',
     required this.onTap,
     this.backgroundColor = Colors.transparent,
-    this.iconColor = Colors.black45
+    this.iconColor = Colors.black45,
+    this.iconSize = 16,
+    this.chooseIconColor = false,
   });
+  final double iconSize;
   final String image;
   final String text;
   final double height;
   final double width;
   final bool isExpanded;
+  final bool chooseIconColor;
   final VoidCallback onTap;
   final Color backgroundColor;
   final Color iconColor;
@@ -42,11 +46,16 @@ class BottomButtons extends StatelessWidget {
             child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            chooseIconColor?SvgPicture.asset(
+              image,
+              height: iconSize,
+              width: iconSize,
+            ):
             SvgPicture.asset(
               image,
-              color: isExpanded ? Color(0xffACB4C0) : iconColor,
-              height: 16,
-              width: 16,
+              color: isExpanded ? chooseIconColor? iconColor: Color(0xffACB4C0) : iconColor,
+              height: iconSize,
+              width: iconSize,
             ),
             isExpanded
                 ? SizedBox(

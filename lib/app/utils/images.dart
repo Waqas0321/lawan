@@ -90,7 +90,8 @@ class Images {
   static const String top = "$mainImage/top.svg";
   static const String male = "$mainImage/male.svg";
   static const String female_icon = "$mainImage/female_Icon.svg";
-  static const String english_flag = "$mainImage/english_flag.svg";
+  static const String english_flag = "$mainImage/united kingdom.svg";
+  static const String malaysia_flag = "$mainImage/malaysia.svg";
   static const String tag = "$mainImage/tag.svg";
   static const String check = "$mainImage/check.svg";
   static const String eye="$mainImage/eye.svg";

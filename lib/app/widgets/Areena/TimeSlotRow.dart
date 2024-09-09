@@ -12,8 +12,10 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
   final String rightText;
   final bool isSelected;
   final ValueChanged<bool> onChanged;
+  final bool forFriendly;
 
   CustomSwitchTimeslotRow({
+    this.forFriendly = false,
     required this.leftText,
     required this.rightText,
     required this.isSelected,
@@ -32,7 +34,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
             child: Text(
               leftText,
               style: TextStyle(
-                color: isSelected ? AppColors.dark_grey : Color(0xFF8A96A8),
+                color: isSelected ?  AppColors.dark_grey : forFriendly?AppColors.dark_grey: Color(0xFF8A96A8),
                 fontSize: 14,
                 fontFamily: 'Lufga',
                 fontWeight: FontWeight.w400,
@@ -44,7 +46,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
           Text(
             isSelected ? Apptext.open : Apptext.closed,
             style: TextStyle(
-              color: isSelected ? AppColors.dark_grey : Color(0xFF8A96A8),
+              color: isSelected ? AppColors.dark_grey : forFriendly?AppColors.dark_grey : Color(0xFF8A96A8),
               fontSize: 14,
               fontFamily: 'Lufga',
               fontWeight: FontWeight.w400,
