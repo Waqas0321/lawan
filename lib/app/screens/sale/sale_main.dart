@@ -4,6 +4,7 @@ import 'package:lawan/app/controller/sales/sales_controller.dart';
 import 'package:lawan/app/screens/sale/widgets/monthly_sales_tabbar.dart';
 import 'package:lawan/app/screens/sale/widgets/sale_header.dart';
 import 'package:lawan/app/screens/sale/widgets/sales_tabbar.dart';
+import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/utils/responsive_utils.dart';
 import 'package:lawan/app/widgets/Areena/custom_tabbar.dart';
@@ -79,14 +80,16 @@ class SaleMain extends StatelessWidget {
                   const TextWidget(
                     title: "24 Sep",
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                   SizedBox(
-                    width: Responsive.h2,
+                    width: Responsive.h4,
                   ),
-                  const TextWidget(
+                   TextWidget(
                     title: "Mon, Today",
-                    textColor: Color(0xFF545F71),
+                    fontSize:14,
+                    fontWeight:FontWeight.w400,
+                    textColor:AppColors.dark_grey,
                   )
                 ],
               ),

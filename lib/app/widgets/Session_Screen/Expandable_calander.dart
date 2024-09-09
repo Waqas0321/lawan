@@ -5,6 +5,7 @@ import 'package:get/get_common/get_reset.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/controller/Session_Screen/SessionScreen_Controller.dart';
+import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -310,7 +311,7 @@ class _ExpandableCustomCalenderState extends State<ExpandableCustomCalender> {
                     SizedBox(width: 16),
                     InkWell(
                       onTap: () {
-                        controller.openBottomSheet(context);
+                        Get.to(FriendlyBottomNav());
                       },
                       child: Container(
                         height: 44,

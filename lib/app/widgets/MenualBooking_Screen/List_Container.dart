@@ -10,17 +10,17 @@ import '../text_widget.dart';
 import 'Custom_Circular_Button.dart';
 
 class ListContainer extends StatefulWidget {
-  const ListContainer(
-      {super.key,
-      this.isOutdoor = false,
-      this.isFriendlySession = false,
-      this.showButton = false,
-      this.isBottomSheet = false,
-      this.onTap,
-        this.index=0,
-      this.selectedProperty = false,
-        this.isSuccessFull = false,
-      });
+  const ListContainer({
+    super.key,
+    this.isOutdoor = false,
+    this.isFriendlySession = false,
+    this.showButton = false,
+    this.isBottomSheet = false,
+    this.onTap,
+    this.index = 0,
+    this.selectedProperty = false,
+    this.isSuccessFull = false,
+  });
 
   final bool isOutdoor;
   final bool isFriendlySession;
@@ -87,9 +87,9 @@ class _ListContainerState extends State<ListContainer> {
         height: widget.isOutdoor || isSelected
             ? 213
             : widget.isFriendlySession && !widget.showButton
-                ? 230
+                ? 210
                 : widget.showButton
-                    ? 260
+                    ? 230
                     : 128,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
@@ -101,7 +101,7 @@ class _ListContainerState extends State<ListContainer> {
               ? [
                   BoxShadow(
                     color: Colors.black.withOpacity(
-                        0.2), // Adjust the shadow color and opacity
+                        0.03), // Adjust the shadow color and opacity
                     offset: Offset(0, 4), // Horizontal and vertical offset
                     blurRadius: 8, // Shadow blur radius
                     spreadRadius: 0, // Shadow spread radius
@@ -134,7 +134,7 @@ class _ListContainerState extends State<ListContainer> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
                     decoration: ShapeDecoration(
-                      color: Colors.black.withOpacity(0.800000011920929),
+                      color: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(400),
@@ -153,25 +153,27 @@ class _ListContainerState extends State<ListContainer> {
                     ),
                   ),
                   widget.showButton
-                      ? widget.index/2==0?ColumnButton(
-                          padding: 10,
-                          onTap: widget.onTap!,
-                        ): ColumnButton(
-                    showBlack: true,
-                    padding: 4,
-                    horizontalPadding: Responsive.h7,
-                    upperText: "Sesssion starting in",
-                    lowerText: "2 days 2 hours 6 mins 3 sec ",
-                    onTap: () {},
-                  )
+                      ? widget.index / 2 == 0
+                          ? ColumnButton(
+                              padding: 10,
+                              onTap: widget.onTap!,
+                            )
+                          : ColumnButton(
+                              showBlack: true,
+                              padding: 4,
+                              horizontalPadding: Responsive.h7,
+                              upperText: "Sesssion starting in",
+                              lowerText: "2 days 2 hours 6 mins 3 sec ",
+                              onTap: () {},
+                            )
                       : isSelected
                           ? Container(
                               width: 44,
                               height: 44,
-                              padding:EdgeInsets.symmetric(
+                              padding: EdgeInsets.symmetric(
                                   horizontal: 12, vertical: 8),
                               decoration: ShapeDecoration(
-                                  color: Colors.black,
+                                  color: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(32),
                                   ),
@@ -405,10 +407,11 @@ class _ListContainerState extends State<ListContainer> {
                               : Row(
                                   children: [
                                     SvgPicture.asset(
-                                      widget.isSuccessFull ? Images.areena:
-                                      !widget.isBottomSheet
-                                          ? Images.location_marker
-                                          : Images.card,
+                                      widget.isSuccessFull
+                                          ? Images.areena
+                                          : !widget.isBottomSheet
+                                              ? Images.location_marker
+                                              : Images.card,
                                       color: AppColors.white,
                                       height: 16,
                                       width: 16,
@@ -417,12 +420,16 @@ class _ListContainerState extends State<ListContainer> {
                                       width: 4,
                                     ),
                                     TextWidget(
-                                      title: widget.isBottomSheet || widget.isSuccessFull
+                                      title: widget.isBottomSheet ||
+                                              widget.isSuccessFull
                                           ? "3"
                                           : 'Petaling Jaya',
                                       textAlign: TextAlign.right,
                                       fontWeight: FontWeight.w500,
-                                      fontSize:widget.isBottomSheet || widget.isSuccessFull? 16: 12,
+                                      fontSize: widget.isBottomSheet ||
+                                              widget.isSuccessFull
+                                          ? 16
+                                          : 12,
                                       textColor: AppColors.white,
                                     )
                                   ],
@@ -668,9 +675,7 @@ class _ListContainerState extends State<ListContainer> {
                                 ],
                               ),
                             ),
-                            SizedBox(
-                              height: 12,
-                            )
+
                           ],
                         ),
                       )

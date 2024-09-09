@@ -22,8 +22,8 @@ class InviteShareGridContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30,
-      padding: const EdgeInsets.all(7),
+      height: 25,
+      padding: const EdgeInsets.only(left: 10,right: 7,top:10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(22),
         border: Border.all(color: Colors.white, width: 0.6),

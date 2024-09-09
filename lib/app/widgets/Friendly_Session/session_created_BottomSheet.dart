@@ -290,7 +290,7 @@ class SessionCreated extends StatelessWidget {
                         onTap: () {
 
                         },
-                        image: Images.trash),
+                        image: Images.trash,iconColor: AppColors.dark_grey,),
                     SizedBox(
                       width: 16,
                     ),
@@ -298,7 +298,7 @@ class SessionCreated extends StatelessWidget {
                         onTap: () {
 
                         },
-                        image: Images.upload),
+                        image: Images.upload,iconColor: AppColors.dark_grey,),
                     SizedBox(
                       width: 16,
                     ),
@@ -306,7 +306,7 @@ class SessionCreated extends StatelessWidget {
                         onTap: () {
 
                         },
-                        image: Images.pencil),
+                        image: Images.pencil,iconColor: AppColors.dark_grey,),
                     SizedBox(
                       width: 16,
                     ),

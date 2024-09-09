@@ -9,6 +9,7 @@ import '../../utils/text.dart';
 import '../Areena/EditAlertBox.dart';
 import '../Areena/areenaButton.dart';
 import '../Areena/custom_header_count.dart';
+import 'countrypicker.dart';
 
 class MenualBottomSheet3 extends StatefulWidget {
   const MenualBottomSheet3({super.key});
@@ -106,14 +107,19 @@ class _MenualBottomSheet3State extends State<MenualBottomSheet3> {
                       SizedBox(height: 4),
                       SizedBox(
                           width: double.infinity,
-                          child: MenualBookigTextField(
-                            isPrefixIcon: true,
-                            preFixIconImagePath: Images.phone_outline,
-                            preFixIconImageHeight: 24,
-                            preFixIconImageWith: 24,
-                            preFixIconColor: AppColors.mid_grey,
-                            hintText: 'Enter Contact Number',
-                            isThirdSheet: true,
+                          child: Row(
+                            children: [
+                              CustomCountryCodePicker(),
+                              MenualBookigTextField(
+                                isPrefixIcon: true,
+                                preFixIconImagePath: Images.phone_outline,
+                                preFixIconImageHeight: 24,
+                                preFixIconImageWith: 24,
+                                preFixIconColor: AppColors.mid_grey,
+                                hintText: 'Enter Contact Number',
+                                isThirdSheet: true,
+                              ),
+                            ],
                           )),
                       SizedBox(height: 12),
                       TextWidget(

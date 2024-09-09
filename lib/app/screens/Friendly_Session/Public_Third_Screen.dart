@@ -40,6 +40,7 @@ class PublicThirdScreen extends StatelessWidget {
                   children: [
                     ListContainer(
                       isFriendlySession: true,
+
                     ),
                     SizedBox(
                       height: 12,

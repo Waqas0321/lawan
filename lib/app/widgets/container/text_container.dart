@@ -14,6 +14,7 @@ class TextContainer extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       child: TextWidget(
         title: text,
+        fontWeight:FontWeight.w500,
         textColor: Colors.white,
         fontSize: 10,
       ),

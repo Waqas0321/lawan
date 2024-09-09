@@ -13,7 +13,7 @@ class GridviewItems extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 1.95,
+        childAspectRatio: 2,
       ),
       itemCount: 4, // Four items to be displayed in the grid
       itemBuilder: (BuildContext context, int index) {
