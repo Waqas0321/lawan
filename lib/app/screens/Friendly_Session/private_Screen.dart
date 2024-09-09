@@ -1,3 +1,4 @@
+import 'package:acrylic_any/acrylic_any.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -40,41 +41,40 @@ class PrivateScreen extends StatelessWidget {
             child: Row(
               children: [
                 InkWell(
-                  onTap: () {
-                    openBottomSheet(context);
-                  },
-                  child:     Container(
-                    width: 90,
-                    height: 44,
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
-                    decoration: ShapeDecoration(
-                      color: Colors.black.withOpacity(0.20000000298023224),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
-                        borderRadius: BorderRadius.circular(80),
+                    onTap: () {
+                      openBottomSheet(context);
+                    },
+                    child:acrylicAny(child:  Container(
+                      width: 90,
+                      height: 44,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      decoration: ShapeDecoration(
+                        color: Colors.black.withOpacity(0.20000000298023224),
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                          borderRadius: BorderRadius.circular(80),
+                        ),
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          Images.adjustments,
-                          colorFilter:
-                          ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TextWidget(
-                          title: "Filter",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          textColor: Colors.white,
-                        )
-                      ],
-                    ),
-                )),
-
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            Images.adjustments,
+                            colorFilter:
+                            ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          TextWidget(
+                            title: "Filter",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            textColor: Colors.white,
+                          )
+                        ],
+                      ),
+                    ), blurlevel: 4)),
                 SizedBox(
                   width: 20,
                 ),
