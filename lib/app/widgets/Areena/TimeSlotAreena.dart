@@ -12,12 +12,14 @@ class TimeSlot extends StatelessWidget {
   final bool isClock;
   final String imagepath;
   final Color  imagecolor;
+  final bool forFriendly;
   TimeSlot({
     required this.timeSlots,
     required this.selectedTimeSlot,
     required this.onChanged,
     required this.isImage,
     this.isClock = true,
+    this.forFriendly = false,
     this.imagepath=Images.exclamation_outline,
     this.imagecolor= AppColors.dark_grey,
   });
@@ -28,12 +30,12 @@ class TimeSlot extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.370,
+        width: forFriendly? MediaQuery.of(context).size.width * 0.715:MediaQuery.of(context).size.width * 0.370,
         height: 45,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            // side: const BorderSide(width: 1, color: Color(0xFFE9EAF0)),
+            side: forFriendly? BorderSide(width: 1, color: Color(0xFFE9EAF0)):BorderSide(width: 0, color: Color(0xFFE9EAF0)),
             borderRadius: BorderRadius.circular(80),
           ),
         ),

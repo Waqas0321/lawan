@@ -173,7 +173,7 @@ class _ListContainerState extends State<ListContainer> {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 12, vertical: 8),
                               decoration: ShapeDecoration(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(32),
                                   ),

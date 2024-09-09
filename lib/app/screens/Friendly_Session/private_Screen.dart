@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/screens/Friendly_Session/Public_Third_Screen.dart';
+import 'package:lawan/app/widgets/MenualBooking_Screen/filterBox.dart';
 
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
@@ -42,7 +43,7 @@ class PrivateScreen extends StatelessWidget {
               children: [
                 InkWell(
                     onTap: () {
-                      openBottomSheet(context);
+                      Get.dialog(FilterBox(isFriendly: true,));
                     },
                     child:acrylicAny(child:  Container(
                       width: 90,
@@ -78,9 +79,14 @@ class PrivateScreen extends StatelessWidget {
                 SizedBox(
                   width: 20,
                 ),
-                CustomShadowButton(
-                  withCounterBox: true,
-                  width: 210,
+                InkWell(
+                  onTap: () {
+                    openBottomSheet(context);
+                  },
+                  child: CustomShadowButton(
+                    withCounterBox: true,
+                    width: 210,
+                  ),
                 )
               ],
             ),

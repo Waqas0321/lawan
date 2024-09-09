@@ -40,7 +40,7 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
     return acrylicAny(
       blurlevel: 10,
       child: Container(
-          height: Get.height * 0.9,
+          height: Get.height * 0.92,
           width: MediaQuery.of(context).size.width - 16,
           margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.only(left: 16,right: 16,top: 16),
