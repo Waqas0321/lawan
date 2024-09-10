@@ -46,13 +46,30 @@ class SessionCreated extends StatelessWidget {
                 child: Stack(children: [
                   Column(
                     children: [
-                      BottomButtons(
-                        onTap: () {
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: 30,),
+                          BottomButtons(
+                            onTap: () {
 
-                        },
-                          iconColor: AppColors.white,
-                          backgroundColor: AppColors.deepGreenColor,
-                          image: Images.check),
+                            },
+                              iconColor: AppColors.white,
+                              backgroundColor: AppColors.deepGreenColor,
+                              image: Images.check),
+                          GestureDetector(
+                              onTap: () {
+                                Get.back();
+                              },
+                              child:  BottomButtons(
+                                onTap: () {
+
+                                },
+
+                                image: Images.x,
+                              ))
+                        ],
+                      ),
                       SizedBox(
                         height: 8,
                       ),
@@ -138,7 +155,6 @@ class SessionCreated extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 2),
                                     Container(
-                                      width: 38,
                                       height: 16,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 6),
@@ -157,7 +173,7 @@ class SessionCreated extends StatelessWidget {
                                       ),
                                       child: const Center(
                                         child: Text(
-                                          'Host',
+                                          'Areena Owner',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: Color(0xFF545F71),
@@ -254,21 +270,6 @@ class SessionCreated extends StatelessWidget {
                       const SizedBox(height: 16),
                     ],
                   ),
-                  Positioned(
-                      top: 13,
-                      right: 0,
-                      child: GestureDetector(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child:  BottomButtons(
-                            onTap: () {
-
-                            },
-                            height: 42,
-                            width: 42,
-                            image: Images.x,
-                          )))
                 ]),
               ),
               Container(
@@ -291,7 +292,7 @@ class SessionCreated extends StatelessWidget {
                         onTap: () {
 
                         },
-                        image: Images.trash,iconColor: AppColors.dark_grey,),
+                        image: Images.pencil,iconColor: AppColors.dark_grey,),
                     SizedBox(
                       width: 16,
                     ),
@@ -307,7 +308,7 @@ class SessionCreated extends StatelessWidget {
                         onTap: () {
 
                         },
-                        image: Images.pencil,iconColor: AppColors.dark_grey,),
+                        image: Images.calendar,iconColor: AppColors.dark_grey,),
                     SizedBox(
                       width: 16,
                     ),

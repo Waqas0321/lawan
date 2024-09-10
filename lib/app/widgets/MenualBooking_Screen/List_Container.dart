@@ -196,6 +196,7 @@ class _ListContainerState extends State<ListContainer> {
                           : SizedBox.shrink(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
                         width: MediaQuery.of(context).size.width * 0.125,
