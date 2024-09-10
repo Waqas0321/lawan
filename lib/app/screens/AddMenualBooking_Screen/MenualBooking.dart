@@ -79,12 +79,10 @@ class MenualBookingScreen extends StatelessWidget {
                       SizedBox(height: 32),
                       DateDayTextContainer(),
                       SessionContainer(
-                          eyeOnTap: () =>
-                              controller.openBottomSheet(context)),
+                          eyeOnTap: () => controller.openBottomSheet(context)),
                       SizedBox(height: 8),
                       SessionContainer(
-                          eyeOnTap: () =>
-                              controller.openBottomSheet(context)),
+                          eyeOnTap: () => controller.openBottomSheet(context)),
                     ],
                   ),
                 );

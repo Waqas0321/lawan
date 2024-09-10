@@ -41,11 +41,11 @@ class FriendlyBottomNav extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() {
-                            if (controller.selectedItem.value == "Friendly") {
+                            if (controller.selectedItem.value == "Ranked") {
                               return ShareInviteSession(byCreatedSession: bycreatedSession,);
                               // return const FriendlySession();
                             } else if (controller.selectedItem.value ==
-                                "Ranked") {
+                                "Friendly") {
                               return const Center(
                                 child: FriendlySession(),
                               );
