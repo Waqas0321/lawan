@@ -40,7 +40,7 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
     return acrylicAny(
       blurlevel: 10,
       child: Container(
-          height: Get.height * 0.92,
+          height: Get.height * 0.87,
           width: MediaQuery.of(context).size.width - 16,
           margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.only(left: 16,right: 16,top: 16),
@@ -68,12 +68,12 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
                   text4: 'Pay',
                   hasFourth: true,
                 ),
-                SizedBox(height: 28),
+                SizedBox(height: 16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextWidget(
-                      title: 'Choose arena',
+                      title: 'Choose Arena',
                       textColor: AppColors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -111,7 +111,7 @@ class _FriendlySessionArenaState extends State<FriendlySessionArena> {
                                 ],
                               )),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 10),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

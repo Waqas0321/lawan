@@ -49,23 +49,21 @@ class SessionCreated extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(width: 30,),
-                          BottomButtons(
-                            onTap: () {
-
-                            },
-                              iconColor: AppColors.white,
-                              backgroundColor: AppColors.deepGreenColor,
-                              image: Images.check),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          SvgPicture.asset(
+                            Images.Pill,
+                            height: 40,
+                            width: 50,
+                            fit: BoxFit.contain,
+                          ),
                           GestureDetector(
                               onTap: () {
                                 Get.back();
                               },
-                              child:  BottomButtons(
-                                onTap: () {
-
-                                },
-
+                              child: BottomButtons(
+                                onTap: () {},
                                 image: Images.x,
                               ))
                         ],
@@ -173,7 +171,7 @@ class SessionCreated extends StatelessWidget {
                                       ),
                                       child: const Center(
                                         child: Text(
-                                          'Areena Owner',
+                                          'Arena Owner',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: Color(0xFF545F71),
@@ -222,11 +220,21 @@ class SessionCreated extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallGreenContainer(text: '25 - 35 years',),
-                          SizedBox(width: 8,),
-                          smallGreenContainer(text: "Male & Female",),
-                          SizedBox(width: 8,),
-                          smallGreenContainer(text: 'English & Malay',),
+                          smallGreenContainer(
+                            text: '25 - 35 years',
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          smallGreenContainer(
+                            text: "Male & Female",
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          smallGreenContainer(
+                            text: 'English & Malay',
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -289,35 +297,38 @@ class SessionCreated extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     BottomButtons(
-                        onTap: () {
-
-                        },
-                        image: Images.pencil,iconColor: AppColors.dark_grey,),
+                      onTap: () {},
+                      image: Images.pencil,
+                      iconColor: AppColors.dark_grey,
+                    ),
                     SizedBox(
                       width: 16,
                     ),
                     BottomButtons(
-                        onTap: () {
-
-                        },
-                        image: Images.upload,iconColor: AppColors.dark_grey,),
+                      onTap: () {},
+                      image: Images.upload,
+                      iconColor: AppColors.dark_grey,
+                    ),
                     SizedBox(
                       width: 16,
                     ),
                     BottomButtons(
-                        onTap: () {
-
-                        },
-                        image: Images.calendar,iconColor: AppColors.dark_grey,),
+                      onTap: () {},
+                      image: Images.calendar,
+                      iconColor: AppColors.dark_grey,
+                    ),
                     SizedBox(
                       width: 16,
                     ),
                     Expanded(
                         child: BottomButtons(
-                          onTap: () {
-                            Get.to(FriendlyBottomNav(bycreatedSession: true,));
-                          },
-                            isExpanded: true, image: Images.users_group_outline)),
+                            onTap: () {
+                              Get.to(FriendlyBottomNav(
+                                bycreatedSession: true,
+                              ));
+                            },
+                            isExpanded: true,
+                            image: Images.users_group_outline)),
                   ],
                 ),
               )
@@ -328,5 +339,3 @@ class SessionCreated extends StatelessWidget {
     );
   }
 }
-
-

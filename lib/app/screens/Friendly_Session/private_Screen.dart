@@ -12,9 +12,7 @@ import '../../utils/responsive_utils.dart';
 import '../../widgets/Areena/areenaButton.dart';
 import '../../widgets/Friendly_Session/Friendly_Session_Select_Date.dart';
 import '../../widgets/Friendly_Session/custom_shadow_button.dart';
-import '../../widgets/Friendly_Session/user_container.dart';
 import '../../widgets/text_widget.dart';
-
 class PrivateScreen extends StatelessWidget {
   const PrivateScreen({super.key});
   void openBottomSheet(BuildContext context) {
@@ -51,11 +49,12 @@ class PrivateScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 12),
                       decoration: ShapeDecoration(
-                        color: Colors.black.withOpacity(0.20000000298023224),
+                        color: Color(0xffB8B8B8),
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                          side: BorderSide(width: 1, color:Color(0xffDEE1E3)),
                           borderRadius: BorderRadius.circular(80),
                         ),
+
                       ),
                       child: Row(
                         children: [

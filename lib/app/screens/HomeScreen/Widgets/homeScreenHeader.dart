@@ -41,7 +41,7 @@ class ScreenHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image.asset(
-                      Images.avatar, // Replace with actual path
+                      Images.avatar1, // Replace with actual path
                       height: 32,
                       width: 40,
                     ),

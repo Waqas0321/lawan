@@ -26,12 +26,18 @@ class customHeaderCount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: hasFourth?MediaQuery.of(context).size.width * 0.05 :MediaQuery.of(context).size.width * 0.1),
+      padding: EdgeInsets.only(
+          left: hasFourth
+              ? MediaQuery.of(context).size.width * 0.0
+              : MediaQuery.of(context).size.width * 0.0),
       child: Row(
-        mainAxisAlignment: hasFourth?MainAxisAlignment.spaceBetween :MainAxisAlignment.center,
+        mainAxisAlignment: hasFourth
+            ? MainAxisAlignment.spaceBetween
+            : MainAxisAlignment.center,
         children: [
-          SizedBox(width: MediaQuery.of(context).size.width * 0.06),
+          SizedBox(width: MediaQuery.of(context).size.width * 0.02),
           Expanded(
+            flex: 2,
             child: CustomCard(
               count: '1',
               showborder: thisCount == "1" ? false : true,
@@ -47,6 +53,7 @@ class customHeaderCount extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 2,
             child: CustomCard(
               count: '2',
               showborder: thisCount == "2" ? false : true,
@@ -57,41 +64,48 @@ class customHeaderCount extends StatelessWidget {
               textcolor:
                   thisCount == "2" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "2" ? FontWeight.w500 : FontWeight.w400,
-              padding: 2,
+              padding: 3,
               linecolor: AppColors.grey3,
             ),
           ),
           Expanded(
+            flex: 2,
             child: CustomCard(
               count: '3',
               text: text3,
               showborder: thisCount == "3" ? false : true,
               color: thisCount == "3" ? AppColors.brand2 : null,
-              linecolor: hasFourth? AppColors.grey3: Colors.transparent,
+              linecolor: hasFourth ? AppColors.grey3 : Colors.transparent,
               countcolor:
                   thisCount == "3" ? AppColors.white : AppColors.dark_grey,
               textcolor:
                   thisCount == "3" ? AppColors.brand2 : AppColors.dark_grey,
               fontWeight: thisCount == "3" ? FontWeight.w500 : FontWeight.w400,
-              padding: 2,
+              padding: 3,
             ),
           ),
-          hasFourth?Expanded(
-            child: CustomCard(
-              count: '4',
-              text: text4,
-              showborder: thisCount == "4" ? false : true,
-              color: thisCount == "4" ? AppColors.brand2 : null,
-              linecolor: Colors.transparent,
-              countcolor:
-              thisCount == "4" ? AppColors.white : AppColors.dark_grey,
-              textcolor:
-              thisCount == "4" ? AppColors.brand2 : AppColors.dark_grey,
-              fontWeight: thisCount == "4" ? FontWeight.w500 : FontWeight.w400,
-              padding:9,
-            ),
-          ):SizedBox(width: 0,),
-
+          hasFourth
+              ? Expanded(
+                  child: CustomCard(
+                    count: '4',
+                    text: text4,
+                    showborder: thisCount == "4" ? false : true,
+                    color: thisCount == "4" ? AppColors.brand2 : null,
+                    linecolor: Colors.transparent,
+                    countcolor: thisCount == "4"
+                        ? AppColors.white
+                        : AppColors.dark_grey,
+                    textcolor: thisCount == "4"
+                        ? AppColors.brand2
+                        : AppColors.dark_grey,
+                    fontWeight:
+                        thisCount == "4" ? FontWeight.w500 : FontWeight.w400,
+                    padding: 11,
+                  ),
+                )
+              : SizedBox(
+                  width: 0,
+                ),
         ],
       ),
     );

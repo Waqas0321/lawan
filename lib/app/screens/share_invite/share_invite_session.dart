@@ -14,7 +14,6 @@ import '../../utils/responsive_utils.dart';
 import '../../widgets/Areena/custom_tabbar.dart';
 import '../../widgets/Friendly_Session/Friendly_BottomSheet.dart';
 import '../HomeScreen/Widgets/homeScreenHeader.dart';
-
 class ShareInviteSession extends StatelessWidget {
   const ShareInviteSession({super.key, required this.byCreatedSession});
   final bool byCreatedSession;
@@ -33,7 +32,7 @@ class ShareInviteSession extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return acrylicAny(child: Container(
       decoration: AppColors.gradientDecoration,
       child: SingleChildScrollView(
         child: Stack(
@@ -68,9 +67,9 @@ class ShareInviteSession extends StatelessWidget {
                           ),
                           Expanded(
                               child: TabBarView(children: [
-                            ShareInvitePublicScreen(),
-                            ShareInvitePublicScreen()
-                          ]))
+                                ShareInvitePublicScreen(),
+                                ShareInvitePublicScreen()
+                              ]))
                         ],
                       )),
                 )
@@ -89,21 +88,22 @@ class ShareInviteSession extends StatelessWidget {
                       child: Container(
                         width: 90,
                         height: 44,
-                        padding: const EdgeInsets.symmetric(
+                        padding:EdgeInsets.symmetric(
                             horizontal: 10, vertical: 12),
                         decoration: ShapeDecoration(
-                          color: Colors.black.withOpacity(0.20000000298023224),
+                          color: Color(0xffB8B8B8),
                           shape: RoundedRectangleBorder(
-                            side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+                            side: BorderSide(width: 1, color:Color(0xffDEE1E3)),
                             borderRadius: BorderRadius.circular(80),
                           ),
+
                         ),
                         child: Row(
                           children: [
                             SvgPicture.asset(
                               Images.adjustments,
                               colorFilter:
-                                  ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                              ColorFilter.mode(Colors.white, BlendMode.srcIn),
                             ),
                             SizedBox(
                               width: 10,
@@ -137,6 +137,6 @@ class ShareInviteSession extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ), blurlevel: 2);
   }
 }

@@ -29,7 +29,7 @@ class FrindlySessionContainer extends StatelessWidget {
       child: Row(
         children: [
           Image(
-            image: AssetImage(Images.avtar),
+            image: AssetImage(Images.avatar1),
             height: 32,
             width: 32,
           ),

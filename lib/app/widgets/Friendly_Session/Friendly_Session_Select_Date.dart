@@ -194,18 +194,16 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                             text: '5 hr'),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(
-                          child: TimeSlot(
-                            timeSlots: _timeSlots,
-                            selectedTimeSlot: _selectedTimeSlot,
-                            onChanged: _onTimeSlotChanged,
-                            isImage: true,
-                            imagepath: Images.clock,
-                          ),
+                        TimeSlot(
+                          timeSlots: _timeSlots,
+                          selectedTimeSlot: _selectedTimeSlot,
+                          onChanged: _onTimeSlotChanged,
+                          isImage: true,
+                          imagepath: Images.clock,
                         ),
                         SizedBox(
                           width: 10,
@@ -223,15 +221,13 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
                         SizedBox(
                           width: 10,
                         ),
-                        Expanded(
-                          child: TimeSlot(
-                            imagepath:Images.clock,
+                        TimeSlot(
+                          imagepath:Images.clock,
 
-                            timeSlots: _timeSlots,
-                            selectedTimeSlot: _selectedTimeSlot,
-                            onChanged: _onTimeSlotChanged,
-                            isImage: true,
-                          ),
+                          timeSlots: _timeSlots,
+                          selectedTimeSlot: _selectedTimeSlot,
+                          onChanged: _onTimeSlotChanged,
+                          isImage: true,
                         ),
                       ],
                     ),
@@ -239,36 +235,32 @@ class _FriendlySessionSelectDateState extends State<FriendlySessionSelectDate> {
 
                   ],
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 60),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: CustomAreenaButton(
-                        text: Apptext.cancel,
-                        color: null,
-                        borderColor: Color(0xFFE9EAF0),
-                        textColor: AppColors.black,
-                        onTap: () {
-                          Get.back();
-                        },
-                      ),
+                    CustomAreenaButton(
+                      text: Apptext.cancel,
+                      color: null,
+                      borderColor: Color(0xFFE9EAF0),
+                      textColor: AppColors.black,
+                      onTap: () {
+                        Get.back();
+                      },
                     ),
                     SizedBox(
                       width: 16,
                     ),
-                    Expanded(
-                      child: CustomAreenaButton(
-                        text: Apptext.next,
-                        color: AppColors.black,
-                        borderColor: AppColors.black,
-                        textColor: AppColors.white,
-                        onTap: () {
-                          Get.back();
-                          openBottomSheet(context);
-                        },
-                      ),
+                    CustomAreenaButton(
+                      text: Apptext.next,
+                      color: AppColors.black,
+                      borderColor: AppColors.black,
+                      textColor: AppColors.white,
+                      onTap: () {
+                        Get.back();
+                        openBottomSheet(context);
+                      },
                     ),
                   ],
                 ),

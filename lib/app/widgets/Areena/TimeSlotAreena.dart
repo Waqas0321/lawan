@@ -13,6 +13,7 @@ class TimeSlot extends StatelessWidget {
   final String imagepath;
   final Color  imagecolor;
   final bool forFriendly;
+  final Color textcolor;
   TimeSlot({
     required this.timeSlots,
     required this.selectedTimeSlot,
@@ -22,6 +23,7 @@ class TimeSlot extends StatelessWidget {
     this.forFriendly = false,
     this.imagepath=Images.exclamation_outline,
     this.imagecolor= AppColors.dark_grey,
+    this.textcolor=Colors.black
   });
 
   @override
@@ -75,8 +77,8 @@ class TimeSlot extends StatelessWidget {
                       ),
                       Text(
                         value,
-                        style: const TextStyle(
-                          color: Colors.black,
+                        style: TextStyle(
+                          color:textcolor,
                           fontSize: 14,
                           fontFamily: 'Lufga',
                           fontWeight: FontWeight.w500,

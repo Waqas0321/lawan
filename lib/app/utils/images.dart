@@ -1,6 +1,6 @@
 class Images {
   static const String mainImage = "assets/Images";
-  static const String avatar = "$mainImage/Avatar.png";
+  static const String avatar = "$mainImage/Avatar1.png";
   static const String avatar1 = "$mainImage/Avatar1.png";
   static const String avatarSvg = "$mainImage/Avatar.svg";
   static const String avatar2 = "$mainImage/Avatar2.png";
@@ -94,6 +94,7 @@ class Images {
   static const String malaysia_flag = "$mainImage/malaysia.svg";
   static const String tag = "$mainImage/tag.svg";
   static const String check = "$mainImage/check.svg";
+  static const String Pill='$mainImage/Pill.svg';
   static const String eye = "$mainImage/eye.svg";
   static const String exclamation_outline =
       "$mainImage/exclamation-outline.svg";

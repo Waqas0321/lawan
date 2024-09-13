@@ -36,7 +36,7 @@ class ListContainer extends StatefulWidget {
 
 class _ListContainerState extends State<ListContainer> {
   List<ImageProvider> memberImages = [
-    AssetImage(Images.avatar),
+    AssetImage(Images.avatar1),
     AssetImage(Images.avatar2),
 
     // Add more images here...
@@ -112,7 +112,7 @@ class _ListContainerState extends State<ListContainer> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(bottom: 12, left: 16, right: 16),
+              padding: EdgeInsets.only(bottom: 8, left: 12, right: 16),
               width: MediaQuery.of(context).size.width,
               height: widget.showButton ? 140 : 120,
               clipBehavior: Clip.antiAlias,
@@ -129,7 +129,7 @@ class _ListContainerState extends State<ListContainer> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    width: MediaQuery.of(context).size.width * 0.4,
                     height: MediaQuery.of(context).size.height * 0.025,
                     padding:
                         const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
@@ -171,7 +171,7 @@ class _ListContainerState extends State<ListContainer> {
                               width: 44,
                               height: 44,
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 8),
+                                  horizontal: 12, vertical: 12),
                               decoration: ShapeDecoration(
                                   color: Colors.black,
                                   shape: RoundedRectangleBorder(
@@ -194,290 +194,293 @@ class _ListContainerState extends State<ListContainer> {
                               ),
                             )
                           : SizedBox.shrink(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.125,
-                        height: MediaQuery.of(context).size.width * 0.04,
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        clipBehavior: Clip.antiAlias,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 1),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.125,
+                          height: MediaQuery.of(context).size.width * 0.04,
+                          // padding: const EdgeInsets.symmetric(horizontal: 8),
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                          ),
+                          child: Center(
+                            child: TextWidget(
+                              title: '5.2km',
+                              fontSize: 11,
+                              textAlign: TextAlign.center,
+                              fontWeight: FontWeight.w500,
+                              textColor: AppColors.textSecondColor,
+                            ),
                           ),
                         ),
-                        child: Center(
-                          child: TextWidget(
-                            title: '5.2km',
-                            fontSize: 11,
-                            textAlign: TextAlign.center,
-                            fontWeight: FontWeight.w500,
-                            textColor: AppColors.textSecondColor,
-                          ),
-                        ),
-                      ),
-                      widget.isFriendlySession && !widget.showButton
-                          ? Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Wrap(
-                                  spacing: -10,
-                                  children: [
-                                    SizedBox(
-                                      height: 24,
-                                      width: 24,
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColors.mid_grey,
-                                        backgroundImage:
-                                            AssetImage(Images.avatar),
+                        widget.isFriendlySession && !widget.showButton
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Wrap(
+                                    spacing: -10,
+                                    children: [
+                                      SizedBox(
+                                        height: 24,
+                                        width: 24,
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColors.mid_grey,
+                                          backgroundImage:
+                                              AssetImage(Images.avatar),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 24,
-                                      width: 24,
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColors.mid_grey,
-                                        backgroundImage:
-                                            AssetImage(Images.avatar2),
+                                      SizedBox(
+                                        height: 24,
+                                        width: 24,
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColors.mid_grey,
+                                          backgroundImage:
+                                              AssetImage(Images.avatar2),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 24,
-                                      width: 24,
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColors.mid_grey,
-                                        backgroundImage:
-                                            AssetImage(Images.avatar3),
+                                      SizedBox(
+                                        height: 24,
+                                        width: 24,
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColors.mid_grey,
+                                          backgroundImage:
+                                              AssetImage(Images.avatar3),
+                                        ),
                                       ),
-                                    ),
-                                    if (!showAll)
-                                      GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            showAll = true;
-                                          });
-                                        },
-                                        child: Container(
-                                            width: 24,
-                                            height: 24,
-                                            decoration: ShapeDecoration(
-                                              color: AppColors.white,
-                                              shape: RoundedRectangleBorder(
-                                                side: BorderSide(
-                                                    width: 1,
-                                                    color: AppColors.mid_grey),
-                                                borderRadius:
-                                                    BorderRadius.circular(999),
-                                              ),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                "+${memberImages.length}",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color:
-                                                      AppColors.textSecondColor,
-                                                  fontSize: 8,
-                                                  fontFamily: 'Inter',
-                                                  fontWeight: FontWeight.w600,
-                                                  height: 0.19,
+                                      if (!showAll)
+                                        GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              showAll = true;
+                                            });
+                                          },
+                                          child: Container(
+                                              width: 24,
+                                              height: 24,
+                                              decoration: ShapeDecoration(
+                                                color: AppColors.white,
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                      width: 1,
+                                                      color: AppColors.mid_grey),
+                                                  borderRadius:
+                                                      BorderRadius.circular(999),
                                                 ),
                                               ),
-                                            ) // Muestra el número de miembros ocultos
-                                            ),
-                                      ),
-                                    if (showAll)
-                                      ...memberImages
-                                          .map((image) => GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    showAll = false;
-                                                  });
-                                                },
-                                                child: SizedBox(
-                                                  height: 24,
-                                                  width: 24,
-                                                  child: CircleAvatar(
-                                                      backgroundImage: image),
+                                              child: Center(
+                                                child: Text(
+                                                  "+${memberImages.length}",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color:
+                                                        AppColors.textSecondColor,
+                                                    fontSize: 8,
+                                                    fontFamily: 'Inter',
+                                                    fontWeight: FontWeight.w600,
+                                                    height: 0.19,
+                                                  ),
                                                 ),
-                                              )),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                TextWidget(
-                                  title: "VS",
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w800,
-                                  textColor: Colors.white,
-                                ),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                Wrap(
-                                  spacing: -10,
-                                  children: [
-                                    SizedBox(
-                                      height: 24,
-                                      width: 24,
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColors.mid_grey,
-                                        backgroundImage:
-                                            AssetImage(Images.avatar),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 24,
-                                      width: 24,
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColors.mid_grey,
-                                        backgroundImage:
-                                            AssetImage(Images.avatar2),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 24,
-                                      width: 24,
-                                      child: CircleAvatar(
-                                        backgroundColor: AppColors.mid_grey,
-                                        backgroundImage:
-                                            AssetImage(Images.avatar3),
-                                      ),
-                                    ),
-                                    if (!showAll)
-                                      GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            showAll = true;
-                                          });
-                                        },
-                                        child: Container(
-                                            width: 24,
-                                            height: 24,
-                                            decoration: ShapeDecoration(
-                                              color: AppColors.white,
-                                              shape: RoundedRectangleBorder(
-                                                side: BorderSide(
-                                                    width: 1,
-                                                    color: AppColors.mid_grey),
-                                                borderRadius:
-                                                    BorderRadius.circular(999),
+                                              ) // Muestra el número de miembros ocultos
                                               ),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                "+${memberImages.length}",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color:
-                                                      AppColors.textSecondColor,
-                                                  fontSize: 8,
-                                                  fontFamily: 'Inter',
-                                                  fontWeight: FontWeight.w600,
-                                                  height: 0.19,
+                                        ),
+                                      if (showAll)
+                                        ...memberImages
+                                            .map((image) => GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      showAll = false;
+                                                    });
+                                                  },
+                                                  child: SizedBox(
+                                                    height: 24,
+                                                    width: 24,
+                                                    child: CircleAvatar(
+                                                        backgroundImage: image),
+                                                  ),
+                                                )),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  TextWidget(
+                                    title: "VS",
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w800,
+                                    textColor: Colors.white,
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Wrap(
+                                    spacing: -10,
+                                    children: [
+                                      SizedBox(
+                                        height: 24,
+                                        width: 24,
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColors.mid_grey,
+                                          backgroundImage:
+                                              AssetImage(Images.avatar),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 24,
+                                        width: 24,
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColors.mid_grey,
+                                          backgroundImage:
+                                              AssetImage(Images.avatar2),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 24,
+                                        width: 24,
+                                        child: CircleAvatar(
+                                          backgroundColor: AppColors.mid_grey,
+                                          backgroundImage:
+                                              AssetImage(Images.avatar3),
+                                        ),
+                                      ),
+                                      if (!showAll)
+                                        GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              showAll = true;
+                                            });
+                                          },
+                                          child: Container(
+                                              width: 24,
+                                              height: 24,
+                                              decoration: ShapeDecoration(
+                                                color: AppColors.white,
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                      width: 1,
+                                                      color: AppColors.mid_grey),
+                                                  borderRadius:
+                                                      BorderRadius.circular(999),
                                                 ),
                                               ),
-                                            ) // Muestra el número de miembros ocultos
-                                            ),
-                                      ),
-                                    if (showAll)
-                                      ...memberImages
-                                          .map((image) => GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    showAll = false;
-                                                  });
-                                                },
-                                                child: SizedBox(
-                                                  height: 24,
-                                                  width: 24,
-                                                  child: CircleAvatar(
-                                                      backgroundImage: image),
+                                              child: Center(
+                                                child: Text(
+                                                  "+${memberImages.length}",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color:
+                                                        AppColors.textSecondColor,
+                                                    fontSize: 8,
+                                                    fontFamily: 'Inter',
+                                                    fontWeight: FontWeight.w600,
+                                                    height: 0.19,
+                                                  ),
                                                 ),
-                                              )),
-                                  ],
-                                ),
-                              ],
-                            )
-                          : widget.showButton
-                              ? SizedBox.shrink()
-                              : Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      widget.isSuccessFull
-                                          ? Images.areena
-                                          : !widget.isBottomSheet
-                                              ? Images.location_marker
-                                              : Images.card,
-                                      color: AppColors.white,
-                                      height: 16,
-                                      width: 16,
-                                    ),
-                                    SizedBox(
-                                      width: 4,
-                                    ),
-                                    TextWidget(
-                                      title: widget.isBottomSheet ||
-                                              widget.isSuccessFull
-                                          ? "3"
-                                          : 'Petaling Jaya',
-                                      textAlign: TextAlign.right,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: widget.isBottomSheet ||
-                                              widget.isSuccessFull
-                                          ? 16
-                                          : 12,
-                                      textColor: AppColors.white,
-                                    )
-                                  ],
-                                ),
-                      widget.isFriendlySession
-                          ? Row(
-                              children: [
-                                SvgPicture.asset(
-                                  Images.users,
+                                              ) // Muestra el número de miembros ocultos
+                                              ),
+                                        ),
+                                      if (showAll)
+                                        ...memberImages
+                                            .map((image) => GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      showAll = false;
+                                                    });
+                                                  },
+                                                  child: SizedBox(
+                                                    height: 24,
+                                                    width: 24,
+                                                    child: CircleAvatar(
+                                                        backgroundImage: image),
+                                                  ),
+                                                )),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            : widget.showButton
+                                ? SizedBox.shrink()
+                                : Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        widget.isSuccessFull
+                                            ? Images.areena
+                                            : !widget.isBottomSheet
+                                                ? Images.location_marker
+                                                : Images.card,
+                                        color: AppColors.white,
+                                        height: 16,
+                                        width: 16,
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      TextWidget(
+                                        title: widget.isBottomSheet ||
+                                                widget.isSuccessFull
+                                            ? "3"
+                                            : 'Petaling Jaya',
+                                        textAlign: TextAlign.right,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: widget.isBottomSheet ||
+                                                widget.isSuccessFull
+                                            ? 16
+                                            : 12,
+                                        textColor: AppColors.white,
+                                      )
+                                    ],
+                                  ),
+                        widget.isFriendlySession
+                            ? Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    Images.users,
+                                    color: Colors.white,
+                                    height: 16,
+                                    width: 16,
+                                  ),
+                                  SizedBox(
+                                    width: 6,
+                                  ),
+                                  TextWidget(
+                                    title: "8/28",
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                    textColor: AppColors.white,
+                                    textAlign: TextAlign.center,
+                                  )
+                                ],
+                              )
+                            : Container(
+                                width: MediaQuery.of(context).size.width * 0.125,
+                                height: MediaQuery.of(context).size.width * 0.04,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 6),
+                                clipBehavior: Clip.antiAlias,
+                                decoration: ShapeDecoration(
                                   color: Colors.white,
-                                  height: 16,
-                                  width: 16,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100),
+                                  ),
                                 ),
-                                SizedBox(
-                                  width: 6,
+                                child: Center(
+                                  child: TextWidget(
+                                    title: 'Grass',
+                                    textAlign: TextAlign.center,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                                TextWidget(
-                                  title: "8/28",
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12,
-                                  textColor: AppColors.white,
-                                  textAlign: TextAlign.center,
-                                )
-                              ],
-                            )
-                          : Container(
-                              width: MediaQuery.of(context).size.width * 0.125,
-                              height: MediaQuery.of(context).size.width * 0.04,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 6),
-                              clipBehavior: Clip.antiAlias,
-                              decoration: ShapeDecoration(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              child: Center(
-                                child: TextWidget(
-                                  title: 'Grass',
-                                  textAlign: TextAlign.center,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            )
-                    ],
+                              )
+                      ],
+                    ),
                   )
                 ],
               ),

@@ -21,7 +21,7 @@ class ShareInvitePublicScreen extends StatelessWidget {
             height: 60,
             width: MediaQuery.of(context).size.width,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding:EdgeInsets.symmetric(horizontal: 16),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,

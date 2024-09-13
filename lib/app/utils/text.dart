@@ -56,5 +56,7 @@ class Apptext {
   static const String Proceed_with_applying_the_changes="Proceed with applying the changes.";
   static const String Confirm="Confirm";
   static const String Delete="Delete";
+  static const String Disable="Disable";
+  static const String Enable="Enable";
 
 }

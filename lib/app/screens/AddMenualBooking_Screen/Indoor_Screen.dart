@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:lawan/app/utils/colors.dart';
-import 'package:lawan/app/utils/images.dart';
-import 'package:lawan/app/widgets/text_widget.dart';
 import '../../widgets/MenualBooking_Screen/List_Container.dart';
 import '../../widgets/MenualBooking_Screen/Indoor_Header.dart';
-
 class IndoorScreen extends StatelessWidget {
-  const IndoorScreen({super.key});
-
+  IndoorScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,16 +18,19 @@ class IndoorScreen extends StatelessWidget {
               ),
               IndoorHeader(),
               SizedBox(height: 16),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [ListContainer(
-                        selectedProperty: true,
-                        isOutdoor: false,), SizedBox(height: 4)],
-                    );
-                  },
+              Container(
+                height:370,
+                child: Expanded(
+                  child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [ListContainer(
+                          selectedProperty: true,
+                          isOutdoor: false,), SizedBox(height: 4)],
+                      );
+                    },
+                  ),
                 ),
               )
             ],

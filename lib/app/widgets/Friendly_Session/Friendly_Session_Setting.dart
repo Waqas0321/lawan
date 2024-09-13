@@ -6,18 +6,13 @@ import 'package:lawan/app/controller/Friendly_Session/setting_controller.dart';
 import 'package:lawan/app/screens/Session_Screen/paymentScreen.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotRow.dart';
-import 'package:lawan/app/widgets/Friendly_Session/session_created_BottomSheet.dart';
-import 'package:lawan/app/widgets/MenualBooking_Screen/search_TextField.dart';
 import 'package:lawan/app/widgets/Session_Screen/Bottom_Buttons.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 import '../../utils/colors.dart';
 import '../../utils/text.dart';
-import '../Areena/EditAlertBox.dart';
 import '../Areena/TimeSlotAreena.dart';
 import '../Areena/areenaButton.dart';
-import '../Areena/custom_container_Add_Areena3.dart';
 import '../Areena/custom_header_count.dart';
-import '../MenualBooking_Screen/FilterBoxButtonsRow.dart';
 
 class FriendlySessionSetting extends StatefulWidget {
   const FriendlySessionSetting({super.key});
@@ -70,7 +65,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
     return acrylicAny(
       blurlevel: 10,
       child: Container(
-          height: Get.height * 0.9,
+          height: Get.height * 0.85,
           width: MediaQuery.of(context).size.width - 16,
           margin: EdgeInsets.only(bottom: 25),
           padding: EdgeInsets.all(16),
@@ -212,7 +207,9 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       CustomSwitchTimeslotRow(
                         forFriendly: true,
                         leftText: "Age Range",
-                        rightText: Apptext.open,
+                        opentext: Apptext.Enable,
+                        closetext: Apptext.Disable,
+                        rightText: Apptext.Disable,
                         isSelected: _isSelectedAgeRange,
                         onChanged: (bool value) {
                           setState(() {
@@ -227,14 +224,12 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Expanded(
-                                  child: TimeSlot(
-                                    isClock: false,
-                                    timeSlots: _timeSlots,
-                                    selectedTimeSlot: _selectedTimeSlot,
-                                    onChanged: _onTimeSlotChanged,
-                                    isImage: true,
-                                  ),
+                                TimeSlot(
+                                  isClock: false,
+                                  timeSlots: _timeSlots,
+                                  selectedTimeSlot: _selectedTimeSlot,
+                                  onChanged: _onTimeSlotChanged,
+                                  isImage: true,
                                 ),
                                 SizedBox(
                                   width: 12,
@@ -252,14 +247,12 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                 SizedBox(
                                   width: 12,
                                 ),
-                                Expanded(
-                                  child: TimeSlot(
-                                    isClock: false,
-                                    timeSlots: _timeSlots,
-                                    selectedTimeSlot: _selectedTimeSlot,
-                                    onChanged: _onTimeSlotChanged,
-                                    isImage: true,
-                                  ),
+                                TimeSlot(
+                                  isClock: false,
+                                  timeSlots: _timeSlots,
+                                  selectedTimeSlot: _selectedTimeSlot,
+                                  onChanged: _onTimeSlotChanged,
+                                  isImage: true,
                                 ),
                               ],
                             )
@@ -272,7 +265,9 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                       CustomSwitchTimeslotRow(
                         forFriendly: true,
                         leftText: "Configure Slots",
-                        rightText: Apptext.open,
+                        closetext: Apptext.Disable,
+                        opentext: Apptext.Enable,
+                        rightText: Apptext.Disable,
                         isSelected: _isSelectedConfigueSlots,
                         onChanged: (bool value) {
                           setState(() {
@@ -287,13 +282,14 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Expanded(
-                                  child: TimeSlot(
-                                    timeSlots: _timeSlotsTwo,
-                                    selectedTimeSlot: _selectedTimeSlotTwo,
-                                    onChanged: _onTimeSlotChangedTwo,
-                                    isImage: true,
-                                  ),
+                                TimeSlot(
+                                  timeSlots: _timeSlotsTwo,
+                                  isClock: true,
+                                  imagepath: Images.exclamation_outline,
+                                  imagecolor: Color(0xff23A991),
+                                  selectedTimeSlot: _selectedTimeSlotTwo,
+                                  onChanged: _onTimeSlotChangedTwo,
+                                  isImage: true,
                                 ),
                                 SizedBox(
                                   width: 12,
@@ -311,14 +307,15 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                 SizedBox(
                                   width: 12,
                                 ),
-                                Expanded(
-                                  child: TimeSlot(
-                                    isClock: false,
-                                    timeSlots: _timeSlotsThree,
-                                    selectedTimeSlot: _selectedTimeSlotThree,
-                                    onChanged: _onTimeSlotChangedThree,
-                                    isImage: true,
-                                  ),
+                                TimeSlot(
+                                  textcolor: AppColors.grey3,
+                                  isClock: false,
+                                  imagepath: Images.exclamation_outline,
+                                  imagecolor: Color(0xff23A991),
+                                  timeSlots: _timeSlotsThree,
+                                  selectedTimeSlot: _selectedTimeSlotThree,
+                                  onChanged: _onTimeSlotChangedThree,
+                                  isImage: false,
                                 ),
                               ],
                             )
@@ -339,7 +336,10 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                 gradient: LinearGradient(
                                   begin: Alignment(0.00, -1.00),
                                   end: Alignment(0, 1),
-                                  colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
+                                  colors: [
+                                    Color(0xFF0C1B22),
+                                    Color(0xFF44D8BE)
+                                  ],
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32),
@@ -361,8 +361,8 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                           SizedBox(
                                             width: double.infinity,
                                             child: Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 8.0),
+                                              padding:
+                                                  EdgeInsets.only(left: 8.0),
                                               child: Text(
                                                 'Price to pay',
                                                 style: TextStyle(
@@ -427,7 +427,10 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                                 gradient: LinearGradient(
                                   begin: Alignment(0.00, -1.00),
                                   end: Alignment(0, 1),
-                                  colors: [Color(0xFF0C1B22), Color(0xFF44D8BE)],
+                                  colors: [
+                                    Color(0xFF0C1B22),
+                                    Color(0xFF44D8BE)
+                                  ],
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32),

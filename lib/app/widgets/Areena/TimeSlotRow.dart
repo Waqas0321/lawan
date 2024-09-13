@@ -5,6 +5,7 @@ import 'package:lawan/app/utils/text.dart';
 
 import '../../../main.dart';
 import '../../utils/colors.dart';
+import '../../utils/images.dart';
 import 'customToggle.dart';
 
 class CustomSwitchTimeslotRow extends StatelessWidget {
@@ -13,13 +14,18 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
   final bool isSelected;
   final ValueChanged<bool> onChanged;
   final bool forFriendly;
-
+  final String opentext;
+  final String closetext;
+  final String imagepath;
   CustomSwitchTimeslotRow({
     this.forFriendly = false,
     required this.leftText,
     required this.rightText,
     required this.isSelected,
     required this.onChanged,
+    this.closetext=Apptext.closed,
+    this.opentext=Apptext.open,
+    this.imagepath=Images.clock,
   });
   @override
   Widget build(BuildContext context) {
@@ -44,7 +50,7 @@ class CustomSwitchTimeslotRow extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            isSelected ? Apptext.open : Apptext.closed,
+            isSelected ? opentext : closetext,
             style: TextStyle(
               color: isSelected ? AppColors.dark_grey : forFriendly?AppColors.dark_grey : Color(0xFF8A96A8),
               fontSize: 14,
