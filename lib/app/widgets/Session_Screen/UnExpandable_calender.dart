@@ -430,7 +430,7 @@ class _UnExpandableCustomCalenderState
                 height: 0.12,
               ),
             ),
-            daysOfWeekHeight: 20,
+            daysOfWeekHeight: 25,
             rowHeight: 50,
           ),
           SizedBox(

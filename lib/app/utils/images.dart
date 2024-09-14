@@ -96,6 +96,7 @@ class Images {
   static const String check = "$mainImage/check.svg";
   static const String Pill='$mainImage/Pill.svg';
   static const String eye = "$mainImage/eye.svg";
+  static const String line2 = "$mainImage/Line 2.svg";
   static const String exclamation_outline =
       "$mainImage/exclamation-outline.svg";
 }
