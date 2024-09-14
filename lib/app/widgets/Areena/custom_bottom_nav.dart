@@ -24,7 +24,7 @@ class CustomBottomNavigation extends StatelessWidget {
     this.widthFactor = 0.56, // Adjust this value based on screen width
     this.containerHeight = 70.0,
     this.padding = 4.0,
-    this.containerColor = const Color(0xCCE5E6E5),
+    this.containerColor = const Color(0xFFE4E5E4),
     this.borderRadius = 80.0,
     this.margin = const EdgeInsets.only(bottom: 10),
     this.iconSize = 15.0,
