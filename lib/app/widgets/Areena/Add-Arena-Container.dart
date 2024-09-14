@@ -35,7 +35,7 @@ class CustomCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               width: 42,
@@ -69,6 +69,7 @@ class CustomCard extends StatelessWidget {
             // SizedBox(
             //   width: 16,
             // ),
+
             Expanded(
                 child: Padding(
               padding: const EdgeInsets.all(10),

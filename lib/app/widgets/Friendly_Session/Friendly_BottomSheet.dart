@@ -34,7 +34,7 @@ class FriendlyBottomSheet extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.only(bottom: 16),
           width: 377,
-          height: 700,
+          height: 690,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -159,7 +159,6 @@ class FriendlyBottomSheet extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 2),
                                     Container(
-                                      width: 38,
                                       height: 16,
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 6),
