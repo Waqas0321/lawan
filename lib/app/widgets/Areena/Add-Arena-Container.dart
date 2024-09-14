@@ -59,14 +59,16 @@ class CustomCard extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.018,
         ),
-        Text(
-          text,
-          style: TextStyle(
-            color: textcolor,
-            fontSize: 14,
-            fontFamily: 'Lufga',
-            fontWeight: fontWeight,
-            height: 0.11,
+        Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: textcolor,
+              fontSize: 14,
+              fontFamily: 'Lufga',
+              fontWeight: fontWeight,
+              height: 0.11,
+            ),
           ),
         ),
       ],
