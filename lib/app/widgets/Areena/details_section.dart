@@ -134,6 +134,9 @@ class _DetailsSctionState extends State<DetailsSction> {
             ),
             SizedBox(height: 12,),
             CustomTextFormField(
+              onTap: () {
+
+              },
                 fontWeight:FontWeight.w500,
                 color:AppColors.black,
                 hintText: 'Petaling Jaya, Selangor', icon: Images.location),

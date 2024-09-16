@@ -106,7 +106,6 @@ class _AreenaMapScreenState extends State<AreenaMapScreen> {
                       TileLayer(
                         urlTemplate:
                             "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                        subdomains: ['a', 'b', 'c'],
                         additionalOptions: {
                           'access_token': 'YOUR_ACCESS_TOKEN',
                           'id': 'mapbox/streets-v11',

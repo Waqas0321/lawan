@@ -10,6 +10,7 @@ import 'package:lawan/app/widgets/Areena/custom_header_count.dart';
 import '../../utils/colors.dart';
 import '../../utils/text.dart';
 import 'AddAreena3.dart';
+import 'Areena1.5.dart';
 import 'TimeSlotRow.dart';
 import 'areenaButton.dart';
 
@@ -363,4 +364,5 @@ class _AddAreena2State extends State<AddAreena2> {
       },
     );
   }
+
 }

@@ -193,7 +193,9 @@ class _AddAreena1State extends State<AddAreena1> {
                             const SizedBox(
                               height: 12,
                             ),
-                            CustomTextFormField(
+                            CustomTextFormField(onTap: () {
+                              _openBottomSheetMap(context);
+                            },
                                 hintText: Apptext.location,
                                 validator: (value) {
                                   return Validator.customValidator(
@@ -211,7 +213,9 @@ class _AddAreena1State extends State<AddAreena1> {
                             const SizedBox(
                               height: 12,
                             ),
-                            CustomTextFormField(
+                            CustomTextFormField(onTap: () {
+
+                            },
                               validator: (value) {
                                 return Validator.customValidator(
                                   value: value,
@@ -230,6 +234,9 @@ class _AddAreena1State extends State<AddAreena1> {
                               height: 12,
                             ),
                             CustomTextFormField(
+                              onTap: () {
+
+                              },
                               validator: (value) {
                                 return Validator.customValidator(
                                   value: value,
@@ -411,6 +418,19 @@ class _AddAreena1State extends State<AddAreena1> {
       enableDrag: true,
       isScrollControlled:
           true, // Allows the bottom sheet to use full screen height
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return AddAreena2();
+      },
+    );
+  }
+  Future<void> _openBottomSheetMap(BuildContext context) async {
+    await showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      enableDrag: true,
+      isScrollControlled:
+      true, // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return AreenaMapScreen();
