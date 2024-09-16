@@ -54,6 +54,9 @@ dependencies:
   bar_chart:
   responsive_builder: ^0.7.1
   overlay_group_avatar: ^0.0.4
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+#  location: ^7.0.0
   acrylic_any: ^0.0.1
 dev_dependencies:
   flutter_test:

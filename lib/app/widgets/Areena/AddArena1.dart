@@ -8,6 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/route_manager.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/text.dart';
+import 'package:lawan/app/widgets/Areena/Areena1.5.dart';
 import 'package:lawan/app/widgets/Areena/ar-in-out-button.dart';
 import 'package:lawan/app/widgets/Areena/areenaButton.dart';
 import '../../utils/ScreenDimensions.dart';
@@ -412,20 +413,8 @@ class _AddAreena1State extends State<AddAreena1> {
           true, // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        return AddAreena2();
+        return AreenaMapScreen();
       },
     );
   }
-  // Future<void> _openBottomSheet(BuildContext context) async {
-  //   await showModalBottomSheet(
-  //      isDismissible: true,
-  //      enableDrag: true,
-  //     isScrollControlled:
-  //             true,
-  //   context: context,
-  //     builder: (BuildContext context) {
-  //       return AddAreena2();
-  //     },
-  //   );
-  // }
 }

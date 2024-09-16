@@ -49,7 +49,7 @@ class _AddAreena2State extends State<AddAreena2> {
     final screenSize = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: acrylicAny(
-        blurlevel: 5000000000.00,
+        blurlevel: 10,
         child: Container(
           // width: MediaQuery.of(context).size.width - 16,
           margin: EdgeInsets.only(left: 10, right: 10, bottom: 25),

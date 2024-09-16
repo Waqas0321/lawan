@@ -50,7 +50,7 @@ class _AddAreena3State extends State<AddAreena3> {
   @override
   Widget build(BuildContext context) {
     return acrylicAny(
-      blurlevel: 10,
+      blurlevel: 6,
       child: Container(
         // width: MediaQuery.of(context).size.width - 16,
         height: 711,
