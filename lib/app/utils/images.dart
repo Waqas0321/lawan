@@ -98,6 +98,7 @@ class Images {
   static const String eye = "$mainImage/eye.svg";
   static const String line2 = "$mainImage/Line 2.svg";
   static const String map_LocatonIndicator = "$mainImage/map_LocatonIndicator.svg";
+  static const String Capa_1 = "$mainImage/Capa_1.svg";
   static const String exclamation_outline =
       "$mainImage/exclamation-outline.svg";
 }
