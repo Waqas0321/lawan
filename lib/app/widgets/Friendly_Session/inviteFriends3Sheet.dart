@@ -107,7 +107,9 @@ class _InviteFriendsThreeSheetState extends State<InviteFriendsThreeSheet> {
                   Row(
                     children: [
                       CustomCircularButton(
-                        onPressFun: () {},
+                        onPressFun: () {
+                          Get.back();
+                        },
                         isSelected: false,
                         isImage: true,
                         imagePath: Images.chevron_left,

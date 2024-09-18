@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../widgets/Friendly_Session/inviteFriends2Sheet.dart';
 import '../../widgets/Friendly_Session/inviteFriends3Sheet.dart';
 
 class InviteFriendsTwoSheetController extends GetxController{

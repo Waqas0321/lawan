@@ -85,7 +85,9 @@ class InviteFriendsOneSheet extends StatelessWidget {
               Row(
                 children: [
                   CustomCircularButton(
-                    onPressFun: () {},
+                    onPressFun: () {
+                      Get.back();
+                    },
                     isSelected: false,
                     isImage: true,
                     imagePath: Images.chevron_left,
