@@ -122,7 +122,9 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                         height: 8,
                       ),
                       BottomButtons(
-                        onTap: () {},
+                        onTap: () {
+                          controller.openBottomSheetInvits(context);
+                        },
                         image: Images.user_plus,
                         iconSize: 22,
                         iconColor: AppColors.dark_grey,

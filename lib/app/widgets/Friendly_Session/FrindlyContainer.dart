@@ -7,9 +7,15 @@ import '../text_widget.dart';
 
 class FrindlySessionContainer extends StatelessWidget {
   final VoidCallback onTap;
-  const FrindlySessionContainer({
+  final bool isSelected;
+  final String imagePath;
+  final Color imageColor;
+   FrindlySessionContainer({
     super.key,
     required this.onTap,
+    this.isSelected = false,
+    this.imagePath = Images.plus,
+    this.imageColor = AppColors.dark_grey,
   });
 
   @override
@@ -45,7 +51,6 @@ class FrindlySessionContainer extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
               Container(
-                width: 48,
                 height: 16,
                 padding: const EdgeInsets.symmetric(horizontal: 6),
                 clipBehavior: Clip.antiAlias,
@@ -73,16 +78,17 @@ class FrindlySessionContainer extends StatelessWidget {
           ),
           Spacer(),
           CustomCircularButton(
+            imageColor: imageColor,
               isImage: true,
               imageheight:20,
               imagewidth:20,
               vertical:0,
               horizontal:0,
-              imagePath: Images.plus,
+              imagePath: imagePath,
               width: 36,
               height: 40,
               onPressFun: onTap,
-              isSelected: false),
+              isSelected: isSelected),
         ],
       ),
     );

@@ -82,7 +82,7 @@ class customHeaderCount extends StatelessWidget {
             fontWeight: thisCount == "3" ? FontWeight.w500 : FontWeight.w400,
           ),
           hasFourth? Padding(
-            padding: EdgeInsets.only(bottom: 10),
+            padding: EdgeInsets.only(bottom: 10,left: Get.width * 0.03,right: Get.width * 0.03),
             child: SvgPicture.asset(Images.line2),
           ):SizedBox(width: 0,),
           hasFourth?CustomCard(

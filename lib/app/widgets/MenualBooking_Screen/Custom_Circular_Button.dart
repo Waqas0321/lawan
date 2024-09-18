@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lawan/app/utils/colors.dart';
+import 'package:lawan/app/utils/images.dart';
 import '../text_widget.dart';
 
 class CustomCircularButton extends StatelessWidget {
-  const CustomCircularButton({
+  CustomCircularButton({
     super.key,
     this.text = '',
     required this.onPressFun,
@@ -17,8 +18,10 @@ class CustomCircularButton extends StatelessWidget {
     this.imagewidth=16,
     this.vertical=8,
     this.horizontal=12,
+     this.rightIcon = false,
+     this.imageColor = AppColors.dark_grey
   });
-
+  final bool rightIcon;
   final String text;
   final GestureTapCallback onPressFun;
   final bool isSelected;
@@ -30,6 +33,7 @@ class CustomCircularButton extends StatelessWidget {
   final double imagewidth;
   final double horizontal;
   final double vertical;
+  final Color imageColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -48,21 +52,28 @@ class CustomCircularButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: isImage
-              ? SvgPicture.asset(
-                  imagePath,
-                  height: imageheight,
-                  width: imageheight,
-                  color: Color(0xff545F71),
-                )
-              : TextWidget(
-                  title: text,
-                  textAlign: TextAlign.center,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  textColor:
-                      isSelected ? AppColors.white : AppColors.textSecondColor,
-                ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              isImage
+                  ? SvgPicture.asset(
+                imagePath,
+                height: imageheight,
+                width: imageheight,
+                color: imageColor,
+              )
+                  : TextWidget(
+                title: text,
+                textAlign: TextAlign.center,
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                textColor:
+                isSelected ? AppColors.white : AppColors.textSecondColor,
+              ),
+              rightIcon?SizedBox(width: 4,):SizedBox(width: 0,),
+              rightIcon? SvgPicture.asset(Images.arrow_sm_right,height: 16,width: 16,):SizedBox(width: 0,)
+            ]
+          ),
         ),
       ),
     );

@@ -31,7 +31,8 @@ class CustomTextFormField extends StatelessWidget {
   final Color errorBorderColor; // Color for the error border
   final bool
       showIcon;
-  final VoidCallback onTap;// Boolean to determine if the icon or text should be displayed
+  final VoidCallback onTap;
+  bool prefixIcon;// Boolean to determine if the icon or text should be displayed
 
   CustomTextFormField({
     required this.hintText, // The hint text to display inside the text field
@@ -48,7 +49,8 @@ class CustomTextFormField extends StatelessWidget {
     this.errorBorderColor =
         Colors.red, // Color of the border when there is an error
     this.showIcon = true,
-    required this.onTap, // Determine whether to show icon or text
+    required this.onTap,
+    this.prefixIcon = false,// Determine whether to show icon or text
   });
 
   @override
@@ -67,8 +69,38 @@ class CustomTextFormField extends StatelessWidget {
               fontWeight: fontWeight, // Font weight of the hint text
               height: 0.11, // Line height for the hint text
             ),
+            prefixIcon: prefixIcon? (icon != null
+                ? Padding(
+                  padding: iconPadding ??
+                      EdgeInsets.all(15.0), // Use provided padding or default
+                  child: Container(
+                    width: iconSize ?? 20, // Use provided size or default
+                    height: iconSize ?? 20, // Use provided size or default
+                    child: SvgPicture.asset(
+                      icon!,
+                      color: iconColor ??
+                          AppColors.mid_grey, // Use provided color or default
+                      // fit:
+                      //     BoxFit.contain, // Fit the icon within the container
+                    ),
+                  ),
+                )
+                : Padding(
+                  padding: iconPadding ??
+                      EdgeInsets.only(top: 16.0, bottom: 10, right: 12),
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      color: Color(0xFF545F71),
+                      fontSize: 12,
+                      fontFamily: 'Lufga',
+                      fontWeight: FontWeight.w400,
+                      // height: 0.12,
+                    ),
+                  ),
+                )):SizedBox(width: 0,),
             // Suffix icon or text configuration
-            suffixIcon: (icon != null
+            suffixIcon:!prefixIcon? (icon != null
                 ? GestureDetector(
               onTap: onTap,
                   child: Padding(
@@ -105,7 +137,7 @@ class CustomTextFormField extends StatelessWidget {
                         ),
                       ),
                     ),
-                )),
+                )):SizedBox(width: 0,),
             // Background and border configuration
             filled: true, // Fill the background color
             fillColor: backgroundColor, // Background color of the text field
