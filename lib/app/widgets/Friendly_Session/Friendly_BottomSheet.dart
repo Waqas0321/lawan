@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:lawan/app/controller/Friendly_Session/setting_controller.dart';
-import 'package:lawan/app/screens/Friendly_Session/chat_screens.dart';
+import 'package:lawan/app/screens/Friendly_Session/chat_screens_main.dart';
 import 'package:lawan/app/screens/friendly/friendly_bottom_nav.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/TimeSlotRow.dart';
@@ -331,7 +331,7 @@ class FriendlyBottomSheet extends StatelessWidget {
                         child: BottomButtons(
                           text: 'Lobby',
                             onTap: () {
-                              Get.to(ChatScreens());
+                              Get.to(ChatScreensMain());
                             },
                             isExpanded: true,
                             image: Images.users_group_outline)),
