@@ -12,7 +12,7 @@ class InviteFriendsThreeSheetController extends GetxController{
       // Allows the bottom sheet to use full screen height
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
-        return FriendlySessionSetting();
+        return FriendlySessionSetting(fromInviteFriends: true,);
       },
     );
   }

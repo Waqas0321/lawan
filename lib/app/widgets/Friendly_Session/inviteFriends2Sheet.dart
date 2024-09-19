@@ -13,6 +13,7 @@ import '../../utils/images.dart';
 import '../MenualBooking_Screen/Custom_Circular_Button.dart';
 import '../text_widget.dart';
 import 'FrindlyContainer.dart';
+import 'circularImageBox.dart';
 
 class InviteFriendsTwoSheet extends StatefulWidget {
    InviteFriendsTwoSheet({super.key});
@@ -144,9 +145,9 @@ class _InviteFriendsTwoSheetState extends State<InviteFriendsTwoSheet> {
                       child: Wrap(
                         spacing: -10,
                         children: [
-                          wrapImageBox(imagePath: Images.avatar,),
-                          wrapImageBox(imagePath: Images.avatar2,),
-                          wrapImageBox(imagePath: Images.avatar3,),
+                          CircularImageBox(imagePath: Images.avatar,),
+                          CircularImageBox(imagePath: Images.avatar2,),
+                          CircularImageBox(imagePath: Images.avatar3,),
                           if (!showAll)
                             GestureDetector(
                               onTap: () {
@@ -210,22 +211,3 @@ class _InviteFriendsTwoSheetState extends State<InviteFriendsTwoSheet> {
   }
 }
 
-class wrapImageBox extends StatelessWidget {
-  const wrapImageBox({
-    super.key,
-    required this.imagePath,
-  });
-  final String imagePath;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 44,
-      width: 44,
-      child: CircleAvatar(
-
-        backgroundImage: AssetImage(imagePath),
-      ),
-    );
-  }
-}

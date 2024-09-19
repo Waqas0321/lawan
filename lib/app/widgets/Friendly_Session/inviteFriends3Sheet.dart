@@ -8,6 +8,7 @@ import '../../utils/images.dart';
 import '../MenualBooking_Screen/Custom_Circular_Button.dart';
 import '../text_widget.dart';
 import 'FrindlyContainer.dart';
+import 'circularImageBox.dart';
 import 'inviteFriends2Sheet.dart';
 import 'inviteFriends_ListContainer.dart';
 
@@ -136,13 +137,13 @@ class _InviteFriendsThreeSheetState extends State<InviteFriendsThreeSheet> {
                         child: Wrap(
                           spacing: -10,
                           children: [
-                            wrapImageBox(
+                            CircularImageBox(
                               imagePath: Images.avatar,
                             ),
-                            wrapImageBox(
+                            CircularImageBox(
                               imagePath: Images.avatar2,
                             ),
-                            wrapImageBox(
+                            CircularImageBox(
                               imagePath: Images.avatar3,
                             ),
                             if (!showAll)
