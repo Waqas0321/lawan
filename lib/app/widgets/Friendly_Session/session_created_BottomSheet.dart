@@ -25,7 +25,7 @@ class SessionCreated extends StatelessWidget {
       child: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.only(bottom: 16),
-          width: 377,
+          width: MediaQuery.of(context).size.width - 16,
           height: 730,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

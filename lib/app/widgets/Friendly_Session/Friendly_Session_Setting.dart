@@ -144,7 +144,7 @@ class _FriendlySessionSettingState extends State<FriendlySessionSetting> {
                               ),
                               SizedBox(
                                 height: 50,
-                                width: MediaQuery.of(context).size.width * 0.75,
+                                width: MediaQuery.of(context).size.width * 0.72,
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   itemCount: 15,
