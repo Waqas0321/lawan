@@ -33,7 +33,7 @@ class ChatScreensMain extends StatelessWidget {
               Color(0xCC0C1B22), // Start color// Gradient color at 30%
               Color(0x0044D8BE), // White color for the remaining 70%
             ],
-            stops: [0.0, 0.36,], // Defines the stops for each color
+            stops: [0.0, 0.44,], // Defines the stops for each color
           ),
         ),
         child: SafeArea(

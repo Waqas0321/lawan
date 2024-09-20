@@ -104,6 +104,10 @@ class Images {
   static const String safety = "$mainImage/safety.svg";
   static const String check_circle = "$mainImage/check-circle.svg";
   static const String capa = "$mainImage/Capa.svg";
+  static const String paperclip = "$mainImage/paperclip.svg";
+  static const String message_send = "$mainImage/message_send.svg";
+  static const String user_headset_outline = "$mainImage/user-headset-outline.svg";
+  static const String smile_emoji = "$mainImage/smile_emoji.svg";
   static const String exclamation_outline =
       "$mainImage/exclamation-outline.svg";
 }
