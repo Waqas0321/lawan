@@ -19,7 +19,9 @@ class CustomCircularButton extends StatelessWidget {
     this.vertical=8,
     this.horizontal=12,
      this.rightIcon = false,
-     this.imageColor = AppColors.dark_grey
+     this.imageColor = AppColors.dark_grey,
+    this.borderColorNoSelected = AppColors.hRBTNBorder,
+    this.borderColorSelected = AppColors.Grey2,
   });
   final bool rightIcon;
   final String text;
@@ -34,6 +36,8 @@ class CustomCircularButton extends StatelessWidget {
   final double horizontal;
   final double vertical;
   final Color imageColor;
+  final Color borderColorNoSelected;
+  final Color borderColorSelected;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -46,8 +50,8 @@ class CustomCircularButton extends StatelessWidget {
           color: isSelected ? Colors.black : Colors.transparent,
           shape: RoundedRectangleBorder(
             side:isSelected
-                ? BorderSide(width: 1, color: Color(0xFFDEE1E2))
-                : BorderSide(width: 1, color: Color(0xFFE0E0E0)),
+                ? BorderSide(width: 1, color: borderColorSelected)
+                : BorderSide(width: 1, color: borderColorNoSelected),
             borderRadius: BorderRadius.circular(32),
           ),
         ),

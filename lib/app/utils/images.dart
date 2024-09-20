@@ -101,6 +101,9 @@ class Images {
   static const String Capa_1 = "$mainImage/Capa_1.svg";
   static const String arrow_sm_right = "$mainImage/arrow-sm-right.svg";
   static const String information_circle = "$mainImage/Cinformation-circle.svg";
+  static const String safety = "$mainImage/safety.svg";
+  static const String check_circle = "$mainImage/check-circle.svg";
+  static const String capa = "$mainImage/Capa.svg";
   static const String exclamation_outline =
       "$mainImage/exclamation-outline.svg";
 }

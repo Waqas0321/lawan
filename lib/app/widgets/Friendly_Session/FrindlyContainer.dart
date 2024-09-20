@@ -10,12 +10,14 @@ class FrindlySessionContainer extends StatelessWidget {
   final bool isSelected;
   final String imagePath;
   final Color imageColor;
+  final Color borderColor;
    FrindlySessionContainer({
     super.key,
     required this.onTap,
     this.isSelected = false,
     this.imagePath = Images.plus,
     this.imageColor = AppColors.dark_grey,
+    this.borderColor = AppColors.hRBTNBorder,
   });
 
   @override
@@ -28,7 +30,7 @@ class FrindlySessionContainer extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.transparent,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFDEE1E2)),
+          side: BorderSide(width: 1, color: borderColor),
           borderRadius: BorderRadius.circular(32),
         ),
       ),
@@ -60,7 +62,7 @@ class FrindlySessionContainer extends StatelessWidget {
                     side: BorderSide(
                       width: 1,
                       strokeAlign: BorderSide.strokeAlignOutside,
-                      color: Color(0xFFDEE1E2),
+                      color: borderColor,
                     ),
                     borderRadius: BorderRadius.circular(100),
                   ),
@@ -78,6 +80,8 @@ class FrindlySessionContainer extends StatelessWidget {
           ),
           Spacer(),
           CustomCircularButton(
+            borderColorNoSelected: borderColor,
+            borderColorSelected: borderColor,
             imageColor: imageColor,
               isImage: true,
               imageheight:20,

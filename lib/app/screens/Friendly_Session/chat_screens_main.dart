@@ -3,14 +3,12 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/controller/Friendly_Session/chat_screen_main_controller.dart';
+import 'package:lawan/app/screens/Friendly_Session/lign_up_screen.dart';
 import 'package:lawan/app/screens/sale/widgets/sales_tabbar.dart';
 import 'package:lawan/app/utils/colors.dart';
 import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/Areena/custom_tabbar.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/Custom_Circular_Button.dart';
-
-import '../../utils/text.dart';
-import '../../widgets/Areena/areenaButton.dart';
 import '../AddMenualBooking_Screen/Indoor_Screen.dart';
 import '../AddMenualBooking_Screen/Outdoor_Screen.dart';
 
@@ -21,9 +19,9 @@ class ChatScreensMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppColors.white,
-      child: Container(
+    return Scaffold(
+      backgroundColor: Color(0xffdcdadD),
+      body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
@@ -31,18 +29,15 @@ class ChatScreensMain extends StatelessWidget {
             begin: Alignment(0.00, -1.00),
             end: Alignment(0, 1),
             colors: [
-              Color(0xCC0C1B22), // Start color
-              Color(0x0044D8BE), // Gradient color at 30%
-              Color(0xfff2f3f2), // White color for the remaining 70%
+              Color(0xCC0C1B22), // Start color// Gradient color at 30%
+              Color(0x0044D8BE), // White color for the remaining 70%
             ],
-            stops: [0.0, 0.24, 0.24], // Defines the stops for each color
+            stops: [0.0, 0.36,], // Defines the stops for each color
           ),
         ),
         child: SafeArea(
           bottom: false,
-
-          child: Stack(
-              children: [
+          child: Stack(children: [
             DefaultTabController(
               length: 2,
               child: Column(
@@ -63,7 +58,7 @@ class ChatScreensMain extends StatelessWidget {
                   Expanded(
                     child: TabBarView(
                       children: [
-                        IndoorScreen(),
+                        LignUpScreen(),
                         OutdoorScreen(),
                       ],
                     ),
