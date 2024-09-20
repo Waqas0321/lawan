@@ -79,6 +79,7 @@ class ChatScreensMain extends StatelessWidget {
                   isSelected: false,
                   isImage: true,
                   imagePath: Images.chevron_left,
+                  imageColor: AppColors.white,
                 ),
               ),
             )
