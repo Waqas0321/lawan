@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lawan/app/bindings/app_bindings.dart';
 import 'package:lawan/app/controller/Friendly_Session/chat_screen_main_controller.dart';
+import 'package:lawan/app/screens/Friendly_Session/chattingRoom_screen.dart';
 import 'package:lawan/app/screens/Friendly_Session/lign_up_screen.dart';
 import 'package:lawan/app/screens/sale/widgets/sales_tabbar.dart';
 import 'package:lawan/app/utils/colors.dart';
@@ -59,7 +60,7 @@ class ChatScreensMain extends StatelessWidget {
                     child: TabBarView(
                       children: [
                         LignUpScreen(),
-                        OutdoorScreen(),
+                        ChattingRoomScreen(),
                       ],
                     ),
                   )
