@@ -8,7 +8,9 @@ import 'package:nb_utils/nb_utils.dart';
 class MenuButton extends StatelessWidget {
   const MenuButton({
     super.key,
+    this.iconImagePath = Images.dots_vertical_outline,
   });
+  final String iconImagePath;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +27,7 @@ class MenuButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(32),
           ),
           offset: Offset(-250, 60),
-          icon: SvgPicture.asset(Images.dots_vertical_outline,color:AppColors.dark_grey,),
+          icon: SvgPicture.asset(iconImagePath,color:AppColors.dark_grey,),
           clipBehavior: Clip.antiAlias,
           itemBuilder: (context) => [
             PopupMenuItem(

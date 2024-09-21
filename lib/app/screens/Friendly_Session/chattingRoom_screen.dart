@@ -8,6 +8,8 @@ import 'package:lawan/app/utils/images.dart';
 import 'package:lawan/app/widgets/MenualBooking_Screen/Custom_Circular_Button.dart';
 import 'package:lawan/app/widgets/text_widget.dart';
 
+import '../../utils/text.dart';
+import '../../widgets/Areena/EditAlertBox.dart';
 import '../../widgets/Friendly_Session/FrindlyContainer.dart';
 
 class ChattingRoomScreen extends StatefulWidget {
@@ -228,43 +230,61 @@ class _ChattingRoomScreenState extends State<ChattingRoomScreen> {
               scrollDirection: Axis.horizontal,
               itemCount: 3,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Container(
-                    width: Get.width * 0.4,
-                    height: 58,
-                    padding: const EdgeInsets.only(
-                      top: 12,
-                      left: 16,
-                      right: 16,
-                      bottom: 8,
-                    ),
-                    decoration: ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 1, color: Colors.white),
-                        borderRadius: BorderRadius.circular(20),
+                return GestureDetector(
+                  onTap: () {
+                    showCustomEditAlertDialog(
+                        conFirmOnTapBottomSheet: false,
+                        "Do you want to reschedule?",
+                        'MThis will add the Admin to the chat for confirmation.',
+                        isConfirmed: true,
+                            () {
+                            },
+                        titleText: Apptext
+                            .Proceed_with_applying_the_changes,
+                        updateButtonText:
+                        "Confirm",
+                        updateButtonBorderColor: AppColors.black,
+                        updateButtonColor: AppColors.black,
+                        updateButtonTextColor: AppColors.white);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Container(
+                      width: Get.width * 0.4,
+                      height: 58,
+                      padding: const EdgeInsets.only(
+                        top: 12,
+                        left: 16,
+                        right: 16,
+                        bottom: 8,
                       ),
-                    ),
-                    child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SvgPicture.asset(
-                            Images.user_headset_outline,
-                            height: 16,
-                            width: 16,
-                          ),
-                          SizedBox(
-                            height: 2,
-                          ),
-                          TextWidget(
-                            title: "Chat with Admin",
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            textColor: AppColors.black,
-                          )
-                        ],
+                      decoration: ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(width: 1, color: Colors.white),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              Images.user_headset_outline,
+                              height: 16,
+                              width: 16,
+                            ),
+                            SizedBox(
+                              height: 2,
+                            ),
+                            TextWidget(
+                              title: "Chat with Admin",
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              textColor: AppColors.black,
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),

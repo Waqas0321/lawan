@@ -181,10 +181,11 @@ void showCustomEditAlertDialog(
                                   color: updateButtonColor,
                                   borderColor: updateButtonBorderColor,
                                   textColor: updateButtonTextColor,
-                                  onTap: () {
+                                  onTap:
+                                      () {
                                     Get.back();
                                     if (conFirmOnTapBottomSheet) {
-                                      _openBottomSheet();
+                                      // _openBottomSheet();
                                     } else {
                                       return null;
                                     }

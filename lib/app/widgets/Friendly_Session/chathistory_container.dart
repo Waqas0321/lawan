@@ -6,6 +6,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../utils/colors.dart';
 import '../../utils/images.dart';
 import '../MenualBooking_Screen/Custom_Circular_Button.dart';
+import '../Session_Screen/MenuButton.dart';
 import '../text_widget.dart';
 
 class ChatHistoryContainer extends StatelessWidget {
@@ -109,12 +110,7 @@ class ChatHistoryContainer extends StatelessWidget {
           SizedBox(
             width: 12,
           ),
-          CustomCircularButton(
-            onPressFun: () {},
-            isSelected: false,
-            imagePath: Images.capa,
-            isImage: true,
-          )
+          MenuButton(iconImagePath: Images.capa,)
         ],
       ),
     );
